@@ -5,7 +5,10 @@ import TrainersFrame from "../components/TrainersFrames.vue"
 
 <template>
   <div>
+
     <TrainersFrame></TrainersFrame>
     <OurPartners></OurPartners>
+
+
   </div>
 </template>
