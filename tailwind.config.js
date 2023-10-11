@@ -1,11 +1,24 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: [
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "primary": "#E60000",
+        "secondary": "#EEEEEE",
+      }
+    },
+    fontFamily: {
+      Manrope: ['Manrope', 'sans-serif'],
+    },
+    container: {
+      padding: "2rem",
+      center: true,
+    },
+
   },
   plugins: [],
 }
