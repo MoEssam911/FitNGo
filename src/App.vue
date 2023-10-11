@@ -1,17 +1,29 @@
 <template>
-  <div>
-    <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-    <i class="fa-solid fa-brain"></i>
+  <main>
+    <Navbar></Navbar>
     <RouterView />
-  </div>
+    <Footer></Footer>
+
+  </main>
 </template>
 
 <script setup>
 import { RouterView } from 'vue-router'
+import Navbar from './components/Navbar.vue'
+import Footer from './components/Footer.vue'
+</script>
+
+<script>
+export default {
+  components:{
+    Navbar,
+    Footer,
+  }
+}
 </script>
 
 <style lang="scss" scoped>
-
+main{
+  min-height: 100vh;
+}
 </style>
