@@ -1,0 +1,53 @@
+{
+    "trainer":[
+        {
+            "id":1,
+            "trainerImg":"../src/assets/Images/Ahmed-Fathy.png",
+            "trainerNames":"C-Ahmed Fathy",
+            "rate":"<i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star-half-stroke'></i>",
+            "Description":"C-Ahmed Fathy is a trainer asdgdsajhsd ashgdasgdasjhdg sahdsagd hsajsgadshadjsgdjhsgdja djgsadasjhg asjhgds ajhdjhgasg"
+
+        },
+        {
+            "id":2,
+            "trainerImg":"../src/assets/Images/Ahmed-Fathy.png",
+            "trainerNames":"C-Ali Mazhar",
+            "rate":"<i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star-half-stroke'></i>",
+            "Description":"C-Ahmed Fathy is a trainer asdgdsajhsd ashgdasgdasjhdg sahdsagd hsajsgadshadjsgdjhsgdja djgsadasjhg asjhgds ajhdjhgasg"
+
+        },
+        {
+            "id":3,
+            "trainerImg":"../src/assets/Images/Ahmed-Fathy.png",
+            "trainerNames":"C-Ahmed Fathy",
+            "rate":"<i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star-half-stroke'></i>",
+            "Description":"C-Ahmed Fathy is a trainer asdgdsajhsd ashgdasgdasjhdg sahdsagd hsajsgadshadjsgdjhsgdja djgsadasjhg asjhgds ajhdjhgasg"
+
+        },
+        {
+            "id":4,
+            "trainerImg":"../src/assets/Images/Ahmed-Fathy.png",
+            "trainerNames":"C-Ahmed Fathy",
+            "rate":"<i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star-half-stroke'></i>",
+            "Description":"C-Ahmed Fathy is a trainer asdgdsajhsd ashgdasgdasjhdg sahdsagd hsajsgadshadjsgdjhsgdja djgsadasjhg asjhgds ajhdjhgasg"
+
+        },
+        {
+            "id":5,
+            "trainerImg":"../src/assets/Images/Ahmed-Fathy.png",
+            "trainerNames":"C-Ahmed Fathy",
+            "rate":"<i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star-half-stroke'></i>",
+            "Description":"C-Ahmed Fathy is a trainer asdgdsajhsd ashgdasgdasjhdg sahdsagd hsajsgadshadjsgdjhsgdja djgsadasjhg asjhgds ajhdjhgasg "
+
+        },
+        {
+            "id":6,
+            "trainerImg":"../src/assets/Images/Ahmed-Fathy.png",
+            "trainerNames":"C-Ahmed Fathy",
+            "rate":"<i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star-half-stroke'></i>",
+            "Description":"C-Ahmed Fathy is a trainer asdgdsajhsd ashgdasgdasjhdg sahdsagd hsajsgadshadjsgdjhsgdja djgsadasjhg asjhgds ajhdjhgasg"
+
+        }
+        
+    ]
+}

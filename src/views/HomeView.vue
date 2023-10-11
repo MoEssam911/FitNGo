@@ -1,10 +1,14 @@
 <script setup>
+import OurPartners from "../components/OurPartners.vue"
+import TrainersFrame from "../components/TrainersFrames.vue"
 </script>
 
 <template>
   <div>
-    <div class="container bg-slate-600 h-full">
-      sdfghjklasdfghjkl
-    </div>
+
+    <TrainersFrame></TrainersFrame>
+    <OurPartners></OurPartners>
+
+
   </div>
 </template>
