@@ -4,7 +4,7 @@
 
 
 .btn-primary-hover {
-  @apply w-40 h-12 bg-primary hover:bg-[#AE0000] rounded-xl font-Manrope text-lg text-center;
+  @apply bg-primary hover:bg-[#AE0000] rounded-xl font-Manrope text-lg text-center;
 }
 
 .btn-more-to-explore {

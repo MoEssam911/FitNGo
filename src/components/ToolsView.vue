@@ -1,5 +1,7 @@
 <template>
-  <div class="container grid grid-cols-12 grid-rows-4 w-full h-[40rem] gap-4 p-4">
+  <div class="container">
+    <h1 class="text-primary text-3xl font-Manrope font-bold">Tools</h1>
+    <div class="container grid grid-cols-12 grid-rows-4 w-full h-[40rem] gap-4 p-4">
 
     <div class="col-span-6 lg:row-span-4 rounded-[40px] hidden lg:block relative">
       <img src="../assets/Images/male-feet-sneakers-running-treadmill-gym-exercise-concept.jpg" alt="treadmill" class="object-cover h-full w-full rounded-[40px]">
@@ -11,7 +13,6 @@
         </button>
       </div>
     </div>
-
 
     <div class="flex justify-center lg:col-span-3 md:row-span-2 col-span-12 row-span-1 md:col-span-6 rounded-[40px] bg-[url('assets/Images/male-feet-sneakers-running-treadmill-gym-exercise-concept(1).jpg')] object-cover bg-center bg-cover opacity-80 hover:opacity-100 hover:text-primary hover:cursor-pointer group transition-all duration-500 ease-in delay-150">
       <div class="bg-gradient-to-t from-black opacity-100 self-center w-full h-full rounded-[40px]"></div>
@@ -32,7 +33,7 @@
         <p class="self-center relative text-white font-Manrope text-2xl font-bold group-hover:text-primary">Macro Calculator</p>
       </div>
     </div>
-    
+
     <div class="flex justify-center lg:col-span-3 md:row-span-2 col-span-12 row-span-1 md:col-span-6 rounded-[40px] bg-[url('assets/Images/flay-lay-salad-bowl-weights.jpg')] object-cover bg-center bg-cover opacity-80 hover:opacity-100 hover:text-primary hover:cursor-pointer group transition-all duration-500 ease-in delay-150">
       <div class="bg-gradient-to-t from-black opacity-100 self-center w-full h-full rounded-[40px]"></div>
       <div class="self-center absolute flex flex-col">  
@@ -68,7 +69,9 @@
       </div>
     </div>
 
+    </div>
   </div>
+
 </template>
 
 <script setup>
