@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <h1 class="text-primary text-3xl font-Manrope font-bold">Tools</h1>
+
     <div class="container grid grid-cols-12 grid-rows-4 w-full h-[40rem] gap-4 p-4">
 
     <div class="col-span-6 lg:row-span-4 rounded-[40px] hidden lg:block relative">
@@ -8,7 +9,7 @@
       <div class="absolute inset-0 bg-gradient-to-t from-black opacity-100 rounded-[40px]"></div>
       <div class="absolute top-3/4 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-3xl font-bold font-Manrope text-center whitespace-nowrap">Start Calculating Now</div>
       <div class="absolute top-[31rem] left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-opacity-80 text-3xl font-bold font-Manrope text-center mt-4">
-        <button class="btn-primary-hover">
+        <button class="w-36 h-9 btn-primary-hover">
           Start Now
         </button>
       </div>
@@ -20,17 +21,17 @@
         <svg fill="white" class="w-1/2 h-1/2 self-center md:w-3/4 md:h-3/4 group-hover:fill-primary" width="204" height="193" viewBox="0 0 204 193" xmlns="http://www.w3.org/2000/svg">
           <path d="M178.5 88.4127H145.01C144.418 88.3368 143.817 88.3368 143.225 88.4127H141.78C141.336 88.652 140.91 88.9201 140.505 89.215C140.032 89.51 139.578 89.8314 139.145 90.1777C138.861 90.5057 138.605 90.8544 138.38 91.2206C137.991 91.7259 137.649 92.2629 137.36 92.8251L123.76 128.204L88.315 37.551C87.7194 36.0022 86.6331 34.6641 85.2035 33.7185C83.774 32.7729 82.0707 32.2656 80.325 32.2656C78.5793 32.2656 76.876 32.7729 75.4465 33.7185C74.0169 34.6641 72.9306 36.0022 72.335 37.551L52.7 88.4127H25.5C23.2457 88.4127 21.0837 89.258 19.4896 90.7624C17.8955 92.2669 17 94.3074 17 96.4351C17 98.5628 17.8955 100.603 19.4896 102.108C21.0837 103.612 23.2457 104.457 25.5 104.457H62.05C62.5331 104.238 62.9892 103.969 63.41 103.655C63.8833 103.36 64.3375 103.039 64.77 102.693L65.535 101.65C65.9401 101.154 66.2825 100.616 66.555 100.045L80.325 63.7039L115.685 155.319C116.279 156.87 117.365 158.21 118.794 159.157C120.224 160.105 121.928 160.613 123.675 160.614C125.422 160.613 127.126 160.105 128.556 159.157C129.985 158.21 131.071 156.87 131.665 155.319L151.215 104.457H178.5C180.754 104.457 182.916 103.612 184.51 102.108C186.104 100.603 187 98.5628 187 96.4351C187 94.3074 186.104 92.2669 184.51 90.7624C182.916 89.258 180.754 88.4127 178.5 88.4127Z"/>
         </svg>
-        <p class="self-center relative text-white font-Manrope text-2xl font-bold group-hover:text-primary">BMR Calculator</p>
+        <p class="self-center relative text-white font-Manrope text-xl font-bold group-hover:text-primary">BMR Calculator</p>
       </div>
     </div>
 
     <div class="flex justify-center lg:col-span-3 md:row-span-2 col-span-12 row-span-1 md:col-span-6  rounded-[40px] bg-[url('assets/Images/young-adult-doing-indoor-sport-gym.jpg')] object-cover bg-center bg-cover opacity-80 hover:opacity-100 hover:text-primary hover:cursor-pointer group transition-all duration-500 ease-in delay-150">
       <div class="bg-gradient-to-t from-black opacity-100 self-center w-full h-full rounded-[40px]"></div>
       <div class="self-center absolute flex flex-col">
-        <svg fill="white" class="w-1/2 h-1/2 self-center md:w-3/4 md:h-3/4 group-hover:fill-primary" width="204" height="193" viewBox="0 0 204 193" xmlns="http://www.w3.org/2000/svg">
-        <path d="M178.5 88.4127H145.01C144.418 88.3368 143.817 88.3368 143.225 88.4127H141.78C141.336 88.652 140.91 88.9201 140.505 89.215C140.032 89.51 139.578 89.8314 139.145 90.1777C138.861 90.5057 138.605 90.8544 138.38 91.2206C137.991 91.7259 137.649 92.2629 137.36 92.8251L123.76 128.204L88.315 37.551C87.7194 36.0022 86.6331 34.6641 85.2035 33.7185C83.774 32.7729 82.0707 32.2656 80.325 32.2656C78.5793 32.2656 76.876 32.7729 75.4465 33.7185C74.0169 34.6641 72.9306 36.0022 72.335 37.551L52.7 88.4127H25.5C23.2457 88.4127 21.0837 89.258 19.4896 90.7624C17.8955 92.2669 17 94.3074 17 96.4351C17 98.5628 17.8955 100.603 19.4896 102.108C21.0837 103.612 23.2457 104.457 25.5 104.457H62.05C62.5331 104.238 62.9892 103.969 63.41 103.655C63.8833 103.36 64.3375 103.039 64.77 102.693L65.535 101.65C65.9401 101.154 66.2825 100.616 66.555 100.045L80.325 63.7039L115.685 155.319C116.279 156.87 117.365 158.21 118.794 159.157C120.224 160.105 121.928 160.613 123.675 160.614C125.422 160.613 127.126 160.105 128.556 159.157C129.985 158.21 131.071 156.87 131.665 155.319L151.215 104.457H178.5C180.754 104.457 182.916 103.612 184.51 102.108C186.104 100.603 187 98.5628 187 96.4351C187 94.3074 186.104 92.2669 184.51 90.7624C182.916 89.258 180.754 88.4127 178.5 88.4127Z"/>
-        </svg>
-        <p class="self-center relative text-white font-Manrope text-2xl font-bold group-hover:text-primary">Macro Calculator</p>
+        <svg width="230" height="218" viewBox="0 0 230 218" fill="white" class="w-1/2 h-1/2 self-center md:w-3/4 md:h-3/4 group-hover:fill-primary" xmlns="http://www.w3.org/2000/svg">
+      <path d="M112.001 108.536L123.846 35.4085C119.93 34.8263 115.973 34.5157 112.008 34.4791C68.6605 34.4791 33.5352 67.6375 33.5352 108.536C33.5352 149.441 68.6677 182.593 112.001 182.593C155.335 182.593 190.467 149.434 190.467 108.536C190.467 106.799 190.323 105.097 190.194 103.38L112.001 108.536ZM139.702 21.7734L127.857 94.9008L206.042 89.7453C204.799 72.9916 197.554 57.1355 185.497 44.7829C173.441 32.4303 157.291 24.3159 139.702 21.7734Z"/>
+      </svg>
+        <p class="self-center relative text-white font-Manrope text-xl font-bold group-hover:text-primary">Macro Calculator</p>
       </div>
     </div>
 
@@ -47,7 +48,7 @@
           </clipPath>
           </defs>
           </svg>
-          <p class="self-center relative text-white font-Manrope text-2xl font-bold group-hover:text-primary">Diet Plan</p>
+          <p class="self-center relative text-white font-Manrope text-xl font-bold group-hover:text-primary pt-5">Diet Plan</p>
       </div>
     </div>
 
@@ -65,7 +66,7 @@
         </clipPath>
         </defs>
         </svg>
-        <p class="self-center relative text-white font-Manrope text-2xl font-bold group-hover:text-primary ">Body Fat Calculator</p>
+        <p class="self-center relative text-white font-Manrope text-xl font-bold group-hover:text-primary pt-4">Body Fat Calculator</p>
       </div>
     </div>
 
