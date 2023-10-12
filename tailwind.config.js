@@ -4,9 +4,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#E60000",
-        secondary: "#EEEEEE",
+
+        "primary": "#E60000",
+        "secondary": "#EEEEEE",
       },
+      transitionProperty: {
+        'width': 'width'
+    },
+
     },
     fontFamily: {
       Manrope: ["Manrope", "sans-serif"],
