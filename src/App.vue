@@ -4,30 +4,34 @@
     <RouterView />
     <Footer></Footer>
 
+    <ShopView></ShopView>
   </main>
 </template>
 
 <script setup>
-import { RouterView } from 'vue-router'
-import Navbar from './components/Navbar.vue'
-import Footer from './components/Footer.vue'
+import { RouterView } from "vue-router";
+import Navbar from "./components/Navbar.vue";
+import Footer from "./components/Footer.vue";
 </script>
 
 <script>
-import { RouterView } from 'vue-router'
-import Navbar from './components/Navbar.vue'
-import Footer from './components/Footer.vue'
+import { RouterView } from "vue-router";
+import Navbar from "./components/Navbar.vue";
+import Footer from "./components/Footer.vue";
+import Card from "./components/Card.vue";
+import ShopView from "./views/ShopView.vue";
 export default {
-  components:{
+  components: {
     Navbar,
     Footer,
-  }
-}
+    Card,
+    ShopView,
+  },
+};
 </script>
 
 <style lang="scss">
-
-main{
+main {
   min-height: 100vh;
 }
 </style>

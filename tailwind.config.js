@@ -4,14 +4,13 @@ export default {
   theme: {
     extend: {
       colors: {
-
-        "primary": "#E60000",
-        "secondary": "#EEEEEE",
+        primary: "#E60000",
+        dark: "#3A3A3A",  
+        secondary: "#EEEEEE",
       },
       transitionProperty: {
-        'width': 'width'
-    },
-
+        width: "width",
+      },
     },
     fontFamily: {
       Manrope: ["Manrope", "sans-serif"],
@@ -23,6 +22,7 @@ export default {
     screens: {
       lg: "1024px",
       xl: "1280px",
+      "2xl": "1536px",
     },
   },
   plugins: [],
