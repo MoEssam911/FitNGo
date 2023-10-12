@@ -5,6 +5,7 @@ import App from './App.vue'
 import router from './router'
 
 import '@fortawesome/fontawesome-svg-core'
+import 'tailwindcss/tailwind.css'
 
 const app = createApp(App)
 
