@@ -1,24 +1,10 @@
-<<<<<<< HEAD
-import { createApp } from "vue";
-import App from "./App.vue";
-import router from "./router";
-import "./style.css";
-import "./assets/global.css";
-
-import "@fortawesome/fontawesome-svg-core";
-
-const app = createApp(App);
-
-app.use(router);
-
-=======
 import "./style.css";
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import '@fortawesome/fontawesome-free/css/all.css';
 import '@fortawesome/fontawesome-svg-core'
-
+import "./assets/global.css";
 
 /* import the fontawesome core */
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -36,5 +22,4 @@ const app = createApp(App).component("font-awesome-icon", FontAwesomeIcon);
 
 app.use(router);
 
->>>>>>> 9eb51457023a96de468dee9b2e6be1260e9d8183
 app.mount("#app");
