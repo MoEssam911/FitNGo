@@ -4,6 +4,7 @@
     <!-- <RouterView /> -->
     <!-- <LoginNSignup></LoginNSignup> -->
     <AboutView></AboutView>
+    <!-- <Card></Card> -->
     <Footer></Footer>
     <!-- <ShopView></ShopView> -->
 

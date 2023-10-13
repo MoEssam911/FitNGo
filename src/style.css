@@ -4,6 +4,9 @@
 
 @layer components {
   .card {
+    &:hover .icon {
+      opacity: 1;
+    }
     &::before {
       content: "";
       width: 330px;
@@ -22,25 +25,28 @@
       height: 458px;
       top: -230px;
     }
-    &:hover img {
+    & .product {
       transition: 0.5s;
-      margin-top: 35px;
+    }
+    &:hover .product {
+      transform: translateY(-35px);
     }
     & .price {
-      position: absolute;
-      bottom: 5%;
-      left: 30%;
       transition: 0.5s;
+      transform-origin: bottom;
     }
     &:hover .price {
-      left: 10px;
-      bottom: 10%;
+      transform: scale(1.1);
     }
-    &:hover .price p {
-      color: #3a3a3a;
+    & button {
+      transform-origin: bottom;
+    }
+    & button:hover {
+      transform: scale(1.1);
+      opacity: 0.9;
     }
   }
 }
 .card {
-  @apply mt-10 hover:shadow-lg transition-all duration-500 border relative overflow-hidden flex flex-col items-center rounded-[40px] h-[450px] grid-cols-3 col-span-3;
+  @apply px-3 mt-10 hover:shadow-xl transition-all duration-500 border relative overflow-hidden flex flex-col items-center rounded-[40px] h-[450px] grid-cols-3 col-span-3;
 }
