@@ -49,5 +49,31 @@
 
         }
         
+    ],
+    "partners":[
+        {
+            "id":1,
+            "partnerImg":"../src/assets/Images/Partners/gofit.png"
+        },
+        {
+            "id":2,
+            "partnerImg":"../src/assets/Images/Partners/maxmuscle.png"
+        },
+        {
+            "id":3,
+            "partnerImg":"../src/assets/Images/Partners/golds.png"
+        },
+        {
+            "id":4,
+            "partnerImg":"../src/assets/Images/Partners/pac.png"
+        },
+        {
+            "id":5,
+            "partnerImg":"../src/assets/Images/Partners/healthy.png"
+        },
+        {
+            "id":6,
+            "partnerImg":"../src/assets/Images/Partners/lychee.png"
+        }
     ]
 }
