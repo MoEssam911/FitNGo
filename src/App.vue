@@ -17,10 +17,11 @@ import Footer from './components/Footer.vue'
 import { RouterView } from 'vue-router'
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
+import Cart from './components/Cart.vue'
 export default {
   components:{
     Navbar,
-    Footer,
+    Footer,Cart
   }
 }
 </script>
