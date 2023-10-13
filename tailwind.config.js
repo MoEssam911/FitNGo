@@ -4,7 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
-
+        'gray-bar': '#EEE',
+        'notify-color':'#D9D9D9',
         "primary": "#E60000",
         "secondary": "#EEEEEE",
       },
@@ -21,8 +22,10 @@ export default {
       center: true,
     },
     screens: {
-      lg: "1024px",
-      xl: "1280px",
+      'sm': '640px',  // Small screens
+      'md': '768px',  // Medium screens
+      'lg': '1024px', // Large screens
+      'xl': '1280px', // Extra-large screens
     },
   },
   plugins: [],

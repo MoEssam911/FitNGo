@@ -5,12 +5,12 @@
     <div class="navigation ms-auto flex me-4">
       <div class="nav-list mx-4 flex text-white" v-if="this.toggle == 'open' || windowWidth > 830">
         <ul class="list-none flex">
-        <a href="" class="hover:text-red-600"><li class="mx-2 ">Home</li></a>
-        <a href="" class="hover:text-red-600"><li class="mx-2 ">Trainers</li></a>
-        <a href="" class="hover:text-red-600"><li class="mx-2 ">E-Shop</li></a>
-        <a href="" class="hover:text-red-600"><li class="mx-2 ">Tools</li></a>
-        <a href="" class="hover:text-red-600"><li class="mx-2 ">Workouts</li></a>
-        <a href="" class="hover:text-red-600"><li class="mx-2 ">About</li></a>
+        <a href="" class="hover:text-primary"><li class="mx-2 ">Home</li></a>
+        <a href="" class="hover:text-primary"><li class="mx-2 ">Trainers</li></a>
+        <a href="" class="hover:text-primary"><li class="mx-2 ">E-Shop</li></a>
+        <a href="" class="hover:text-primary"><li class="mx-2 ">Tools</li></a>
+        <a href="" class="hover:text-primary"><li class="mx-2 ">Workouts</li></a>
+        <a href="" class="hover:text-primary"><li class="mx-2 ">About</li></a>
       </ul>
       
       </div>
@@ -19,7 +19,7 @@
     </div>
     <div>
         <div class="icon-login bg-slate-300 mx-auto mb-1 hover:cursor-pointer"><i class="fa-solid fa-user"></i></div>
-        <h6 class="text-sm hover:cursor-pointer hover:text-red-600">Login/SignUp</h6>
+        <h6 class="text-sm hover:cursor-pointer hover:text-red-600">Login</h6>
     </div>
     <i class="fa-solid fa-list responsive-icon hover:cursor-pointer text-right mx-4" @click="displayList"></i>
   </div>
@@ -66,7 +66,7 @@
   width: 35px;
   height: 35px;
   text-align: center;
-  line-height: 40px;
+  line-height: 35px;
   border-radius: 100%;
 }
 .logo img{
