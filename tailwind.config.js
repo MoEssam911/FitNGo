@@ -4,7 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
-
+        'gray-bar': '#EEE',
+        'notify-color':'#D9D9D9',
         "primary": "#E60000",
         "secondary": "#EEEEEE",
       },
