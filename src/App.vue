@@ -1,10 +1,11 @@
 <template>
   <main>
-    <Navbar></Navbar>
+    <!-- <Navbar></Navbar>
     <RouterView />
     <Footer></Footer>
+    <ShopView></ShopView> -->
 
-    <ShopView></ShopView>
+    <AboutView></AboutView>
   </main>
 </template>
 
@@ -20,12 +21,14 @@ import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
 import Card from "./components/Card.vue";
 import ShopView from "./views/ShopView.vue";
+import AboutView from "./views/AboutView.vue";
 export default {
   components: {
     Navbar,
     Footer,
     Card,
     ShopView,
+    AboutView,
   },
 };
 </script>

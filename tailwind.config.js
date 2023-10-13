@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         primary: "#E60000",
-        dark: "#3A3A3A",  
+        dark: "#3A3A3A",
         secondary: "#EEEEEE",
       },
       transitionProperty: {
@@ -16,7 +16,13 @@ export default {
       Manrope: ["Manrope", "sans-serif"],
     },
     container: {
-      padding: "2rem",
+      padding: {
+        DEFAULT: "2rem",
+        sm: "2rem",
+        lg: "4rem",
+        xl: "5rem",
+        "2xl": "6rem",
+      },
       center: true,
     },
     screens: {

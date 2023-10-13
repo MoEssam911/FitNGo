@@ -1,3 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .card {
+    &::before {
+      content: "";
+      width: 330px;
+      height: 330px;
+      background-color: #e60000;
+      position: absolute;
+      top: -100px;
+      right: -130px;
+      border-radius: 50%;
+      z-index: -1;
+      transition: 0.5s;
+    }
+    &:hover:before {
+      content: "";
+      width: 464px;
+      height: 458px;
+      top: -230px;
+    }
+    &:hover img {
+      transition: 0.5s;
+      margin-top: 35px;
+    }
+    & .price {
+      position: absolute;
+      bottom: 5%;
+      left: 30%;
+      transition: 0.5s;
+    }
+    &:hover .price {
+      left: 10px;
+      bottom: 10%;
+    }
+    &:hover .price p {
+      color: #3a3a3a;
+    }
+  }
+}
+.card {
+  @apply mt-10 hover:shadow-lg transition-all duration-500 border relative overflow-hidden flex flex-col items-center rounded-[40px] h-[450px] grid-cols-3 col-span-3;
+}
