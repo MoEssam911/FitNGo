@@ -1,3 +1,8 @@
+
+
+<template>
+  <ToolsView />
+=======
 <script setup>
 import OurPartners from "../components/OurPartners.vue"
 import Cart from "../components/Cart.vue"
@@ -15,4 +20,9 @@ import GymLocations from "../components/GymLocations.vue"
 
 
   </div>
+
 </template>
+
+<script setup>
+import ToolsView from '../components/ToolsView.vue'
+</script>

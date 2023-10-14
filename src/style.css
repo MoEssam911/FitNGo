@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+.btn-primary-hover {
+  @apply bg-primary hover:bg-[#AE0000] rounded-xl font-Manrope text-lg text-center;
+}
+
+.btn-more-to-explore {
+  @apply text-primary text-lg font-medium font-Manrope rounded-full border border-primary hover:border-white hover:bg-primary hover:text-white;
+}
+
 @layer components {
   .card {
     &:hover .icon {
@@ -50,3 +60,4 @@
 .card {
   @apply px-3 mt-10 hover:shadow-xl transition-all duration-500 border relative overflow-hidden flex flex-col items-center rounded-[40px] h-[450px] grid-cols-3 col-span-3;
 }
+

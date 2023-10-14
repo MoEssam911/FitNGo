@@ -17,6 +17,7 @@ import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
 </script>
 
+
 <script>
 import { RouterView } from "vue-router";
 import Navbar from "./components/Navbar.vue";
@@ -44,3 +45,4 @@ main {
   min-height: 100vh;
 }
 </style>
+
