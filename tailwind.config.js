@@ -18,8 +18,9 @@ export default {
       Manrope: ["Manrope", "sans-serif"],
     },
     container: {
-      padding: "2rem",
       center: true,
+      margin:'1%',
+
     },
     screens: {
       lg: "1024px",
