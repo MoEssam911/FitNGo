@@ -5,7 +5,6 @@ import HomeView from '../views/HomeView.vue'
 import WorkoutsView from '../views/WorkoutsView.vue'
 import WorkoutView from '../views/WokrkoutView.vue'
 
-import WorkoutView from '../views/WorkoutView.vue'
 
 
 const router = createRouter({
@@ -22,16 +21,15 @@ const router = createRouter({
       name: 'workouts',
       component: WorkoutsView
     },
+
     {
       path: '/workouts/:id',
       name: 'workoutView',
       component: WorkoutView,
-      props: true
-
+      props: true,
       path: "/workouts",
       name: "workouts",
       component: WorkoutView
-
     }
   ]
 })
