@@ -19,7 +19,7 @@
           <button
             class=" rounded-xl bg-primary text-white px-10 py-2 block mx-auto mt-6 transition duration-200"
           >
-            Info
+            Info 
           </button>
         </div>
       </div>

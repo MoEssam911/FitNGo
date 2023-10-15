@@ -16,3 +16,4 @@ import GymLocations from "../components/GymLocations.vue"
 import ToolsView from '../components/ToolsView.vue'
 </script>
 
+ 
