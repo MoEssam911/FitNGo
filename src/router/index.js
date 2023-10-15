@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import HomeView from '../views/HomeView.vue'
 import TrainersView from '../views/TrainersView.vue'
+import OneTrainerView from '../views/OneTrainerView.vue'
 
 import WorkoutsView from '../views/WorkoutsView.vue'
 import WorkoutView from '../views/WokrkoutView.vue'
@@ -22,6 +23,11 @@ const router = createRouter({
       path: '/trainers',
       name: 'trainers',
       component: TrainersView
+    },
+    {
+      path: '/trainers/:id',
+      name: 'OneTrainerView',
+      component: OneTrainerView
     },
     {
 
