@@ -1,9 +1,9 @@
 <template>
   <main>
     <Navbar></Navbar>
-    <!-- <RouterView /> -->
+    <RouterView />
     <!-- <LoginNSignup></LoginNSignup> -->
-    <AboutView></AboutView>
+    <!-- <AboutView></AboutView> -->
     <!-- <Card></Card> -->
     <Footer></Footer>
     <!-- <ShopView></ShopView> -->

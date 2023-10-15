@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <section class="container mt-12">
     <h1 class="text-primary text-3xl font-Manrope font-bold">Tools</h1>
 
     <div class="container grid grid-cols-12 grid-rows-4 w-full h-[40rem] gap-4 p-4">
@@ -71,7 +71,7 @@
     </div>
 
     </div>
-  </div>
+  </section>
 
 </template>
 

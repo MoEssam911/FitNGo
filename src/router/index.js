@@ -4,6 +4,8 @@ import HomeView from '../views/HomeView.vue'
 
 import WorkoutsView from '../views/WorkoutsView.vue'
 import WorkoutView from '../views/WokrkoutView.vue'
+import About from '../views/AboutView.vue'
+import ShopViwe from '../views/ShopView.vue'
 
 
 
@@ -30,7 +32,19 @@ const router = createRouter({
       path: "/workouts",
       name: "workouts",
       component: WorkoutView
-    }
+    },
+
+    {
+      path: '/About',
+      name: 'about',
+      component: About
+    },
+    
+    {
+      path: '/shop',
+      name: 'shop',
+      component: ShopViwe
+    },
   ]
 })
 
