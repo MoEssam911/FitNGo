@@ -12,7 +12,8 @@
           </p>
         </div>
       </div>
-      <div class="flex gap-3 mt-12">
+      <div class="flex gap-3 mt-12"> 
+        
         <div
           class="flex flex-col justify-between our-mission w-4/12 h-96 bg-[#eee] rounded-3xl p-9 text-2xl">
           <h3 class="text-center text-primary font-semibold">Our Mission</h3>
