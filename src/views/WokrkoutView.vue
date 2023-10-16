@@ -73,6 +73,7 @@ async function fetchAPI() {
     exercise.value = response.data;
     console.log(exercise);
     console.log(id);
+    console.log(Route)
   } catch (error) {
     console.error(error);
   }

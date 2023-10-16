@@ -4,7 +4,6 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
-    "./node_modules/flowbite/**/*.js",
   ],
 
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
@@ -24,8 +23,6 @@ export default {
       Manrope: ["Manrope", "sans-serif"],
     },
     container: {
-
-
       padding: {
         DEFAULT: "2rem",
         sm: "2rem",
@@ -33,8 +30,9 @@ export default {
         xl: "5rem",
         "2xl": "6rem",
       },
-
       center: true,
+      margin:'1%',
+
     },
     screens: {
       'sm': '640px',  // Small screens
@@ -45,9 +43,9 @@ export default {
     },
   },
 
-  plugins: [
-    require('flowbite/plugin')
-  ],
+  // plugins: [
+  //   require('flowbite/plugin')
+  // ],
 }
 
 

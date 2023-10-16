@@ -33,17 +33,19 @@
     </div>
 
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10" @mouseover="show = true" @mouseleave="show = false">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10" >
       <div v-for="(exercise, index) in exercises" :key="index">
 
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow h-full">
-
+        <div class="flex flex-col justify-between items-center max-w-sm bg-white border border-gray-200 rounded-lg shadow h-full">
           <img class="rounded-t-lg" :src="exercise.gifUrl" />
+          <div>
+            <h5 class="mb-2 text-lg font-bold tracking-tight text-gray-900 font-Manrope text-center">{{exercise.name}}</h5>
+            <p class="mb-3 text-center font-medium text-medium text-gray-700 font-Manrope">Target Muscle(s): {{exercise.target}}</p>
+          </div>
+        
           <div class="p-5">
         
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 font-Manrope">{{exercise.name}}</h5>
 
-            <p class="mb-3 font-medium text-lg text-gray-700 font-Manrope">Target Muscle(s): {{exercise.target}}</p>
             
             <RouterLink :to="`workouts/${exercise.id}`" class="inline-flex items-center px-3 py-2 text-sm font-Manrope font-medium text-center text-white bg-primary rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300">
             Show Exercise
