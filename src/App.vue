@@ -4,7 +4,7 @@
   <div class="fixed z-10 bg-[#000000ee] w-full h-screen top-0" @click="closeLogin" v-if="isLoggedIn"></div>
   <main class="w-full relative">
     <Navbar class="fixed top-0 z-50 w-full"></Navbar>
-    <!-- <RouterView /> -->
+    <RouterView />
     <!-- <AboutView></AboutView> -->
     <!-- <Card></Card> -->
     <!-- <CheckOut></CheckOut> -->
