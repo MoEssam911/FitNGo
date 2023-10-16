@@ -1,9 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import HomeView from '../views/HomeView.vue'
+import TrainersView from '../views/TrainersView.vue'
+import OneTrainerView from '../views/OneTrainerView.vue'
 
 import WorkoutsView from '../views/WorkoutsView.vue'
 import WorkoutView from '../views/WokrkoutView.vue'
+import About from '../views/AboutView.vue'
+import ShopViwe from '../views/ShopView.vue'
 
 
 
@@ -14,6 +18,16 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView
+    },
+    {
+      path: '/trainers',
+      name: 'trainers',
+      component: TrainersView
+    },
+    {
+      path: '/trainers/:id',
+      name: 'OneTrainerView',
+      component: OneTrainerView
     },
     {
 
@@ -30,7 +44,19 @@ const router = createRouter({
       path: "/workouts",
       name: "workouts",
       component: WorkoutView
-    }
+    },
+
+    {
+      path: '/About',
+      name: 'about',
+      component: About
+    },
+    
+    {
+      path: '/shop',
+      name: 'shop',
+      component: ShopViwe
+    },
   ]
 })
 

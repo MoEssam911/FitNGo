@@ -1,12 +1,12 @@
 <template>
-    <section class="mt-12 container mx-auto">
+    <section class="mt-12 mb-11 container mx-auto">
         <h2 class="text-2xl text-primary font-bold ml-3 my-5">Our Partners</h2>
-<div class="flex container p-2">
-    <template v-for="logo in data" :key="logo">
-<div class="circle flex justify-center items-center m-3">
-<img :src="logo.partnerImg" alt="">
+<div class="flex container flex-wrap">
+    <div v-for="logo in data" :key="logo" class="lg:w-2/12 md:w-4/12 sm:w-6/12">
+<div class="circle flex items-center lg:h-72">
+<img :src="logo.partnerImg" class="object-contain" alt="">
 </div>
-</template>    
+</div>    
 </div>
     </section>
 </template>
@@ -41,10 +41,10 @@ import axios from "axios";
 
 <style scoped>
 .circle {
-    width: 200px;
-height: 200px;
+    /* width: 200px; */
+/* height: 200px; */
 background-color: white;
-border-radius: 50%;
+/* border-radius: 50%; */
 filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.25));
 overflow: hidden;
 transition: .3s;

@@ -1,16 +1,16 @@
 <template>
   <header>
-    <div class="navbar flex px-10 items-center bg-black text-white">
+    <div class="navbar flex px-10 items-center bg-black text-white fixed w-full z-50 top-0">
     <div class="logo"><a href=""><img src="../assets/Images/Logo-Fit&go version 2-white.png" alt=""></a></div>
     <div class="navigation ms-auto flex me-4">
       <div class="nav-list mx-4 flex text-white" v-if="this.toggle == 'open' || windowWidth > 830">
         <ul class="list-none flex">
-        <a href="" class="hover:text-primary"><li class="mx-2 ">Home</li></a>
-        <a href="" class="hover:text-primary"><li class="mx-2 ">Trainers</li></a>
-        <a href="" class="hover:text-primary"><li class="mx-2 ">E-Shop</li></a>
-        <a href="" class="hover:text-primary"><li class="mx-2 ">Tools</li></a>
-        <a href="" class="hover:text-primary"><li class="mx-2 ">Workouts</li></a>
-        <a href="" class="hover:text-primary"><li class="mx-2 ">About</li></a>
+        <router-link to="/"><a href="" class="hover:text-primary"><li class="mx-2 ">Home</li></a></router-link>
+        <router-link to="/trainers"><a href="" class="hover:text-primary"><li class="mx-2 ">Trainers</li></a></router-link>
+        <router-link to="/shop"><a href="" class="hover:text-primary"><li class="mx-2 ">E-Shop</li></a></router-link>
+        <router-link to="/"><a href="" class="hover:text-primary"><li class="mx-2 ">Tools</li></a></router-link>
+        <router-link to="/workouts"><a href="" class="hover:text-primary"><li class="mx-2 ">Workouts</li></a></router-link>
+        <router-link to="/About"><a href="" class="hover:text-primary"><li class="mx-2 ">About</li></a></router-link>
       </ul>
       
       </div>
@@ -90,7 +90,7 @@
     width: 100%;
     color: #000;
     text-align: center;
-    background: #000;
+    background: #00000091;
     width: 100%;
     color: #fff;
     margin-left: 0px;
