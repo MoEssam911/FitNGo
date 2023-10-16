@@ -13,17 +13,19 @@
     <!-- <ShopView></ShopView> -->
     
 
-  </main>
+
 </template>
 
 <script setup>
+import HomeBanner from './components/HomeBanner.vue'
 import { RouterView } from "vue-router";
 import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
 </script> 
 
 
-<script>
+
+<script setup>
 import { RouterView } from "vue-router";
 import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
