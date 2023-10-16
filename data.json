@@ -5,49 +5,75 @@
             "trainerImg":"../src/assets/Images/Ahmed-Fathy.png",
             "trainerNames":"C-Ahmed Fathy",
             "rate":"<i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star-half-stroke'></i>",
-            "Description":"C-Ahmed Fathy is a trainer asdgdsajhsd ashgdasgdasjhdg sahdsagd hsajsgadshadjsgdjhsgdja djgsadasjhg asjhgds ajhdjhgasg"
+            "Description":"Your fitness fairy godmother is here!, and I'm here to help you transform your body and mind, and become the best version of yourself.\nI believe that fitness should be fun and rewarding, so I create workouts that are challenging but enjoyable. And I'm always here to support you and motivate you along the way,Are you ready to make a change?"
 
         },
         {
             "id":2,
-            "trainerImg":"../src/assets/Images/Ahmed-Fathy.png",
-            "trainerNames":"C-Ali Mazhar",
+            "trainerImg":"../src/assets/Images/aly.jpg",
+            "trainerNames":"C-Aly Mazhar",
             "rate":"<i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star-half-stroke'></i>",
-            "Description":"C-Ahmed Fathy is a trainer asdgdsajhsd ashgdasgdasjhdg sahdsagd hsajsgadshadjsgdjhsgdja djgsadasjhg asjhgds ajhdjhgasg"
+            "Description":"Through every day of being a coach, an athlete, and an entrepreneur\nI own my failures,I face my struggles,and I hold myself accountable.\nI always believe in leading by example.\nPractice what you preach, you know?"
 
         },
         {
             "id":3,
-            "trainerImg":"../src/assets/Images/Ahmed-Fathy.png",
-            "trainerNames":"C-Ahmed Fathy",
+            "trainerImg":"../src/assets/Images/hassangabr.jpg",
+            "trainerNames":"C-Hassan Gabr",
             "rate":"<i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star-half-stroke'></i>",
-            "Description":"C-Ahmed Fathy is a trainer asdgdsajhsd ashgdasgdasjhdg sahdsagd hsajsgadshadjsgdjhsgdja djgsadasjhg asjhgds ajhdjhgasg"
+            "Description":"Whether you choose to join our Gorilla Gym world or opt for a fully personalized program, we make sure to pave your road towards a more wholesome lifestyle"
 
         },
         {
             "id":4,
-            "trainerImg":"../src/assets/Images/Ahmed-Fathy.png",
-            "trainerNames":"C-Ahmed Fathy",
+            "trainerImg":"../src/assets/Images/momen-maher.png",
+            "trainerNames":"C-Momen Maher",
             "rate":"<i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star-half-stroke'></i>",
-            "Description":"C-Ahmed Fathy is a trainer asdgdsajhsd ashgdasgdasjhdg sahdsagd hsajsgadshadjsgdjhsgdja djgsadasjhg asjhgds ajhdjhgasg"
+            "Description":"Prepare yourself and join thousands of young people in the most powerful and enjoyable adventure with a comprehensive training program that will help you become the best version of yourself under the supervision of a complete team of specialized doctors."
 
         },
         {
             "id":5,
-            "trainerImg":"../src/assets/Images/Ahmed-Fathy.png",
-            "trainerNames":"C-Ahmed Fathy",
+            "trainerImg":"../src/assets/Images/Diet-and-cheat.png",
+            "trainerNames":"Diet & Cheat",
             "rate":"<i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star-half-stroke'></i>",
-            "Description":"C-Ahmed Fathy is a trainer asdgdsajhsd ashgdasgdasjhdg sahdsagd hsajsgadshadjsgdjhsgdja djgsadasjhg asjhgds ajhdjhgasg "
+            "Description":"I wanted to follow a sustainable diet that actually works and there are so many people out there talking about diets out there that assure is the ONE. I needed to find scientific & sustainable plan to live a healthy lifestyle and sustain body image. I studied the Precision Diet that focuses on personalized nutrition on how to do it "
 
         },
         {
             "id":6,
-            "trainerImg":"../src/assets/Images/Ahmed-Fathy.png",
-            "trainerNames":"C-Ahmed Fathy",
+            "trainerImg":"../src/assets/Images/omar.jpg",
+            "trainerNames":"C-Omar Ibrahim",
             "rate":"<i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star-half-stroke'></i>",
-            "Description":"C-Ahmed Fathy is a trainer asdgdsajhsd ashgdasgdasjhdg sahdsagd hsajsgadshadjsgdjhsgdja djgsadasjhg asjhgds ajhdjhgasg"
+            "Description":"I'm Omar Ibrahim, your fitness fairy godmother. I'm here to help you transform your body and mind, and become the best version of yourself.\nI believe that fitness should be fun and rewarding, so I create workouts that are challenging but enjoyable. And I'm always here to support you and motivate you along the way."
 
         }
         
+    ],
+    "partners":[
+        {
+            "id":1,
+            "partnerImg":"../src/assets/Images/Partners/gofit.png"
+        },
+        {
+            "id":2,
+            "partnerImg":"../src/assets/Images/Partners/maxmuscle.png"
+        },
+        {
+            "id":3,
+            "partnerImg":"../src/assets/Images/Partners/golds.png"
+        },
+        {
+            "id":4,
+            "partnerImg":"../src/assets/Images/Partners/pac.png"
+        },
+        {
+            "id":5,
+            "partnerImg":"../src/assets/Images/Partners/healthy.png"
+        },
+        {
+            "id":6,
+            "partnerImg":"../src/assets/Images/Partners/lychee.png"
+        }
     ]
 }

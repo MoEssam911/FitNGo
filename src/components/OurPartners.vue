@@ -1,38 +1,48 @@
 <template>
-    <div>
-<h2 class="text-2xl text-primary font-bold ml-3">Our Partners</h2>
-<section class="flex container p-2">
-    <template v-for="logo in partnersLogo" :key="logo">
+    <section class="mt-12 container mx-auto">
+        <h2 class="text-2xl text-primary font-bold ml-3 my-5">Our Partners</h2>
+<div class="flex container p-2">
+    <template v-for="logo in data" :key="logo">
 <div class="circle flex justify-center items-center m-3">
-<img src="../assets/Images/gofit.png" alt="">
+<img :src="logo.partnerImg" alt="">
 </div>
 </template>    
-</section>
-    </div>
+</div>
+    </section>
 </template>
 
 <script>
+import axios from "axios";
     export default {
         name:"OurPartners",
         data(){
             return {
-        partnersLogo : [
-        "../../assets/Images/gofit.png",
-        "/assets/Images/gofit.png",
-        "/assets/Images/gofit.png",
-        "/assets/Images/gofit.png",
-        "/assets/Images/gofit.png",
-        "/assets/Images/gofit.png"
-        ]
+        // partnersLogo : [
+        // "../../assets/Images/gofit.png",
+        // "/assets/Images/gofit.png",
+        // "/assets/Images/gofit.png",
+        // "/assets/Images/gofit.png",
+        // "/assets/Images/gofit.png",
+        // "/assets/Images/gofit.png"
+        // ]
+        data: [],
             }
-        }
+        },
+        created() {
+    axios
+      .get("http://localhost:3000/partners")
+      .then((res) => {
+        this.data = res.data;
+      })
+      .catch((err) => console.log(err));
+  },
     }
 </script>
 
 <style scoped>
 .circle {
-    width: 234px;
-height: 234px;
+    width: 200px;
+height: 200px;
 background-color: white;
 border-radius: 50%;
 filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.25));
