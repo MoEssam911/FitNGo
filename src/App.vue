@@ -35,6 +35,7 @@ export default {
     Navbar,
     Footer,
     Cart,
+    item,
     LoginNSignup,
     Cart,
     Card,
