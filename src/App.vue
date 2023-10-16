@@ -8,11 +8,10 @@
     <!-- <AboutView></AboutView> -->
     <!-- <Card></Card> -->
     <!-- <CheckOut></CheckOut> -->
-    <Footer></Footer>
-    <!-- <ShopView></ShopView> -->
-    
+?    <!-- <TrainerStatsData></TrainerStatsData> -->
+    <Footer></Footer> 
+    <!-- <ShopView></ShopView> --> 
   </main>
-
 </template>
 
 <script setup>
@@ -20,11 +19,10 @@ import HomeBanner from './components/HomeBanner.vue'
 import { RouterView } from "vue-router";
 import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
-</script> 
+</script>
 
 
-
-<script setup>
+<script>
 import { RouterView } from "vue-router";
 import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
@@ -33,7 +31,9 @@ import LoginNSignup from './components/LoginAndSignup/loginnsignup.vue'
 import Card from "./components/Card.vue";
 import ShopView from "./views/ShopView.vue";
 import AboutView from "./views/AboutView.vue";
-import CheckOut from './views/CheckOut.vue';
+import CheckOut from "./views/CheckOut.vue";
+import TrainerAccount from "./views/TrainerAccount.vue";
+// import TrainerStatsData from "/components/TrainerStats&Data.vue";
 export default {
   components: {
     Navbar,
@@ -44,7 +44,9 @@ export default {
     Card,
     ShopView,
     AboutView,
-     CheckOut,
+    CheckOut,
+    TrainerAccount,
+    // TrainerStatsData,
   },
   data(){
     return{
@@ -73,4 +75,3 @@ export default {
   position: fixed;
 }
 </style>
-
