@@ -1,6 +1,6 @@
 <template>
-  <div class="flex justify-center items-center parent bg-white">
-    <div class="my-10 w-8/12 mx-auto">
+  <div class="flex justify-center items-center parent bg-white w-full h-full">
+    <div class="md:w-8/12 w-11/12 my-10 mx-auto">
     <div class="w-full mx-auto logo mt-3">
       <img src="../../assets/Images/Logo-Fit&go version 2.png" alt="Fit and Go" class="">
     </div>

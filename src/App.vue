@@ -3,7 +3,8 @@
   <div class="fixed z-10 bg-[#000000ee] w-full h-screen top-0" @click="closeLogin" v-if="isLoggedIn"></div>
   <main class="w-full relative">
     <Navbar class="fixed top-0 z-50 w-full"></Navbar>
-    <RouterView />
+    <BannerHome></BannerHome>
+    <!-- <RouterView /> -->
     <!-- <AboutView></AboutView> -->
     <!-- <Card></Card> -->
     <!-- <CheckOut></CheckOut> -->
@@ -31,6 +32,7 @@ import Card from "./components/Card.vue";
 import ShopView from "./views/ShopView.vue";
 import AboutView from "./views/AboutView.vue";
 import CheckOut from './views/CheckOut.vue';
+import BannerHome from "./components/Home/BannerHome.vue";
 export default {
   components: {
     Navbar,
@@ -42,6 +44,7 @@ export default {
     ShopView,
     AboutView,
      CheckOut,
+     BannerHome,
   },
   data(){
     return{

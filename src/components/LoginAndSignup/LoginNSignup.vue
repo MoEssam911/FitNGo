@@ -1,14 +1,14 @@
 <template>
-  <div>
-    <div class="flex relative">
-    <div class="w-2/4">
+  <div class="login-signup">
+    <div class="flex relative h-full">
+      <div class="md:w-2/4 w-3/4" v-if="test == 'login'">
+        <transition name="fade">
+          <LoginLeft></LoginLeft>
+        </transition> 
+      </div>  
+    <div class="md:w-2/4 w-3/4 ms-auto" v-if="test == 'sign'">
       <transition name="fade">
-        <LoginLeft v-if="test == 'login'"></LoginLeft>
-      </transition> 
-    </div>
-    <div class="w-2/4">
-      <transition name="fade">
-        <SignRight v-if="test == 'sign'"></SignRight>
+        <SignRight></SignRight>
       </transition> 
     </div>
     <div class="bg-primary red-card-left" :class="{'red-card-right' :sign}">
@@ -93,10 +93,31 @@ import SignRight from './SignRight.vue'
   transition: right 0.5s ease, left 0.5s ease;
   z-index: 12;
 }
+@media (max-width: 768px) {
+  .red-card-left{
+  position: absolute;
+  left: 75%;
+  top: 0;
+  width: 25%;
+  height: 100%;
+  transition: right 0.5s ease, left 0.5s ease;
+  z-index: 12;
+}
+.red-card-right{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 25%;
+  height: 100%;
+  transition: right 0.5s ease, left 0.5s ease;
+  z-index: 12;
+}
+}
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.9s;
 }
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }
+
 </style>
