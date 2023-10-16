@@ -1,5 +1,3 @@
-router-link<script setup></script>
-
 <template>
   <section class="container h-full mt-12">
     <div class="container flex lg:flex-wrap justify-center items-center">
