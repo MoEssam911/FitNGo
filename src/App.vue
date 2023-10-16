@@ -11,7 +11,7 @@
     <Footer></Footer>
     <!-- <ShopView></ShopView> -->
     
-
+  </main>
 
 </template>
 
