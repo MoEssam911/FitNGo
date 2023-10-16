@@ -1,20 +1,30 @@
 <template>
-  <main>
-    <Navbar></Navbar>
+  <Navbar></Navbar>
+
     <!-- <RouterView /> -->
-    <!-- <LoginNSignup></LoginNSignup> -->
-    <AboutView></AboutView>
+    <!-- <AboutView></AboutView> -->
+  <HomeBanner />
+      <!-- <LoginNSignup></LoginNSignup> -->
+      <!-- <WorkoutsView /> -->
+      <!-- <HomeView /> -->
+      <!-- <RouterView /> -->
+      <!-- <ToolsPage  class="h-max"/> -->
+
     <!-- <Card></Card> -->
-    <Footer></Footer>
+    <!-- <Footer></Footer> -->
     <!-- <ShopView></ShopView> -->
 
-  </main>
+
 </template>
 
 <script setup>
+import HomeBanner from './components/HomeBanner.vue'
 import { RouterView } from "vue-router";
 import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
+import WorkoutView from './views/WorkoutView.vue'
+import HomeView from './views/HomeView.vue'
+import ToolsPage from './components/ToolsPage.vue'
 </script>
 
 

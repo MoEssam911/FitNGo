@@ -21,16 +21,19 @@ const router = createRouter({
       name: 'workouts',
       component: WorkoutsView
     },
+    {
+      path: "/workouts",
+      name: "workouts",
+      component: WorkoutsView
+    },
 
     {
       path: '/workouts/:id',
       name: 'workoutView',
       component: WorkoutView,
       props: true,
-      path: "/workouts",
-      name: "workouts",
-      component: WorkoutView
-    }
+    },
+
   ]
 })
 

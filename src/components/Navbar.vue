@@ -9,7 +9,7 @@
         <a href="" class="hover:text-primary"><li class="mx-2 ">Trainers</li></a>
         <a href="" class="hover:text-primary"><li class="mx-2 ">E-Shop</li></a>
         <a href="" class="hover:text-primary"><li class="mx-2 ">Tools</li></a>
-        <a href="" class="hover:text-primary"><li class="mx-2 ">Workouts</li></a>
+        <RouterLink to="/workouts" class="hover:text-primary"><li class="mx-2 ">Workouts</li></RouterLink>
         <a href="" class="hover:text-primary"><li class="mx-2 ">About</li></a>
       </ul>
       

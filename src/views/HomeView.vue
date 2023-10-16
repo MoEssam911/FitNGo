@@ -2,9 +2,8 @@
   <div>
     <TrainersFrame></TrainersFrame>
     <GymLocations></GymLocations>
-    <OurPartners></OurPartners>
-    <Cart></Cart>
     <ToolsView />
+    <OurPartners></OurPartners>
   </div>
 
 </template>
