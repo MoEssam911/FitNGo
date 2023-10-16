@@ -1,7 +1,7 @@
 <template>
   <main>
     <Navbar></Navbar>
-    <!-- <RouterView /> -->
+    <RouterView />
     <!-- <LoginNSignup></LoginNSignup> -->
     <!-- <AboutView></AboutView> -->
     <!-- <Card></Card> -->

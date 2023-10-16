@@ -1,18 +1,18 @@
 <template>
-  <section class="container mx-auto">
+  <section class="container">
     <h2 class="text-2xl text-primary font-bold ml-3 my-5">Trainers</h2>
-    <div class="flex gap-1">
+    <div class="flex lg:flex-nowrap sm:flex-wrap justify-center lg:gap-1 md:gap-4">
       <div
-        class="overflow-hidden transition-width frame w-2/12 hover:w-5/12 duration-1000 rounded-xl relative text-white text-center leading-[612px] hover:text-left hover:leading-none pt-5 pl-5"
+        class="overflow-hidden transition-width frame lg:w-2/12 lg:hover:w-5/12 md:w-3/12 md:hover:w-5/12 sm:w-9/12 sm:hover:w-10/12  duration-1000 rounded-xl relative text-white text-center leading-[612px] hover:text-left hover:leading-none pt-5 pl-5"
         v-for="da in data"
         :key="da"
       >
         <img
-          :src="da.trainerImg"
+          :src="da.TrainerImg"
           alt=""
           class="h-full object-cover absolute left-0 top-0"
         />
-        <div class="trainer-data"> <h2>{{ da.trainerNames }}</h2>
+        <div class="trainer-data"> <h2>{{ da.TrainerNames }}</h2>
         <div v-html="da.rate" class="rate mt-40 text-primary"></div>
         
           <p class="w-10/12 mx-auto">{{ da.Description }}</p>
