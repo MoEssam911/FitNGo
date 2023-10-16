@@ -9,6 +9,7 @@ import TrainersFrame from "../components/TrainersFrames.vue"
 
 <template>
   <div>
+    <BannerHome></BannerHome>
     <TrainersFrame></TrainersFrame>
     <GymLocations></GymLocations>
     <!-- <Cart></Cart> -->
@@ -25,6 +26,7 @@ import OurPartners from "../components/OurPartners.vue"
 import TrainersFrame from "../components/TrainersFrames.vue"
 import GymLocations from "../components/GymLocations.vue"
 import ToolsView from '../components/ToolsView.vue'
+import BannerHome from "../components/Home/BannerHome.vue"
 </script>
 
  

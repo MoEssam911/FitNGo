@@ -15,7 +15,7 @@
       </div>
     </div>
 
-    <div class="flex justify-center lg:col-span-3 md:row-span-2 col-span-12 row-span-1 md:col-span-6 rounded-[40px] bg-[url('assets/Images/male-feet-sneakers-running-treadmill-gym-exercise-concept(1).jpg')] object-cover bg-center bg-cover opacity-80 hover:opacity-100 hover:text-primary hover:cursor-pointer group transition-all duration-500 ease-in delay-150">
+    <div class="flex justify-center lg:col-span-3 md:row-span-2 col-span-12 row-span-1 md:col-span-6 rounded-[40px] bg-[url('assets/Images/male-feet-sneakers-running-treadmill-gym-exercise-concept(1).jpg')] object-cover bg-center bg-cover opacity-80 hover:opacity-100 hover:text-primary hover:cursor-pointer group transition-all duration-500 ease-in">
       <div class="bg-gradient-to-t from-black opacity-100 self-center w-full h-full rounded-[40px]"></div>
       <div class="self-center absolute flex flex-col">
         <svg fill="white" class="w-1/2 h-1/2 self-center md:w-3/4 md:h-3/4 group-hover:fill-primary" width="204" height="193" viewBox="0 0 204 193" xmlns="http://www.w3.org/2000/svg">
@@ -25,7 +25,7 @@
       </div>
     </div>
 
-    <div class="flex justify-center lg:col-span-3 md:row-span-2 col-span-12 row-span-1 md:col-span-6  rounded-[40px] bg-[url('assets/Images/young-adult-doing-indoor-sport-gym.jpg')] object-cover bg-center bg-cover opacity-80 hover:opacity-100 hover:text-primary hover:cursor-pointer group transition-all duration-500 ease-in delay-150">
+    <div class="flex justify-center lg:col-span-3 md:row-span-2 col-span-12 row-span-1 md:col-span-6  rounded-[40px] bg-[url('assets/Images/young-adult-doing-indoor-sport-gym.jpg')] object-cover bg-center bg-cover opacity-80 hover:opacity-100 hover:text-primary hover:cursor-pointer group transition-all duration-500 ease-in">
       <div class="bg-gradient-to-t from-black opacity-100 self-center w-full h-full rounded-[40px]"></div>
       <div class="self-center absolute flex flex-col">
         <svg width="230" height="218" viewBox="0 0 230 218" fill="white" class="w-1/2 h-1/2 self-center md:w-3/4 md:h-3/4 group-hover:fill-primary" xmlns="http://www.w3.org/2000/svg">
@@ -35,7 +35,7 @@
       </div>
     </div>
 
-    <div class="flex justify-center lg:col-span-3 md:row-span-2 col-span-12 row-span-1 md:col-span-6 rounded-[40px] bg-[url('assets/Images/flay-lay-salad-bowl-weights.jpg')] object-cover bg-center bg-cover opacity-80 hover:opacity-100 hover:text-primary hover:cursor-pointer group transition-all duration-500 ease-in delay-150">
+    <div class="flex justify-center lg:col-span-3 md:row-span-2 col-span-12 row-span-1 md:col-span-6 rounded-[40px] bg-[url('assets/Images/flay-lay-salad-bowl-weights.jpg')] object-cover bg-center bg-cover opacity-80 hover:opacity-100 hover:text-primary hover:cursor-pointer group transition-all duration-500 ease-in">
       <div class="bg-gradient-to-t from-black opacity-100 self-center w-full h-full rounded-[40px]"></div>
       <div class="self-center absolute flex flex-col">  
         <svg fill="white" class="w-1/2 h-1/2 self-center md:w-3/4 md:h-3/4 group-hover: fill-primary" width="172" height="164" viewBox="0 0 172 164" xmlns="http://www.w3.org/2000/svg">
@@ -52,7 +52,7 @@
       </div>
     </div>
 
-    <div class=" flex justify-center lg:col-span-3 md:row-span-2 col-span-12 row-span-2 md:col-span-6  rounded-[40px] bg-[url('assets/Images/woman-using-health-tracking-her-phone-by-weighing-scale-innovative-technology.jpg')] object-cover bg-center bg-cover opacity-80 hover:opacity-100 hover:text-primary hover:cursor-pointer group transition-all duration-500 ease-in delay-150">
+    <div class=" flex justify-center lg:col-span-3 md:row-span-2 col-span-12 row-span-2 md:col-span-6  rounded-[40px] bg-[url('assets/Images/woman-using-health-tracking-her-phone-by-weighing-scale-innovative-technology.jpg')] object-cover bg-center bg-cover opacity-80 hover:opacity-100 hover:text-primary hover:cursor-pointer group transition-all duration-500 ease-in">
       <div class="bg-gradient-to-t from-black opacity-100 self-center w-full h-full rounded-[40px]"></div>
       <div class="self-center absolute flex flex-col">
         <svg fill="white" class="w-1/2 h-1/2 self-center md:w-3/4 md:h-3/4 group-hover:fill-primary" width="176" height="167" viewBox="0 0 176 167"  xmlns="http://www.w3.org/2000/svg">
