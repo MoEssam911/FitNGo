@@ -23,8 +23,6 @@ export default {
       Manrope: ["Manrope", "sans-serif"],
     },
     container: {
-
-
       padding: {
         DEFAULT: "2rem",
         sm: "2rem",
@@ -32,8 +30,9 @@ export default {
         xl: "5rem",
         "2xl": "6rem",
       },
-
       center: true,
+      margin:'1%',
+
     },
     screens: {
       'sm': '640px',  // Small screens
@@ -44,8 +43,9 @@ export default {
     },
   },
 
-  plugins: [
-  ],
+  // plugins: [
+  //   require('flowbite/plugin')
+  // ],
 }
 
 
