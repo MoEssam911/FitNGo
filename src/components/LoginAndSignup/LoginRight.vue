@@ -1,5 +1,6 @@
 <template>
-  <div class="w-8/12 mx-auto text-center my-20">
+  <div class="flex justify-center items-center parent">
+    <div class="w-8/12 mx-auto text-center my-20">
     <div>
       <i class="fa-solid fa-dumbbell rotate-[60deg] text-2xl text-white"></i>
     </div>
@@ -16,6 +17,7 @@
       Sign up now
     </button>
   </div>
+  </div>
 </template>
 
 <script>
@@ -26,4 +28,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.parent{
+  min-height: 635px;
+}
+</style>

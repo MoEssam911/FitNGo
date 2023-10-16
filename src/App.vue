@@ -1,11 +1,12 @@
 <template>
-  <main>
-    <Navbar></Navbar>
-    <!-- <RouterView /> -->
-    <!-- <LoginNSignup></LoginNSignup> -->
+  <LoginNSignup class="fixed z-20 top-5 left-2/4 -translate-x-1/2 w-10/12 mx-auto border border-black bg-white" v-if="isLoggedIn"></LoginNSignup>
+  <div class="fixed z-10 bg-[#000000ee] w-full h-screen top-0" @click="closeLogin" v-if="isLoggedIn"></div>
+  <main class="w-full relative">
+    <Navbar class="fixed top-0 z-50 w-full"></Navbar>
+    <RouterView />
     <!-- <AboutView></AboutView> -->
     <!-- <Card></Card> -->
-      <CheckOut></CheckOut>
+    <!-- <CheckOut></CheckOut> -->
     <Footer></Footer>
     <!-- <ShopView></ShopView> -->
     
@@ -25,7 +26,7 @@ import { RouterView } from "vue-router";
 import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
 import Cart from "./components/Cart.vue";
-import LoginNSignup from "./components/LoginAndSignup/LoginNSignup.vue";
+import LoginNSignup from './components/LoginAndSignup/loginnsignup.vue'
 import Card from "./components/Card.vue";
 import ShopView from "./views/ShopView.vue";
 import AboutView from "./views/AboutView.vue";
@@ -42,12 +43,31 @@ export default {
     AboutView,
      CheckOut,
   },
+  data(){
+    return{
+      isLoggedIn : false,
+    }
+  },
+  methods:{
+    apperLogin(){
+      this.isLoggedIn=true;
+    },
+    closeLogin(){
+      this.isLoggedIn =false;
+    }
+  },
+  provide(){
+    return{
+      isLoggedIn:this.isLoggedIn,
+      apperLogin:this.apperLogin
+    }
+  }
 };
 </script>
 
 <style lang="scss">
-main {
-  min-height: 100vh;
+.login{
+  position: fixed;
 }
 </style>
 

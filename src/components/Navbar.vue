@@ -19,7 +19,7 @@
     </div>
     <div>
         <div class="icon-login bg-slate-300 mx-auto mb-1 hover:cursor-pointer"><i class="fa-solid fa-user"></i></div>
-        <h6 class="text-sm hover:cursor-pointer hover:text-red-600">Login</h6>
+        <h6 class="select-none text-sm hover:cursor-pointer hover:text-red-600" @click="apperLogin">Login</h6>
     </div>
     <i class="fa-solid fa-list responsive-icon hover:cursor-pointer text-right mx-4" @click="displayList"></i>
   </div>
@@ -35,6 +35,7 @@
         windowWidth: window.innerWidth,
       }
     },
+    inject: ["isLoggedIn","apperLogin"],
     beforeUnmount() {
       // Remove the resize event listener when the component is unmounted
       window.removeEventListener('resize', this.updateWindowWidth);

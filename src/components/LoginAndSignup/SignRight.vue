@@ -1,5 +1,6 @@
 <template>
-  <div class="my-10 w-8/12 mx-auto">
+  <div class="flex justify-center items-center parent bg-white">
+    <div class="my-10 w-8/12 mx-auto">
     <div class="w-full mx-auto logo mt-3">
       <img src="../../assets/Images/Logo-Fit&go version 2.png" alt="Fit and Go" class="">
     </div>
@@ -55,6 +56,7 @@
       <a href=""><i class="fa-brands fa-facebook text-[#17359D] text-3xl"></i></a>
     </div>
   </div>
+  </div>
 </template>
 
 <script>
@@ -73,7 +75,10 @@
   position: relative;
   z-index: 2;
 }
-input[type=email]:focus{
-  transform: scaleY(1.03);
+input:focus{
+  transform: scaleY(1.05);
+}
+.parent{
+  min-height: 635px;
 }
 </style>

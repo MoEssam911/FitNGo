@@ -3,7 +3,7 @@
     <TrainersFrame></TrainersFrame>
     <GymLocations></GymLocations>
     <OurPartners></OurPartners>
-    <Cart></Cart>
+    <!-- <Cart></Cart> -->
     <ToolsView />
   </div>
 

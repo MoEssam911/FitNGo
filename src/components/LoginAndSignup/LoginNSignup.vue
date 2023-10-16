@@ -1,5 +1,6 @@
 <template>
-  <div class="flex relative">
+  <div>
+    <div class="flex relative">
     <div class="w-2/4">
       <transition name="fade">
         <LoginLeft v-if="test == 'login'"></LoginLeft>
@@ -14,6 +15,7 @@
       <LoginRight v-if="test == 'login'"></LoginRight>
       <SignLeft v-if="test == 'sign'"></SignLeft>
     </div>
+  </div>
   </div>
 </template>
 
