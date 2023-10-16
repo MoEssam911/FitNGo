@@ -17,7 +17,7 @@
     </div>
     <button class="border rounded-xl bg-primary hover:bg-[#e60000df] text-white py-2 w-full block mx-auto  mt-4">Login</button>
     <h3 class="text-xl text-center my-3">Or Sign In With</h3>
-    <div class="w-3/12 mx-auto flex justify-around">
+    <div class="w-3/12 mx-auto flex justify-around gap-3">
       <a href=""><i class="fa-brands fa-google text-primary text-3xl "></i></a>
       <a href=""><i class="fa-brands fa-facebook text-[#17359D] text-3xl"></i></a>
     </div>

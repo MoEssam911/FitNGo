@@ -1,5 +1,5 @@
 <template>
-  <div class="login-signup">
+  <div class="login-signup h-screen">
     <div class="flex relative h-full">
       <div class="md:w-2/4 w-3/4" v-if="test == 'login'">
         <transition name="fade">
