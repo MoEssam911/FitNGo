@@ -8,8 +8,7 @@
     <!-- <AboutView></AboutView> -->
     <!-- <Card></Card> -->
     <!-- <CheckOut></CheckOut> -->
-    <TrainerAccount></TrainerAccount>
-    <!-- <TrainerStatsData></TrainerStatsData> -->
+?    <!-- <TrainerStatsData></TrainerStatsData> -->
     <Footer></Footer> 
     <!-- <ShopView></ShopView> --> 
   </main>
@@ -23,7 +22,7 @@ import Footer from "./components/Footer.vue";
 </script>
 
 
-<script setup>
+<script>
 import { RouterView } from "vue-router";
 import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";

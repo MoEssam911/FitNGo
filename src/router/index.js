@@ -5,7 +5,7 @@ import TrainersView from '../views/TrainersView.vue'
 import OneTrainerView from '../views/OneTrainerView.vue'
 
 import WorkoutsView from '../views/WorkoutsView.vue'
-import WorkoutView from '../views/WokrkoutView.vue'
+import WorkoutView from '../views/WorkoutView.vue'
 import About from '../views/AboutView.vue'
 import ShopViwe from '../views/ShopView.vue'
 
@@ -40,10 +40,6 @@ const router = createRouter({
       path: '/workouts/:id',
       name: 'workoutView',
       component: WorkoutView,
-      props: true,
-      path: "/workouts",
-      name: "workouts",
-      component: WorkoutView
     },
 
     {
