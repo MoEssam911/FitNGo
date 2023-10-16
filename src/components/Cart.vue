@@ -1,7 +1,7 @@
 <template>
-  <div class="container grid font-manrope">
-    <div class="grid grid-cols-3">
-      <div class="grid grid-flow-row col-span-2 h-5/6">
+  <div class="container grid font-manrope mt-[5%] mb-[5%] ">
+    <div class="grid grid-cols-3 lg:grid-cols-3 md:grid-rows-3 md:grid-flow-row">
+      <div class="grid grid-flow-row col-span-2 h-5/6 ">
         <div class="container pt-[1%] grid grid-cols-10 bg-gray-bar rounded-xl">
           <div class="col-span-5 ml-[50%]"><p>product</p></div>
           <div class="col-span-3 ml-[5%]"><p>Price</p></div>

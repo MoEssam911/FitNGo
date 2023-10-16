@@ -15,6 +15,8 @@ export default {
         dark: "#3A3A3A",
         secondary: "#EEEEEE",
         'notify-color':'#D9D9D9',
+        'gray-bar': '#EEE',
+
       },
       transitionProperty: {
         width: "width",
@@ -47,6 +49,7 @@ export default {
 
   plugins: [
     require('flowbite/plugin')
+    
   ],
 }
 
