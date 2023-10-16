@@ -5,7 +5,7 @@
     <!-- <LoginNSignup></LoginNSignup> -->
     <!-- <AboutView></AboutView> -->
     <!-- <Card></Card> -->
-      <CheckOut></CheckOut>
+      <!-- <CheckOut></CheckOut> -->
     <Footer></Footer>
     <!-- <ShopView></ShopView> -->
     
