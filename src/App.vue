@@ -9,12 +9,11 @@
     v-if="isLoggedIn"></div> -->
   <main class="w-full relative">
     <Navbar class="fixed top-0 z-50 w-full"></Navbar>
-    <RouterView  />
+    <RouterView class="mt-20"/>
     <!-- <AboutView></AboutView> -->
     <!-- <Card></Card> -->
     <!-- <CheckOut></CheckOut> -->
-
-  <TrainerAccount></TrainerAccount>
+    <!-- <TrainerStatsData></TrainerStatsData> -->
     <Footer></Footer> 
     <!-- <ShopView></ShopView> --> 
 
@@ -25,14 +24,14 @@
 <script setup>
 import HomeBanner from "./components/HomeBanner.vue";
 import { RouterView } from "vue-router";
-import Navbar from "./components/Navbar.vue";
-import Footer from "./components/Footer.vue";
+import Navbar from "./components/utilities/Navbar.vue";
+import Footer from "./components/utilities/Footer.vue";
 </script>
 
 <script>
 import { RouterView } from "vue-router";
-import Navbar from "./components/Navbar.vue";
-import Footer from "./components/Footer.vue";
+import Navbar from "./components/utilities/Navbar.vue";
+import Footer from "./components/utilities/Footer.vue";
 import Cart from "./components/Cart.vue";
 
 import LoginNSignup from './components/LoginAndSignup/loginnsignup.vue';
