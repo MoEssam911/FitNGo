@@ -19,6 +19,9 @@ export default {
         width: "width",
       },
     },
+    backgroundImage:{
+'ourShop':"url('./src/assets/Images/08f1c52293c3de74e6874e9dbc83aceb.png')"
+    },
     fontFamily: {
       Manrope: ["Manrope", "sans-serif"],
     },
@@ -35,17 +38,18 @@ export default {
 
     },
     screens: {
-      'sm': '640px',  // Small screens
-      'md': '768px',  // Medium screens
-      'lg': '1024px', // Large screens
-      'xl': '1280px', // Extra-large screens
-      "2xl": "1536px",
+      'sm': '640.999999px',  // Small screens
+      'md': '768.999999px',  // Medium screens
+      'lg': '1024.999999px', // Large screens
+      'xl': '1280.999999px', // Extra-large screens
+      "2xl": "1536.999999px",
     },
   },
 
   // plugins: [
   //   require('flowbite/plugin')
   // ],
+
 }
 
 

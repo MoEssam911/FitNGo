@@ -7,6 +7,7 @@
     @click="closeLogin"
     v-if="isLoggedIn"></div>
   <main class="w-full relative">
+
     <!-- <Navbar class="fixed top-0 z-50 w-full"></Navbar> -->
     <!-- <RouterView /> -->
     <UserSideBar></UserSideBar>
@@ -18,24 +19,29 @@
     <!-- <Footer></Footer> -->
     <!-- <ShopView></ShopView> -->
   </main>
+
 </template>
 
 <script setup>
 import HomeBanner from "./components/HomeBanner.vue";
 import { RouterView } from "vue-router";
-import Navbar from "./components/Navbar.vue";
-import Footer from "./components/Footer.vue";
+import Navbar from "./components/utilities/Navbar.vue";
+import Footer from "./components/utilities/Footer.vue";
 </script>
 
 <script>
 import { RouterView } from "vue-router";
-import Navbar from "./components/Navbar.vue";
-import Footer from "./components/Footer.vue";
+import Navbar from "./components/utilities/Navbar.vue";
+import Footer from "./components/utilities/Footer.vue";
 import Cart from "./components/Cart.vue";
 import ToolsPage from "./components/ToolsPage.vue";
 import Card from "./components/Card.vue";
+
 import MacroCalculator from "./components/Tools/MacroCalculator.vue";
 import UserSideBar from "./components/Tools/UserSideBar.vue";
+
+import LoginNSignup from "./components/LoginAndSignup/LoginNSignup.vue";
+
 import ShopView from "./views/ShopView.vue";
 import AboutView from "./views/AboutView.vue";
 import CheckOut from "./views/CheckOut.vue";
@@ -53,12 +59,14 @@ export default {
     Card,
     ShopView,
     AboutView,
+
     CheckOut,
     TrainerAccount,
     MacroCalculator,
     ToolsPage,
     UserSideBar,
     // TrainerStatsData,
+    
   },
   data() {
     return {
