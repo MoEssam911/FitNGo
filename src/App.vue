@@ -8,7 +8,7 @@
     <!-- <AboutView></AboutView> -->
     <!-- <Card></Card> -->
     <!-- <CheckOut></CheckOut> -->
-?    <!-- <TrainerStatsData></TrainerStatsData> -->
+?   <TrainerAccount></TrainerAccount>
     <Footer></Footer> 
     <!-- <ShopView></ShopView> --> 
   </main>
@@ -27,7 +27,7 @@ import { RouterView } from "vue-router";
 import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
 import Cart from "./components/Cart.vue";
-import LoginNSignup from './components/LoginAndSignup/loginnsignup.vue'
+import LoginNSignup from './components/LoginAndSignup/loginnsignup.vue';
 import Card from "./components/Card.vue";
 import ShopView from "./views/ShopView.vue";
 import AboutView from "./views/AboutView.vue";
@@ -47,6 +47,7 @@ export default {
     CheckOut,
     TrainerAccount,
     // TrainerStatsData,
+    
   },
   data(){
     return{
