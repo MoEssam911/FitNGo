@@ -1,5 +1,4 @@
 <template>
-
   <LoginNSignup
     class="fixed z-20 top-5 left-2/4 -translate-x-1/2 w-10/12 mx-auto border border-black bg-white"
     v-if="isLoggedIn"></LoginNSignup>
@@ -8,16 +7,18 @@
     @click="closeLogin"
     v-if="isLoggedIn"></div>
   <main class="w-full relative">
-    <Navbar class="fixed top-0 z-50 w-full"></Navbar>
-    <RouterView class="mt-20"/>
-    <!-- <AboutView></AboutView>
-    <Card></Card>
-    <CheckOut></CheckOut>
-    <TrainerStatsData></TrainerStatsData>
-    <ShopView></ShopView> -->
-    <Footer></Footer> 
-    </main>
 
+    <!-- <Navbar class="fixed top-0 z-50 w-full"></Navbar> -->
+    <!-- <RouterView /> -->
+    <UserSideBar></UserSideBar>
+    <!-- <TrainerAccount></TrainerAccount> -->
+    <!-- <AboutView></AboutView> -->
+    <!-- <Card></Card> -->
+    <!-- <CheckOut></CheckOut> -->
+    <!-- <TrainerStatsData></TrainerStatsData> -->
+    <!-- <Footer></Footer> -->
+    <!-- <ShopView></ShopView> -->
+  </main>
 
 </template>
 
@@ -33,12 +34,20 @@ import { RouterView } from "vue-router";
 import Navbar from "./components/utilities/Navbar.vue";
 import Footer from "./components/utilities/Footer.vue";
 import Cart from "./components/Cart.vue";
+import ToolsPage from "./components/ToolsPage.vue";
 import Card from "./components/Card.vue";
+
+import MacroCalculator from "./components/Tools/MacroCalculator.vue";
+import UserSideBar from "./components/Tools/UserSideBar.vue";
+
 import LoginNSignup from "./components/LoginAndSignup/LoginNSignup.vue";
+
 import ShopView from "./views/ShopView.vue";
 import AboutView from "./views/AboutView.vue";
 import CheckOut from "./views/CheckOut.vue";
 import TrainerAccount from "./views/TrainerAccount.vue";
+import LoginNSignup from "./components/LoginAndSignup/LoginNSignup.vue";
+
 // import TrainerStatsData from "/components/TrainerStats&Data.vue";
 export default {
   components: {
@@ -53,6 +62,9 @@ export default {
 
     CheckOut,
     TrainerAccount,
+    MacroCalculator,
+    ToolsPage,
+    UserSideBar,
     // TrainerStatsData,
     
   },
@@ -74,7 +86,6 @@ export default {
       isLoggedIn: this.isLoggedIn,
       apperLogin: this.apperLogin,
     };
-
   },
 };
 </script>
