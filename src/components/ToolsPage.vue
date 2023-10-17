@@ -210,11 +210,11 @@ const options = computed(() => {
 async function fetchAPI() {
   try {
     const response = await axios.request(options.value);
-    console.log(response.data);
-    console.log(weight.value, height.value, age.value, selectedGender.value)
+    // console.log(response.data);
+    // console.log(weight.value, height.value, age.value, selectedGender.value)
     result.value = response.data;
-    console.log(result)
     submitted.value = true;
+    // console.log(result)
   } catch (error) {
     console.log(error);
   }
