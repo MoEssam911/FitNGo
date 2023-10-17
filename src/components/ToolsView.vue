@@ -75,10 +75,10 @@
 
 </template>
 
-<script setup>
-
+<script>
+export default {
+  name: "ToolsView",
+};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style scoped></style>

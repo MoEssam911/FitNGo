@@ -19,6 +19,9 @@ export default {
         width: "width",
       },
     },
+    backgroundImage:{
+'ourShop':"url('./src/assets/Images/08f1c52293c3de74e6874e9dbc83aceb.png')"
+    },
     fontFamily: {
       Manrope: ["Manrope", "sans-serif"],
     },
@@ -46,6 +49,7 @@ export default {
   // plugins: [
   //   require('flowbite/plugin')
   // ],
+
 }
 
 
