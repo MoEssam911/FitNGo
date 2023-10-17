@@ -1,11 +1,11 @@
 <template>
-  <!-- <LoginNSignup
+  <LoginNSignup
     class="fixed z-20 top-5 left-2/4 -translate-x-1/2 w-10/12 mx-auto border border-black bg-white"
     v-if="isLoggedIn"></LoginNSignup>
   <div
     class="fixed z-10 bg-[#000000ee] w-full h-screen top-0"
     @click="closeLogin"
-    v-if="isLoggedIn"></div> -->
+    v-if="isLoggedIn"></div>
   <main class="w-full relative">
     <Navbar class="fixed top-0 z-50 w-full"></Navbar>
     <RouterView  />
