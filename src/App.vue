@@ -7,10 +7,18 @@
     <RouterView />
     <!-- <AboutView></AboutView> -->
     <!-- <Card></Card> -->
+<<<<<<< HEAD
     <!-- <CheckOut></CheckOut> -->
 ?    <!-- <TrainerStatsData></TrainerStatsData> -->
     <Footer></Footer> 
     <!-- <ShopView></ShopView> --> 
+=======
+      <!-- <CheckOut></CheckOut> -->
+    <Footer></Footer>
+    <!-- <ShopView></ShopView> -->
+    
+
+>>>>>>> hassanV3
   </main>
 </template>
 

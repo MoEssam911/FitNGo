@@ -1,3 +1,5 @@
+<script setup></script>
+
 <template>
   <section class="container h-full mt-12">
     <div class="container flex lg:flex-wrap justify-center items-center">
@@ -32,7 +34,7 @@
               {{ card.Fees }}
             </p>
           </div>
-          <router-link :to="`/trainers/${card.Id}`"><button class="bg-primary transition rounded px-2 py-1 text-white">
+          <router-link :to="`/trainers/${card.id}`"><button class="bg-primary transition rounded px-2 py-1 text-white">
             Hire Now
           </button></router-link>
         </div>
