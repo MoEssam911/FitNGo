@@ -1,4 +1,5 @@
 <template>
+
   <!-- <LoginNSignup
     class="fixed z-20 top-5 left-2/4 -translate-x-1/2 w-10/12 mx-auto border border-black bg-white"
     v-if="isLoggedIn"></LoginNSignup>
@@ -17,6 +18,7 @@
     <Footer></Footer> 
     <!-- <ShopView></ShopView> --> 
 
+
   </main>
 </template>
 
@@ -32,6 +34,7 @@ import { RouterView } from "vue-router";
 import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
 import Cart from "./components/Cart.vue";
+
 import LoginNSignup from './components/LoginAndSignup/loginnsignup.vue';
 
 import Card from "./components/Card.vue";
@@ -51,6 +54,7 @@ export default {
     Card,
     ShopView,
     AboutView,
+
     CheckOut,
     TrainerAccount,
     // TrainerStatsData,
@@ -74,6 +78,7 @@ export default {
       isLoggedIn: this.isLoggedIn,
       apperLogin: this.apperLogin,
     };
+
   },
 };
 </script>
