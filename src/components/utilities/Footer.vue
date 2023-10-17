@@ -18,11 +18,12 @@
     <div class="md:w-auto sm:w-6/12 w-full md:text-start sm:text-end text-left sm:mt-0 my-3">
       <h3 class="text-xl font-bold mb-3">Menu</h3>
       <div class="flex flex-wrap box-border">
-         <h6 class="md:w-6/12  my-1 w-full">Trainers</h6>
-         <h6 class="md:w-6/12  my-1 w-full">E-Shop</h6>
-         <h6 class="md:w-6/12  my-1 w-full">Tools</h6>
-         <h6 class="md:w-6/12  my-1 w-full">Workouts</h6>
-         <h6 class="md:w-max  my-1 w-full">About</h6>
+         <router-link to="/" class="md:w-6/12  my-1 w-full">Home</router-link>
+         <router-link to="/trainers" class="md:w-6/12  my-1 w-full">Trainers</router-link>
+         <router-link to="/shop" class="md:w-6/12  my-1 w-full">E-Shop</router-link>c`x`
+         <router-link to="/" class="md:w-6/12  my-1 w-full">Tools</router-link>
+         <router-link to="/workouts" class="md:w-6/12  my-1 w-full">Workouts</router-link>
+         <router-link to="/About" class="md:w-6/12  my-1 w-full">About</router-link>
       </div>
     </div>
   </footer>
@@ -37,7 +38,7 @@
 <style scoped>
 footer{
   min-height: 200px;
-  background: #000000af url(../assets/Images/footer.jpg) no-repeat 100%/100%;
+  background: #000000af url(../../assets/Images/footer.jpg) no-repeat 100%/100%;
   background-size: cover;
   background-blend-mode: multiply;
 }
