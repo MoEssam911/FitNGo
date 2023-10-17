@@ -9,8 +9,8 @@
   <main class="w-full relative">
     <!-- <Navbar class="fixed top-0 z-50 w-full"></Navbar> -->
     <!-- <RouterView /> -->
-    <!-- <ToolsPage></ToolsPage> -->
-    <MacroCalculator></MacroCalculator>
+    <UserSideBar></UserSideBar>
+    <!-- <TrainerAccount></TrainerAccount> -->
     <!-- <AboutView></AboutView> -->
     <!-- <Card></Card> -->
     <!-- <CheckOut></CheckOut> -->
@@ -34,7 +34,8 @@ import Footer from "./components/Footer.vue";
 import Cart from "./components/Cart.vue";
 import ToolsPage from "./components/ToolsPage.vue";
 import Card from "./components/Card.vue";
-import MacroCalculator from "./components/MacroCalculator.vue";
+import MacroCalculator from "./components/Tools/MacroCalculator.vue";
+import UserSideBar from "./components/Tools/UserSideBar.vue";
 import ShopView from "./views/ShopView.vue";
 import AboutView from "./views/AboutView.vue";
 import CheckOut from "./views/CheckOut.vue";
@@ -56,6 +57,7 @@ export default {
     TrainerAccount,
     MacroCalculator,
     ToolsPage,
+    UserSideBar,
     // TrainerStatsData,
   },
   data() {
