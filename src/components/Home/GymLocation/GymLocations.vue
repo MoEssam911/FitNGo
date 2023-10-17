@@ -1,6 +1,6 @@
 <script setup>
-import LocationafterScan from "../components/LocationafterScan.vue";
-import LocationbeforeScan from "../components/LocationbeforeScan.vue";
+import LocationafterScan from "./LocationafterScan.vue";
+import LocationbeforeScan from "./LocationbeforeScan.vue";
 </script>
 
 <template>

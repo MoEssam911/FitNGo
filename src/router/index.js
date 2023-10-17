@@ -10,6 +10,7 @@ import About from '../views/AboutView.vue'
 import ShopViwe from '../views/ShopView.vue'
 import BodyFatTool from '../components/BodyFatTool.vue'
 import DietPlan from '../components/DietPlan.vue'
+import BmrTool from '../components/ToolsPage.vue'
 
 
 
@@ -64,6 +65,11 @@ const router = createRouter({
       path: '/dietplan',
       name: 'DietPlan',
       component: DietPlan
+    },
+    {
+      path: '/bmrtool',
+      name: 'BmrTool',
+      component: BmrTool
     },
   ]
 })

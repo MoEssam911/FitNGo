@@ -24,7 +24,7 @@
 
 <style scoped>
 .bgimg {
-    background-image: url("../assets/Images/background-location.jpg");
+    background-image: url("../../../assets/Images/background-location.jpg");
     background-size: cover;
 }
 

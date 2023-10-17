@@ -103,7 +103,7 @@
 </template>
 
 <script>
-import OurPartners from "../components/OurPartners.vue";
+import OurPartners from "../components/Home/OurPartners.vue";
 export default {
   name: "About",
   components: {

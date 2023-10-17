@@ -1,4 +1,5 @@
 <template>
+
   <LoginNSignup
     class="fixed z-20 top-5 left-2/4 -translate-x-1/2 w-10/12 mx-auto border border-black bg-white"
     v-if="isLoggedIn"></LoginNSignup>
@@ -8,27 +9,29 @@
     v-if="isLoggedIn"></div>
   <main class="w-full relative">
     <Navbar class="fixed top-0 z-50 w-full"></Navbar>
-    <RouterView  />
-    <!-- <AboutView></AboutView> -->
-    <!-- <Card></Card> -->
-    <!-- <CheckOut></CheckOut> -->
-    <!-- <TrainerStatsData></TrainerStatsData> -->
-    <Footer></Footer>
-    <!-- <ShopView></ShopView> -->
-  </main>
+    <RouterView class="mt-20"/>
+    <!-- <AboutView></AboutView>
+    <Card></Card>
+    <CheckOut></CheckOut>
+    <TrainerStatsData></TrainerStatsData>
+    <ShopView></ShopView> -->
+    <Footer></Footer> 
+    </main>
+
+
 </template>
 
 <script setup>
 import HomeBanner from "./components/HomeBanner.vue";
 import { RouterView } from "vue-router";
-import Navbar from "./components/Navbar.vue";
-import Footer from "./components/Footer.vue";
+import Navbar from "./components/utilities/Navbar.vue";
+import Footer from "./components/utilities/Footer.vue";
 </script>
 
 <script>
 import { RouterView } from "vue-router";
-import Navbar from "./components/Navbar.vue";
-import Footer from "./components/Footer.vue";
+import Navbar from "./components/utilities/Navbar.vue";
+import Footer from "./components/utilities/Footer.vue";
 import Cart from "./components/Cart.vue";
 import Card from "./components/Card.vue";
 import LoginNSignup from "./components/LoginAndSignup/LoginNSignup.vue";
@@ -47,9 +50,11 @@ export default {
     Card,
     ShopView,
     AboutView,
+
     CheckOut,
     TrainerAccount,
     // TrainerStatsData,
+    
   },
   data() {
     return {
@@ -69,6 +74,7 @@ export default {
       isLoggedIn: this.isLoggedIn,
       apperLogin: this.apperLogin,
     };
+
   },
 };
 </script>
