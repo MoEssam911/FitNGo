@@ -22,10 +22,16 @@
 </template>
 
 <script setup>
-import HomeBanner from "./components/HomeBanner.vue";
-import { RouterView } from "vue-router";
-import Navbar from "./components/utilities/Navbar.vue";
-import Footer from "./components/utilities/Footer.vue";
+import { computed } from 'vue'
+import { useFavicon, usePreferredDark } from '@vueuse/core'
+const isDark = usePreferredDark();
+const favicon = computed(() =>
+  {return isDark.value ? 'Logo-Fit&go version 2-white.png' : 'Logo-Fit&go version 2.png'})
+
+useFavicon(favicon, {
+  baseUrl: '/public/',
+  rel: 'icon',
+})
 </script>
 
 <script>
@@ -37,7 +43,6 @@ import Cart from "./components/Cart.vue";
 import LoginNSignup from './components/LoginAndSignup/loginnsignup.vue';
 
 import Card from "./components/Card.vue";
-import LoginNSignup from "./components/LoginAndSignup/LoginNSignup.vue";
 import ShopView from "./views/ShopView.vue";
 import AboutView from "./views/AboutView.vue";
 import CheckOut from "./views/CheckOut.vue";

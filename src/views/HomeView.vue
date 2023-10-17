@@ -6,8 +6,8 @@
     <!-- <Cart></Cart> -->
     <ToolsView />
     <OurPartners></OurPartners>
-    <Cart></Cart>
-    <item></item>
+    <!-- <Cart></Cart> -->
+    <!-- <item></item> -->
   </div>
 
 </template>
