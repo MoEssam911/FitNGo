@@ -82,7 +82,7 @@
         </div>
       </div>
     </div>
-    <button class="drag-bt  n btn-primary-hover px-4 text-white" @click="drag">
+    <button class="drag-btn btn-primary-hover px-4 text-white" @click="drag">
       Drag
     </button>
   </section>
