@@ -2,14 +2,14 @@
   <div class="container grid font-manrope mt-[5%] mb-[5%] ">
     <div class="grid grid-cols-3 lg:grid-cols-3 md:grid-rows-3 md:grid-flow-row">
       <div class="grid grid-flow-row col-span-2 h-5/6 ">
-        <div class="container pt-[1%] grid grid-cols-10 bg-gray-bar rounded-xl">
+        <div class="container pt-[1%] grid grid-cols-10 bg-secondary rounded-xl">
           <div class="col-span-5 ml-[50%]"><p>product</p></div>
           <div class="col-span-3 ml-[5%]"><p>Price</p></div>
           <div class="col-span-1"><p>Quantity</p></div>
         </div>
         <div>
           <div
-            class="grid grid-cols-10 container mx-auto bg-gray-bar rounded-lg mt-4 pt-[2%] pb-[2%] items-center gap-4 content-between"
+            class="grid grid-cols-10 container mx-auto bg-secondary rounded-lg mt-4 pt-[2%] pb-[2%] items-center gap-4 content-between"
           >
             <img src="./cover.jpg" class="col-span-2 rounded-xl ml-3 mr-6" />
             <p class="col-span-3 ml-[10%]">ProductNAme</p>
@@ -28,7 +28,7 @@
         </div>
       </div>
       <div
-        class="flex flex-col col-span-1 bg-gray-bar mx-auto rounded-xl container w-2/3 mr-[10%] ml-[10%] pt-[2%] pb-[2%]"
+        class="flex flex-col col-span-1 bg-secondary mx-auto rounded-xl container w-2/3 mr-[10%] ml-[10%] pt-[2%] pb-[2%]"
       >
         <h2 class="flex font-bold order justify-center mb-[15%]">Cart Total</h2>
         <div class="flex flex-row justify-around">
