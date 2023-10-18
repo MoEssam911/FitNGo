@@ -9,7 +9,6 @@
     </p>
   </div>
 
-
   <div class="container flex flex-col">
     <div class="m-5 flex">
       <select
@@ -100,7 +99,7 @@
       More To Explore
     </button>
   </div>
-</div>  
+</div>
 </template>
 
 <script setup>

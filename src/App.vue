@@ -14,10 +14,12 @@
     <!-- <TrainerAccount></TrainerAccount> -->
     <!-- <AboutView></AboutView> -->
     <!-- <Card></Card> -->
+    <shop></shop>
     <!-- <CheckOut></CheckOut> -->
     <!-- <TrainerStatsData></TrainerStatsData> -->
     <!-- <Footer></Footer> -->
     <!-- <ShopView></ShopView> -->
+
   </main>
 
 </template>
@@ -43,6 +45,7 @@ import Cart from "./components/Cart.vue";
 import ToolsPage from "./components/ToolsPage.vue";
 import Card from "./components/Card.vue";
 
+
 import MacroCalculator from "./components/Tools/MacroCalculator.vue";
 import UserSideBar from "./components/Tools/UserSideBar.vue";
 
@@ -51,6 +54,7 @@ import ShopView from "./views/ShopView.vue";
 import AboutView from "./views/AboutView.vue";
 import CheckOut from "./views/CheckOut.vue";
 import TrainerAccount from "./views/TrainerAccount.vue";
+import Shop from './components/shop.vue';
 import LoginNSignup from "./components/LoginAndSignup/LoginNSignup.vue";
 
 // import TrainerStatsData from "/components/TrainerStats&Data.vue";
@@ -64,9 +68,9 @@ export default {
     Card,
     ShopView,
     AboutView,
-
     CheckOut,
     TrainerAccount,
+    Shop,
     MacroCalculator,
     ToolsPage,
     UserSideBar,
@@ -99,4 +103,5 @@ export default {
 .login {
   position: fixed;
 }
+
 </style>
