@@ -7,19 +7,17 @@
     @click="closeLogin"
     v-if="isLoggedIn"></div>
   <main class="w-full relative">
-
-    <!-- <Navbar class="fixed top-0 z-50 w-full"></Navbar> -->
-    <!-- <RouterView /> -->
-    <UserSideBar></UserSideBar>
-    <!-- <TrainerAccount></TrainerAccount> -->
-    <!-- <AboutView></AboutView> -->
+    <Navbar class="fixed top-0 z-50 w-full"></Navbar>
+    <RouterView />
+    <!-- <UserSideBar></UserSideBar> -->
+    <!-- <BmrIcon></BmrIcon> -->
+    <!-- <ToolsPage></ToolsPage> -->
     <!-- <Card></Card> -->
     <!-- <CheckOut></CheckOut> -->
     <!-- <TrainerStatsData></TrainerStatsData> -->
     <!-- <Footer></Footer> -->
     <!-- <ShopView></ShopView> -->
   </main>
-
 </template>
 
 <script setup>
@@ -36,8 +34,9 @@ import Footer from "./components/utilities/Footer.vue";
 import Cart from "./components/Cart.vue";
 import ToolsPage from "./components/ToolsPage.vue";
 import Card from "./components/Card.vue";
-import MacroCalculator from "./components/Tools/MacroCalculator.vue";
+import MacroCalculator from "./components/Tools/MacroCalculatorTool.vue";
 import UserSideBar from "./components/Tools/UserSideBar.vue";
+import BmrIcon from "./components/Tools/BmrIcon.vue";
 import LoginNSignup from "./components/LoginAndSignup/LoginNSignup.vue";
 import ShopView from "./views/ShopView.vue";
 import AboutView from "./views/AboutView.vue";
@@ -61,8 +60,8 @@ export default {
     MacroCalculator,
     ToolsPage,
     UserSideBar,
+    BmrIcon,
     // TrainerStatsData,
-    
   },
   data() {
     return {

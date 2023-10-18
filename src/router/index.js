@@ -8,8 +8,9 @@ import WorkoutsView from '../views/WorkoutsView.vue'
 import WorkoutView from '../views/WorkoutView.vue'
 import About from '../views/AboutView.vue'
 import ShopViwe from '../views/ShopView.vue'
-import BodyFatTool from '../components/BodyFatTool.vue'
-import DietPlan from '../components/DietPlan.vue'
+import ToolsPageViwe from '../views/ToolsPageView.vue'
+import BodyFatTool from '../components/Tools/BodyFatTool.vue'
+import DietPlan from '../components/Tools/DietPlanTool.vue'
 import BmrTool from '../components/ToolsPage.vue'
 
 
@@ -55,6 +56,11 @@ const router = createRouter({
       path: '/shop',
       name: 'shop',
       component: ShopViwe
+    },
+    {
+      path: '/tools',
+      name: 'ToolsPageView',
+      component: ToolsPageViwe
     },
     {
       path: '/bodyfattool',
