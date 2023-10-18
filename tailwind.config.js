@@ -38,11 +38,11 @@ export default {
 
     },
     screens: {
-      'sm': '640px',  // Small screens
-      'md': '768px',  // Medium screens
-      'lg': '1024px', // Large screens
-      'xl': '1280px', // Extra-large screens
-      "2xl": "1536px",
+      'sm': '640.999999px',  // Small screens
+      'md': '768.999999px',  // Medium screens
+      'lg': '1024.999999px', // Large screens
+      'xl': '1280.999999px', // Extra-large screens
+      "2xl": "1536.999999px",
     },
   },
 
