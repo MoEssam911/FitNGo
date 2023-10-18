@@ -2,11 +2,11 @@
   <div class="container flex flex-col">
     <div class="flex relative mt-[10%] object-cover">
       <img
-        class="w-full blur-[1px]"
+        class="w-full blur-[2px]"
         src="../../src/assets/Images/banner-shoppp - Copy.png"
       />
       <p
-        class="absolute inset-0 flex items-center justify-center font-Manrope text-white text-6xl font-extrabold"
+        class="absolute inset-0 flex items-center justify-center font-Manrope text-white text-8xl font-extrabold"
       >
         OurShop
       </p>
@@ -14,7 +14,7 @@
 
     <!-- ad banners  -->
     <div class="flex relative object-cover">
-      <div class="w-1/2 h-1/4 ease-in-out duration-300">
+      <div class="w-1/2 h-1/4 transition ease-in-out  hover:-translate-y-1 hover:scale-110 duration-300 ">
         <img
           src="../../src/assets/Images/08f1c52293c3de74e6874e9dbc83aceb.png"
         />
@@ -22,9 +22,10 @@
       <div class="w-1/2 h-1/4">
         <img class="blur-[0.5px]" src="../../src/assets/Images/zegama.jpg" />
         <p
-          class="absolute left-[50%] inset-0 flex font-Manrope whitespace-pre-line p-[2%] text-primary text-xl font-extrabold"
+          class="absolute left-[50%] inset-0 flex font-Manrope whitespace-pre-line p-[5%] text-primary text-5xl font-extrabold transition ease-in-out  hover:-translate-y-1 hover:scale-110 duration-300"
         >
-          SALE 15% ON SPORT SHOES
+          SALE 15% 
+          ON SPORT SHOES
         </p>
       </div>
     </div>
