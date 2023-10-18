@@ -8,23 +8,24 @@
     v-if="isLoggedIn"></div>
   <main class="w-full relative">
 
-    <!-- <Navbar class="fixed top-0 z-50 w-full"></Navbar> -->
-    <!-- <RouterView /> -->
-    <UserSideBar></UserSideBar>
+    <Navbar class="fixed top-0 z-50 w-full"></Navbar>
+    <RouterView />
+    <!-- <UserSideBar></UserSideBar> -->
+
     <!-- <TrainerAccount></TrainerAccount> -->
     <!-- <AboutView></AboutView> -->
     <!-- <Card></Card> -->
-    <shop></shop>
+    <!-- <shop></shop> -->
     <!-- <CheckOut></CheckOut> -->
     <!-- <TrainerStatsData></TrainerStatsData> -->
-    <!-- <Footer></Footer> -->
+    <Footer></Footer>
     <!-- <ShopView></ShopView> -->
 
   </main>
 
 </template>
 
-<script setup>
+<!-- <script setup>
 import { computed } from 'vue'
 import { useFavicon, usePreferredDark } from '@vueuse/core'
 const isDark = usePreferredDark();
@@ -35,7 +36,7 @@ useFavicon(favicon, {
   baseUrl: '/public/',
   rel: 'icon',
 })
-</script>
+</script> -->
 
 <script>
 import { RouterView } from "vue-router";
@@ -43,7 +44,6 @@ import Navbar from "./components/utilities/Navbar.vue";
 import Footer from "./components/utilities/Footer.vue";
 import Cart from "./components/Cart.vue";
 import ToolsPage from "./components/ToolsPage.vue";
-import Card from "./components/Card.vue";
 
 
 import MacroCalculator from "./components/Tools/MacroCalculator.vue";
@@ -64,7 +64,6 @@ export default {
     Footer,
     Cart,
     LoginNSignup,
-    Cart,
     Card,
     ShopView,
     AboutView,

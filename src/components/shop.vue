@@ -75,7 +75,7 @@
           <img
             :src="item.image"
             width="150"
-            class="mt-20 transition-all duration-500"
+            class="mt-20 transition-all duration-500 mix-blend-"
             alt="product"
           />
           <p class="text-center text-xl font-extrabold py-3 text-dark">
@@ -129,7 +129,7 @@ export default {
   },
   created() {
     axios
-      .get("http://localhost:7071/supplements")
+      .get("http://localhost:3000/supplements")
       .then((res) => {
         this.itemsDb = res.data;
       })

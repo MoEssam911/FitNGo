@@ -1,24 +1,69 @@
 <template>
-  <div class="relative">
-    <img class="w-full h-screen object-cover" src="../assets/Images/HomeBanner/lifting-banner.png" alt="" style="height: calc(100vh - 80px);">
-    <div class="absolute inset-0 flex items-center justify-center">
-      <h1 class="text-4xl text-white animate-fade-in" style="transition-delay:800ms;">Hello, world!</h1>
-    </div>
+  <div class="bg-black">
+    <transition-group name="fade" appear>
+
+      <LiftingBanner v-show="showFirst" key="first" />
+
+      <ShopBanner v-show="showSecond" key="second" />
+
+      <ToolsBanner v-show="!showFirst && !showSecond" key="third" />
+
+  </transition-group>
   </div>
+
 </template>
 
+<script>
+import LiftingBanner from './HomeBanner/LiftingBanner.vue'
+import ShopBanner from './HomeBanner/shopBanner.vue'
+import ToolsBanner from './HomeBanner/ToolsBanner.vue'
+
+export default {
+  components: {
+    LiftingBanner,
+    ShopBanner,
+    ToolsBanner
+  },
+
+  data() {
+    return {
+      showFirst: true,
+      showSecond: false,
+    };
+  },
+
+  mounted() {
+    setInterval(() => {
+      if (this.showFirst) {
+        this.showFirst = false;
+        this.showSecond = true;
+
+      }
+      else if (this.showSecond) {
+         this.showSecond = false; 
+          this.showFirst = false;
+      }
+      else {
+        this.showFirst = true;
+      }
+      
+    }, 3000);
+  },
+};
+</script>
 
 <style scoped>
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
 
-  .animate-fade-in {
-    animation: fade-in 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
+.fade-enter-from {
+   opacity: 65%; 
+}
+
+.fade-enter-to {
+   opacity: 100%; 
+} 
+.fade-enter-active {
+   transition: all 1s ease-in; 
+}
+
+ 
 </style>

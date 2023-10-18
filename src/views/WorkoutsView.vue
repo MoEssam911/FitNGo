@@ -1,4 +1,5 @@
 <template>
+  <div>
   <div class="flex relative">
     <img
       class="w-full h-32 object-cover"

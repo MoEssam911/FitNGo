@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BannerHome></BannerHome>
+    <HomeBanner></HomeBanner>
     <TrainersFrame></TrainersFrame>
     <GymLocations></GymLocations>
     <!-- <Cart></Cart> -->
@@ -12,6 +12,7 @@
 
 </template>
 <script setup>
+import HomeBanner from "../components/HomeBanner.vue"
 import OurPartners from "../components/Home/OurPartners.vue"
 // import Cart from "../components/Cart.vue"
 import TrainersFrame from "../components/Home/TrainersFrames.vue"
