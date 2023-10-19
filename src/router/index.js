@@ -12,6 +12,7 @@ import ShopView from '../views/ShopView.vue'
 import BodyFatTool from '../components/BodyFatTool.vue'
 import DietPlan from '../components/DietPlan.vue'
 import BmrTool from '../components/ToolsPage.vue'
+import MyPlan from '../components/MyPlan.vue'
 
 
 
@@ -76,6 +77,11 @@ const router = createRouter({
       path: '/bmrtool',
       name: 'BmrTool',
       component: BmrTool
+    },
+    {
+      path: '/myplan',
+      name: 'myplan',
+      component: MyPlan
     },
   ]
 })

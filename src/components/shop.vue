@@ -65,13 +65,39 @@
       </div>
     </div>
     <!-- shop items  -->
-    <div class="grid lg:grid-cols-12 md:grid-cols-6 gap-6 grid-flow-row">
+    <div class="flex flex-wrap gap-5 justify-center">
       <div
         v-for="(item, index) in items"
         :key="index"
-        class="card col-span-3 mb-5"
+        class="cards w-3/12"
       >
-        <div class="product flex flex-col justify-center items-center">
+      <div class="card mb-5">
+
+      
+          <div class="icon z-10">
+            <a href="index.html">
+              <i class="fa-solid fa-cart-shopping text-xl text-white"></i>
+            </a>
+          </div>
+          <div class="product flex flex-col justify-center items-center">
+            <img
+              :src="item.image"
+              width="150"
+              class="mt-20 transition-all duration-500"
+              alt="product" />
+            <p class="text-center text-xl font-bold text-dark">
+              Optimum Nutrition Whey Protein
+            </p>
+            <p class="price text-primary text-center text-xl font-bold">
+              EGP1,600.00
+            </p>
+          </div>
+          <button class="bg-primary transition rounded px-2 py-1 text-white">
+            Buy Now
+          </button>
+        </div>
+      
+        <!-- <div class="product flex flex-col justify-center items-center">
           <img
             :src="item.image"
             width="150"
@@ -96,7 +122,7 @@
           >
             <i class="fa-solid fa-cart-plus"></i>
           </button>
-        </div>
+        </div> -->
       </div>
 
       <!-- <div  v-for="(item, index) in itemsDb" :key="index" class=" card col-span-3">
@@ -159,5 +185,13 @@ export default {
   top: 5%;
   transform: translate(-90%, -90%);
   z-index: 1;
+}
+
+.icon {
+  opacity: 0;
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  transition: 0.5s;
 }
 </style>
