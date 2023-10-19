@@ -16,16 +16,25 @@
     <CheckOut></CheckOut>
     <TrainerStatsData></TrainerStatsData>
     <ShopView></ShopView> -->
-    <trainerAccount></trainerAccount>
+    <!-- <shop></shop> -->
+    <!-- <trainerAccount></trainerAccount> -->
     <Footer></Footer>
   </main>
 </template>
 
+//
 <script setup>
-import HomeBanner from "./components/HomeBanner.vue";
-import { RouterView } from "vue-router";
-import Navbar from "./components/utilities/Navbar.vue";
-import Footer from "./components/utilities/Footer.vue";
+// import { computed } from 'vue'
+// import { useFavicon, usePreferredDark } from '@vueuse/core'
+// const isDark = usePreferredDark();
+// const favicon = computed(() =>
+//   {return isDark.value ? 'Logo-Fit&go version 2-white.png' : 'Logo-Fit&go version 2.png'})
+
+// useFavicon(favicon, {
+//   baseUrl: '/public/',
+//   rel: 'icon',
+// }) 
+//
 </script>
 
 <script>
@@ -33,13 +42,18 @@ import { RouterView } from "vue-router";
 import Navbar from "./components/utilities/Navbar.vue";
 import Footer from "./components/utilities/Footer.vue";
 import Cart from "./components/Cart.vue";
+import ToolsPage from "./components/ToolsPage.vue";
 import Card from "./components/Card.vue";
-import LoginNSignup from "./components/LoginAndSignup/LoginNSignup.vue";
+import MacroCalculator from "./components/Tools/MacroCalculator.vue";
+import UserSideBar from "./components/Tools/UserSideBar.vue";
 import ShopView from "./views/ShopView.vue";
 import AboutView from "./views/AboutView.vue";
 import CheckOut from "./views/CheckOut.vue";
 import TrainerAccount from "./views/TrainerAccount.vue";
+import Shop from "./components/shop.vue";
+import LoginNSignup from "./components/LoginAndSignup/LoginNSignup.vue";
 
+// import TrainerStatsData from "/components/TrainerStats&Data.vue";
 export default {
   components: {
     Navbar,
@@ -50,9 +64,13 @@ export default {
     Card,
     ShopView,
     AboutView,
-
     CheckOut,
     TrainerAccount,
+    Shop,
+    MacroCalculator,
+    ToolsPage,
+    UserSideBar,
+    // TrainerStatsData,
   },
   data() {
     return {

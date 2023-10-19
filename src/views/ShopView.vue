@@ -9,7 +9,7 @@
 <script>
 import Card from "../components/Card.vue";
 export default {
-  name: "ShopViwe",
+  name: "ShopView",
   components: {
     Card
   }
