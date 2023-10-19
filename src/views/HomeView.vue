@@ -1,13 +1,14 @@
 <template>
   <div>
-    <BannerHome></BannerHome>
+    <!-- <BannerHome></BannerHome>
     <TrainersFrame></TrainersFrame>
-    <GymLocations></GymLocations>
+    <GymLocations></GymLocations> -->
     <!-- <Cart></Cart> -->
-    <ToolsView />
+    <!-- <ToolsView />
     <OurPartners></OurPartners>
     <Cart></Cart>
-    <item></item>
+    <item></item> -->
+    <TrainerAccount></TrainerAccount>
   </div>
 
 </template>
@@ -19,6 +20,7 @@ import GymLocations from "../components/Home/GymLocation/GymLocations.vue"
 import ToolsView from '../components/ToolsView.vue'
 import Cart from "../components/Cart.vue"
 import item from "../components/item.vue"
+import TrainerAccount from "./TrainerAccount.vue";
 </script>
 
  

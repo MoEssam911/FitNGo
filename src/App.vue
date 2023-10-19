@@ -39,7 +39,7 @@ import ShopView from "./views/ShopView.vue";
 import AboutView from "./views/AboutView.vue";
 import CheckOut from "./views/CheckOut.vue";
 import TrainerAccount from "./views/TrainerAccount.vue";
-// import TrainerStatsData from "/components/TrainerStats&Data.vue";
+
 export default {
   components: {
     Navbar,
@@ -50,7 +50,6 @@ export default {
     Card,
     ShopView,
     AboutView,
-
     CheckOut,
     TrainerAccount,
     // TrainerStatsData,
