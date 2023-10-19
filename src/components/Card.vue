@@ -1,11 +1,10 @@
 <template>
   <section>
-    <div class="container">
-      <div class="cards grid grid-cols-12 gap-4">
+      <div class="">
         <div class="card mb-5">
           <div class="icon z-10">
             <a href="index.html">
-              <i class="fa-solid fa-cart-shopping text-xl text-white"></i>
+              <i class="fa-solid fa-cart-plus text-xl hover:text-2xl hover:rotate-3 transition-all text-white"></i>
             </a>
           </div>
           <div class="product flex flex-col justify-center items-center">
@@ -26,8 +25,9 @@
           </button>
         </div>
       </div>
-    </div>
   </section>
+
+
 </template>
 
 <script>
@@ -45,12 +45,4 @@ export default {
   right: 25px;
   transition: 0.5s;
 }
-// .icon i {
-//   transition: 0.2s;
-// }
-// .icon:hover i {
-//   padding: 1px;
-//   border: 0.5px solid white;
-//   border-radius: 7px;
-// }
 </style>

@@ -1,7 +1,8 @@
 <template>
   <div>
     <div
-      class="group bg-secondary bg-opacity-50 rounded-3xl hover:bg-primary hover:cursor-pointer flex flex-col justify-center items-center py-4">
+      class="group bg-secondary bg-opacity-50 rounded-3xl hover:bg-primary hover:cursor-pointer flex flex-col justify-center items-center py-4"
+      :class="toggleBmrClass ? 'active-tool' : 'inactive-tool'">
       <div class="group-hover:fill-white">
         <svg
           width="100"
@@ -20,7 +21,28 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {};
+  },
+  computed: {},
+  props: {
+    toggleBmrClass: Boolean,
+  },
+  created() {
+    console.log(this.toggleBmrClass);
+  },
+};
 </script>
 
-<style scoped></style>
+<style scoped>
+.active-tool {
+  background-color: rgb(230, 0, 0);
+  color: white;
+  fill: white;
+}
+.inactive-tool {
+  background-color: rgba(238, 238, 238, 0.5);
+}
+
+</style>

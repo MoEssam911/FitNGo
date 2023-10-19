@@ -34,7 +34,6 @@ import Footer from "./components/utilities/Footer.vue";
 import Cart from "./components/Cart.vue";
 import ToolsPage from "./components/ToolsPage.vue";
 import Card from "./components/Card.vue";
-import MacroCalculator from "./components/Tools/MacroCalculatorTool.vue";
 import UserSideBar from "./components/Tools/UserSideBar.vue";
 import BmrIcon from "./components/Tools/BmrIcon.vue";
 import LoginNSignup from "./components/LoginAndSignup/LoginNSignup.vue";
@@ -57,7 +56,6 @@ export default {
 
     CheckOut,
     TrainerAccount,
-    MacroCalculator,
     ToolsPage,
     UserSideBar,
     BmrIcon,
