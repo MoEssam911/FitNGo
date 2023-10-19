@@ -1,6 +1,6 @@
 
 <template>
-  <div class="flex flex-col bg-gray-300
+  <div class="flex flex-col bg-secondary 
      m-4 rounded-xl  w-8/12 md:w-9/12 lg:w-9/12 ">
      <div class="text-black">
       <h1 class="text-xl font-bold p-4">My Stats & Data</h1>

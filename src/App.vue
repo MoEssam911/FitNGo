@@ -1,24 +1,24 @@
 <template>
-
   <LoginNSignup
     class="fixed z-20 top-5 left-2/4 -translate-x-1/2 w-10/12 mx-auto border border-black bg-white"
-    v-if="isLoggedIn"></LoginNSignup>
+    v-if="isLoggedIn"
+  ></LoginNSignup>
   <div
     class="fixed z-10 bg-[#000000ee] w-full h-screen top-0"
     @click="closeLogin"
-    v-if="isLoggedIn"></div>
+    v-if="isLoggedIn"
+  ></div>
   <main class="w-full relative">
     <Navbar class="fixed top-0 z-50 w-full"></Navbar>
-    <RouterView class="mt-20"/>
+    <RouterView class="mt-20" />
     <!-- <AboutView></AboutView>
     <Card></Card>
     <CheckOut></CheckOut>
     <TrainerStatsData></TrainerStatsData>
     <ShopView></ShopView> -->
-    <Footer></Footer> 
-    </main>
-
-
+    <trainerAccount></trainerAccount>
+    <Footer></Footer>
+  </main>
 </template>
 
 <script setup>
@@ -39,7 +39,7 @@ import ShopView from "./views/ShopView.vue";
 import AboutView from "./views/AboutView.vue";
 import CheckOut from "./views/CheckOut.vue";
 import TrainerAccount from "./views/TrainerAccount.vue";
-// import TrainerStatsData from "/components/TrainerStats&Data.vue";
+
 export default {
   components: {
     Navbar,
@@ -53,8 +53,6 @@ export default {
 
     CheckOut,
     TrainerAccount,
-    // TrainerStatsData,
-    
   },
   data() {
     return {
@@ -74,7 +72,6 @@ export default {
       isLoggedIn: this.isLoggedIn,
       apperLogin: this.apperLogin,
     };
-
   },
 };
 </script>
