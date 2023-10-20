@@ -13,6 +13,7 @@ import BodyFatTool from '../components/BodyFatTool.vue'
 import DietPlan from '../components/DietPlan.vue'
 import BmrTool from '../components/ToolsPage.vue'
 import MyPlan from '../components/MyPlan.vue'
+import TrainerPlanMaker from '../components/TrainerPlanMaker.vue'
 
 
 
@@ -82,6 +83,11 @@ const router = createRouter({
       path: '/myplan',
       name: 'myplan',
       component: MyPlan
+    },
+    {
+      path: '/TrainerPlanMaker',
+      name: 'TrainerPlanMaker',
+      component: TrainerPlanMaker
     },
   ]
 })
