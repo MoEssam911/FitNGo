@@ -8,13 +8,21 @@
     <!-- <AboutView></AboutView> -->
     <!-- <Card></Card> -->
     <!-- <CheckOut></CheckOut> -->
-?    <!-- <TrainerStatsData></TrainerStatsData> -->
+  <!-- <TrainerStatsData></TrainerStatsData> -->
+  <!-- <LiftingBanner /> -->
+  <!-- <MacroCalc /> -->
+  <!-- <Tools /> -->
+  <!-- <HomeBanner /> -->
     <Footer></Footer> 
     <!-- <ShopView></ShopView> --> 
   </main>
 </template>
 
 <script setup>
+import LiftingBanner from './components/HomeBanner/LiftingBanner.vue';
+import shopBanner from './components/HomeBanner/shopBanner.vue';
+import ToolsBanner from './components/HomeBanner/ToolsBanner.vue';
+import Tools from './components/ToolsPage.vue'
 import HomeBanner from './components/HomeBanner.vue'
 import { RouterView } from "vue-router";
 import Navbar from "./components/Navbar.vue";

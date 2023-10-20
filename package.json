@@ -16,9 +16,17 @@
     "@fortawesome/vue-fontawesome": "^3.0.3",
     "axios": "^1.5.1",
     "flowbite": "^1.8.1",
+    "libgif": "^0.0.3",
+    "ol": "^8.1.0",
+    "ol-contextmenu": "^5.3.0",
+    "ol-ext": "^4.0.11",
     "vue": "^3.3.4",
     "vue-axios": "^3.5.2",
-    "vue-router": "^4.2.4"
+    "vue-browser-geolocation": "^1.8.0",
+    "vue-freeze-gif": "^0.1.7",
+    "vue-router": "^4.2.4",
+    "vue3-geolocation": "^1.0.0",
+    "vue3-openlayers": "^2.0.1"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.3.4",
