@@ -54,10 +54,12 @@ import ShopView from "./views/ShopView.vue";
 import AboutView from "./views/AboutView.vue";
 import CheckOut from "./views/CheckOut.vue";
 import TrainerAccount from "./views/TrainerAccount.vue";
+
 import Shop from './components/shop.vue';
 import LoginNSignup from "./components/LoginAndSignup/LoginNSignup.vue";
 
 // import TrainerStatsData from "/components/TrainerStats&Data.vue";
+
 export default {
   components: {
     Navbar,
