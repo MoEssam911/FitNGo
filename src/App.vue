@@ -6,15 +6,16 @@
     class="fixed z-10 bg-[#000000ee] w-full h-screen top-0"
     @click="closeLogin"
     v-if="isLoggedIn"></div>
+    <Navbar />
   <main class="w-full relative">
 
     <!-- <Navbar class="fixed top-0 z-50 w-full"></Navbar> -->
-    <!-- <RouterView /> -->
-    <UserSideBar></UserSideBar>
+    <RouterView />
+    <!-- <UserSideBar></UserSideBar> -->
     <!-- <TrainerAccount></TrainerAccount> -->
     <!-- <AboutView></AboutView> -->
     <!-- <Card></Card> -->
-    <shop></shop>
+    <!-- <shop></shop> -->
     <!-- <CheckOut></CheckOut> -->
 
   <!-- <TrainerStatsData></TrainerStatsData> -->
@@ -29,7 +30,7 @@
 
 </template>
 
-<script setup>
+<!-- <script setup>
 
 import LiftingBanner from './components/HomeBanner/LiftingBanner.vue';
 import shopBanner from './components/HomeBanner/shopBanner.vue';
@@ -39,18 +40,8 @@ import HomeBanner from './components/HomeBanner.vue'
 import { RouterView } from "vue-router";
 import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
-</script>
-import { computed } from 'vue'
-import { useFavicon, usePreferredDark } from '@vueuse/core'
-const isDark = usePreferredDark();
-const favicon = computed(() =>
-  {return isDark.value ? 'Logo-Fit&go version 2-white.png' : 'Logo-Fit&go version 2.png'})
 
-useFavicon(favicon, {
-  baseUrl: '/public/',
-  rel: 'icon',
-})
-</script>
+</script> -->
 
 <script>
 import { RouterView } from "vue-router";
@@ -59,12 +50,8 @@ import Footer from "./components/utilities/Footer.vue";
 import Cart from "./components/Cart.vue";
 import ToolsPage from "./components/ToolsPage.vue";
 import Card from "./components/Card.vue";
-
-
 import MacroCalculator from "./components/Tools/MacroCalculator.vue";
 import UserSideBar from "./components/Tools/UserSideBar.vue";
-
-import Card from "./components/Card.vue";
 import ShopView from "./views/ShopView.vue";
 import AboutView from "./views/AboutView.vue";
 import CheckOut from "./views/CheckOut.vue";

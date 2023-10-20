@@ -57,20 +57,6 @@ const router = createRouter({
       component: ShopViwe
     },
 
-  ],
-  scrollBehavior(to, from, savedPosition) {
-    if (savedPosition) {
-      return savedPosition;
-    }
-    if (to.hash) {
-      return {
-        el: to.hash,
-        behavior: "smooth", 
-      };
-    }
-    return { top: 0 };
-  },
-
     {
       path: '/bodyfattool',
       name: 'BodyFatTool',
@@ -86,7 +72,19 @@ const router = createRouter({
       name: 'BmrTool',
       component: BmrTool
     },
-  ]
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    }
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: "smooth", 
+      };
+    }
+    return { top: 0 };
+  },
 
 })
 

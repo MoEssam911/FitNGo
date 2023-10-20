@@ -100,7 +100,7 @@
       More To Explore
     </button>
   </div>
-</div>
+
 </template>
 
 <script setup>
@@ -111,11 +111,6 @@
   let exerciseDb = ref([]);
   let searchQuery = ref('');
   let bodyPart = ref('');
-
-let show = ref(false);
-let exerciseDb = ref([]);
-let searchQuery = ref("");
-let bodyPart = ref("");
 
 const options = {
   method: "GET",
