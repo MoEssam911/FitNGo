@@ -75,13 +75,9 @@
 
 <script setup>
   import axios from 'axios'
-  import { ref, computed, onMounted, watch } from 'vue'
-  import { initFlowbite } from 'flowbite'
-  onMounted(() => {
-    initFlowbite();
-  })
+  import { ref, computed } from 'vue'
 
-  let show = ref(false);
+
   let exerciseDb = ref([]);
   let searchQuery = ref('');
   let bodyPart = ref('');
@@ -92,7 +88,7 @@
   url: 'https://exercisedb.p.rapidapi.com/exercises',
   params: {limit: '1300'},
   headers: {
-    'X-RapidAPI-Key': '0daf7c767cmsh4df62db306d693cp121d48jsne1b23e6b766a',
+    'X-RapidAPI-Key': '0daf7c767cmsh4df62db306d693cp121d48jsne1b23e6b766aa',
     'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
   }
 };

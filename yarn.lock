@@ -1207,6 +1207,11 @@ vue-browser-geolocation@^1.8.0:
   dependencies:
     vue "^2.0.1"
 
+vue-canvas@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.npmjs.org/vue-canvas/-/vue-canvas-0.0.1.tgz"
+  integrity sha512-2xKXTgp9Mk/TomsxT/UHhUZMu9O7m0XorVAlOkJgQTNXdPnPmtMYP6ZVXP7F/wBnFfGKn+Fed/4Pe9AHTElM7A==
+
 vue-freeze-gif@^0.1.7:
   version "0.1.7"
   resolved "https://registry.npmjs.org/vue-freeze-gif/-/vue-freeze-gif-0.1.7.tgz"
