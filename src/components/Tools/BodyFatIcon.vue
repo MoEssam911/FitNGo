@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="group bg-secondary bg-opacity-50 rounded-3xl hover:bg-primary hover:cursor-pointer flex flex-col justify-center items-center py-4"
+      class="group transition duration-300  bg-secondary bg-opacity-50 rounded-3xl hover:bg-primary hover:cursor-pointer flex flex-col justify-center items-center py-4"
       :class="toggleFatClass ? 'active-tool' : 'inactive-tool'">
       <div class="group-hover:fill-white">
         <svg
@@ -41,13 +41,6 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.active-tool {
-  background-color: rgb(230, 0, 0);
-  color: white;
-  fill: white;
-}
-.inactive-tool {
-  background-color: rgba(238, 238, 238, 0.5);
-}
+<style scoped>
+
 </style>

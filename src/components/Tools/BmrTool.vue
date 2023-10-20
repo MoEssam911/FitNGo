@@ -1,5 +1,5 @@
 <template>
-  <div class="h-auto bg-secondary bg-opacity-50 rounded-3xl p-9">
+  <div class="h-auto bg-secondary bg-opacity-50 rounded-3xl p-9 mb-9">
     <div>
       <h2 class="text-2xl font-bold pb-5">BMR Calculator</h2>
       <form @submit.prevent="fetchAPI">
