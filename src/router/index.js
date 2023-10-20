@@ -56,6 +56,21 @@ const router = createRouter({
       name: 'shop',
       component: ShopViwe
     },
+
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    }
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: "smooth", 
+      };
+    }
+    return { top: 0 };
+  },
+
     {
       path: '/bodyfattool',
       name: 'BodyFatTool',
@@ -72,6 +87,7 @@ const router = createRouter({
       component: BmrTool
     },
   ]
+
 })
 
 export default router

@@ -1,24 +1,18 @@
 <template>
   <div>
-    <!-- <BannerHome></BannerHome>
-    <TrainersFrame></TrainersFrame>
-    <GymLocations></GymLocations> -->
-    <!-- <Cart></Cart> -->
-    <!-- <ToolsView />
+    <HomeBanner />
+    <TrainersFrame></TrainersFrame> 
+    <GymLocations></GymLocations>
+    <ToolsView />
     <OurPartners></OurPartners>
-
-    <Cart></Cart>
-    <item></item> -->
-    <TrainerAccount></TrainerAccount>
-
-    <!-- <Cart></Cart> -->
-    <!-- <item></item> -->
 
   </div>
 
 </template>
 <script setup>
-import OurPartners from "../components/Home/OurPartners.vue"
+import HomeBanner from '../components/HomeBanner.vue'
+import OurPartners from "../components/OurPartners.vue"
+
 // import Cart from "../components/Cart.vue"
 import TrainersFrame from "../components/Home/TrainersFrames.vue"
 import GymLocations from "../components/Home/GymLocation/GymLocations.vue"

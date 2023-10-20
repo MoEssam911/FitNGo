@@ -16,15 +16,30 @@
     <!-- <Card></Card> -->
     <shop></shop>
     <!-- <CheckOut></CheckOut> -->
-    <!-- <TrainerStatsData></TrainerStatsData> -->
-    <!-- <Footer></Footer> -->
-    <!-- <ShopView></ShopView> -->
+
+  <!-- <TrainerStatsData></TrainerStatsData> -->
+  <!-- <LiftingBanner /> -->
+  <!-- <MacroCalc /> -->
+  <!-- <Tools /> -->
+  <!-- <HomeBanner /> -->
+    <Footer></Footer> 
+    <!-- <ShopView></ShopView> --> 
 
   </main>
 
 </template>
 
 <script setup>
+
+import LiftingBanner from './components/HomeBanner/LiftingBanner.vue';
+import shopBanner from './components/HomeBanner/shopBanner.vue';
+import ToolsBanner from './components/HomeBanner/ToolsBanner.vue';
+import Tools from './components/ToolsPage.vue'
+import HomeBanner from './components/HomeBanner.vue'
+import { RouterView } from "vue-router";
+import Navbar from "./components/Navbar.vue";
+import Footer from "./components/Footer.vue";
+</script>
 import { computed } from 'vue'
 import { useFavicon, usePreferredDark } from '@vueuse/core'
 const isDark = usePreferredDark();
