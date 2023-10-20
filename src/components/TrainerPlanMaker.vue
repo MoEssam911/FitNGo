@@ -206,346 +206,102 @@
                           <td
                             class="px-6 py-4 text-center text-primary text-lg tracking-widest"
                             colspan="4">
-                            Fit&Go Calorie (October 2023)
+                            October 2023
                           </td>
                         </tr>
                         <tr class="bg-primary text-white tracking-wider">
-                          <th scope="col" class="px-6 py-3">Exercises</th>
-                          <th scope="col" class="px-6 py-3">Sets</th>
-                          <th scope="col" class="px-6 py-3">Reps</th>
+                          <th scope="col" class="px-6 py-3 w-2/12">Id</th>
+                          <th scope="col" class="px-6 py-3 w-6/12">Exercises</th>
+                          <th scope="col" class="px-6 py-3 w-2/12">Reps</th>
+                          <th scope="col" class="px-6 py-3 w-2/12">Sets</th>
+                          <th scope="col" class="px-6 py-3 w-2/12">Action</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr class="border-b">
+                        
+                        
+                        <tr class="border-b" v-for="exercise,index in table" :key="exercise">
+                            
                           <th
                             scope="row"
                             class="px-6 py-4 font-medium text-dark whitespace-nowrap">
-                            BARBELL BENCH PRESS</th>
-                          <td class="px-6 py-4">
-                            4
-                          </td>
-                          <td class="px-6 py-4">
-                            8-12
-                          </td>
-                        </tr>
-                        <tr class="border-b">
+                          {{ index+1 }}</th>
                           <th
                             scope="row"
                             class="px-6 py-4 font-medium text-dark whitespace-nowrap">
-                            HAMMER STRENGHT MACHINE INCLINE PRESS S</th>
+                           <input
+                        v-model="exercise.exerciseName"
+                        type="text"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-10/12 p-2.5"
+                        placeholder="Exercise Name"
+                        required /></th>
                           <td class="px-6 py-4">
-                            4
+                            <input
+                        v-model="exercise.sets"
+                        type="number"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-8/12 p-2.5"
+                        placeholder="Sets"
+                        required
+                        min="1"
+                        max="5" />
                           </td>
                           <td class="px-6 py-4">
-                            8-15
-                          </td>
-                        </tr>
-                        <tr class="">
-                          <th
-                            scope="row"
-                            class="px-6 py-4 font-medium text-dark whitespace-nowrap">
-                            MEDICINE BALL CHEST PRESS
-                          </th>
-                          <td class="px-6 py-4">
-                            4
+                            <input
+                        v-model="exercise.reps"
+                        type="number"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-8/12 p-2.5"
+                        placeholder="Reps"
+                        required
+                        min="1"
+                        max="15" />
                           </td>
                           <td class="px-6 py-4">
-                            8-15
-                          </td>
-                        </tr>
-                        <tr class="">
-                          <th
-                            scope="row"
-                            class="px-6 py-4 font-medium text-dark whitespace-nowrap">
-                            HIGH TO LOW STANDING CABLE FLY
-                          </th>
-                          <td class="px-6 py-4">
-                            4
-                          </td>
-                          <td class="px-6 py-4">
-                            8-15
+                            <i class="fa-solid fa-plus text-green-500 cursor-pointer" @click="AddRow"></i>
+                            <i class="fa-solid fa-trash text-primary ml-4 cursor-pointer" @click="deleteRow(index)"></i>
                           </td>
                         </tr>
-                        <tr class="">
-                          <th
-                            scope="row"
-                            class="px-6 py-4 font-medium text-dark whitespace-nowrap">
-                            WEIGHTED CRUNCHES
-                          </th>
-                          <td class="px-6 py-4">
-                            4
-                          </td>
-                          <td class="px-6 py-4">
-                            8-15
-                          </td>
-                        </tr>
-                        <tr class="">
-                          <th
-                            scope="row"
-                            class="px-6 py-4 font-medium text-dark whitespace-nowrap">
-                            DUMBBELL LATERAL RAISE
-                          </th>
-                          <td class="px-6 py-4">
-                            4
-                          </td>
-                          <td class="px-6 py-4">
-                            8-15
-                          </td>
-                        </tr>
-                        <tr class="">
-                          <th
-                            scope="row"
-                            class="px-6 py-4 font-medium text-dark whitespace-nowrap">
-                            DUMBBELL FRONT RAISE
-                          </th>
-                          <td class="px-6 py-4">
-                            4
-                          </td>
-                          <td class="px-6 py-4">
-                            8-15
-                          </td>
-                        </tr>
-                        <tr class="">
-                          <th
-                            scope="row"
-                            class="px-6 py-4 font-medium text-dark whitespace-nowrap">
-                            SEATED DUMBBELL TRICEPS EXTENSION
-                          </th>
-                          <td class="px-6 py-4">
-                            4
-                          </td>
-                          <td class="px-6 py-4">
-                            8-15
-                          </td>
-                        </tr>
-                        <tr class="">
-                          <th
-                            scope="row"
-                            class="px-6 py-4 font-medium text-dark whitespace-nowrap">
-                            REVERSE GRIP TRICEPS EXTENSION
-                          </th>
-                          <td class="px-6 py-4">
-                            4
-                          </td>
-                          <td class="px-6 py-4">
-                            8-15
-                          </td>
-                        </tr>
-                        <tr class="">
-                          <th
-                            scope="row"
-                            class="px-6 py-4 font-medium text-dark whitespace-nowrap">
-                            NEUTRAL WIDE GRIP LAT PULLDOWN
-                          </th>
-                          <td class="px-6 py-4">
-                            4
-                          </td>
-                          <td class="px-6 py-4">
-                            8-15
-                          </td>
-                        </tr>
-                        <tr class="">
-                          <th
-                            scope="row"
-                            class="px-6 py-4 font-medium text-dark whitespace-nowrap">
-                            BENT-OVER BB ROW
-                          </th>
-                          <td class="px-6 py-4">
-                            4
-                          </td>
-                          <td class="px-6 py-4">
-                            8-15
-                          </td>
-                        </tr>
-                        <tr class="">
-                          <th
-                            scope="row"
-                            class="px-6 py-4 font-medium text-dark whitespace-nowrap">
-                            ROTATIONAL MEDICINE BALL THROW
-                          </th>
-                          <td class="px-6 py-4">
-                            4
-                          </td>
-                          <td class="px-6 py-4">
-                            8-15
-                          </td>
-                        </tr>
-                        <tr class="">
-                          <th
-                            scope="row"
-                            class="px-6 py-4 font-medium text-dark whitespace-nowrap">
-                            REVERSE GRIP SEATED ROW
-                          </th>
-                          <td class="px-6 py-4">
-                            4
-                          </td>
-                          <td class="px-6 py-4">
-                            8-15
-                          </td>
-                        </tr>
-                        <tr class="">
-                          <th
-                            scope="row"
-                            class="px-6 py-4 font-medium text-dark whitespace-nowrap">
-                            STRAIGHT ARM LAT PULLDOWN
-                          </th>
-                          <td class="px-6 py-4">
-                            4
-                          </td>
-                          <td class="px-6 py-4">
-                            8-15
-                          </td>
-                        </tr>
-                        <tr class="">
-                          <th
-                            scope="row"
-                            class="px-6 py-4 font-medium text-dark whitespace-nowrap">
-                            MACHINE REVERSE FLY
-                          </th>
-                          <td class="px-6 py-4">
-                            4
-                          </td>
-                          <td class="px-6 py-4">
-                            8-15
-                          </td>
-                        </tr>
-                        <tr class="">
-                          <th
-                            scope="row"
-                            class="px-6 py-4 font-medium text-dark whitespace-nowrap">
-                            MACHINE REVERSE FLY
-                          </th>
-                          <td class="px-6 py-4">
-                            4
-                          </td>
-                          <td class="px-6 py-4">
-                            8-15
-                          </td>
-                        </tr>
-                        <tr class="">
-                          <th
-                            scope="row"
-                            class="px-6 py-4 font-medium text-dark whitespace-nowrap">
-                            STANDING ALTERNATING DUMBBELL CURL
-                          </th>
-                          <td class="px-6 py-4">
-                            4
-                          </td>
-                          <td class="px-6 py-4">
-                            8-15
-                          </td>
-                        </tr>
-                        <tr class="">
-                          <th
-                            scope="row"
-                            class="px-6 py-4 font-medium text-dark whitespace-nowrap">
-                            CLOSE GRIP CABLE CURL
-                          </th>
-                          <td class="px-6 py-4">
-                            4
-                          </td>
-                          <td class="px-6 py-4">
-                            8-15
-                          </td>
-                        </tr>
-                        <tr class="">
-                          <th
-                            scope="row"
-                            class="px-6 py-4 font-medium text-dark whitespace-nowrap">
-                            EZ-BAR REVERSE GRIP CURL
-                          </th>
-                          <td class="px-6 py-4">
-                            4
-                          </td>
-                          <td class="px-6 py-4">
-                            8-15
-                          </td>
-                        </tr>
-                        <tr class="">
-                          <th
-                            scope="row"
-                            class="px-6 py-4 font-medium text-dark whitespace-nowrap">
-                            HIP ABDUCTION MACHINE
-                          </th>
-                          <td class="px-6 py-4">
-                            4
-                          </td>
-                          <td class="px-6 py-4">
-                            8-15
-                          </td>
-                        </tr>
-                        <tr class="">
-                          <th
-                            scope="row"
-                            class="px-6 py-4 font-medium text-dark whitespace-nowrap">
-                            BB BACK SQUAT
-                          </th>
-                          <td class="px-6 py-4">
-                            4
-                          </td>
-                          <td class="px-6 py-4">
-                            8-15
-                          </td>
-                        </tr>
-                        <tr class="">
-                          <th
-                            scope="row"
-                            class="px-6 py-4 font-medium text-dark whitespace-nowrap">
-                            STIFFED-LEG DEADLIFT
-                          </th>
-                          <td class="px-6 py-4">
-                            4
-                          </td>
-                          <td class="px-6 py-4">
-                            8-15
-                          </td>
-                        </tr>
-                        <tr class="">
-                          <th
-                            scope="row"
-                            class="px-6 py-4 font-medium text-dark whitespace-nowrap">
-                            LEG EXTENSION
-                          </th>
-                          <td class="px-6 py-4">
-                            4
-                          </td>
-                          <td class="px-6 py-4">
-                            8-15
-                          </td>
-                        </tr>
-                        <tr class="">
-                          <th
-                            scope="row"
-                            class="px-2 py-4 font-medium text-dark whitespace-nowrap">
-                            CABLE CRUNCH
-                          </th>
-                          <td class="px-6 py-4">
-                            4
-                          </td>
-                          <td class="px-6 py-4">
-                            8-15
-                          </td>
-                        </tr>
+                        
                       </tbody>
                     </table>
-  
-             
+                  <button class="btn-primary-hover text-white font-bold">Submit Plan</button>
+                  <div>
+                    
+                  </div>
             </div>
+            
           </div>
         </div>
       </div>
+      
     </section>
   </template>
   
   
-  <script setup>
+  <script>
+import { reactive } from "vue";
+export default {
+    setup(){
+const table = reactive([
+    {exerciseName : "", sets : "", reps : "",}
+])
 
+const AddRow = ()=> {
+    table.push({exerciseName : "", sets : "", reps : "",})
+}
+
+const deleteRow = (index)=> {
+    table.splice(index,1)
+}
+
+return{ 
+    table,
+    AddRow,
+    deleteRow,
+ }
+}
+
+}
   </script>
-  
-  
-  
-  
-  
   
   <style scoped>
   
