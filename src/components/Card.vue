@@ -2,7 +2,7 @@
   <section>
     <div class="container">
       <div class="cards grid grid-cols-12 gap-4">
-        <div class="card mb-5">
+        <div class="card col-span-3 mb-5">
           <div class="icon z-10">
             <a href="index.html">
               <i class="fa-solid fa-cart-shopping text-xl text-white"></i>

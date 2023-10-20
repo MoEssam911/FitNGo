@@ -6,9 +6,14 @@
     <!-- <Cart></Cart> -->
     <!-- <ToolsView />
     <OurPartners></OurPartners>
+
     <Cart></Cart>
     <item></item> -->
     <TrainerAccount></TrainerAccount>
+
+    <!-- <Cart></Cart> -->
+    <!-- <item></item> -->
+
   </div>
 
 </template>
