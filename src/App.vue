@@ -8,13 +8,14 @@
     v-if="isLoggedIn"></div>
   <main class="w-full relative">
 
-    <!-- <Navbar class="fixed top-0 z-50 w-full"></Navbar> -->
-    <!-- <RouterView /> -->
+    <Navbar class="fixed top-0 z-50 w-full"></Navbar>
+    <RouterView />
     <UserSideBar></UserSideBar>
     <!-- <TrainerAccount></TrainerAccount> -->
     <!-- <AboutView></AboutView> -->
     <!-- <Card></Card> -->
-    <shop></shop>
+<edit></edit>
+    <!-- <shop></shop> -->
     <!-- <CheckOut></CheckOut> -->
     <!-- <TrainerStatsData></TrainerStatsData> -->
     <!-- <Footer></Footer> -->
@@ -24,7 +25,7 @@
 
 </template>
 
-<script setup>
+<!-- <script setup>
 import { computed } from 'vue'
 import { useFavicon, usePreferredDark } from '@vueuse/core'
 const isDark = usePreferredDark();
@@ -35,10 +36,11 @@ useFavicon(favicon, {
   baseUrl: '/public/',
   rel: 'icon',
 })
-</script>
+</script> -->
 
 <script>
 import { RouterView } from "vue-router";
+
 import Navbar from "./components/utilities/Navbar.vue";
 import Footer from "./components/utilities/Footer.vue";
 import Cart from "./components/Cart.vue";
@@ -49,12 +51,13 @@ import Card from "./components/Card.vue";
 import MacroCalculator from "./components/Tools/MacroCalculator.vue";
 import UserSideBar from "./components/Tools/UserSideBar.vue";
 
-import Card from "./components/Card.vue";
+// import Card from "./components/Card.vue";
 import ShopView from "./views/ShopView.vue";
 import AboutView from "./views/AboutView.vue";
 import CheckOut from "./views/CheckOut.vue";
 import TrainerAccount from "./views/TrainerAccount.vue";
 import Shop from './components/shop.vue';
+import edit from './components/edit.vue';
 import LoginNSignup from "./components/LoginAndSignup/LoginNSignup.vue";
 
 // import TrainerStatsData from "/components/TrainerStats&Data.vue";
@@ -66,6 +69,7 @@ export default {
     LoginNSignup,
     Cart,
     Card,
+    edit,
     ShopView,
     AboutView,
     CheckOut,

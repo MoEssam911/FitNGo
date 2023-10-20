@@ -7,12 +7,11 @@
         <div class="mx-auto">
           <img
             class="w-32 h-32 rounded-full object-cover"
-            src="../../assets/Images/selim.jpeg " />
+            :src="userImg" />
         </div>
         <p
           class="font-Manrope font-bold text-primary text-2xl text-center py-3">
-          Ali Maher
-        </p>
+{{ userName }}        </p>
 
         <hr />
 
@@ -90,10 +89,19 @@
 
 <script>
 export default {
+  name:"UserSideBar",
+  provide(){
+    return{
+      userName:this.userName
+    }
+  },
   data() {
+    
     return {
       toggle: "main-side-right",
       flag: false,
+      userName:'Ali Maher',
+    userImg:"../../../src/assets/Images/selim.jpeg "
     };
   },
   methods: {
