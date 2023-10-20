@@ -1,25 +1,24 @@
 <template>
   <section class="container">
     <h2 class="text-2xl text-primary font-bold ml-3 my-5">Trainers</h2>
-    <div class="flex lg:flex-nowrap sm:flex-wrap justify-center lg:gap-1 md:gap-4">
+    <div
+      class="flex lg:flex-nowrap sm:flex-wrap justify-center lg:gap-1 md:gap-4">
       <div
-        class="overflow-hidden transition-width frame lg:w-2/12 lg:hover:w-5/12 md:w-3/12 md:hover:w-5/12 sm:w-9/12 sm:hover:w-10/12  duration-1000 rounded-xl relative text-white text-center leading-[612px] hover:text-left hover:leading-none pt-5 pl-5"
+        class="overflow-hidden transition-width frame lg:w-2/12 lg:hover:w-5/12 md:w-3/12 md:hover:w-5/12 sm:w-9/12 sm:hover:w-10/12 duration-1000 rounded-xl relative text-white text-center leading-[612px] hover:text-left hover:leading-none pt-5 pl-5"
         v-for="da in data"
-        :key="da"
-      >
+        :key="da">
         <img
           :src="da.TrainerImg"
           alt=""
-          class="h-full object-cover absolute left-0 top-0"
-        />
-        <div class="trainer-data"> <h2>{{ da.TrainerNames }}</h2>
-        <div v-html="da.rate" class="rate mt-40 text-primary"></div>
-        
+          class="h-full object-cover absolute left-0 top-0" />
+        <div class="trainer-data">
+          <h2>{{ da.TrainerNames }}</h2>
+          <div v-html="da.rate" class="rate mt-40 text-primary"></div>
+
           <p class="w-10/12 mx-auto">{{ da.Description }}</p>
           <button
-            class=" rounded-xl bg-primary text-white px-10 py-2 block mx-auto mt-6 transition duration-200"
-          >
-            Info 
+            class="rounded-xl bg-primary text-white px-10 py-2 block mx-auto mt-6 transition duration-200">
+            Info
           </button>
         </div>
       </div>
@@ -69,15 +68,15 @@ export default {
 .frame {
   height: 600px;
   background: white;
-  transition: 0.5s;  
+  transition: 0.5s;
 }
 .trainer-data p {
   transition: 1s;
 }
 
 .trainer-data {
-position: relative;
-transform: translateY(600px);
+  position: relative;
+  transform: translateY(600px);
   transition: 1s;
 }
 .frame:hover .trainer-data {
@@ -87,11 +86,11 @@ transform: translateY(600px);
 }
 
 .frame h2 {
-opacity: 0;
+  opacity: 0;
   transition: 0.5s;
 }
 .frame:hover h2 {
-    opacity: 1;
+  opacity: 1;
   transform: translateX(-10px);
   transform: translateY(-80px);
 }
