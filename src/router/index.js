@@ -16,7 +16,8 @@ import TrainerPlanMaker from "../components/TrainerPlanMaker.vue";
 import UserPlans from '../components/UserAccount/UserPlans.vue'
 import TrainerClientPlan from '../components/TrainerClientPlan.vue'
 import TrainerDietPlan from '../components/TrainerDietPlanMaker.vue'
-import EditProfile from '../components/UserAccount/EditProfile.vue'import TrainerAccount from '../components/TrainerAccount.vue'
+import EditProfile from '../components/UserAccount/EditProfile.vue'
+import TrainerAccount from '../components/TrainerAccount.vue'
 
 
 
