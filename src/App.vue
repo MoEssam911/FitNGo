@@ -25,7 +25,7 @@
 
 </template>
 
-<!-- <script setup>
+<script setup>
 import { computed } from 'vue'
 import { useFavicon, usePreferredDark } from '@vueuse/core'
 const isDark = usePreferredDark();
@@ -36,7 +36,7 @@ useFavicon(favicon, {
   baseUrl: '/public/',
   rel: 'icon',
 })
-</script> -->
+</script>
 
 <script>
 import { RouterView } from "vue-router";
