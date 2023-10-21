@@ -19,13 +19,14 @@
 
       <div class="mt-5 flex flex-col">
         <div
-          class="heading flex items-center gap-4 hover:bg-primary hover:text-white py-3 cursor-pointer">
+          class="heading flex items-center gap-4 hover:bg-primary hover:text-white py-3 cursor-pointer" :class="{backPrimary : test=='trainer'}" @click="test='trainer'">
           <div class="pl-[15%]">
             <svg
+            class="blackSvg"
+            :class="{fillsvg : test=='trainer'}"
               width="25"
               height="25"
               viewBox="0 0 48 52"
-              fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <path
                 fill-rule="evenodd"
@@ -33,18 +34,20 @@
                 d="M16 15.1667C16 12.8681 16.8429 10.6637 18.3431 9.03841C19.8434 7.41309 21.8783 6.5 24 6.5C26.1217 6.5 28.1566 7.41309 29.6569 9.03841C31.1571 10.6637 32 12.8681 32 15.1667C32 17.4652 31.1571 19.6696 29.6569 21.2949C28.1566 22.9202 26.1217 23.8333 24 23.8333C21.8783 23.8333 19.8434 22.9202 18.3431 21.2949C16.8429 19.6696 16 17.4652 16 15.1667ZM16 28.1667C13.3478 28.1667 10.8043 29.308 8.92893 31.3397C7.05357 33.3713 6 36.1268 6 39C6 40.7239 6.63214 42.3772 7.75736 43.5962C8.88258 44.8152 10.4087 45.5 12 45.5H36C37.5913 45.5 39.1174 44.8152 40.2426 43.5962C41.3679 42.3772 42 40.7239 42 39C42 36.1268 40.9464 33.3713 39.0711 31.3397C37.1957 29.308 34.6522 28.1667 32 28.1667H16Z" />
             </svg>
           </div>
-          <h2 class="font-Manrope font-semibold text-sm lg:text-base">
+          <h2 class="font-Manrope font-semibold text-sm lg:text-base bg-transparent">
             Get Trainer
           </h2>
         </div>
-        <div
+        <div :class="{backPrimary : test=='myplan'}" @click="test='myplan'"
           class="heading flex items-center gap-4 hover:bg-primary hover:text-white py-3 cursor-pointer">
-          <div class="pl-[15%]">
+          <div class="pl-[15%]" >
             <svg
+            class="blackSvg"
+            :class="{fillsvg : test=='myplan'}"
               width="25"
               height="25"
+              fill="#fff"
               viewBox="0 0 49 50"
-              fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M39.9082 3.14941H42.875V50H6.125V3.14941H9.13965V0H12.2021V3.14941H18.375V0H21.4375V3.14941H27.6104V0H30.6729V3.14941H36.8457V0H39.9082V3.14941ZM39.8125 46.875V6.27441H9.1875V46.875H39.8125ZM33.6875 12.5244V15.6494H15.3125V12.5244H33.6875ZM15.3125 40.6738V37.5488H33.6875V40.6738H15.3125ZM15.3125 28.1494V25.0244H33.6875V28.1494H15.3125Z" />
@@ -54,10 +57,12 @@
             My Plan
           </h2>
         </div>
-        <div
+        <div :class="{backPrimary : test=='myshop'}" @click="test='myshop'"
           class="heading flex items-center gap-4 hover:bg-primary hover:text-white py-3 cursor-pointer">
           <div class="pl-[15%]">
             <svg
+            class="blackSvg"
+            :class="{fillsvg : test=='myshop'}"
               width="25"
               height="25"
               viewBox="0 0 43 43"
@@ -71,10 +76,12 @@
             My Shop
           </h2>
         </div>
-        <div
+        <div :class="{backPrimary : test=='tools'}" @click="test='tools'"
           class="heading flex items-center gap-4 hover:bg-primary hover:text-white py-3 cursor-pointer">
           <div class="pl-[15%]">
             <svg
+            class="blackSvg"
+            :class="{fillsvg : test=='tools'}"
               width="25"
               height="25"
               viewBox="0 0 54 55"
@@ -92,10 +99,12 @@
 </template>
 <script>
 export default {
+  name:'UserSideBar',
   data() {
     return {
       toggle: "main-side-right",
       flag: false,
+      test:''
     };
   },
   methods: {
@@ -120,10 +129,22 @@ export default {
 .heading {
   transition: 0.2s;
 }
-.heading svg {
+.blackSvg {
   fill: black;
 }
 .heading:hover svg {
+  fill: white;
+}
+.back-white{
+  background-color: white;
+}
+.backPrimary{
+  color:white;
+  fill: white;
+  background-color: #E60000;
+}
+
+.fillsvg {
   fill: white;
 }
 </style>
