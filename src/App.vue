@@ -15,7 +15,7 @@
 
     <!-- <TrainerAccount></TrainerAccount> -->
     <!-- <AboutView></AboutView> -->
-    <!-- <Card></Card> -->
+    <Card></Card>
     <shop></shop>
     <!-- <CheckOut></CheckOut> -->
 

@@ -3,8 +3,6 @@
     <div class="container">
       <div class="cards grid grid-cols-12 gap-4">
         <div class="card col-span-3 mb-5">
-
-
           <div class="icon z-10">
             <a href="index.html">
               <i class="fa-solid fa-cart-plus text-xl hover:text-2xl hover:rotate-3 transition-all text-white"></i>
@@ -37,7 +35,6 @@
 <script>
 export default {
   name: "Card",
-  components: {},
 };
 </script>
 
