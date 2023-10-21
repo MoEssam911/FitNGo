@@ -7,10 +7,13 @@ import OneTrainerView from '../views/OneTrainerView.vue'
 import WorkoutsView from '../views/WorkoutsView.vue'
 import WorkoutView from '../views/WorkoutView.vue'
 import About from '../views/AboutView.vue'
-import ShopViwe from '../views/ShopView.vue'
+import shop from '../components/shop.vue'
+import ShopView from '../views/ShopView.vue'
 import BodyFatTool from '../components/BodyFatTool.vue'
 import DietPlan from '../components/DietPlan.vue'
 import BmrTool from '../components/ToolsPage.vue'
+import MyPlan from '../components/MyPlan.vue'
+import TrainerPlanMaker from '../components/TrainerPlanMaker.vue'
 
 
 
@@ -54,7 +57,12 @@ const router = createRouter({
     {
       path: '/shop',
       name: 'shop',
-      component: ShopViwe
+      component: shop
+    },
+    {
+      path: '/shop3esam',
+      name: 'shop3ss',
+      component: ShopView
     },
 
     {
@@ -71,6 +79,16 @@ const router = createRouter({
       path: '/bmrtool',
       name: 'BmrTool',
       component: BmrTool
+    },
+    {
+      path: '/myplan',
+      name: 'myplan',
+      component: MyPlan
+    },
+    {
+      path: '/TrainerPlanMaker',
+      name: 'TrainerPlanMaker',
+      component: TrainerPlanMaker
     },
   ],
   scrollBehavior(to, from, savedPosition) {

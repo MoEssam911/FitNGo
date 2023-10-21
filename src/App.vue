@@ -9,9 +9,10 @@
     <Navbar />
   <main class="w-full relative">
 
-    <!-- <Navbar class="fixed top-0 z-50 w-full"></Navbar> -->
+    <Navbar class="fixed top-0 z-50 w-full"></Navbar>
     <RouterView />
     <!-- <UserSideBar></UserSideBar> -->
+
     <!-- <TrainerAccount></TrainerAccount> -->
     <!-- <AboutView></AboutView> -->
     <!-- <Card></Card> -->
@@ -49,7 +50,8 @@ import Navbar from "./components/utilities/Navbar.vue";
 import Footer from "./components/utilities/Footer.vue";
 import Cart from "./components/Cart.vue";
 import ToolsPage from "./components/ToolsPage.vue";
-import Card from "./components/Card.vue";
+
+
 import MacroCalculator from "./components/Tools/MacroCalculator.vue";
 import UserSideBar from "./components/Tools/UserSideBar.vue";
 import ShopView from "./views/ShopView.vue";
@@ -68,7 +70,6 @@ export default {
     Footer,
     Cart,
     LoginNSignup,
-    Cart,
     Card,
     ShopView,
     AboutView,

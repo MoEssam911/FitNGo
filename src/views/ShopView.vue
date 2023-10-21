@@ -3,7 +3,7 @@
     <div class="banner w-full h-80 object-">
     </div>
   </div> -->
-  <Card></Card>
+  <Card class="mt-20"></Card>
 </template>
 
 <script>
