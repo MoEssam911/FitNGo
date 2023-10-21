@@ -7,7 +7,7 @@
     @click="closeLogin"
     v-if="isLoggedIn"></div>
     <Navbar />
-  <main class="w-full relative">
+  <main class="w-full h-screen relative">
 
     <Navbar class="fixed top-0 z-50 w-full"></Navbar>
     <RouterView />
