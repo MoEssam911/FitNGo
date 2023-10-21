@@ -70,7 +70,6 @@ export default {
     Footer,
     Cart,
     LoginNSignup,
-    Card,
     ShopView,
     AboutView,
     CheckOut,

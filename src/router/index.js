@@ -14,6 +14,8 @@ import DietPlan from '../components/DietPlan.vue'
 import BmrTool from '../components/ToolsPage.vue'
 import MyPlan from '../components/MyPlan.vue'
 import TrainerPlanMaker from '../components/TrainerPlanMaker.vue'
+import TrainerClientPlan from '../components/TrainerClientPlan.vue'
+import TrainerDietPlan from '../components/TrainerDietPlanMaker.vue'
 
 
 
@@ -89,6 +91,16 @@ const router = createRouter({
       path: '/TrainerPlanMaker',
       name: 'TrainerPlanMaker',
       component: TrainerPlanMaker
+    },
+    {
+      path: '/TrainerClientPlan',
+      name: 'TrainerClientPlan',
+      component: TrainerClientPlan
+    },
+    {
+      path: '/TrainerDietPlan',
+      name: 'TrainerDietPlan',
+      component: TrainerDietPlan
     },
   ],
   scrollBehavior(to, from, savedPosition) {
