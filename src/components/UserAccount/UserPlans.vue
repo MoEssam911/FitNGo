@@ -22,22 +22,22 @@
                         <tr class="border-b" v-for="ex,index in plan.table" :key="ex">
                             <th
                             scope="row"
-                            class="px-6 py-4 font-medium text-dark ">
+                            class="px-6 py-4 font-medium text-dark lg:text-base md:text-sm text-xs">
                             {{ index+=1 }}
                           </th>
                           <th
                             scope="row"
-                            class="px-6 py-4 font-medium text-dark ">
+                            class="px-6 py-4 font-medium text-dark lg:text-base md:text-sm text-xs">
                             {{ ex.exerciseName }}
                           </th>
                           <th
                             scope="row"
-                            class="px-6 py-4 font-medium text-dark ">
+                            class="px-6 py-4 font-medium text-dark lg:text-base md:text-sm text-xs">
                             {{ ex.sets }}
                           </th>
                           <th
                             scope="row"
-                            class="px-6 py-4 font-medium text-dark ">
+                            class="px-6 py-4 font-medium text-dark lg:text-base md:text-sm text-xs">
                             {{ ex.reps }}
                           </th>
                         </tr>

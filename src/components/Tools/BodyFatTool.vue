@@ -10,14 +10,14 @@
                 v-model="weight"
                 type="number"
                 name="floating_first_name"
-                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-dark appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-primary peer"
+                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-dark appearance-none    focus:outline-none focus:ring-0 focus:border-primary peer"
                 placeholder=" "
                 required
                 min="40"
                 max="160" />
               <label
                 for="floating_first_name"
-                class="peer-focus:font-medium absolute text-sm text-dark dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                class="peer-focus:font-medium absolute text-sm text-dark  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                 >Weight <span class="text-xs">(kg)</span></label
               >
             </div>
@@ -27,14 +27,14 @@
                 type="number"
                 name="floating_last_name"
                 id="floating_last_name"
-                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-dark appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-primary peer"
+                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-dark appearance-none    focus:outline-none focus:ring-0 focus:border-primary peer"
                 placeholder=" "
                 required
                 min="130"
                 max="230" />
               <label
                 for="floating_last_name"
-                class="peer-focus:font-medium absolute text-sm text-dark dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                class="peer-focus:font-medium absolute text-sm text-dark  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                 >Height <span class="text-xs">(cm)</span></label
               >
             </div>
@@ -46,14 +46,14 @@
                 type="number"
                 name="floating_phone"
                 id="floating_phone"
-                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-dark appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-primary peer"
+                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-dark appearance-none    focus:outline-none focus:ring-0 focus:border-primary peer"
                 placeholder=" "
                 required
                 min="1"
                 max="80" />
               <label
                 for="floating_phone"
-                class="peer-focus:font-medium absolute text-sm text-dark dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                class="peer-focus:font-medium absolute text-sm text-dark  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                 >Age</label
               >
             </div>
@@ -63,14 +63,14 @@
                 type="number"
                 name="floating_company"
                 id="floating_company"
-                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-dark appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-primary peer"
+                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-dark appearance-none    focus:outline-none focus:ring-0 focus:border-primary peer"
                 placeholder=" "
                 required
                 min="40"
                 max="130" />
               <label
                 for="floating_company"
-                class="peer-focus:font-medium absolute text-sm text-dark dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                class="peer-focus:font-medium absolute text-sm text-dark  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                 Waist <span class="text-xs">(40cm to 130cm)</span></label
               >
             </div>
@@ -82,14 +82,14 @@
                 type="number"
                 name="floating_phone"
                 id="floating_phone"
-                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-dark appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-primary peer"
+                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-dark appearance-none    focus:outline-none focus:ring-0 focus:border-primary peer"
                 placeholder=" "
                 required
                 min="20"
                 max="80" />
               <label
                 for="floating_phone"
-                class="peer-focus:font-medium absolute text-sm text-dark dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                class="peer-focus:font-medium absolute text-sm text-dark  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                 >Neck <span class="text-xs">(20cm to 80cm)</span></label
               >
             </div>
@@ -99,14 +99,14 @@
                 type="number"
                 name="floating_company"
                 id="floating_company"
-                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-dark appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-primary peer"
+                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-dark appearance-none    focus:outline-none focus:ring-0 focus:border-primary peer"
                 placeholder=" "
                 required
                 min="40"
                 max="130" />
               <label
                 for="floating_company"
-                class="peer-focus:font-medium absolute text-sm text-dark dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                class="peer-focus:font-medium absolute text-sm text-dark  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                 Hip <span class="text-xs">(40cm to 130cm)</span></label
               >
             </div>
