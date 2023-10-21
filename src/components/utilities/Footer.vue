@@ -20,7 +20,7 @@
       <div class="flex flex-wrap box-border">
          <router-link to="/" class="md:w-6/12  my-1 w-full">Home</router-link>
          <router-link to="/trainers" class="md:w-6/12  my-1 w-full">Trainers</router-link>
-         <router-link to="/shop" class="md:w-6/12  my-1 w-full">E-Shop</router-link>c`x`
+         <router-link to="/shop" class="md:w-6/12  my-1 w-full">E-Shop</router-link>
          <router-link to="/" class="md:w-6/12  my-1 w-full">Tools</router-link>
          <router-link to="/workouts" class="md:w-6/12  my-1 w-full">Workouts</router-link>
          <router-link to="/About" class="md:w-6/12  my-1 w-full">About</router-link>

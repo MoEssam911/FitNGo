@@ -194,7 +194,8 @@
             </div>
   
             <!-- macro calculator component -->
-            <div class="flex flex-col flex-wrap h-auto my-5 w-full bg-zinc-300 bg-opacity-50 rounded-3xl"><table
+            <div class="flex flex-col flex-wrap h-auto my-5 w-full bg-zinc-300 bg-opacity-50 rounded-3xl">
+              <table
                       class="w-full text-center text-dark bg-white shadow-lg rounded-2xl mb-9">
                       <caption class="text-dark text-2xl">
                         Your diet plan is
@@ -205,7 +206,6 @@
                           <th scope="col" class="px-6 py-3">High Protein</th>
                           <th scope="col" class="px-6 py-3">Low Carbs</th>
                           <th scope="col" class="px-6 py-3">Low Fat</th>
-                          <th scope="col" class="px-6 py-3">Plan</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -217,22 +217,16 @@
                           </th>
                           <td
                             class="px-6 py-4 text-center text-primary text-lg tracking-widest"
-                            colspan="4">
+                            colspan="3">
                             Fit&Go Calorie
                           </td>
                         </tr>
                         <tr class="border-b">
                           <th
                             scope="row"
-                            class="px-6 py-4 font-medium text-dark whitespace-nowrap dark:text-white">
+                            class="px-6 py-4 font-medium text-dark whitespace-nowrap">
                             Protein
                           </th>
-                          <td class="px-6 py-4">
-                            Fit&Go gm
-                          </td>
-                          <td class="px-6 py-4">
-                            Fit&Go gm
-                          </td>
                           <td class="px-6 py-4">
                             Fit&Go gm
                           </td>
@@ -255,9 +249,7 @@
                           <td class="px-6 py-4">
                             Fit&Go gm
                           </td>
-                          <td class="px-6 py-4">
-                            Fit&Go gm
-                          </td>
+                         
                         </tr>
                         <tr class="">
                           <th
@@ -274,9 +266,7 @@
                           <td class="px-6 py-4">
                             Fit&Go gm
                           </td>
-                          <td class="px-6 py-4">
-                            Fit&Go gm
-                          </td>
+                        
                         </tr>
                       </tbody>
                     </table>

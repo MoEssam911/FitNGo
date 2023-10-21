@@ -47,7 +47,7 @@
           <div class="rounded-xl  overflow-hidden"><img src="../assets/Images/beforeandafter/ba3.webp" class="w-9/12 hover:w-10/12 transition-width duration-500 border shadow-lg" alt=""></div>
         </div>
         <p class="text-sm my-4">
-          <h2 class="font-bold">How it works :</h2>
+         <span> <h2 class="font-bold">How it works :</h2></span>
           You enroll with the coach of your choice You fill in your addition key
           details like food preferences, preferred time to contact, any medical
           issue etc Coach calls you within 24 hours at your preferred time Coach

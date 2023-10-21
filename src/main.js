@@ -9,6 +9,7 @@ import "./assets/global.css";
 import 'tailwindcss/tailwind.css'
 
 
+
 /* import the fontawesome core */
 import { library } from "@fortawesome/fontawesome-svg-core";
 
@@ -23,6 +24,6 @@ library.add(faUserSecret);
 
 const app = createApp(App).component("font-awesome-icon", FontAwesomeIcon);
 
-app.use(router);
+app.use(router)
 
 app.mount("#app");

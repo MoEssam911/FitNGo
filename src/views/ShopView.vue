@@ -3,13 +3,13 @@
     <div class="banner w-full h-80 object-">
     </div>
   </div> -->
-  <Card></Card>
+  <Card class="mt-20"></Card>
 </template>
 
 <script>
 import Card from "../components/Card.vue";
 export default {
-  name: "ShopViwe",
+  name: "ShopView",
   components: {
     Card
   }
