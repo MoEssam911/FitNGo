@@ -28,7 +28,6 @@
     <!-- <ShopView></ShopView> --> 
 
   </main>
-
 </template>
 
 <!-- <script setup>
@@ -72,7 +71,6 @@ export default {
     TrainerAccount,
     ToolsPage,
     // TrainerStatsData,
-    
   },
   data() {
     return {

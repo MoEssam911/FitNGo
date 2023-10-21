@@ -8,7 +8,7 @@
         <router-link to="/"><a href="" class="hover:text-primary"><li class="mx-2 ">Home</li></a></router-link>
         <router-link to="/trainers"><a href="" class="hover:text-primary"><li class="mx-2 ">Trainers</li></a></router-link>
         <router-link to="/shop"><a href="" class="hover:text-primary"><li class="mx-2 ">E-Shop</li></a></router-link>
-        <router-link to="/"><a href="" class="hover:text-primary"><li class="mx-2 ">Tools</li></a></router-link>
+        <router-link to="/tools"><a href="" class="hover:text-primary"><li class="mx-2 ">Tools</li></a></router-link>
         <router-link to="/workouts"><a href="" class="hover:text-primary"><li class="mx-2 ">Workouts</li></a></router-link>
         <router-link to="/About"><a href="" class="hover:text-primary"><li class="mx-2 ">About</li></a></router-link>
       </ul>

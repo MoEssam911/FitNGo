@@ -34,7 +34,6 @@ export default {
         "2xl": "6rem",
       },
       center: true,
-      margin:'1%',
 
     },
     screens: {
