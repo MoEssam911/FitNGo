@@ -14,7 +14,7 @@ import BmrTool from '../components/Tools/BmrTool.vue'
 import MyPlan from "../components/MyPlan.vue";
 import TrainerPlanMaker from "../components/TrainerPlanMaker.vue";
 import UserPlans from '../components/UserAccount/UserPlans.vue'
-
+import EditProfile from '../components/UserAccount/EditProfile.vue'
 
 
 const router = createRouter({
@@ -92,6 +92,11 @@ const router = createRouter({
       path: '/UserPlans',
       name: 'UserPlans',
       component: UserPlans
+    },
+    {
+      path: '/EditProfile',
+      name: 'EditProfile',
+      component: EditProfile
     },
   ],
   scrollBehavior(to, from, savedPosition) {
