@@ -16,6 +16,7 @@ import TrainerPlanMaker from "../components/TrainerPlanMaker.vue";
 import UserPlans from '../components/UserAccount/UserPlans.vue'
 import TrainerClientPlan from '../components/TrainerClientPlan.vue'
 import TrainerDietPlan from '../components/TrainerDietPlanMaker.vue'
+import TrainerAccount from '../components/TrainerAccount.vue'
 
 
 
@@ -104,6 +105,11 @@ const router = createRouter({
       path: '/TrainerDietPlan',
       name: 'TrainerDietPlan',
       component: TrainerDietPlan
+    },
+    {
+      path: '/TrainerAccount',
+      name: 'TrainerAccount',
+      component: TrainerAccount
     },
   ],
   scrollBehavior(to, from, savedPosition) {
