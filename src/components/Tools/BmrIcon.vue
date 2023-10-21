@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="group transition duration-300 bg-secondary bg-opacity-50 rounded-3xl hover:bg-primary hover:cursor-pointer flex flex-col justify-center items-center py-4"
+      class="group transition duration-300 bg-secondary  rounded-3xl hover:bg-primary hover:cursor-pointer flex flex-col justify-center items-center py-4"
       :class="toggleBmrClass ? 'active-tool' : 'inactive-tool'">
       <div class="group-hover:fill-white">
         <svg

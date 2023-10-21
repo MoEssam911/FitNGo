@@ -15,7 +15,7 @@
     <!-- <Card></Card> -->
     <!-- <CheckOut></CheckOut> -->
     <!-- <TrainerStatsData></TrainerStatsData> -->
-    <!-- <Footer></Footer> -->
+    <Footer></Footer>
     <!-- <ShopView></ShopView> -->
   </main>
 </template>

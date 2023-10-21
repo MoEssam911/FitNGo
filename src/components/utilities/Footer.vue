@@ -1,5 +1,5 @@
 <template>
-  <footer class="text-white p-14 flex flex-wrap md:items-center md:justify-between sticky top-[100vh]">
+  <footer class="z-50 text-white p-14 flex flex-wrap md:items-center md:justify-between sticky top-[100vh]">
     <div class="md:w-auto sm:w-6/12 w-full">
       <h3 class="text-xl font-bold mb-3">Contact Us</h3>
       <h6 class="my-2"><i class="fa-solid fa-phone me-3"></i><span>01154569204</span></h6>
@@ -20,7 +20,7 @@
       <div class="flex flex-wrap box-border">
          <router-link to="/" class="md:w-6/12  my-1 w-full">Home</router-link>
          <router-link to="/trainers" class="md:w-6/12  my-1 w-full">Trainers</router-link>
-         <router-link to="/shop" class="md:w-6/12  my-1 w-full">E-Shop</router-link>c`x`
+         <router-link to="/shop" class="md:w-6/12  my-1 w-full">E-Shop</router-link>
          <router-link to="/" class="md:w-6/12  my-1 w-full">Tools</router-link>
          <router-link to="/workouts" class="md:w-6/12  my-1 w-full">Workouts</router-link>
          <router-link to="/About" class="md:w-6/12  my-1 w-full">About</router-link>

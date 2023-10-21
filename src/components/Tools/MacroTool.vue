@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-secondary bg-opacity-50 rounded-3xl h-auto p-9 mb-9">
+  <div class="bg-secondary rounded-3xl h-auto p-9 mb-9">
     <div>
       <h2 class="text-2xl font-bold pb-5">Macro Calculator</h2>
       <form @submit.prevent="fetchAPI">
@@ -92,7 +92,7 @@
           <label
             for=""
             class="peer-focus:font-medium absolute text-sm text-dark dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-            >Activity Level</label
+            >Goal</label
           >
           <div class="mt-5">
             <input

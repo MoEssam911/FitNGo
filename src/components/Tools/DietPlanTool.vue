@@ -1,7 +1,7 @@
 <template>
   <section>
     <div
-      class="flex flex-col flex-wrap h-auto w-full bg-secondary bg-opacity-50 rounded-3xl p-9 mb-9">
+      class="flex flex-col flex-wrap h-auto w-full bg-secondary  rounded-3xl p-9 mb-9">
       <table
         class="w-full text-center text-dark bg-white shadow-lg rounded-2xl mb-9">
         <caption class="text-dark text-2xl">

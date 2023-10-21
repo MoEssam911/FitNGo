@@ -1,5 +1,5 @@
 <template>
-  <div class="h-auto bg-secondary bg-opacity-50 rounded-3xl p-9 mb-9">
+  <div class="h-auto bg-secondary  rounded-3xl p-9 mb-9">
     <div>
       <h2 class="text-2xl font-bold pb-5">BMR Calculator</h2>
       <form @submit.prevent="fetchAPI">
@@ -86,7 +86,7 @@
       </form>
     </div>
 
-    <div class="flex mx-10 font-Manrope text-gray-700 text-md">
+    <div class="flex font-Manrope text-gray-700 text-md">
       <div class="text-xl" v-if="submitted">
         <h1>
           Your Basic Metablic Rate is
