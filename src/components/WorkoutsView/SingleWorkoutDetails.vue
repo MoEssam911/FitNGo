@@ -43,43 +43,8 @@
   </div>
 </template>
 
-<script setup>
-import axios from "axios";
-import { useRoute } from "vue-router";
-import { ref } from "vue";
-import { onMounted } from "vue";
-import { initFlowbite } from "flowbite";
-
-onMounted(() => {
-  initFlowbite();
-});
-
-const Route = useRoute();
-let exercise = ref({});
-let id = Route.params.id;
-
-const options = {
-  method: "GET",
-  url: `https://exercisedb.p.rapidapi.com/exercises/exercise/${id}`,
-  headers: {
-    "X-RapidAPI-Key": "7229adc070msh26d4e2c32a6cd6cp13204ejsn1e0f423a3faa",
-    "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
-  },
-};
-
-async function fetchAPI() {
-  try {
-    const response = await axios.request(options);
-    exercise.value = response.data;
-    console.log(exercise);
-    console.log(id);
-    console.log(Route)
-  } catch (error) {
-    console.error(error);
-  }
+<script>
+export default {
+  props: ['exercise']
 }
-
-fetchAPI();
 </script>
-
-<style scoped></style>
