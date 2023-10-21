@@ -13,22 +13,6 @@ import DietPlanTool from "../components/Tools/DietPlanTool.vue";
 import BmrTool from '../components/Tools/BmrTool.vue'
 import MyPlan from "../components/MyPlan.vue";
 import TrainerPlanMaker from "../components/TrainerPlanMaker.vue";
-import { createRouter, createWebHistory } from 'vue-router'
-
-import HomeView from '../views/HomeView.vue'
-import TrainersView from '../views/TrainersView.vue'
-import OneTrainerView from '../views/OneTrainerView.vue'
-
-import WorkoutsView from '../views/WorkoutsView.vue'
-import WorkoutView from '../views/WorkoutView.vue'
-import About from '../views/AboutView.vue'
-import shop from '../components/shop.vue'
-import ShopView from '../views/ShopView.vue'
-import BodyFatTool from '../components/BodyFatTool.vue'
-import DietPlan from '../components/DietPlan.vue'
-import BmrTool from '../components/ToolsPage.vue'
-import MyPlan from '../components/MyPlan.vue'
-import TrainerPlanMaker from '../components/TrainerPlanMaker.vue'
 import UserPlans from '../components/UserAccount/UserPlans.vue'
 
 
