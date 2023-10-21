@@ -101,7 +101,7 @@
       More To Explore
     </button>
   </div>
-
+</div>
 </template>
 
 <script setup>
