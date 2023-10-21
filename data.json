@@ -954,20 +954,137 @@
   ],
   "workoutplans": [
     {
-      "month": "jun",
+      "month": "October 2023",
       "table": [
         {
-          "exerciseName": "aaaa",
-          "sets": 5,
+          "exerciseName": "BARBELL BENCH PRESS",
+          "sets": 4,
+          "reps": 12
+        },
+        {
+          "exerciseName": "HAMMER STRENGHT MACHINE INCLINE PRESS S",
+          "sets": 4,
+          "reps": 15
+        },
+        {
+          "exerciseName": " MEDICINE BALL CHEST PRESS",
+          "sets": 4,
+          "reps": 15
+        },
+        {
+          "exerciseName": "HIGH TO LOW STANDING CABLE FLY",
+          "sets": 4,
+          "reps": 15
+        },
+        {
+          "exerciseName": "WEIGHTED CRUNCHES",
+          "sets": 4,
+          "reps": 20
+        },
+        {
+          "exerciseName": "DUMBBELL LATERAL RAISE",
+          "sets": 4,
+          "reps": 15
+        },
+        {
+          "exerciseName": "DUMBBELL FRONT RAISE",
+          "sets": 4,
+          "reps": 15
+        },
+        {
+          "exerciseName": "SEATED DUMBBELL TRICEPS EXTENSION",
+          "sets": 4,
+          "reps": 8
+        },
+        {
+          "exerciseName": "REVERSE GRIP TRICEPS EXTENSION",
+          "sets": 4,
           "reps": 10
         },
         {
-          "exerciseName": "sss",
-          "sets": 6,
-          "reps": 9
+          "exerciseName": "NEUTRAL WIDE GRIP LAT PULLDOWN",
+          "sets": 4,
+          "reps": 8
+        },
+        {
+          "exerciseName": "BENT-OVER BB ROW",
+          "sets": 4,
+          "reps": 8
+        },
+        {
+          "exerciseName": "ROTATIONAL MEDICINE BALL THROW",
+          "sets": 4,
+          "reps": 12
+        },
+        {
+          "exerciseName": "REVERSE GRIP SEATED ROW",
+          "sets": 3,
+          "reps": 15
+        },
+        {
+          "exerciseName": "STRAIGHT ARM LAT PULLDOWN",
+          "sets": 3,
+          "reps": 15
+        },
+        {
+          "exerciseName": "MACHINE REVERSE FLY",
+          "sets": 4,
+          "reps": 8
         }
       ],
       "id": 1
+    },
+    {
+      "month": "Novamber 2023",
+      "table": [
+        {
+          "exerciseName": "HIGH TO LOW STANDING CABLE FLY",
+          "sets": 4,
+          "reps": 8
+        },
+        {
+          "exerciseName": "DUMBBELL FRONT RAISE\t",
+          "sets": 4,
+          "reps": 8
+        },
+        {
+          "exerciseName": "MEDICINE BALL CHEST PRESS\t",
+          "sets": 4,
+          "reps": 8
+        },
+        {
+          "exerciseName": "BENT-OVER BB ROW\t",
+          "sets": 4,
+          "reps": 8
+        },
+        {
+          "exerciseName": "MACHINE REVERSE FLY\t",
+          "sets": 4,
+          "reps": 8
+        }
+      ],
+      "id": 2
+    },
+    {
+      "month": "December 2023",
+      "table": [
+        {
+          "exerciseName": "ROTATIONAL MEDICINE BALL THROW\t",
+          "sets": 4,
+          "reps": 8
+        },
+        {
+          "exerciseName": "WEIGHTED CRUNCHES",
+          "sets": 4,
+          "reps": 8
+        },
+        {
+          "exerciseName": "STRAIGHT ARM LAT PULLDOWN",
+          "sets": 4,
+          "reps": 8
+        }
+      ],
+      "id": 3
     }
   ]
 }
