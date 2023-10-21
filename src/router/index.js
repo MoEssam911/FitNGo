@@ -14,6 +14,8 @@ import BmrTool from '../components/Tools/BmrTool.vue'
 import MyPlan from "../components/MyPlan.vue";
 import TrainerPlanMaker from "../components/TrainerPlanMaker.vue";
 import UserPlans from '../components/UserAccount/UserPlans.vue'
+import TrainerClientPlan from '../components/TrainerClientPlan.vue'
+import TrainerDietPlan from '../components/TrainerDietPlanMaker.vue'
 
 
 
@@ -92,6 +94,16 @@ const router = createRouter({
       path: '/UserPlans',
       name: 'UserPlans',
       component: UserPlans
+    },
+    {
+      path: '/TrainerClientPlan',
+      name: 'TrainerClientPlan',
+      component: TrainerClientPlan
+    },
+    {
+      path: '/TrainerDietPlan',
+      name: 'TrainerDietPlan',
+      component: TrainerDietPlan
     },
   ],
   scrollBehavior(to, from, savedPosition) {
