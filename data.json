@@ -1086,5 +1086,83 @@
       ],
       "id": 3
     }
+  ],
+  "dietplans": [
+    {
+      "week": "",
+      "table": [
+        {
+          "breakfast": "Bacon & Egg Cup with Avocado",
+          "snacks": "Plain Greek Yorgurt + Nuts",
+          "launch": "Pesto Chicken",
+          "dinner": " Baked Salmon"
+        },
+        {
+          "breakfast": "Keto Bread with Butter",
+          "snacks": "Chili Pepper Cauliflower Bites",
+          "launch": "Chorizo Casserole with Broccoli Cheese Soup",
+          "dinner": "Chicken Marsala w/ Cauliflower"
+        },
+        {
+          "breakfast": "Eggs in an Avocado Basket",
+          "snacks": "Keto Fat Bombs",
+          "launch": "Stuffed Chicken Avocado Salad",
+          "dinner": "Seared Scallops with Cheese Sauce"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "month": "Novamber 2023",
+      "table": [
+        {
+          "exerciseName": "HIGH TO LOW STANDING CABLE FLY",
+          "sets": 4,
+          "reps": 8
+        },
+        {
+          "exerciseName": "DUMBBELL FRONT RAISE\t",
+          "sets": 4,
+          "reps": 8
+        },
+        {
+          "exerciseName": "MEDICINE BALL CHEST PRESS\t",
+          "sets": 4,
+          "reps": 8
+        },
+        {
+          "exerciseName": "BENT-OVER BB ROW\t",
+          "sets": 4,
+          "reps": 8
+        },
+        {
+          "exerciseName": "MACHINE REVERSE FLY\t",
+          "sets": 4,
+          "reps": 8
+        }
+      ],
+      "id": 2
+    },
+    {
+      "month": "December 2023",
+      "table": [
+        {
+          "exerciseName": "ROTATIONAL MEDICINE BALL THROW\t",
+          "sets": 4,
+          "reps": 8
+        },
+        {
+          "exerciseName": "WEIGHTED CRUNCHES",
+          "sets": 4,
+          "reps": 8
+        },
+        {
+          "exerciseName": "STRAIGHT ARM LAT PULLDOWN",
+          "sets": 4,
+          "reps": 8
+        }
+      ],
+      "id": 3
+    }
   ]
 }
