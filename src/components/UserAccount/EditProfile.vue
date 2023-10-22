@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-screen bg-secondary p-6 rounded-2xl mt-28">
+  <div class="w-full h-screen bg-secondary p-6 rounded-2xl">
     <form @submit.prevent="fetchAPI">
       <div class="grid md:grid-cols-2 md:gap-6">
         <div class="relative z-0 w-full mb-6 group">
@@ -131,7 +131,7 @@
           class="bg-primary rounded-lg p-2 px-6 text-white font-Manrope text-sm hover:bg-red-800"
           type="submit"
         >
-          Calculate
+          Save
         </button>
       </div>
     </form>

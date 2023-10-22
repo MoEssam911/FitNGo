@@ -15,6 +15,7 @@ import MyPlan from "../components/MyPlan.vue";
 import TrainerPlanMaker from "../components/TrainerPlanMaker.vue";
 import UserPlans from '../components/UserAccount/UserPlans.vue'
 import EditProfile from '../components/UserAccount/EditProfile.vue'
+import UserProfile from '../views/UserProfile.vue'
 
 
 const router = createRouter({
@@ -97,6 +98,11 @@ const router = createRouter({
       path: '/EditProfile',
       name: 'EditProfile',
       component: EditProfile
+    },
+    {
+      path: '/UserProfile',
+      name: 'UserProfile',
+      component: UserProfile
     },
   ],
   scrollBehavior(to, from, savedPosition) {
