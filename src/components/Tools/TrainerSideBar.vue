@@ -10,11 +10,11 @@
       <div class="mx-auto">
         <img
           class="w-32 h-32 rounded-full object-cover"
-          src="../../assets/Images/selim.jpeg "
+          src="../../assets/Images/trainercards/amrsamehcard.png "
         />
       </div>
       <p class="font-Manrope font-bold text-primary text-lg text-center py-3">
-        Ali Maher
+        Amr Sameh
       </p>
 
       <hr />
@@ -22,13 +22,13 @@
       <div class="mt-5 flex flex-col">
         <div
           class="heading flex items-center gap-4 hover:bg-primary hover:text-white py-3 cursor-pointer"
-          :class="{ backPrimary: test == 'info' }"
-          @click="test = 'info'"
+          :class="{ backPrimary: toggleComp == 'info' }"
+          @click="ChangeTest1"
         >
           <div class="pl-[15%]">
             <svg
               class="blackSvg"
-              :class="{ fillsvg: test == 'info' }"
+              :class="{ fillsvg: toggleComp == 'info' }"
               width="25"
               height="25"
               viewBox="0 0 48 52"
@@ -48,14 +48,14 @@
           </h2>
         </div>
         <div
-          :class="{ backPrimary: test == 'myclients' }"
-          @click="test = 'myclients'"
+          :class="{ backPrimary: toggleComp == 'myclients' }"
+          @click="ChangeTest2"
           class="heading flex items-center gap-4 hover:bg-primary hover:text-white py-3 cursor-pointer"
         >
           <div class="pl-[15%]">
             <svg
               class="blackSvg"
-              :class="{ fillsvg: test == 'myclients' }"
+              :class="{ fillsvg: toggleComp == 'myclients' }"
               xmlns="http://www.w3.org/2000/svg"
               width="25"
               height="25"
@@ -78,11 +78,14 @@
 <script>
 export default {
   name: "TrainerSideBar",
+  inject: ["ChangeToggle1","ChangeToggle2","toggleComp"],
+  
   data() {
     return {
       toggle: "main-side-right",
       flag: false,
       test: "",
+      toggleComp:"info",
     };
   },
   methods: {
@@ -94,6 +97,16 @@ export default {
       }
       this.flag = !this.flag;
     },
+    ChangeTest1 () {
+      this.toggleComp="info"
+      this.ChangeToggle1()
+      console.log(this.toggleComp)
+    },
+    ChangeTest2 () {
+      this.toggleComp = "myclients"
+      this.ChangeToggle2()
+      console.log(this.toggleComp)
+    }
   },
 };
 </script>

@@ -10,14 +10,14 @@
   <main class="w-full h-screen relative">
 
     <Navbar class="fixed top-0 z-50 w-full"></Navbar>
-    <RouterView />
+    <RouterView class="mt-24"/>
     <!-- <UserSideBar></UserSideBar> -->
 
     <!-- <TrainerAccount></TrainerAccount> -->
     <!-- <AboutView></AboutView> -->
-    <Card></Card>
+    <!-- <Card></Card>
     <shop></shop>
-    <TrainerSideBar></TrainerSideBar>
+    <TrainerSideBar></TrainerSideBar> -->
     <!-- <CheckOut></CheckOut> -->
 
   <!-- <TrainerStatsData></TrainerStatsData> -->

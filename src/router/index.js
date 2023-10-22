@@ -17,7 +17,7 @@ import UserPlans from '../components/UserAccount/UserPlans.vue'
 import TrainerClientPlan from '../components/TrainerClientPlan.vue'
 import TrainerDietPlan from '../components/TrainerDietPlanMaker.vue'
 import EditProfile from '../components/UserAccount/EditProfile.vue'
-import TrainerAccount from '../components/TrainerAccount.vue'
+import TrainerAccountView from '../views/TrainerAccountView.vue'
 
 
 
@@ -115,7 +115,7 @@ const router = createRouter({
     {
       path: '/TrainerAccount',
       name: 'TrainerAccount',
-      component: TrainerAccount
+      component: TrainerAccountView
     },
   ],
   scrollBehavior(to, from, savedPosition) {

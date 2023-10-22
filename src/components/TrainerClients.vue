@@ -76,6 +76,7 @@
 
 <script>
 export default {
+  name:"TrainerClients",
   data() {
     return {
       clients: [
