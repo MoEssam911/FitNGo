@@ -8,12 +8,7 @@ import SingleWorkoutDetails from "../components/WorkoutsView/SingleWorkoutDetail
 import axios from "axios";
 import { useRoute } from "vue-router";
 import { ref } from "vue";
-import { onMounted } from "vue";
-import { initFlowbite } from "flowbite";
 
-onMounted(() => {
-  initFlowbite();
-});
 
 const Route = useRoute();
 let exercise = ref({});
@@ -32,9 +27,7 @@ async function fetchAPI() {
   try {
     const response = await axios.request(options);
     exercise.value = response.data;
-    console.log(exercise);
-    console.log(id);
-    console.log(Route)
+
   } catch (error) {
     console.error(error);
   }
