@@ -18,7 +18,7 @@
       <a href=""><i class="fa-solid fa-bell text-yellow-400 text-right"></i></a>
     </div>
     <div>
-        <div class="icon-login bg-slate-300 mx-auto mb-1 hover:cursor-pointer"><i class="fa-solid fa-user"></i></div>
+        <router-link to="/UserProfile"><div class="icon-login bg-slate-300 mx-auto mb-1 hover:cursor-pointer"><i class="fa-solid fa-user"></i></div></router-link>
         <h6 class="select-none text-sm hover:cursor-pointer hover:text-red-600" @click="apperLogin">Login</h6>
     </div>
     <i class="fa-solid fa-list responsive-icon hover:cursor-pointer text-right mx-4" @click="displayList"></i>
