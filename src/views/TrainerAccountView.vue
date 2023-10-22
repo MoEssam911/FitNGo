@@ -87,6 +87,11 @@ export default {
          
         console.log(this.toggleComp);
       },
+      ChangeToggleClient: () => {
+        this.toggleComp = "trainerclispc";
+         
+        console.log(this.toggleComp);
+      },
       toggleComp: this.toggleComp,
     };
   },
@@ -94,7 +99,7 @@ export default {
     return {
       toggleUserSide: false,
       toggleIcons: true,
-      toggleComp: "",
+      toggleComp: "info",
       test: "",
     };
   },
