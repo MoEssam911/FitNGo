@@ -1,11 +1,13 @@
 <template>
   <div
-    class="flex flex-col bg-secondary m-4 rounded-xl w-8/12 md:w-9/12 lg:w-9/12"
+    class="flex flex-col  bg-secondary m-4 rounded-xl w-8/12 md:w-9/12 lg:w-9/12"
   >
-    <div class="text-black">
-      <h1 class="text-l font-bold p-6 float-left">My Client/Id</h1>
-      <h1 class="text-l font-bold p-6 float-right">Client Workouts Plans</h1>
-      <h1 class="text-l font-bold p-6 float-right">Client Diet Plans</h1>
+    <div class="text-black flex justify-between">
+      <h1 class="text-l font-bold p-2 float-left">Selim Mohamed</h1>
+      <div class="flex flex-col p-2">
+      <div class="text-sm font-bold hover:text-primary transition-all duration-200 cursor-pointer" @click="ClientWPlan">Client Workouts Plans</div>
+      <div class="text-sm font-bold hover:text-primary transition-all duration-200 cursor-pointer" @click="ClientDPlan">Client Diet Plans</div>
+    </div>
     </div>
 
     <div class="w-full flex flex-col justify-center items-center">
@@ -23,6 +25,8 @@
 <script>
 export default {
   name: "TrainerClientSpecfic",
+  inject:['ClientWPlan',"ClientDPlan"],
+
 };
 </script>
 

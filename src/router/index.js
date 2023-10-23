@@ -120,10 +120,11 @@ const router = createRouter({
       name: 'TrainerAccount',
       component: TrainerAccountView
     },
+    {
       path: '/UserProfile',
       name: 'UserProfile',
       component: UserProfile
-
+  
     },
   ],
   scrollBehavior(to, from, savedPosition) {
