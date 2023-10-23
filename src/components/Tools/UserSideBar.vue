@@ -21,11 +21,11 @@
 
       <div class="mt-5 flex flex-col">
         <div
-          class="heading flex items-center gap-4 hover:bg-primary hover:text-white py-3 cursor-pointer" :class="{backPrimary : test=='trainer'}" @click="test='trainer'">
+          class="heading flex items-center gap-4 hover:bg-primary hover:text-white py-3 cursor-pointer" :class="{backPrimary : toggleComponent2=='trainer'}" @click="changeAll('trainer')">
           <div class="pl-[15%]">
             <svg
             class="blackSvg"
-            :class="{fillsvg : test=='trainer'}"
+            :class="{fillsvg : toggleComponent2=='trainer'}"
               width="25"
               height="25"
               viewBox="0 0 48 52"
@@ -40,12 +40,12 @@
             Get Trainer
           </h2>
         </div>
-        <div :class="{backPrimary : test=='myplan'}" @click="test='myplan'"
+        <div :class="{backPrimary : toggleComponent2=='myplan'}" @click="changeAll('myplan')"
           class="heading flex items-center gap-4 hover:bg-primary hover:text-white py-3 cursor-pointer">
           <div class="pl-[15%]" >
             <svg
             class="blackSvg"
-            :class="{fillsvg : test=='myplan'}"
+            :class="{fillsvg : toggleComponent2=='myplan'}"
               width="25"
               height="25"
               fill="#fff"
@@ -59,12 +59,12 @@
             My Plan
           </h2>
         </div>
-        <div :class="{backPrimary : test=='myshop'}" @click="test='myshop'"
+        <div :class="{backPrimary : toggleComponent2=='mydata'}" @click="changeAll('mydata')"
           class="heading flex items-center gap-4 hover:bg-primary hover:text-white py-3 cursor-pointer">
           <div class="pl-[15%]">
             <svg
             class="blackSvg"
-            :class="{fillsvg : test=='myshop'}"
+            :class="{fillsvg : toggleComponent2=='mydata'}"
               width="25"
               height="25"
               viewBox="0 0 43 43"
@@ -75,15 +75,15 @@
             </svg>
           </div>
           <h2 class="font-Manrope font-semibold text-sm lg:text-base">
-            My Shop
+            My Data
           </h2>
         </div>
-        <div :class="{backPrimary : test=='tools'}" @click="test='tools'"
+        <div :class="{backPrimary : toggleComponent2=='tools'}" @click="changeAll('tools')"
           class="heading flex items-center gap-4 hover:bg-primary hover:text-white py-3 cursor-pointer">
           <div class="pl-[15%]">
             <svg
             class="blackSvg"
-            :class="{fillsvg : test=='tools'}"
+            :class="{fillsvg : toggleComponent2=='tools'}"
               width="25"
               height="25"
               viewBox="0 0 54 55"
@@ -100,25 +100,24 @@
   </div>
 </template>
 <script>
+import 'vue'
 export default {
   name:'UserSideBar',
   data() {
     return {
       toggle: "main-side-right",
       flag: false,
-      test:''
+      toggleComponent2:'trainer',
     };
   },
-  methods: {
-    drag() {
-      if (this.flag) {
-        this.toggle = "main-side-right";
-      } else {
-        this.toggle = "main-side-left";
-      }
-      this.flag = !this.flag;
-    },
-  },
+  inject:["changeToggle","toggleComponent"],
+  methods:{
+    changeAll(cname){
+      this.changeToggle(cname);
+      this.toggleComponent2=cname;
+    }
+  }
+  
 };
 </script>
 

@@ -114,6 +114,7 @@
 
 <script>
 export default {
+  name:'MyData',
   data() {
     return {
       isSaved: false,
