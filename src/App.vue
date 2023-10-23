@@ -10,7 +10,7 @@
   <main class="w-full h-screen relative">
 
     <Navbar class="fixed top-0 z-50 w-full"></Navbar>
-    <RouterView class="mt-24"/>
+    <RouterView  class="mt-24"/>
     <!-- <UserSideBar></UserSideBar> -->
 
     <!-- <TrainerAccount></TrainerAccount> -->

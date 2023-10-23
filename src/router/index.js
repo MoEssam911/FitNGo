@@ -19,6 +19,8 @@ import TrainerDietPlan from '../components/TrainerDietPlanMaker.vue'
 import EditProfile from '../components/UserAccount/EditProfile.vue'
 import TrainerAccountView from '../views/TrainerAccountView.vue'
 
+import UserProfile from '../views/UserProfile.vue'
+
 
 
 const router = createRouter({
@@ -113,9 +115,15 @@ const router = createRouter({
       component: EditProfile
     },
     {
+
       path: '/TrainerAccount',
       name: 'TrainerAccount',
       component: TrainerAccountView
+    },
+      path: '/UserProfile',
+      name: 'UserProfile',
+      component: UserProfile
+
     },
   ],
   scrollBehavior(to, from, savedPosition) {
