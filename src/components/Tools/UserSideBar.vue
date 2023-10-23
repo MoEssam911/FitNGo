@@ -1,18 +1,20 @@
 <template>
+  <!-- <div class="overlay relative">
+    <div class="w-screen h-screen bg-slate-600 bg-opacity-50 fixed top-0 left-0 -z-10">
+
+    </div>
+  </div> -->
   <div class="relative">
     <div
-      class="my-shadow h-auto bg-secondary rounded-3xl py-9 flex flex-col relative"
+      class="my-shadow h-auto bg-secondary rounded-3xl py-9 flex flex-col "
       :class="toggle">
-      <!-- <div class="drag-btn px-4 text-white" @click="drag">
-      <i class="fa-solid fa-bars text-primary cursor-pointer"></i>
-    </div> -->
       <div class="mx-auto">
         <img
           class="w-32 h-32 rounded-full object-cover"
           src="../../assets/Images/selim.jpeg " />
       </div>
       <p class="font-Manrope font-bold text-primary text-lg text-center py-3">
-        Ali Maher
+        Selim Mohamed
       </p>
 
       <hr />
