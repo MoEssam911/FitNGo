@@ -1,6 +1,6 @@
 <template>
   <div class="relative">
-    <main class="container ">
+    <main class="container">
       <div class="flex gap-2 mt-28 pb-6 items-center cursor-pointer">
         <div class="md:hidden">
           <MenuIcon @click="toggleUserSideHandler"></MenuIcon>
@@ -10,7 +10,7 @@
           <svg
             width="20"
             height="20"
-            viewBox="0 0 30 30" 
+            viewBox="0 0 30 30"
             fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path
@@ -26,7 +26,7 @@
           :class="toggleUserSide ? 'show-user-sidebar' : 'hide-user-sidebar'">
           <UserSideBar class="w-full"></UserSideBar>
         </aside>
-  
+
         <section class="grid grid-cols-12 gap-3 w-full">
           <!-- Tools Icons -->
           <BmrIcon
@@ -45,7 +45,7 @@
             @click="deitHandler"
             class="col-span-3 hidden lg:block"
             :toggleDeitClass="toggleDeitClass"></DeitIcon>
-  
+
           <!-- Tools Components -->
           <BmrTool v-if="toggleTool === 'bmr'" class="col-span-12"></BmrTool>
           <MacroTool
@@ -59,7 +59,7 @@
             class="col-span-12"></DietPlanTool>
         </section>
       </div>
-  
+
       <!-- Small and medium screens icons -->
       <div
         class="arrow-icon fixed right-[5%] top-1/2 lg:hidden border hover:text-white hover:bg-primary rounded-full p-3 bg-secondary cursor-pointer transition duration-300 w-12 h-12 scale-110 text-center"
