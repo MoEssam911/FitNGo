@@ -2,18 +2,22 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import TrainersView from "../views/TrainersView.vue";
 import OneTrainerView from "../views/OneTrainerView.vue";
-import WorkoutsView from "../views/WorkoutsView.vue";
-import WorkoutView from "../views/WorkoutView.vue";
 import ToolsPageView from "../views/ToolsPageView.vue";
 import About from "../views/AboutView.vue";
 import shop from "../components/shop.vue";
-import ShopView from "../views/ShopView.vue";
 import BodyFatTool from "../components/Tools/BodyFatTool.vue";
 import DietPlanTool from "../components/Tools/DietPlanTool.vue";
 import BmrTool from '../components/Tools/BmrTool.vue'
 import MyPlan from "../components/MyPlan.vue";
 import TrainerPlanMaker from "../components/TrainerPlanMaker.vue";
 import UserPlans from '../components/UserAccount/UserPlans.vue'
+import TrainerClientPlan from '../components/TrainerClientPlan.vue'
+import TrainerDietPlan from '../components/TrainerDietPlanMaker.vue'
+import EditProfile from '../components/UserAccount/EditProfile.vue'
+import TrainerAccountView from '../views/TrainerAccountView.vue'
+import UserProfile from '../views/UserProfile.vue'
+import WorkoutsView from '../views/WorkoutsView.vue'
+import SingleWorkout from '../views/SingleWorkout.vue'
 
 
 
@@ -42,9 +46,9 @@ const router = createRouter({
     },
 
     {
-      path: "/workouts/:id",
-      name: "workoutView",
-      component: WorkoutView,
+      path: '/workouts/:id',
+      name: 'SingleWorkout',
+      component: SingleWorkout,
     },
 
     {
@@ -92,6 +96,32 @@ const router = createRouter({
       path: '/UserPlans',
       name: 'UserPlans',
       component: UserPlans
+    },
+    {
+      path: '/TrainerClientPlan',
+      name: 'TrainerClientPlan',
+      component: TrainerClientPlan
+    },
+    {
+      path: '/TrainerDietPlan',
+      name: 'TrainerDietPlan',
+      component: TrainerDietPlan
+    },
+    {
+      path: '/EditProfile',
+      name: 'EditProfile',
+      component: EditProfile
+    },
+    {
+
+      path: '/TrainerAccount',
+      name: 'TrainerAccount',
+      component: TrainerAccountView
+    },
+    {
+      path: '/UserProfile',
+      name: 'UserProfile',
+      component: UserProfile
     },
   ],
   scrollBehavior(to, from, savedPosition) {

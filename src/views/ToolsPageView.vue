@@ -1,5 +1,6 @@
 <template>
   <div class="relative">
+
     <main class="container">
       <div class="flex gap-2 mt-28 pb-6 items-center cursor-pointer">
         <div class="md:hidden">

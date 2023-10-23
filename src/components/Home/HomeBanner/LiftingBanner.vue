@@ -2,7 +2,9 @@
 
     <div class="relative font-Manrope">
 
-      <img class="w-full min-h-screen object-cover" src="../../../assets/Images/HomeBanner/lifting-banner.jpg" style="height: calc(100vh - 80px);">
+      <div class="mt-[80px]" style="height: calc(100vh - 80px);">
+        <img class="w-full h-full object-fit" src="../../../assets/Images/HomeBanner/lifting-banner.jpg" >
+     </div>
       
       <div style="transition-delay:1s; opacity:0;" class="absolute inset-0 flex  justify-center animate-fade-in flex-col mt-52 ml-20">
       <h1 class="text-3xl font-bold uppercase text-white">
