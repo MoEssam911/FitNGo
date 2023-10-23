@@ -3,7 +3,7 @@
   <div class="relative font-Manrope">
 
     <div class="mt-[80px]" style="height: calc(100vh - 80px);">
-    <img class="w-full h-full object-center object-coverz" src="../../../assets/Images/HomeBanner/tools-banner.jpg" >
+    <img class="w-full h-full object-center object-cover" src="../../../assets/Images/HomeBanner/tools-banner.jpg" >
     </div>
 
     <div style="transition-delay:1s; opacity:0;" class="absolute inset-0 flex  justify-center animate-fade-in flex-col mt-52  bg-black bg-opacity-25 h-2/4">
