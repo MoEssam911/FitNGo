@@ -1,16 +1,11 @@
 <template>
   <div class="bg-black" >
-    <transition-group name="fade" appear>
-
-        <LiftingBanner  v-show="showFirst" key="first" />
-
-        <ShopBanner v-show="showSecond" key="second" />
-
-        <ToolsBanner v-show="!showFirst && !showSecond" key="third" />
-
-    </transition-group>
+    <keep-alive>
+      <transition name="fade" mode="out-in">
+        <component :is="currentSlide" />
+      </transition>
+    </keep-alive>
   </div>
-
 </template>
 
 <script>
@@ -27,43 +22,43 @@ export default {
 
   data() {
     return {
-      showFirst: true,
-      showSecond: false,
+      slides: [
+        'LiftingBanner',
+        'ShopBanner',
+        'ToolsBanner'
+      ],
+      currentIndex: 0
+    }
+  },
+
+  computed: {
+    currentSlide() {
+      return this.slides[this.currentIndex]
     }
   },
 
   mounted() {
     setInterval(() => {
-      if (this.showFirst) {
-        this.showFirst = false;
-          this.showSecond = true;
-        
-      }
-      else if (this.showSecond) {
-         this.showSecond = false; 
-          this.showFirst = false;
-
-      }
-      else {
-        this.showFirst = true;
-      }
-    }, 3000);
+      this.currentIndex = (this.currentIndex + 1) % this.slides.length
+    }, 4000);
   }
 }
 </script>
 
 <style scoped>
 
-.fade-enter-from {
-   opacity: 0.5;
-}
-
-.fade-enter-to {
-   opacity: 1;
-} 
 .fade-enter-active {
-   transition: all 1s ease-in-out; 
+   transition: opacity 1s ease-in-out; 
 }
 
+.fade-enter-from, .fade-leave-to {
+   opacity: 0.8;
+}
 
+.fade-enter-to, .fade-leave-from {
+   opacity: 1;
+}
+.fade-leave-active {
+  transition: opacity 1s ease-in-out;
+}
 </style>
