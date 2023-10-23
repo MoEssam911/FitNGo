@@ -37,14 +37,20 @@
               
             </tbody>
           </table>
+          
     </div>
   </div>
 </template>
 
 <script>
+
+
 export default {
   name:"TrainerClients",
   inject:['ChangeToggleClient'],
+  components: {
+    
+  },
   data() {
     return {
       

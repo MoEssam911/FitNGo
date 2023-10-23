@@ -1,9 +1,9 @@
 <template>
-    <section class="mt-40">
+    <section>
       <div class=" h-max ">
     
   
-        <div class="flex gap-5 my-10">
+        <div class="flex gap-5">
           
   
           <div class="w-full">
@@ -11,7 +11,8 @@
   
             <!-- macro calculator component -->
             <div
-              class="flex flex-col flex-wrap h-auto  w-full bg-zinc-300 bg-opacity-50 rounded-3xl">
+              class="flex flex-col flex-wrap h-auto p-4 w-full bg-zinc-300 bg-opacity-50 rounded-3xl">
+              <div><i class="fa-solid fa-arrow-left hover:text-primary transition duration-200 cursor-pointer text-lg" @click="ClientDPlan"></i></div>
               <table
                       class="w-full text-center text-dark bg-white shadow-lg rounded-2xl mb-9" >
                       <caption class="text-dark text-2xl">
@@ -107,6 +108,7 @@
 import axios from 'axios'
 export default {
   name:"TrainerDietPlan",
+  inject:['ClientDPlan'],
   data () {
     return {
       dietTable:{

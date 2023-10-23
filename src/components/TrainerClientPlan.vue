@@ -11,6 +11,7 @@
           <div
             class="flex flex-col flex-wrap h-auto w-full bg-zinc-300 bg-opacity-50 rounded-3xl"
           >
+          
             <table
               class="w-full text-center text-dark bg-white shadow-lg rounded-2xl mb-9"
               v-for="(plan, indx) in ClientPlan"
