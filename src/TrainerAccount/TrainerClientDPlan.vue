@@ -1,8 +1,9 @@
 <template>
   <div class="relative w-full">
     <div class="flex gap-5">
-      <div class="bg-secondary w-full p-6 rounded-2xl">
-        <div @click="ClientDPlanMaker" class="cursor-pointer"><i class="fa-solid fa-plus text-green-500"></i> Diet Plan</div>
+      <div class="bg-secondary w-full p-4 rounded-2xl">
+        <div class="flex justify-between"><div><i class="fa-solid fa-arrow-left hover:text-primary transition duration-200 cursor-pointer text-lg" @click="ChangeToggleClient"></i></div>
+        <div @click="ClientDPlanMaker" class="cursor-pointer"><i class="fa-solid fa-plus text-green-500"></i> Diet Plan</div></div>
         <div class="flex justify-between">
           <i
             class="fa-solid fa-caret-left text-4xl hover:cursor-pointer hover:text-primary inline-block"
@@ -88,7 +89,7 @@
 import axios from "axios";
 export default {
   name: "TrainerClientWPlans",
-inject:["ClientDPlanMaker"],
+inject:["ClientDPlanMaker",'ChangeToggleClient'],
   components: {
     // UserSideBar,
     // MenuIcon,
