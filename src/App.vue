@@ -15,8 +15,9 @@
 
     <!-- <TrainerAccount></TrainerAccount> -->
     <!-- <AboutView></AboutView> -->
-    <Card></Card>
+    <!-- <Card></Card>
     <shop></shop>
+    <TrainerSideBar></TrainerSideBar> -->
     <!-- <CheckOut></CheckOut> -->
 
   <!-- <TrainerStatsData></TrainerStatsData> -->
@@ -42,6 +43,11 @@ import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
 
 </script> -->
+
+<script setup>
+import TrainerSideBar from "./components/Tools/TrainerSideBar.vue";
+
+</script>
 
 <script>
 import { RouterView } from "vue-router";
@@ -70,6 +76,7 @@ export default {
     CheckOut,
     TrainerAccount,
     ToolsPage,
+  
     // TrainerStatsData,
   },
   data() {
