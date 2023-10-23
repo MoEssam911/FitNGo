@@ -47,12 +47,7 @@
 import axios from "axios";
 import { useRoute } from "vue-router";
 import { ref } from "vue";
-import { onMounted } from "vue";
-import { initFlowbite } from "flowbite";
 
-onMounted(() => {
-  initFlowbite();
-});
 
 const Route = useRoute();
 let exercise = ref({});
