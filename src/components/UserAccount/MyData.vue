@@ -1,5 +1,5 @@
 <template>
-    <div class="h-auto bg-secondary rounded-3xl p-9 mb-9">
+  <div class="h-auto bg-secondary rounded-3xl p-9 mb-9">
     <h2 class="text-2xl font-bold pb-7">My Data</h2>
     <div v-if="isSaved">
       <div class="grid md:grid-cols-2 md:gap-6">
@@ -20,7 +20,6 @@
       </div>
     </div>
     <div v-else>
-
       <form @submit.prevent="saveInfo">
         <div class="grid md:grid-cols-2 md:gap-6">
           <div class="relative z-0 w-full mb-6 group">
@@ -110,7 +109,6 @@
         </div>
       </form>
     </div>
-
   </div>
 </template>
 
