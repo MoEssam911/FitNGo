@@ -1,6 +1,10 @@
 
 <template>
+<<<<<<< HEAD
   <div class="flex flex-col bg-secondary 
+=======
+  <div class="flex flex-col bg-secondary
+>>>>>>> b326da241ae7f01393d8ecf8b4b269a620d53f31
      m-4 rounded-xl  w-8/12 md:w-9/12 lg:w-9/12 ">
      <div class="text-black">
       <h1 class="text-xl font-bold p-4">My Stats & Data</h1>

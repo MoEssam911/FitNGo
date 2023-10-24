@@ -6,6 +6,7 @@
   <div
     class="fixed z-10 bg-[#000000ee] w-full h-screen top-0"
     @click="closeLogin"
+<<<<<<< HEAD
     v-if="isLoggedIn"
   ></div>
   <main class="w-full relative">
@@ -35,6 +36,51 @@
 //   rel: 'icon',
 // }) 
 //
+=======
+    v-if="isLoggedIn"></div>
+    <Navbar />
+  <main class="w-full h-screen relative">
+
+    <Navbar class="fixed top-0 z-50 w-full"></Navbar>
+
+    <RouterView  class="mt-20"/>
+    <!-- <UserSideBar></UserSideBar> -->
+
+    <!-- <TrainerAccount></TrainerAccount> -->
+    <!-- <AboutView></AboutView> -->
+    <!-- <Card></Card>
+    <shop></shop>
+    <TrainerSideBar></TrainerSideBar> -->
+    <!-- <CheckOut></CheckOut> -->
+
+  <!-- <TrainerStatsData></TrainerStatsData> -->
+  <!-- <LiftingBanner /> -->
+  <!-- <MacroCalc /> -->
+  <!-- <Tools /> -->
+  <!-- <HomeBanner /> -->
+    <Footer></Footer> 
+    <!-- <ShopView></ShopView> --> 
+
+  </main>
+</template>
+
+<!-- <script setup>
+
+import LiftingBanner from './components/HomeBanner/LiftingBanner.vue';
+import shopBanner from './components/HomeBanner/shopBanner.vue';
+import ToolsBanner from './components/HomeBanner/ToolsBanner.vue';
+import Tools from './components/ToolsPage.vue'
+import HomeBanner from './components/HomeBanner.vue'
+import { RouterView } from "vue-router";
+import Navbar from "./components/Navbar.vue";
+import Footer from "./components/Footer.vue";
+
+</script> -->
+
+<script setup>
+import TrainerSideBar from "./components/Tools/TrainerSideBar.vue";
+
+>>>>>>> b326da241ae7f01393d8ecf8b4b269a620d53f31
 </script>
 
 <script>
@@ -44,32 +90,37 @@ import Footer from "./components/utilities/Footer.vue";
 import Cart from "./components/Cart.vue";
 import ToolsPage from "./components/ToolsPage.vue";
 import Card from "./components/Card.vue";
+<<<<<<< HEAD
 import MacroCalculator from "./components/Tools/MacroCalculator.vue";
 import UserSideBar from "./components/Tools/UserSideBar.vue";
+=======
+import LoginNSignup from "./components/LoginAndSignup/LoginNSignup.vue";
+>>>>>>> b326da241ae7f01393d8ecf8b4b269a620d53f31
 import ShopView from "./views/ShopView.vue";
 import AboutView from "./views/AboutView.vue";
 import CheckOut from "./views/CheckOut.vue";
 import TrainerAccount from "./views/TrainerAccount.vue";
+<<<<<<< HEAD
 import Shop from "./components/shop.vue";
 import LoginNSignup from "./components/LoginAndSignup/LoginNSignup.vue";
+=======
+>>>>>>> b326da241ae7f01393d8ecf8b4b269a620d53f31
 
 // import TrainerStatsData from "/components/TrainerStats&Data.vue";
+
 export default {
   components: {
     Navbar,
     Footer,
     Cart,
     LoginNSignup,
-    Cart,
-    Card,
+    // Card,
     ShopView,
     AboutView,
     CheckOut,
     TrainerAccount,
-    Shop,
-    MacroCalculator,
     ToolsPage,
-    UserSideBar,
+  
     // TrainerStatsData,
   },
   data() {

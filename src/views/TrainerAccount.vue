@@ -39,7 +39,10 @@
       <!-- <TrainerStatsData></TrainerStatsData> -->
       <!-- <TrainerClients></TrainerClients> -->
       <TrainerClientId></TrainerClientId>
+<<<<<<< HEAD
 
+=======
+>>>>>>> b326da241ae7f01393d8ecf8b4b269a620d53f31
     </div>
   </div>
 </template>
