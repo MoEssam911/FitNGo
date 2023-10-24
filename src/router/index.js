@@ -124,7 +124,6 @@ const router = createRouter({
       path: '/UserProfile',
       name: 'UserProfile',
       component: UserProfile
-  
     },
   ],
   scrollBehavior(to, from, savedPosition) {
