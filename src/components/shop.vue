@@ -65,9 +65,9 @@
         <div
           v-for="(item, index) in items"
           :key="index"
-          class="col-span-3 mb-5"
+          class="col-span-3 mb-2"
         >
-          <div class="product flex flex-col justify-center items-center">
+        <router-link :to="`/shop/${item.id}`"> <div class="product flex flex-col justify-center items-center">
             <div class="">
               <div class="cards grid gap-4">
                 <div class="card col-span-3 mb-5">
@@ -83,15 +83,17 @@
                     <img
                       :src="item.images[0]"
                       width="150"
-                      class="mt-20 transition-all duration-500"
+                      class="mt-20 w-[150px] h-[175px] transition-all duration-500"
                       alt="product"
                     />
+                    <div class="h-[70px]">
                     <p class="text-center text-xl font-bold text-dark">
                       {{ item.title.substr(0, 20) }}
-                    </p>
+                    </p></div>
+                    <div class="h-30px pb-[5%]">
                     <p class="price text-primary text-center text-xl font-bold">
                       {{ item.price }}
-                    </p>
+                    </p></div>
                   </div>
                   <button
                     class="bg-primary transition rounded px-2 py-1 text-white"
@@ -101,20 +103,19 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div></router-link>
         </div>
 
         <!-- <div  v-for="(item, index) in itemsDb" :key="index" class=" card col-span-3">
       {{ item.desc}}
       <div class=" "></div>
     </div> -->
-      </div>
-      <button
-        @click="loadMore"
-        class="btn-more-to-explore w-40 h-12 self-center m-5"
-      >
-        More To Explore
-      </button>
+      </div> 
+          <button
+      @click="loadMore"
+      class="btn-more-to-explore w-40 h-12 self-center m-5">
+      More To Explore
+    </button>
     </div>
   </div>
 </template>

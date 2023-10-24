@@ -10,15 +10,15 @@
 
     <Navbar class="fixed top-0 z-50 w-full"></Navbar>
     <RouterView />
-    <UserSideBar></UserSideBar>
+    <!-- <UserSideBar></UserSideBar> -->
     <!-- <TrainerAccount></TrainerAccount> -->
     <!-- <AboutView></AboutView> -->
     <!-- <Card></Card> -->
-<edit></edit>
-    <!-- <shop></shop> -->
+<!-- <edit></edit> -->
+
     <!-- <CheckOut></CheckOut> -->
     <!-- <TrainerStatsData></TrainerStatsData> -->
-    <!-- <Footer></Footer> -->
+    <Footer></Footer>
     <!-- <ShopView></ShopView> -->
 
   </main>

@@ -31,7 +31,7 @@
             <input
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block p-2.5"
               type="text"
-              id="Fname"
+              id="lName"
               placeholder="Rayan"
             />
           </div>
@@ -69,33 +69,56 @@
         </div>
 
         <!-- location -->
-        <!-- <div>
-
+        <!-- my one -->
+        <div class="flex flex-row justify-around">
+<div class="flex flex-col w-1/2 m-2 space-y-2">
           <label for="county">Country</label>
-          <input list="bands" id="choice" name="choice" />
-
           <select
-            name="city-input"
-            id="city" 
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block p-2.5"        
-              >
+            name="country-input"
+            id="county"
+            @change="changeSelected(event)"
+            v-model="cValue"
+            class="bg-gray-50 border outline-primary border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block p-2.5"
+            >
+              <option value="">- Choose Country -</option><div>cValue</div>
               <option 
-              v-for="(country , index) in world"
+              v-for="(country , index) in countries "
               :key="index"
               >{{ country.country }}</option>
-          </select>
+          </select></div>
+          <div class="flex flex-col w-1/2 m-2 space-y-2  ">
           <label for="city">City</label>
           <select
+          
             name="city-input"
             id="city" 
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block p-2.5"        
-              >
-              <option
-              v-for="(country , index) in world"
-              :key="index"
-              >{{ country.city }}</option>
+            v-model.lazy="city"
+            class="bg-gray-50 border outline-primary border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block p-2.5"
+            >
+              <option value="">- Choose City -</option>
 
-          </select> -->
+              <option
+              v-for="(value , index) of cities"
+              :key="index"
+              >{{ index}}</option>
+
+          </select>
+        </div>
+          </div>
+          <!-- bard one -->
+          
+            <!-- <div>
+              <select v-model="selectedCountry">
+                <option v-for="(country,index) in countries" :value="country" :key="index"
+                >{{ country }}</option>
+              </select>
+          
+              <select v-model="selectedCity">
+                <option v-for="(city,index) in filteredCities" :key="index" :value="city 
+                ">{{ city }}</option>
+              </select>
+            </div> -->
+          
         <!-- PAssword -->
         <div class="flex flex-col space-y-2 m-2">
           <label for="pass">Password</label>
@@ -112,34 +135,85 @@
 </template>
 
 <script>
+import axios from "axios";
+import { ref, computed, onMounted, watch } from "vue";
 export default {
   data() {
     return {
       countries: [],
       searchQuery: "",
       userImg: "../../../src/assets/Images/selim.jpeg ",
+      cValue:"",
+      city:"",
     };
   },
-  //   created() {
-  //     axios
-  //       .get("http://localhost:3000/countries")
-  //       .then((res) => {
-  //         this.countries = res.data;
-  //       })
-  //       .catch((err) => console.log(err));
-  //   },
-  //   computed: {
-  //     world() {
-  //       return
-  //         this.countries
-
-  //     },
-  //   },
+    created() {
+      axios
+        .get("http://localhost:3000/countries")
+        .then((res) => {
+          this.countries = res.data;
+        })
+        .catch((err) => console.log(err));
+    },
+    computed: {
+      cities() {
+          return this.countries.filter(city => city.country === this.cValue).map(city => city.city);
+      },
+    },
+    methods: {
+    changeSelected(event) {
+this.cValue = event.target.value;
+return this.cValue
+    },
+  },
 };
 </script>
+<!-- <script>
+export default {
+  data() {
+    return {
+      countries: [],
+      cities: [],
+      selectedCountry: '',
+      selectedCity: ''
+    }
+  },
+
+  mounted() {
+    // Read the JSON file into the data
+    fetch('CountryData.json')
+      .then(response => response.json())
+      .then(data => {
+        this.countries = data
+        this.cities = data.reduce((acc, country) => {
+          acc = [...acc, ...country.city]
+          return acc
+        }, [])
+      })
+  },
+
+  computed: {
+    filteredCities() {
+      // Filter the city select element options based on the selected country
+      return this.cities.filter(city => city.country === this.selectedCountry)
+    }
+  },
+
+  watch: {
+    selectedCountry(newCountry) {
+      // Update the city select element options when the selected country changes
+      this.selectedCity = ''
+    }
+  }
+}
+</script> -->
 
 <style scoped>
 input {
-  border: gray solid 1px;
+  border: 1px solid gray ;
+}
+input:focus{
+border:1px solid #E60000  ;
+outline-color: #E60000;
 }
 </style>

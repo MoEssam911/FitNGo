@@ -7,10 +7,11 @@ import OneTrainerView from '../views/OneTrainerView.vue'
 import WorkoutsView from '../views/WorkoutsView.vue'
 import WorkoutView from '../views/WorkoutView.vue'
 import About from '../views/AboutView.vue'
-import ShopViwe from '../views/ShopView.vue'
+import shop from '../components/shop.vue'
 import BodyFatTool from '../components/BodyFatTool.vue'
 import DietPlan from '../components/DietPlan.vue'
 import BmrTool from '../components/ToolsPage.vue'
+import item from '../components/item.vue'
 
 
 
@@ -31,6 +32,11 @@ const router = createRouter({
       path: '/trainers/:id',
       name: 'OneTrainerView',
       component: OneTrainerView
+    },
+    {
+      path: '/shop/:id',
+      name: 'item',
+      component: item
     },
     {
 
@@ -54,7 +60,7 @@ const router = createRouter({
     {
       path: '/shop',
       name: 'shop',
-      component: ShopViwe
+      component: shop
     },
     {
       path: '/bodyfattool',

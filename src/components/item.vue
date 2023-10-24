@@ -1,109 +1,44 @@
 <template>
-  <!-- <div>
-    <div class="w-[1504px] h-[757px] relative bg-white rounded-lg">
-      <div class="w-[618px] h-[609px] left-[134px] top-[145px] absolute">
-          <img class="w-[618px] h-[480px] left-0 top-0 absolute" src="https://via.placeholder.com/618x480" />
-          <div class="w-[618px] h-[97px] left-0 top-[512px] absolute"></div>
-          <img class="w-[190px] h-[97px] left-[-132px] top-[140px] absolute rounded-lg border border-zinc-300" src="https://via.placeholder.com/190x97" />
-      </div>
-      <img class="w-[190px] h-[97px] left-0 top-[507px] absolute rounded-lg border-2 border-zinc-300" src="https://via.placeholder.com/190x97" />
-      <img class="w-[190px] h-[97px] left-0 top-[174px] absolute rounded-lg border-2 border-zinc-300" src="https://via.placeholder.com/190x97" />
-      <img class="w-[190px] h-[97px] left-0 top-[396px] absolute rounded-lg border border-zinc-300" src="https://via.placeholder.com/190x97" />
-      <div class="w-[601px] h-[0px] left-[752px] top-[78px] absolute origin-top-left rotate-90 border border-zinc-300"></div>
-      <div class="h-[407px] left-[796px] top-[175px] absolute flex-col justify-start items-start gap-8 inline-flex">
-          <div class="self-stretch h-[197px] flex-col justify-start items-start gap-8 flex">
-              <div class="self-stretch justify-start items-center inline-flex">
-                  <div class="grow shrink basis-0 flex-col justify-start items-start gap-2 inline-flex">
-                      <div class="self-stretch text-zinc-900 text-xl font-semibold font-['Inter'] leading-7">NutraBio Whey Protein Isolate- 5 lb- Vanilla Caramel</div>
-                      <div class="self-stretch"><span style="text-black text-2xl font-normal font-['Inter']">2,900 </span><span style="text-black text-2xl font-bold font-['Inter']">EGP</span></div>
-                  </div>
-              </div>
-              <div class="self-stretch h-[100px] flex-col justify-start items-start gap-5 flex">
-                  <div class="self-stretch justify-start items-center gap-4 inline-flex">
-                      <div class="text-neutral-800 text-base font-normal font-['Lato'] leading-[33.11px]">Shipping</div>
-                      <div class="flex-col justify-start items-start inline-flex">
-                          <div class="justify-end items-center gap-1 inline-flex">
-                              <div class="text-neutral-800 text-sm font-medium font-['Lato'] leading-tight">Free Shipping for above 500L.E</div>
-                              <div class="w-2.5 h-2.5 relative origin-top-left rotate-90"></div>
-                          </div>
-                          <div class="text-neutral-400 text-xs font-normal font-['Lato'] leading-tight">Delivery Time: 14–17 days</div>
-                      </div>
-                  </div>
-                  <div class="self-stretch justify-start items-center gap-4 inline-flex">
-                      <div class="text-neutral-800 text-base font-normal font-['Lato'] leading-[33.11px]">Quantity</div>
-                      <div class="justify-start items-center gap-5 flex">
-                          <div class="px-4 py-2.5 rounded border border-stone-300 flex-col justify-start items-start gap-2.5 inline-flex">
-                              <div class="justify-start items-start gap-2.5 inline-flex">
-                                  <div class="w-5 h-5 relative">
-                                      <div class="w-3.5 h-0.5 left-[3px] top-[9px] absolute bg-stone-300 rounded-[1px]"></div>
-                                  </div>
-                                  <div class="text-center text-neutral-800 text-sm font-normal font-['Lato'] leading-tight">1</div>
-                                  <div class="w-5 h-5 relative"></div>
-                              </div>
-                          </div>
-                          <div class="text-neutral-600 text-sm font-normal font-['Lato'] leading-tight">10 available / 50 sold</div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="self-stretch h-[178px] flex-col justify-start items-start gap-8 flex">
-              <div class="self-stretch h-[90px] px-6 py-3 bg-zinc-100 rounded flex-col justify-start items-start gap-2 flex">
-                  <div class="self-stretch"><span style="text-black text-2xl font-normal font-['Inter']">2,900 </span><span style="text-black text-2xl font-bold font-['Inter']">EGP</span></div>
-                  <div class="w-[660px] h-px justify-center items-center inline-flex">
-                      <div class="w-[660px] h-px bg-stone-300"></div>
-                  </div>
-                  <div class="self-stretch justify-start items-start gap-[5px] inline-flex">
-                      <div class="w-5 h-5 relative"></div>
-                      <div class="grow shrink basis-0"><span style="text-neutral-600 text-xs font-normal font-['Lato'] leading-tight">Add shipping insurance for 50L.E</span><span style="text-neutral-600 text-[10px] font-normal font-['Lato'] leading-tight">( declared value  only if the package gets lost, stolen or damaged.)</span></div>
-                  </div>
-              </div>
-              <div class="self-stretch justify-start items-start gap-5 inline-flex">
-                  <div class="grow shrink basis-0 h-14 px-8 py-4 bg-red-600 rounded-[10px] justify-center items-center gap-2 flex">
-                      <div class="w-[78px] h-5 justify-center items-center flex">
-                          <div class="text-center text-white text-base font-medium font-['Manrope'] uppercase leading-tight">Shop now</div>
-                      </div>
-                  </div>
-                  <div class="grow shrink basis-0 h-14 px-8 py-4 rounded-[10px] border border-neutral-700 justify-center items-center gap-2 flex">
-                      <div class="w-6 h-6 relative"></div>
-                      <div class="w-[109px] h-5 pl-5 justify-end items-center flex">
-                          <div class="text-right text-neutral-600 text-sm font-medium font-['Manrope'] uppercase leading-tight">Add to Cart</div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-  </div> -->
-  <div class="container mt-[2%] mb-[2%] font-manrope content-around">
+  <div class="container mt-[55%] mb-[2%] font-manrope content-around">
     <div class="w-full h-full grid">
       <div class="grid grid-cols-12 container">
-        <div class="col-span-2 flex-row">
-          <img
-            src="https://via.placeholder.com/190x97"
+        <!-- <div class="col-span-2 flex-row"
+        > -->
+        
+        <div class="col-span-2 flex-row "
+       >
+        <div
+        v-for="(img, index) in oneItem.images" :key="index" 
+        >
+        <img @click="imageSwap(index)" 
+            :src="oneItem.images[index]"
+            class="rounded-xl border-2 border-zinc-300 "
+          /></div>  
+          <!-- <img
+            :src="oneItem.images[1]"
             class="rounded-xl border-2 border-zinc-300"
           />
           <img
-            src="https://via.placeholder.com/190x97"
-            class="rounded-xl border-2 border-zinc-300"
+          :src="oneItem.images[2]"
+          class="rounded-xl border-2 border-zinc-300"
           />
           <img
-            src="https://via.placeholder.com/190x97"
-            class="rounded-xl border-2 border-zinc-300"
-          />
+          :src="oneItem.images[3]"
+          class="rounded-xl border-2 border-zinc-300"
+          /> -->
         </div>
-        <!-- /*  iamge collection maybe i need to merge it with image div */ -->
-        <div class="col-span-4 pr-[2%] border-r-2 border-notify-color">
-          <img class="rounded-xl" src="https://via.placeholder.com/618x480" />
+        <!-- /*  image collection may be i need to merge it with image div */ -->
+        <div class="col-span-4 mt-[18%] pr-[2%] border-r-2 border-notify-color">
+          <img class="rounded-xl h-[300px] w-[700px] object-cover" :src="oneItem.images[countImg]" />
         </div>
         <!-- /* end of  image div to display item */ -->
         <!-- /* start of item data flex container  */ -->
 
         <div class="col-span-6 container flex flex-col p-[4%]">
           <div class="text-zinc-900 text-xl font-semibold leading-7">
-            NutraBio Whey Protein Isolate- 5 lb- Vanilla Caramel
-          </div>
-          <div class="text-black text-2xl">
-            2500 <span class="text-black text-2xl font-bold">EGP</span>
+{{ oneItem.title }}          </div>
+          <div class="text-neutral-400 text-xs">
+            {{ oneItem.description }}
           </div>
           <!-- /*  shiping row data flex container  */ -->
           <div class="flex flex-row mt-[2%] text-neutral-800 font-medium">
@@ -119,7 +54,7 @@
           </div>
           <!-- quantity counter -->
           <div class="flex flex-row mt-[2%] text-neutral-800 font-medium">
-            <div class="mr-[5%]">Quantity</div>
+            <div class="mr-[5%]">{{oneItem.stock}} in stock</div>
             <!-- counter -->
             <div class="mt-[1%] border-black">
               <div class="max-w-fit p-0">
@@ -228,25 +163,26 @@
       <div class="font-bold text-md text-black">Description</div>
       <div>
         <ul class="list-inside list-disc text-sm">
+<li>{{ oneItem.description }}</li>
           <li class="leading-relaxed">
-            HIGH QUALITY INGREDIENTS - NutraBio uses only the best, and our
-            Isolate is no exception. We use high grade, cold processed,
-            ultra-filtered WPI 90; the purest isolate available. Our protein is
-            also non-GMO, soy free, low carb, low calorie, low cholesterol,
-            kosher dairy, contains no fat, no additives, and no added sugar.
+Company: {{oneItem.overview.Company}}
           </li>
-          <li>
-            IDEAL FOR WEIGHT LOSS - Our whey isolate is low in carbs and
-            contains no fat, making it ideal for anyone on a diet and also
-            keto-friendly. Our pure whey isolate can help any gym-goer build
-            lean muscle mass.
+          <li class="leading-relaxed">
+            Origin: {{oneItem.overview.Origin}}
           </li>
-          <li>
-            FREE OF FILLERS – You won’t find any fillers or fluff in our protein
-            powder! Our Isolate contains zero dextrose, maltodextrin, dairy
-            creamer, or other junk. It’s also suitable for lactose sensitive
-            individuals.
+          <li class="leading-relaxed">
+            Weight: {{oneItem.overview.Weight}}
           </li>
+          <li class="leading-relaxed">
+            Servings: {{oneItem.overview.Servings}}
+          </li>
+          <li class="leading-relaxed">
+            Flavor: {{oneItem.overview.Flavor}}
+          </li>
+          <li class="leading-relaxed">
+            Formation: {{oneItem.overview.Formation}}
+          </li>
+
         </ul>
       </div>
     </div>
@@ -255,14 +191,32 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: "item",
   data() {
     return {
       counter: 1,
+      oneItem:{},
+      id:"",
+    countImg:0
     };
   },
+  created() {
+    this.getTrainer();
+  },
   methods: {
+    getTrainer() {
+      this.id = this.$route.params.id;
+      axios
+      .get(`http://localhost:7071/products/${this.id}`)
+        .then((res) => (this.oneItem = res.data))
+        .catch((err) => console.log(err));
+    },
+    imageSwap(index){
+    this.countImg=index
+    },
+
     addItem() {
       return this.counter++;
     },
@@ -273,6 +227,10 @@ export default {
         return this.counter--;
       }
     },
+
+
+      
+    
   },
 };
 </script>
