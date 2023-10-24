@@ -23,7 +23,7 @@
           <div class="pl-[15%]">
             <svg
             class="blackSvg"
-            :class="{fillsvg : toggleComponent2=='trainer'}"
+            :class="{fillsvg : toggleComponent2=='trainer'}" @click="changeAll('trainer')"
               width="25"
               height="25"
               viewBox="0 0 48 52"

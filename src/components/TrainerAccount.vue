@@ -2,6 +2,7 @@
 
     <div class="h-max">
       <div class="flex gap-5">
+        
         <div class="w-full">
           <div
             class="flex flex-col flex-wrap h-auto w-full bg-secondary  rounded-3xl p-5"
@@ -42,6 +43,7 @@
 <script>
 export default {
   name: "TrainerAccount",
+ 
 };
 </script>
 
