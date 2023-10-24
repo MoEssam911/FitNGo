@@ -3,8 +3,8 @@
     <main class="container">
       <div class="flex gap-2 pb-6 items-center cursor-pointer">
         <div class="md:hidden">
-          <MenuIcon @click="toggleUserSideHandler"></MenuIcon>
-        </div>
+                    <MenuIcon @click="toggleUserSideHandler"></MenuIcon>
+                </div>
         <h1
           class="font-Manrope font-bold text-lg"
           @ChangeTest="updatetoggleComp2($event)"
@@ -70,6 +70,7 @@ import TrainerClientWPlanVue from '../TrainerAccount/TrainerClientWPlan.vue';
 import TrainerClientDPlanVue from '../TrainerAccount/TrainerClientDPlan.vue' ;
 import TrainerDietPlanMaker from "../components/TrainerDietPlanMaker.vue";
 import TrainerPlanMaker from "../components/TrainerPlanMaker.vue";
+import MenuIcon from '../components/Tools/MenuIcon.vue'
 export default {
   name: "TrainerAccountView",
   //   props : {
@@ -87,6 +88,7 @@ export default {
     TrainerClientDPlanVue,
     TrainerDietPlanMaker,
     TrainerPlanMaker,
+    MenuIcon,
   },
   provide() {
     return {

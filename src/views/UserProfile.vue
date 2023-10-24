@@ -24,6 +24,7 @@
                 :class="toggleUserSide ? 'show-user-sidebar' : 'hide-user-sidebar'">
                 <UserSideBar class="w-full"></UserSideBar>
             </aside>
+            <GetTrainer class="w-full" v-if="toggleComponent == 'trainer'"></GetTrainer>
             <UserPlans class="w-full" v-if="toggleComponent == 'myplan'"></UserPlans>
             <MyData class="w-full" v-if="toggleComponent == 'mydata'"></MyData>
             <Tools class="w-full" v-if="toggleComponent == 'tools'"></Tools>
@@ -39,6 +40,7 @@ import MenuIcon from '../components/Tools/MenuIcon.vue'
 import Tools from './ToolsPageView.vue'
 import EditProfile from '../components/UserAccount/EditProfile.vue'
 import MyData from '../components/UserAccount/MyData.vue'
+import GetTrainer from '../components/UserAccount/GetTrainer.vue'
     export default {
         name: "UserProfile",
         data(){
@@ -54,6 +56,7 @@ import MyData from '../components/UserAccount/MyData.vue'
             Tools,
             EditProfile,
             MyData,
+            GetTrainer,
         },
         methods:{
             changeToggle(cname){
