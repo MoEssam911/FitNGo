@@ -18,6 +18,7 @@ import TrainerAccountView from '../views/TrainerAccountView.vue'
 import UserProfile from '../views/UserProfile.vue'
 import WorkoutsView from '../views/WorkoutsView.vue'
 import SingleWorkout from '../views/SingleWorkout.vue'
+import ChangeProfilePicture from '../components/ChangeProfilePicture.vue'
 
 
 
@@ -122,6 +123,11 @@ const router = createRouter({
       path: '/UserProfile',
       name: 'UserProfile',
       component: UserProfile
+    },
+    {
+      path: '/ChangeProfilePicture',
+      name: 'ChangeProfilePicture',
+      component: ChangeProfilePicture
     },
   ],
   scrollBehavior(to, from, savedPosition) {
