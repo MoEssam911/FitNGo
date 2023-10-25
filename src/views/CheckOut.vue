@@ -9,7 +9,7 @@
           <h1>Address _________ Shipping ________ Payment</h1>
         </div>
         <div class="mt-4"> 
-          <button
+          <button 
             class="bg-gray-200 m-[5%] text-black font-bold px-6 py-2 rounded-lg self-center outline-4 outline-gray-300"
           >
             PayPal
