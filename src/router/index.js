@@ -17,7 +17,15 @@ import EditProfile from '../components/UserAccount/EditProfile.vue'
 import TrainerAccountView from '../views/TrainerAccountView.vue'
 import UserProfile from '../views/UserProfile.vue'
 import WorkoutsView from '../views/WorkoutsView.vue'
+import WorkoutView from '../views/WorkoutView.vue'
+import About from '../views/AboutView.vue'
+import shop from '../components/shop.vue'
+import BodyFatTool from '../components/BodyFatTool.vue'
+import DietPlan from '../components/DietPlan.vue'
+import BmrTool from '../components/ToolsPage.vue'
+import item from '../components/item.vue'
 import SingleWorkout from '../views/SingleWorkout.vue'
+
 
 
 
@@ -40,9 +48,15 @@ const router = createRouter({
       component: OneTrainerView,
     },
     {
-      path: "/workouts",
-      name: "workouts",
-      component: WorkoutsView,
+
+      path: '/shop/:id',
+      name: 'item',
+      component: item
+    },
+    {
+      path: '/workouts',
+      name: 'workouts',
+      component: WorkoutsView
     },
 
     {
@@ -78,9 +92,15 @@ const router = createRouter({
       component: DietPlanTool,
     },
     {
+
+      path: '/shop',
+      name: 'shop',
+      component: shop
+    },
       path: "/bmrtool",
       name: "BmrTool",
       component: BmrTool,
+
     },
     {
       path: "/myplan",

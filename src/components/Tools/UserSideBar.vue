@@ -1,9 +1,4 @@
 <template>
-  <!-- <div class="overlay relative">
-    <div class="w-screen h-screen bg-slate-600 bg-opacity-50 fixed top-0 left-0 -z-10">
-
-    </div>
-  </div> -->
   <div class="relative">
     <div
       class="my-shadow h-auto bg-secondary rounded-3xl py-9 flex flex-col "
@@ -102,13 +97,13 @@
 <script>
 import 'vue'
 export default {
-  name:'UserSideBar',
+  name:"UserSideBar",
+
   data() {
     return {
       toggle: "main-side-right",
       flag: false,
       toggleComponent2:'trainer',
-    };
   },
   inject:["changeToggle","toggleComponent"],
   methods:{
