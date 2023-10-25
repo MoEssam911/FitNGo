@@ -1,4 +1,5 @@
 <template>
+
   <LoginNSignup
     class="fixed z-20 top-5 left-2/4 -translate-x-1/2 w-10/12 mx-auto border border-black bg-white"
     v-if="isLoggedIn"
@@ -13,6 +14,7 @@
     <RouterView  class="mt-20"/>
     <Footer></Footer> 
   </main>
+  
 </template>
 
 // logo black and white
@@ -28,10 +30,6 @@ useFavicon(favicon, {
   rel: 'icon',
 })
 </script> -->
-=======
-
-
-
 
 <script>
 import { RouterView } from "vue-router";

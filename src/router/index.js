@@ -25,6 +25,10 @@ import DietPlan from '../components/DietPlan.vue'
 import BmrTool from '../components/ToolsPage.vue'
 import item from '../components/item.vue'
 import SingleWorkout from '../views/SingleWorkout.vue'
+import ChangeProfilePicture from '../components/ChangeProfilePicture.vue'
+import DashboardView from '../AdminDashboard/DashboardView.vue'
+import EditTrainer from '../AdminDashboard/TrainersDashboard/TrainersDashboardEdit.vue'
+import EditProduct from '../AdminDashboard/ProductsDashboard/ProductsDashboardEdit.vue'
 
 
 
@@ -142,6 +146,26 @@ const router = createRouter({
       path: '/UserProfile',
       name: 'UserProfile',
       component: UserProfile
+    },
+    {
+      path: '/ChangeProfilePicture',
+      name: 'ChangeProfilePicture',
+      component: ChangeProfilePicture
+    },
+    {
+      path: '/DashboardView',
+      name: 'DashboardView',
+      component: DashboardView
+    },
+    {
+      path: '/trainersdata/:id/edit',
+      name: 'EditTrainer',
+      component: EditTrainer
+    },
+    {
+      path: '/productsdata/:id/edit',
+      name: 'EditProduct',
+      component: EditProduct
     },
   ],
   scrollBehavior(to, from, savedPosition) {
