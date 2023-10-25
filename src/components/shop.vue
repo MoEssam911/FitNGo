@@ -7,26 +7,33 @@
       />
     </div>
 
+    <div class="container">
+
     <!-- ad banners  -->
     <div class="flex relative object-cover">
       <div
-        class="w-1/2 transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
+        class="w-1/2 "
       >
         <img
           src="../../src/assets/Images/08f1c52293c3de74e6874e9dbc83aceb.png"
+          class="transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
         />
+        <p
+        class=" flex font-Manrope whitespace-pre-line p-[5%] text-primary lg:text-2xl md:text-2xl sm:text-base font-extrabold"
+      >
+        SALE 15% ON SPORT SHOES
+      </p>
       </div>
       <div class="w-1/2 h-1/4">
         <img class="blur-[0.5px]" src="../../src/assets/Images/zegama.jpg" />
         <p
-          class="absolute left-[50%] inset-0 flex font-Manrope whitespace-pre-line p-[5%] text-primary lg:text-5xl md:text-2xl sm:text-xl font-extrabold transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
+          class="absolute left-[50%] inset-0 flex font-Manrope whitespace-pre-line p-[5%] text-primary lg:text-4xl md:text-2xl sm:text-xl font-extrabold transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
         >
           SALE 15% ON SPORT SHOES
         </p>
       </div>
     </div>
     <!-- search  -->
-    <div class="container">
       <div class="mt-[3%]">
         <!-- <input type="search" id="site-search" placeholder="Search For Product .." class="border-gray-100 border-2 active:border-1-black" />
     <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span> -->
@@ -34,7 +41,7 @@
           <input
             v-model="searchQuery"
             type="search"
-            class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-lg border-l-gray-50 border-l-2 border border-gray-300 focus:ring-primary focus:border-primary"
+            class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-lg border-l-gray-50 border-l-2 border border-gray-300 focus:ring-primary focus:border-primary outline-primary"
             placeholder="Search by Exercise name ..."
           />
           <button
@@ -61,7 +68,7 @@
         </div>
       </div>
       <!-- shop items  -->
-      <div class="grid lg:grid-cols-12 md:grid-cols-6 gap-6 grid-flow-row">
+      <div class="grid grid-cols-6 lg:grid-cols-12 sm:grid-cols-6 gap-x-6 gap-y-0 grid-flow-row">
         <div
           v-for="(item, index) in items"
           :key="index"
@@ -69,12 +76,12 @@
         >
         <router-link :to="`/shop/${item.id}`"> <div class="product flex flex-col justify-center items-center">
             <div class="">
-              <div class="cards grid gap-4">
-                <div class="card col-span-3 mb-5">
-                  <div class="icon z-10">
+              <div class="lg:cards grid gap-4">
+                <div class="card col-span-3 mb-2">
+                  <div class="icon z-10 ">
                     <a href="index.html">
                       <!-- <i class="fa-solid fa-cart-shopping text-xl text-white"></i> -->
-                      <i class="fa-solid fa-cart-plus text-xl text-white"></i>
+                      <i class="fa-solid fa-cart-plus text-xl text-primary"></i>
                     </a>
                   </div>
                   <div
@@ -83,11 +90,11 @@
                     <img
                       :src="item.images[0]"
                       width="150"
-                      class="mt-20 w-[150px] h-[175px] transition-all duration-500"
+                      class="mt-20 w-[150px] h-[180px] md:transition-all  md:duration-500"
                       alt="product"
                     />
                     <div class="h-[70px]">
-                    <p class="text-center text-xl font-bold text-dark">
+                    <p class="text-center md:text-xl  text-md font-bold text-dark">
                       {{ item.title.substr(0, 20) }}
                     </p></div>
                     <div class="h-30px pb-[5%]">
@@ -175,4 +182,5 @@ export default {
   right: 25px;
   transition: 0.5s;
 }
+
 </style>
