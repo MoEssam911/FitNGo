@@ -62,6 +62,7 @@ import ShopView from "./views/ShopView.vue";
 import AboutView from "./views/AboutView.vue";
 import CheckOut from "./views/CheckOut.vue";
 import TrainerAccount from "./views/TrainerAccount.vue";
+import firebase from "./firebaseInit";
 
 // import TrainerStatsData from "/components/TrainerStats&Data.vue";
 

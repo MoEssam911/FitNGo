@@ -9,122 +9,115 @@
       <h2 class="text-3xl font-bold text-center text-primary md:my-3 my-1">
         Sign Up
       </h2>
-      <div class="w-full">
-        <div class="flex md:flex-nowrap flex-wrap w-full md:gap-4 gap-1">
-          <div class="md:w-2/4 w-full">
-            <h3 class="float-text">
-              <span class="bg-white ms-2 text-center px-2">Full Name</span>
-            </h3>
-            <input
-            v-model="userName"
-              type="text"
-              placeholder="ex:Mohamed Elshimi"
-              class="outline outline-2 px-2 w-full rounded md:py-2 py-1 focus:outline-primary" />
+      <form @submit.prevent="register">
+        <div class="w-full">
+          <div class="flex md:flex-nowrap flex-wrap w-full md:gap-4 gap-1">
+            <div class="md:w-2/4 w-full">
+              <h3 class="float-text">
+                <span class="bg-white ms-2 text-center px-2">User Name</span>
+              </h3>
+              <input
+                required
+                v-model="userName"
+                type="text"
+                placeholder="ex:Mohamed Elshimi"
+                class="outline outline-2 px-2 w-full rounded md:py-2 py-1 focus:outline-primary" />
+            </div>
+            <div class="md:w-2/4 w-full">
+              <h3 class="float-text">
+                <span class="bg-white ms-2 text-center px-2">Email</span>
+              </h3>
+              <input
+                required
+                v-model="email"
+                type="email"
+                placeholder="ex:mid9653@gmail.com"
+                class="outline outline-2 px-2 w-full rounded py-2 focus:outline-primary" />
+            </div>
           </div>
-          <div class="md:w-2/4 w-full">
-            <h3 class="float-text">
-              <span class="bg-white ms-2 text-center px-2">Email</span>
-            </h3>
-            <input
-              v-model="email"
-              type="email"
-              placeholder="ex:mid9653@gmail.com"
-              class="outline outline-2 px-2 w-full rounded py-2 focus:outline-primary" />
+          <div
+            class="flex md:flex-nowrap flex-wrap w-full md:gap-4 gap-1 md:mt-3 mt-1">
+            <div class="md:w-2/4 w-full">
+              <h3 class="float-text">
+                <span class="bg-white ms-2 text-center px-2">Password</span>
+              </h3>
+              <input
+              required
+                v-model="password"
+                type="password"
+                placeholder="***********"
+                class="outline outline-2 px-2 w-full rounded md:py-2 py-1 focus:outline-primary" />
+            </div>
+            <div class="md:w-2/4 w-full">
+              <h3 class="float-text">
+                <span class="bg-white ms-2 text-center px-2">Age</span>
+              </h3>
+              <input
+              required
+                type="number"
+                min="0"
+                max="100"
+                v-model="age"
+                placeholder="ex:25"
+                class="outline outline-2 px-2 w-full rounded md:py-2 py-1 focus:outline-primary" />
+            </div>
           </div>
-        </div>
-        <div
-          class="flex md:flex-nowrap flex-wrap w-full md:gap-4 gap-1 md:mt-3 mt-1">
-          <div class="md:w-2/4 w-full">
-            <h3 class="float-text">
-              <span class="bg-white ms-2 text-center px-2">Password</span>
-            </h3>
-            <input
-              v-model="password"
-              type="password"
-              placeholder="***********"
-              class="outline outline-2 px-2 w-full rounded md:py-2 py-1 focus:outline-primary" />
-          </div>
-          <div class="md:w-2/4 w-full">
-            <h3 class="float-text">
-              <span class="bg-white ms-2 text-center px-2">Age</span>
-            </h3>
-            <input
-              type="number"
-              min="0"
-              max="100"
-              v-model="age"
-              placeholder="ex:25"
-              class="outline outline-2 px-2 w-full rounded md:py-2 py-1 focus:outline-primary" />
-          </div>
-        </div>
-        <div
-          class="flex md:flex-nowrap flex-wrap w-full md:gap-4 gap-1 md:mt-3 mt-1">
-          <div class="md:w-2/4 w-full">
-            <h3 class="float-text">
-              <span class="bg-white ms-2 text-center px-2">Number</span>
-            </h3>
-            <input
-              type="text"
-              min="0"
-              v-model="phone"
-              placeholder="Number For Whatsapp"
-              class="outline outline-2 px-2 w-full rounded md:py-2 py-1 focus:outline-primary" />
-          </div>
-          <div class="md:w-2/4 w-full flex items-center pt-3">
-            <input
-              type="radio"
-              name="gender"
-              id="male"
-              class="hover:cursor-pointer" v-model="gender" />
-            <label
-              class="bg-white text-center px-2 hover:cursor-pointer"
-              for="male"
-              >Male</label
-            >
-            <input
-              type="radio"
-              name="gender"
-              id="female"
-              class="hover:cursor-pointer" v-model="gender" />
-            <label
-              class="bg-white text-center px-2 hover:cursor-pointer"
-              for="female"
-              >Female</label
-            >
-          </div>
-        </div>
-        <div
-          class="flex md:flex-nowrap flex-wrap w-full md:gap-4 gap-1 md:mt-3 mt-1">
-          <div class="w-full items-center">
-            <div class="w-full">
-            <h3 class="float-text">
-              <span class="bg-white ms-2 text-center px-2">Role</span>
-            </h3>
-            
-            <select
-              v-model="role"
-             class="outline outline-2 px-2 w-full rounded md:py-2 py-1 focus:outline-primary"
-              name="goals"
-              id="goals">
-              <option class="" value="" selected disabled>Your Role</option>
-              <option class="" value="Trainer">Trainer</option>
-              <option class="" value="User">User</option>
-            </select>
-          </div>
+          <div
+            class="flex md:flex-nowrap flex-wrap w-full md:gap-4 gap-1 md:mt-3 mt-1">
+            <div class="md:w-2/4 w-full">
+              <h3 class="float-text">
+                <span class="bg-white ms-2 text-center px-2">Number</span>
+              </h3>
+              <input
+                type="tel"
+                min="0"
+                v-model="phone"
+                placeholder="Number For Whatsapp"
+                class="outline outline-2 px-2 w-full rounded md:py-2 py-1 focus:outline-primary" />
+            </div>
+            <div class="accent-primary md:w-2/4 w-full flex items-center pt-3">
+              <input
+              checked
+                type="radio"
+                name="gender"
+                value="male"
+                id="male"
+                class="hover:cursor-pointer"
+                v-model="gender" />
+              <label
+                class="bg-white text-center px-2 hover:cursor-pointer"
+                for="male"
+                >Male</label
+              >
+              <input
+                type="radio"
+                name="gender"
+                value="female"
+                id="female"
+                class="hover:cursor-pointer"
+                v-model="gender" />
+              <label
+                class="bg-white text-center px-2 hover:cursor-pointer"
+                for="female"
+                >Female</label
+              >
+            </div>
           </div>
         </div>
-      </div>
-      <button
-        class="border rounded-xl bg-primary hover:bg-[#e60000df] text-white py-2 w-full block mx-auto mt-4"
-        @click="register">
-        Sign Up
-      </button>
+        <button
+          class="border rounded-xl bg-primary hover:bg-[#e60000df] text-white py-2 w-full block mx-auto mt-4">
+          Sign Up
+        </button>
+      </form>
+
       <h3 class="text-xl text-center my-2">Or Sign In With</h3>
-      <div class="w-3/12 mx-auto flex justify-around gap-3">
-        <a href=""><i class="fa-brands fa-google text-primary text-3xl"></i></a>
-        <a href=""
-          ><i class="fa-brands fa-facebook text-[#17359D] text-3xl"></i
-        ></a>
+      <div class="w-3/12 mx-auto flex justify-center items-center gap-6">
+        <button @click="signInWithGoogle">
+          <i class="fa-brands fa-google text-primary text-3xl"></i>
+        </button>
+        <button @click="signInWithFacebook">
+          <i class="fa-brands fa-facebook text-[#17359D] text-3xl"></i>
+        </button>
       </div>
     </div>
   </div>
@@ -132,30 +125,84 @@
 
 <script setup>
 import { ref } from "vue";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import router from "../../router";
+
+// import auth functions
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  FacebookAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
+
+// import firestore functions
+import { getFirestore, doc, setDoc } from "@firebase/firestore";
+import axios from "axios";
+
+//
+const db = getFirestore();
 const email = ref("");
 const password = ref("");
 const userName = ref("");
-const role = ref("");
 const phone = ref("");
 const age = ref("");
 const gender = ref("");
 const register = () => {
-  createUserWithEmailAndPassword(getAuth(), email.value, password.value, userName.value, phone.value)
+  createUserWithEmailAndPassword(getAuth(), email.value, password.value)
     .then((data) => {
-      data.user.displayName=userName.value
-      data.user.phoneNumber=phone.value
-      data.user.photoURL='../../assets/Images/Logo-Fit&go version 2.png'
-      console.log("success", data);
+      data.user.displayName = userName.value;
+      data.user.phoneNumber = phone.value;
+      data.user.photoURL = "../../assets/Images/Logo-Fit&go version 2.png";
       console.log("user:", data.user);
       router.push("./tools");
+
+      const docCollectionRef = doc(db, "users", data.user.uid);
+
+      setDoc(docCollectionRef, {
+        id: data.user.uid,
+        userName: userName.value,
+        age: age.value,
+        gender: gender.value,
+      });
+      const user = {
+        id: data.user.uid,
+        userName: userName.value,
+        userName: userName.value,
+        age: age.value,
+        gender: gender.value,
+      };
+      axios
+        .post("http://localhost:3000/users", user)
+        .then((res) => console.log(res.data))
+        .catch((err) => console.log(err.message));
     })
     .catch((err) => {
       console.log(err.message);
     });
 };
-const signInWithGoogle = () => {};
+const signInWithGoogle = () => {
+  const provider = new GoogleAuthProvider();
+  signInWithPopup(getAuth(), provider)
+    .then((result) => {
+      console.log(result);
+      const user = result.user;
+      console.log(user);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+const signInWithFacebook = () => {
+  const provider = new FacebookAuthProvider();
+  signInWithPopup(getAuth(), provider)
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
 </script>
 
 <script>

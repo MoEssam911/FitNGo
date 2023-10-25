@@ -29,26 +29,27 @@ app.use(router)
 app.mount("#app");
 
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+// import { initializeApp } from "firebase/app";
+// import { getAnalytics } from "firebase/analytics";
+// // TODO: Add SDKs for Firebase products that you want to use
+// // https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyDpP28_aTu3tKSLT55_dDeoInFpTv0w7LI",
-  authDomain: "fitngo-project.firebaseapp.com",
-  projectId: "fitngo-project",
-  storageBucket: "fitngo-project.appspot.com",
-  messagingSenderId: "60919017979",
-  appId: "1:60919017979:web:1c5f360e87066596b81b5e",
-  measurementId: "G-5GEKZ0KBVM"
-};
+// // Your web app's Firebase configuration
+// // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// const firebaseConfig = {
+//   apiKey: "AIzaSyDpP28_aTu3tKSLT55_dDeoInFpTv0w7LI",
+//   authDomain: "fitngo-project.firebaseapp.com",
+//   projectId: "fitngo-project",
+//   storageBucket: "fitngo-project.appspot.com",
+//   messagingSenderId: "60919017979",
+//   appId: "1:60919017979:web:1c5f360e87066596b81b5e",
+//   measurementId: "G-5GEKZ0KBVM"
+// };
 
-// Initialize Firebase
-const firebaseApp = initializeApp(firebaseConfig);
-const analytics = getAnalytics(firebaseApp);
+// // Initialize Firebase
+// const firebaseApp = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(firebaseApp);
+
 
 
 
