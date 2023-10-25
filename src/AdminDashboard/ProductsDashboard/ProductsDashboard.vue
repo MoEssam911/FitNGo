@@ -38,7 +38,7 @@
                            {{ prod.price }}
                           </td>
                           <td class="px-6 py-4">
-                            <i class="fa-solid fa-pen cursor-pointer"></i>
+                            <router-link :to="`/productsdata/${prod.id}/edit`"><i class="fa-solid fa-pen cursor-pointer"></i></router-link>
                             <i class="fa-solid fa-trash text-primary ml-4 cursor-pointer" @click="deleteRow(index)"></i>
                           </td>
                         </template>
