@@ -19,6 +19,9 @@ import UserProfile from '../views/UserProfile.vue'
 import WorkoutsView from '../views/WorkoutsView.vue'
 import SingleWorkout from '../views/SingleWorkout.vue'
 import ChangeProfilePicture from '../components/ChangeProfilePicture.vue'
+import DashboardView from '../AdminDashboard/DashboardView.vue'
+import EditTrainer from '../AdminDashboard/TrainersDashboard/TrainersDashboardEdit.vue'
+import EditProduct from '../AdminDashboard/ProductsDashboard/ProductsDashboardEdit.vue'
 
 
 
@@ -128,6 +131,21 @@ const router = createRouter({
       path: '/ChangeProfilePicture',
       name: 'ChangeProfilePicture',
       component: ChangeProfilePicture
+    },
+    {
+      path: '/DashboardView',
+      name: 'DashboardView',
+      component: DashboardView
+    },
+    {
+      path: '/trainersdata/:id/edit',
+      name: 'EditTrainer',
+      component: EditTrainer
+    },
+    {
+      path: '/productsdata/:id/edit',
+      name: 'EditProduct',
+      component: EditProduct
     },
   ],
   scrollBehavior(to, from, savedPosition) {
