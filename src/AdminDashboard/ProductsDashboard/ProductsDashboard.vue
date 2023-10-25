@@ -1,7 +1,11 @@
 <template>
     <div>
+      <div class="flex justify-end cursor-pointer" @click="showadd='show'"><div><i class="fa-solid fa-plus text-green-500 mr-2"></i></div><div>Add Product</div>
+    </div>
+      
+      <AddProduct v-if="showadd==='show'"></AddProduct>
         <table
-                      class="w-full text-center text-dark bg-white shadow-lg rounded-2xl mb-9" >
+                      class="w-full text-center text-dark bg-white shadow-lg rounded-2xl mb-9" v-if="showadd===''">
                      
                       <thead class="text-xs uppercase">
                         <tr class="border-b" >
@@ -39,7 +43,7 @@
                           </td>
                           <td class="px-6 py-4">
                             <router-link :to="`/productsdata/${prod.id}/edit`"><i class="fa-solid fa-pen cursor-pointer"></i></router-link>
-                            <i class="fa-solid fa-trash text-primary ml-4 cursor-pointer" @click="deleteRow(index)"></i>
+                            <i class="fa-solid fa-trash text-primary ml-4 cursor-pointer" @click="deleteRow(Indx)"></i>
                           </td>
                         </template>
                         </tr>
@@ -51,20 +55,34 @@
 
 <script>
 import axios from 'axios'
+import AddProduct from "../ProductsDashboard/ProductsDashboardAdd.vue"
     export default {
         name:'ProductsDashboard',
+        components:{
+          AddProduct,
+        },
         data(){
             return {
           products: [],
           id: '',
           nxt: 10,
           pre: 0,
+          showadd:'',
             }
         },
         created(){
           axios.get("http://localhost:3000/supplements").then((res)=>{
             this.products = res.data
           }).catch((err)=>console.log(err))
+        },
+        methods:{
+          deleteRow(id){
+       let conf = confirm("Are you sure you want to delete this item ?")
+        if (conf==true){
+          axios.delete(`http://localhost:3000/supplements/${id}`).then((res)=>{console.log(res)}).catch((err)=>{console.log(err)});
+            this.getData()
+        }
+    },
         }
     }
 </script>

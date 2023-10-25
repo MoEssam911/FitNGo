@@ -26,10 +26,11 @@
   <!-- <MacroCalc /> -->
   <!-- <Tools /> -->
   <!-- <HomeBanner /> -->
-    <Footer></Footer> 
+ 
     <!-- <ShopView></ShopView> --> 
 
   </main>
+  <!-- <Footer></Footer>  -->
 </template>
 
 <!-- <script setup>

@@ -76,6 +76,13 @@ import lists from '../Lists.vue';
         components:{
             lists,
         },
+        provide() {
+    return {
+        changeView : (togg)=> {
+  this.toggle = togg
+   }
+    };
+},
         data(){
             return {
                 Onetrainer : {

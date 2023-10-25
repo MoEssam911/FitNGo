@@ -86,8 +86,8 @@
       "TrainerCard": "../src/assets/Images/trainercards/ahmedfathycard.png",
       "TrainerNames": "Ahmed Fathy",
       "ٌRate": "<i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star'></i><i class='fa-solid fa-star-half-stroke'></i>",
-      "Description": "Your fitness fairy godmother is here!, and I'm here to help you transform your body and mind, and become the best version of yourself.I believe that fitness should be fun and rewarding, so I create workouts that are challenging but enjoyable. And I'm always here to support you and motivate you along the way,Are you ready to make a change?",
-      "Fees": "1800EGP/Mth",
+      "Description": "Your fitness fairy godmother is here!, and I'm here to help you transform your body and mind, and become the best version of yourself.\nI believe that fitness should be fun and rewarding, so I create workouts that are challenging but enjoyable. And I'm always here to support you and motivate you along the way,Are you ready to make a change?",
+      "Fees": "1200EGP/Mth",
       "Clients-Results": "",
       "Clients": [
         {}
@@ -222,6 +222,18 @@
       "Clients": [
         {}
       ]
+    },
+    {
+      "TrainerImg": "",
+      "TrainerCard": "https://www.informa-180.com/images/informa-character.png",
+      "TrainerNames": "Hussien Informa",
+      "Rate": "",
+      "Description": "Your fitness fairy godmother is here!, and I'm here to help you transform your body and mind, and become the best version of yourself.I believe that fitness should be fun and rewarding, so I create workouts that are challenging but enjoyable. And I'm always here to support you and motivate you along the way,Are you ready to make a change?",
+      "Fees": "4700 EGP/MTH",
+      "Clients": [
+        {}
+      ],
+      "id": 12
     }
   ],
   "partners": [
@@ -950,6 +962,13 @@
       "image": "https://www.maxmuscleelite.com/web/image/product.template/3802/image_512/%5B6224009096664%5D%20Organic%20Nation%20Almond%20Butter-350G?unique=1383eba",
       "title": "Organic Nation Almond Butter-350G\nLE 250.00",
       "price": "LE 250.00"
+    },
+    {
+      "desc": "Nutrex Lipo-6 Black Ultra Concentrate is an ultra-potent fat-loss support formula that is designed to rapidly help you achieve your weight loss goals. This unique and powerful fat-burning supplement contains ingredients that have been scientifically proven to activate your body’s thermogenic response, which helps to increase your metabolic rate, thereby burning calories and fat more efficiently.",
+      "title": "Nutrex|Lipo 6 Black Ultra + towel free",
+      "price": "700,00 EGP",
+      "image": "https://gofit-eg.com/wp-content/uploads/2023/03/WhatsApp-Image-2023-10-04-at-4.37.23-PM-1.jpeg",
+      "id": "EQiFuG1"
     }
   ],
   "workoutplans": [

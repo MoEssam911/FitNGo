@@ -71,6 +71,13 @@
 import axios from 'axios'
     export default {
         name:'EditProduct',
+        provide() {
+    return {
+        changeView : (togg)=> {
+  this.toggle = togg
+   }
+    };
+},
         data(){
             return {
                 OneProduct : {
