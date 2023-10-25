@@ -1,7 +1,8 @@
 <template>
   <LoginNSignup
     class="fixed z-20 top-5 left-2/4 -translate-x-1/2 w-10/12 mx-auto border border-black bg-white"
-    v-if="isLoggedIn"></LoginNSignup>
+    v-if="isLoggedIn"
+  ></LoginNSignup>
   <div
     class="fixed z-10 bg-[#000000ee] w-full h-screen top-0"
     @click="closeLogin"
@@ -57,11 +58,15 @@ import Footer from "./components/utilities/Footer.vue";
 import Cart from "./components/Cart.vue";
 import ToolsPage from "./components/ToolsPage.vue";
 import Card from "./components/Card.vue";
+// import MacroCalculator from "./components/Tools/MacroCalculator.vue";
+import UserSideBar from "./components/Tools/UserSideBar.vue";
 import LoginNSignup from "./components/LoginAndSignup/LoginNSignup.vue";
 import ShopView from "./views/ShopView.vue";
 import AboutView from "./views/AboutView.vue";
 import CheckOut from "./views/CheckOut.vue";
 import TrainerAccount from "./views/TrainerAccount.vue";
+import Shop from "./components/shop.vue";
+// import LoginNSignup from "./components/LoginAndSignup/LoginNSignup.vue";
 
 // import TrainerStatsData from "/components/TrainerStats&Data.vue";
 
@@ -106,5 +111,4 @@ export default {
 .login {
   position: fixed;
 }
-
 </style>

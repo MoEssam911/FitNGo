@@ -4,7 +4,7 @@
       <div class="about h-80 rounded-3xl overflow-hidden">
         <div class="mt-16 ml-28 z-10 relative">
           <h2 class="text-primary font-semibold text-3xl">About Us</h2>
-          <p class="text-white mt-9 w-[700px]">
+          <p class="text-white mt-9 w-96 md:w-full lg:w-[700px] pr-6">
             We are a fitness community dedicated to helping people achieve their
             fitness goals. Our mission is to provide our members with the best
             possible fitness experience by offering expert trainers,
@@ -14,8 +14,8 @@
       </div>
       <div class="flex gap-3 mt-12">
         
-        <div
-          class="flex flex-col justify-between our-mission w-4/12 h-96 bg-[#eee] rounded-3xl p-9 text-2xl">
+        <div class="flex flex-col justify-between our-mission w-6/12
+         md:w-4/12  bg-[#eee] rounded-3xl p-9 text-2xl">
           <h3 class="text-center text-primary font-semibold">Our Mission</h3>
           <div class="icon text-center">
             <i class="fa-solid fa-medal text-primary text-7xl"></i>
@@ -27,7 +27,8 @@
           </p>
         </div>
         <div
-          class="flex flex-col justify-between our-mission w-4/12 h-96 bg-[#eee] rounded-3xl p-9 text-2xl">
+          class="flex flex-col justify-between our-mission w-6/12 md:w-4/12 
+           bg-[#eee] rounded-3xl p-9 text-2xl">
           <h3 class="text-center text-primary font-semibold">Our Goals</h3>
           <div class="icon text-center">
             <i class="fa-solid fa-bullseye text-primary text-7xl"></i>
@@ -40,7 +41,7 @@
           </p>
         </div>
         <div
-          class="flex flex-col justify-between our-mission w-4/12 h-96 bg-secondary rounded-3xl p-9 text-2xl">
+          class="flex flex-col justify-between our-mission w-6/12 md:w-4/12  bg-secondary rounded-3xl p-9 text-2xl">
           <h3 class="text-center text-primary font-semibold">Our Message</h3>
           <div class="icon text-center">
             <i class="fa-solid fa-heart text-primary text-7xl"></i>
@@ -59,15 +60,15 @@
       <h3 class="text-primary text-center font-semibold text-3xl">
         Principles
       </h3>
-      <div class="flex gap-3 mt-12">
-        <div class="w-6/12 bg-secondary h-40 rounded-3xl p-9">
+      <div class="flex gap-3 mt-6">
+        <div class="w-6/12 bg-secondary  rounded-3xl p-9">
           <h3 class="text-center text-primary text-2xl">Remove Barriers</h3>
           <p class="text-center mt-5">
             Just grab your phone and start when you are ready we’ll build up the
             rest from there.
           </p>
         </div>
-        <div class="w-6/12 bg-secondary h-40 rounded-3xl p-9">
+        <div class="w-6/12 bg-secondary  rounded-3xl p-9">
           <h3 class="text-center text-primary text-2xl">Act as a coach</h3>
           <p class="text-center mt-5">
             We build personalized workout and meal plans, track your progress,
@@ -77,7 +78,7 @@
         </div>
       </div>
       <div class="flex gap-3 mt-3">
-        <div class="w-6/12 bg-secondary h-40 rounded-3xl p-9">
+        <div class="w-6/12 bg-secondary rounded-3xl p-9">
           <h3 class="text-center text-primary text-2xl">
             Spread the knowledge
           </h3>
@@ -86,7 +87,7 @@
             learn about your body and the workout process.
           </p>
         </div>
-        <div class="w-6/12 bg-secondary h-40 rounded-3xl p-9">
+        <div class="w-6/12 bg-secondary  rounded-3xl p-9">
           <h3 class="text-center text-primary text-2xl">Foster the habit</h3>
           <p class="text-center mt-5">
             Besides getting you the body you want, we aim to make you embrace a
