@@ -37,19 +37,22 @@
       </div>
 
       <!-- <TrainerStatsData></TrainerStatsData> -->
-      <TrainerClients></TrainerClients>
+      <!-- <TrainerClients></TrainerClients> -->
+      <TrainerClientId></TrainerClientId>
     </div>
   </div>
 </template>
 
 <script>
-// import TrainerStatsData from "../components/TrainerStats&Data.vue";
+import TrainerStatsData from "../components/TrainerStats&Data.vue";
 import TrainerClients from "../components/TrainerClients.vue";
+import TrainerClientId from "../components/TrainerClientId.vue";
 export default {
   name: "TrainerAccount",
   components: {
-    // TrainerStatsData,
+    TrainerStatsData,
     TrainerClients,
+    TrainerClientId,
   },
 };
 </script>
