@@ -6,37 +6,6 @@
   <div
     class="fixed z-10 bg-[#000000ee] w-full h-screen top-0"
     @click="closeLogin"
-<<<<<<< HEAD
-    v-if="isLoggedIn"
-  ></div>
-  <main class="w-full relative">
-    <Navbar class="fixed top-0 z-50 w-full"></Navbar>
-    <RouterView class="mt-20" />
-    <!-- <AboutView></AboutView>
-    <Card></Card>
-    <CheckOut></CheckOut>
-    <TrainerStatsData></TrainerStatsData>
-    <ShopView></ShopView> -->
-    <!-- <shop></shop> -->
-    <!-- <trainerAccount></trainerAccount> -->
-    <Footer></Footer>
-  </main>
-</template>
-
-//
-<script setup>
-// import { computed } from 'vue'
-// import { useFavicon, usePreferredDark } from '@vueuse/core'
-// const isDark = usePreferredDark();
-// const favicon = computed(() =>
-//   {return isDark.value ? 'Logo-Fit&go version 2-white.png' : 'Logo-Fit&go version 2.png'})
-
-// useFavicon(favicon, {
-//   baseUrl: '/public/',
-//   rel: 'icon',
-// }) 
-//
-=======
     v-if="isLoggedIn"></div>
     <Navbar />
   <main class="w-full h-screen relative">
@@ -80,7 +49,6 @@ import Footer from "./components/Footer.vue";
 <script setup>
 import TrainerSideBar from "./components/Tools/TrainerSideBar.vue";
 
->>>>>>> b326da241ae7f01393d8ecf8b4b269a620d53f31
 </script>
 
 <script>
@@ -90,21 +58,15 @@ import Footer from "./components/utilities/Footer.vue";
 import Cart from "./components/Cart.vue";
 import ToolsPage from "./components/ToolsPage.vue";
 import Card from "./components/Card.vue";
-<<<<<<< HEAD
-import MacroCalculator from "./components/Tools/MacroCalculator.vue";
+// import MacroCalculator from "./components/Tools/MacroCalculator.vue";
 import UserSideBar from "./components/Tools/UserSideBar.vue";
-=======
 import LoginNSignup from "./components/LoginAndSignup/LoginNSignup.vue";
->>>>>>> b326da241ae7f01393d8ecf8b4b269a620d53f31
 import ShopView from "./views/ShopView.vue";
 import AboutView from "./views/AboutView.vue";
 import CheckOut from "./views/CheckOut.vue";
 import TrainerAccount from "./views/TrainerAccount.vue";
-<<<<<<< HEAD
 import Shop from "./components/shop.vue";
-import LoginNSignup from "./components/LoginAndSignup/LoginNSignup.vue";
-=======
->>>>>>> b326da241ae7f01393d8ecf8b4b269a620d53f31
+// import LoginNSignup from "./components/LoginAndSignup/LoginNSignup.vue";
 
 // import TrainerStatsData from "/components/TrainerStats&Data.vue";
 

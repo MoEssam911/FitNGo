@@ -15,7 +15,7 @@
             <table
               class="w-full text-center text-dark bg-white shadow-lg rounded-2xl mb-9"
               v-for="(plan, indx) in ClientPlan"
-              :key="plan"
+              :key="plan" 
             >
               <template v-if="indx > PrePlan && indx <= NxtPlan">
                 <caption class="text-dark text-2xl">
