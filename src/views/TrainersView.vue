@@ -1,6 +1,8 @@
 <template>
-  <TrainersBanner />
-  <TrainersFromJson />
+  <div>
+    <TrainersBanner />
+    <TrainersFromJson />
+  </div>
 </template>
 
 

@@ -10,7 +10,7 @@
     v-if="isLoggedIn"></div>
     <Navbar />
   <main class="w-full h-screen relative">
-    <RouterView />
+    <RouterView class="mt-20" />
 
 
     <Footer />
