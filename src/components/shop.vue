@@ -11,7 +11,7 @@
     <div class="container">
 
     <!-- ad banners  -->
-    <div class="flex relative object-cover">
+    <div class="flex relative object-cover lg:flex-row md:flex-row sm:flex-col">
       <div
         class="w-1/2 "
       >
@@ -43,7 +43,7 @@
             v-model="searchQuery"
             type="search"
             class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-lg border-l-gray-50 border-l-2 border border-gray-300 focus:ring-primary focus:border-primary outline-primary"
-            placeholder="Search by Exercise name ..."
+            placeholder="Search by products name ..."
           />
           <button
             type="submit"
@@ -75,16 +75,16 @@
           :key="index"
           class="col-span-3 mb-2"
         >
-        <router-link :to="`/shop/${item.id}`"> <div class="product flex flex-col justify-center items-center">
+
+        <div class="product flex flex-col justify-center items-center">
             <div class="">
               <div class="lg:cards grid gap-4">
                 <div class="card col-span-3 mb-2">
                   <div class="icon z-10 ">
-                    <a href="index.html">
                       <!-- <i class="fa-solid fa-cart-shopping text-xl text-white"></i> -->
-                      <i class="fa-solid fa-cart-plus text-xl text-primary"></i>
-                    </a>
+                      <i @click="addCart(item)" class="fa-solid fa-cart-plus text-xl text-primary cursor-pointer"></i>
                   </div>
+                  <router-link :to="`/shop/${item.id}`">
                   <div
                     class="product flex flex-col justify-center items-center"
                   >
@@ -102,16 +102,18 @@
                     <p class="price text-primary text-center text-xl font-bold">
                       {{ item.price }}
                     </p></div>
-                  </div>
+                  </div></router-link>
                   <button
+                  @click="addCart(item)"
                     class="bg-primary transition rounded px-2 py-1 text-white"
-                  >
-                    Buy Now
-                  </button>
+                  > <router-link :to="`/cart`">
+
+                    Buy Now</router-link>
+                  </button> 
                 </div>
               </div>
             </div>
-          </div></router-link>
+          </div>
         </div>
 
         <!-- <div  v-for="(item, index) in itemsDb" :key="index" class=" card col-span-3">
@@ -155,6 +157,12 @@ export default {
     loadMore() {
       this.currentIndex += 12;
     },
+    addCart(item){
+      axios
+        .post("http://localhost:3000/cart",item)
+        .then((res) => console.log(res))
+        .catch((err) => console.log(err));  
+    },
   },
   computed: {
     items() {
@@ -164,7 +172,8 @@ export default {
           .filter((item) => item.title.toLowerCase().includes(this.searchQuery.toLowerCase()))
           .slice(0, this.currentIndex + 12)
       );
-    },
+    }, 
+    
   },
 
 };

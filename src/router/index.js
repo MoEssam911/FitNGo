@@ -24,12 +24,13 @@ import BodyFatTool from '../components/BodyFatTool.vue'
 import DietPlan from '../components/DietPlan.vue'
 import BmrTool from '../components/ToolsPage.vue'
 import item from '../components/item.vue'
+import cart from '../components/Cart.vue'
+import checkout from '../views/CheckOut.vue'
 import SingleWorkout from '../views/SingleWorkout.vue'
 import ChangeProfilePicture from '../components/ChangeProfilePicture.vue'
 import DashboardView from '../AdminDashboard/DashboardView.vue'
 import EditTrainer from '../AdminDashboard/TrainersDashboard/TrainersDashboardEdit.vue'
 import EditProduct from '../AdminDashboard/ProductsDashboard/ProductsDashboardEdit.vue'
-
 
 
 
@@ -56,6 +57,16 @@ const router = createRouter({
       path: '/shop/:id',
       name: 'item',
       component: item
+    },
+    {
+      path: '/cart',
+      name: 'cart',
+      component: cart
+    },
+    {
+      path: '/checkout',
+      name: 'checkout',
+      component: checkout
     },
     {
       path: '/workouts',

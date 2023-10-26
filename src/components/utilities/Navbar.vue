@@ -14,7 +14,7 @@
       </ul>
       
       </div>
-      <a href=""><i class="fa-solid fa-cart-shopping mx-6 text-right"></i></a>
+      <router-link to="/cart"><a href=""><i class="fa-solid fa-cart-shopping mx-6 text-right"></i></a></router-link>
       <a href=""><i class="fa-solid fa-bell text-yellow-400 text-right"></i></a>
     </div>
     <div>
