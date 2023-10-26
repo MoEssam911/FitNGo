@@ -2,7 +2,7 @@
 
     <div class="relative font-Manrope">
 
-      <div class="mt-[80px]" style="height: calc(100vh - 80px);">
+      <div style="height: calc(100vh - 80px);">
         <img class="w-full h-full object-fit" src="../../../assets/Images/HomeBanner/lifting-banner.jpg" >
      </div>
       

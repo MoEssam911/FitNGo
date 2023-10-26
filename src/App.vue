@@ -10,7 +10,7 @@
     v-if="isLoggedIn"></div>
     <Navbar />
   <main class="w-full h-screen relative">
-    <RouterView />
+    <RouterView  class="mt-20"/>
 
 
     <Footer />
@@ -18,8 +18,7 @@
   
 </template>
 
-// logo black and white
-<!-- <script setup>
+<script setup>
 import { computed } from 'vue'
 import { useFavicon, usePreferredDark } from '@vueuse/core'
 const isDark = usePreferredDark();
@@ -30,7 +29,7 @@ useFavicon(favicon, {
   baseUrl: '/public/',
   rel: 'icon',
 })
-</script> -->
+</script>
 
 <script>
 import { RouterView } from "vue-router";

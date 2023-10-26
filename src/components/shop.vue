@@ -127,7 +127,7 @@
       More To Explore
     </button>
     </div>
-  </div>
+    </div>
 </template>
 <script setup>
 import ShopCardsandSearchVue from "./ShopCardsandSearch.vue";
