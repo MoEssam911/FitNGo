@@ -1,18 +1,15 @@
 <template>
   <div class="relative">
     <div
-      class="my-shadow h-auto bg-secondary rounded-3xl py-9 flex flex-col relative"
+      class="my-shadow h-auto bg-secondary rounded-3xl py-9 flex flex-col "
       :class="toggle">
-      <!-- <div class="drag-btn px-4 text-white" @click="drag">
-      <i class="fa-solid fa-bars text-primary cursor-pointer"></i>
-    </div> -->
       <div class="mx-auto">
         <img
           class="w-32 h-32 rounded-full object-cover"
           src="../../assets/Images/selim.jpeg " />
       </div>
       <p class="font-Manrope font-bold text-primary text-lg text-center py-3">
-        Ali Maher
+        Selim Mohamed
       </p>
 
       <hr />
@@ -23,7 +20,7 @@
           <div class="pl-[15%]">
             <svg
             class="blackSvg"
-            :class="{fillsvg : toggleComponent2=='trainer'}"
+            :class="{fillsvg : toggleComponent2=='trainer'}" @click="changeAll('trainer')"
               width="25"
               height="25"
               viewBox="0 0 48 52"
@@ -100,13 +97,13 @@
 <script>
 import 'vue'
 export default {
-  name:'UserSideBar',
+  name:"UserSideBar",
+
   data() {
     return {
       toggle: "main-side-right",
       flag: false,
       toggleComponent2:'trainer',
-    };
   },
   inject:["changeToggle","toggleComponent"],
   methods:{

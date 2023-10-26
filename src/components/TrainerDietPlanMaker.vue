@@ -1,9 +1,9 @@
 <template>
-    <section class="mt-40">
+    <section>
       <div class=" h-max ">
     
   
-        <div class="flex gap-5 my-10">
+        <div class="flex gap-5">
           
   
           <div class="w-full">
@@ -11,28 +11,28 @@
   
             <!-- macro calculator component -->
             <div
-              class="flex flex-col flex-wrap h-auto  w-full bg-zinc-300 bg-opacity-50 rounded-3xl">
-              <table
-                      class="w-full text-center text-dark bg-white shadow-lg rounded-2xl mb-9" >
-                      <caption class="text-dark text-2xl">
+              class="flex flex-col flex-wrap h-auto p-4 w-full bg-zinc-300 bg-opacity-50 rounded-3xl">
+              <div><i class="fa-solid fa-arrow-left hover:text-primary transition duration-200 cursor-pointer text-lg" @click="ClientDPlan"></i></div>
+              <table class="w-full text-center text-dark bg-white shadow-lg rounded-2xl mb-9" >
+                      <caption class="text-dark text-center mb-2 text-2xl">
                         Diet plan:
                       </caption>
                       <thead class="text-xs uppercase">
                         <tr class="border-b" >
                           <td
                             class="px-6 py-4 text-center text-primary text-lg tracking-widest"
-                            colspan="4">
+                            colspan="8">
                             <label for="">Week : </label>
                             <input type="text" v-model="dietTable.month" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary w-10/12 p-2.5">
                           </td>
                         </tr>
                         <tr class="bg-primary text-white tracking-wider">
-                          <th scope="col" class="px-6 py-3 w-1/12">Id</th>
-                          <th scope="col" class="px-6 py-3 w-4/12">Breakfast</th>
-                          <th scope="col" class="px-6 py-3 w-4/12">Snack</th>
-                          <th scope="col" class="px-6 py-3 w-4/12">Launch</th>
-                          <th scope="col" class="px-6 py-3 w-4/12">Dinner</th>
-                          <th scope="col" class="px-6 py-3 w-1/12">Action</th>
+                          <th scope="col" class="px-2 lg:px-6 py-3 w-1/12 md:w-1/12 lg:w-1/12">Id</th>
+                          <th scope="col" class="px-2 lg:px-6 py-3 w-1/12 md:w-1/12 lg:w-4/12">Breakfast</th>
+                          <th scope="col" class="px-2 lg:px-6 py-3 w-1/12 md:w-1/12 lg:w-4/12">Snack</th>
+                          <th scope="col" class="px-2 lg:px-6 py-3 w-1/12 md:w-1/12 lg:w-4/12">Launch</th>
+                          <th scope="col" class="px-2 lg:px-6 py-3 w-1/12 md:w-1/12 lg:w-4/12">Dinner</th>
+                          <th scope="col" class="px-2 lg:px-6 py-3 w-1/12 md:w-1/12 lg:w-1/12">Action</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -107,6 +107,7 @@
 import axios from 'axios'
 export default {
   name:"TrainerDietPlan",
+  inject:['ClientDPlan'],
   data () {
     return {
       dietTable:{

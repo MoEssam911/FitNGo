@@ -3,8 +3,8 @@
     <main class="container">
       <div class="flex gap-2 pb-6 items-center cursor-pointer">
         <div class="md:hidden">
-          <MenuIcon @click="toggleUserSideHandler"></MenuIcon>
-        </div>
+                    <MenuIcon @click="toggleUserSideHandler"></MenuIcon>
+                </div>
         <h1
           class="font-Manrope font-bold text-lg"
           @ChangeTest="updatetoggleComp2($event)"
@@ -40,16 +40,21 @@
           <TrainerAccountVue
             class="col-span-12"
             v-if="toggleComp === 'info'"
-            @ChangeTest="updatetoggleComp1($event)"
           ></TrainerAccountVue>
           <TrainerClients
             class="col-span-12"
             v-if="toggleComp === 'myclients'"
           ></TrainerClients>
-          <TrainerClientSpecfic
-            class="col-span-12"
-            v-if="toggleComp === 'trainerclispc'"
-          ></TrainerClientSpecfic>
+          <TrainerClientSpecfic class="col-span-12"
+            v-if="toggleComp === 'trainerclispc'"></TrainerClientSpecfic>
+          <TrainerClientWPlanVue class="col-span-12"
+            v-if="toggleComp === 'workoutplanTrainer'"></TrainerClientWPlanVue>
+            <TrainerClientDPlanVue class="col-span-12"
+            v-if="toggleComp === 'dietplanTrainer'"></TrainerClientDPlanVue>
+            <TrainerDietPlanMaker class="col-span-12"
+            v-if="toggleComp === 'dietplanMaker'"></TrainerDietPlanMaker>
+            <TrainerPlanMaker class="col-span-12"
+            v-if="toggleComp === 'workoutplanMaker'"></TrainerPlanMaker>
         </section>
       </div>
     </main>
@@ -61,6 +66,11 @@ import TrainerSideBar from "../components/Tools/TrainerSideBar.vue";
 import TrainerAccountVue from "../components/TrainerAccount.vue";
 import TrainerClients from "../components/TrainerClients.vue";
 import TrainerClientSpecfic from "../components/TrainerClientId.vue";
+import TrainerClientWPlanVue from '../TrainerAccount/TrainerClientWPlan.vue';
+import TrainerClientDPlanVue from '../TrainerAccount/TrainerClientDPlan.vue' ;
+import TrainerDietPlanMaker from "../components/TrainerDietPlanMaker.vue";
+import TrainerPlanMaker from "../components/TrainerPlanMaker.vue";
+import MenuIcon from '../components/Tools/MenuIcon.vue'
 export default {
   name: "TrainerAccountView",
   //   props : {
@@ -74,6 +84,11 @@ export default {
     TrainerAccountVue,
     TrainerClients,
     TrainerClientSpecfic,
+    TrainerClientWPlanVue,
+    TrainerClientDPlanVue,
+    TrainerDietPlanMaker,
+    TrainerPlanMaker,
+    MenuIcon,
   },
   provide() {
     return {
@@ -89,6 +104,26 @@ export default {
       },
       ChangeToggleClient: () => {
         this.toggleComp = "trainerclispc";
+         
+        console.log(this.toggleComp);
+      },
+      ClientWPlan: () => {
+        this.toggleComp = "workoutplanTrainer";
+         
+        console.log(this.toggleComp);
+      },
+      ClientDPlan: () => {
+        this.toggleComp = "dietplanTrainer";
+         
+        console.log(this.toggleComp);
+      },
+      ClientDPlanMaker: () => {
+        this.toggleComp = "dietplanMaker";
+         
+        console.log(this.toggleComp);
+      },
+      ClientWPlanMaker: () => {
+        this.toggleComp = "workoutplanMaker";
          
         console.log(this.toggleComp);
       },
@@ -110,12 +145,7 @@ export default {
     toggleUserSideHandler() {
       this.toggleUserSide = !this.toggleUserSide;
     },
-    // updatetoggleComp1 (updatedtoggleComp) {
-    //     this.toggleComp = updatedtoggleComp
-    // },
-    // updatetoggleComp2 (updatedtoggleComp) {
-    //     this.toggleComp = updatedtoggleComp
-    // },
+
   },
 };
 </script>
