@@ -16,7 +16,7 @@
         "Flavor": "Vanilla",
         "Formation": "Powder"
       },
-      "price": "3,000.00",
+      "price": "3000.00",
       "stock": 1,
       "color": "white"
     },
@@ -156,7 +156,7 @@
         "Flavor": "Icy Dragon Fruit",
         "Formation": "Powder"
       },
-      "price": "1,000.00",
+      "price": "1000.00",
       "stock": 1,
       "color": "white"
     },

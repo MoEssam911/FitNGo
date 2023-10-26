@@ -83,40 +83,30 @@
         <div class="text-black">
           <h1 class="text-2xl font-bold">Your Cart</h1>
         </div>
-        <div class="grid grid-cols-3 p-4">
+        <div class="grid grid-cols-3 p-4"
+        v-for="(item, index) in oneItem" :key="index"
+        >
           <div class="col-span-1">
             <img
-              src="../assets/Images/muscletech_creatine_monohydrate_200g_unflavoured_LRG.jpg"
+            :src="item.images[0]"
               class="w-24 h-28 p-4"
               alt=""
             />
           </div>
-          <div class="col-span-2 text-sm">
+       
+          <div class="col-span-2 text-sm"
+          >
             <p>
-              Whey Protein Standard Edition 2.2Kg <br />
-              Quantity: 1 <br />
-              2,900 <br />
+            {{item.title.substring(0,25)}}<br />
+              {{ item.price }}<br />
               <span class="font-bold">EGP</span>
             </p>
           </div>
         </div>
         <hr class="m-4" />
         <div class="grid grid-cols-3 p-4">
-          <div class="col-span-1">
-            <img
-              src="../assets/Images/muscletech_creatine_monohydrate_200g_unflavoured_LRG.jpg"
-              class="w-24 h-28 p-4"
-              alt=""
-            />
-          </div>
-          <div class="col-span-2 text-sm">
-            <p>
-              Whey Protein Standard Edition 2.2Kg <br />
-              Quantity: 1 <br />
-              2,900 <br />
-              <span class="font-bold">EGP</span>
-            </p>
-          </div>
+   
+      
         </div>
 
         <div class="flex items-center m-2">
@@ -134,7 +124,7 @@
             <h4>Subtotal</h4>
           </div>
           <div class="col-span-1 ml-6">
-            <h3>4,000 <span class="font-bold">EGP</span></h3>
+            <h3>{{ prices }} <span class="font-bold">EGP</span></h3>
           </div>
         </div>
         <div class="grid grid-cols-3 m-4">
@@ -152,7 +142,7 @@
             <h4>Total</h4>
           </div>
           <div class="col-span-1 ml-6">
-            <h3>4,000 <span class="font-bold">EGP</span></h3>
+            <h3>{{ prices }} <span class="font-bold">EGP</span></h3>
           </div>
         </div>
       </div>
@@ -161,19 +151,53 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "CheckOut",
   data() {
     return {
       active: false,
+      oneItem:[],
+      id: "",
+      total:0,
     };
   },
+  created() {
+    this.getItem();
+  },
+  computed:{
+    prices(){
+      for(var i=0;i<this.oneItem.length;i++){
+        console.log(this.total)
+      this.total+= parseInt(this.oneItem[i].price.split(",").join(""))
+    } 
+    return this.total
+    }, },
   methods: {
     toggle() {
       this.active = !this.active;
     },
-  },
-};
+  
+  getItem() {
+      axios
+        .get("http://localhost:3000/cart")
+        .then((res) => {
+          this.oneItem = res.data
+          console.log(this.oneItem)
+          
+        })
+        .catch((err) => console.log(err));
+    },
+  remove(id){
+
+       let conf = confirm(`Are you sure you want to delete ?`)
+        if (conf==true){
+          axios.delete(`http://localhost:3000/cart/${id}`).then((res)=>{console.log(res)}).catch((err)=>{console.log(err)});
+            this.getData()
+        }
+  }
+}};
 </script>
 
 <style lang="scss" scoped></style>

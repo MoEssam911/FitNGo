@@ -123,10 +123,11 @@
           </div>
           <!-- btns of add item  -->
           <div class="flex flex-row mt-[2%]">
-            <button
+            
+            <button @click="addCart()"
               class="bg-primary w-full rounded-md py-[1%] self-center mr-[1%]"
-            >
-              Shop Now
+            ><router-link :to="`/cart`">
+              Buy Now</router-link>
             </button>
             <button @click="addCart()"
               class="flex bg-white text-gray-600 border-gray-600 border-2 py-[1%] justify-center ml-[1%] rounded-lg w-full"
