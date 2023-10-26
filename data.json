@@ -367,6 +367,8 @@
       "price": "60.00",
       "stock": 1,
       "color": "white"
+    }
+  ],
   "supplements": [
     {
       "id": "1",
