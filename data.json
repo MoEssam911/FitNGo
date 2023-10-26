@@ -222,18 +222,6 @@
       "Clients": [
         {}
       ]
-    },
-    {
-      "TrainerImg": "",
-      "TrainerCard": "https://www.informa-180.com/images/informa-character.png",
-      "TrainerNames": "Hussien Informa",
-      "Rate": "",
-      "Description": "Your fitness fairy godmother is here!, and I'm here to help you transform your body and mind, and become the best version of yourself.I believe that fitness should be fun and rewarding, so I create workouts that are challenging but enjoyable. And I'm always here to support you and motivate you along the way,Are you ready to make a change?",
-      "Fees": "4700 EGP/MTH",
-      "Clients": [
-        {}
-      ],
-      "id": 12
     }
   ],
   "partners": [
@@ -1214,6 +1202,21 @@
     },
     {
       "id": 6
+    }
+  ],
+  "users": [
+    {
+      "userName": "asdasjh",
+      "id": "RLxUaPFTi3Qh3yqeImhc3ZwBwjp1",
+      "age": 25,
+      "role": "",
+      "gender": "male"
+    },
+    {
+      "id": "o5yyVPfzGxcgOG6FhwziOY1ZyoE2",
+      "userName": "Mohamed Essam",
+      "age": 25,
+      "gender": "male"
     }
   ]
 }
