@@ -17,7 +17,19 @@ import EditProfile from '../components/UserAccount/EditProfile.vue'
 import TrainerAccountView from '../views/TrainerAccountView.vue'
 import UserProfile from '../views/UserProfile.vue'
 import WorkoutsView from '../views/WorkoutsView.vue'
+import WorkoutView from '../views/WorkoutView.vue'
+import About from '../views/AboutView.vue'
+import shop from '../components/shop.vue'
+import BodyFatTool from '../components/BodyFatTool.vue'
+import DietPlan from '../components/DietPlan.vue'
+import BmrTool from '../components/ToolsPage.vue'
+import item from '../components/item.vue'
 import SingleWorkout from '../views/SingleWorkout.vue'
+import ChangeProfilePicture from '../components/ChangeProfilePicture.vue'
+import DashboardView from '../AdminDashboard/DashboardView.vue'
+import EditTrainer from '../AdminDashboard/TrainersDashboard/TrainersDashboardEdit.vue'
+import EditProduct from '../AdminDashboard/ProductsDashboard/ProductsDashboardEdit.vue'
+
 
 
 
@@ -40,9 +52,15 @@ const router = createRouter({
       component: OneTrainerView,
     },
     {
-      path: "/workouts",
-      name: "workouts",
-      component: WorkoutsView,
+
+      path: '/shop/:id',
+      name: 'item',
+      component: item
+    },
+    {
+      path: '/workouts',
+      name: 'workouts',
+      component: WorkoutsView
     },
 
     {
@@ -78,9 +96,15 @@ const router = createRouter({
       component: DietPlanTool,
     },
     {
+
+      path: '/shop',
+      name: 'shop',
+      component: shop
+    },
       path: "/bmrtool",
       name: "BmrTool",
       component: BmrTool,
+
     },
     {
       path: "/myplan",
@@ -122,6 +146,26 @@ const router = createRouter({
       path: '/UserProfile',
       name: 'UserProfile',
       component: UserProfile
+    },
+    {
+      path: '/ChangeProfilePicture',
+      name: 'ChangeProfilePicture',
+      component: ChangeProfilePicture
+    },
+    {
+      path: '/DashboardView',
+      name: 'DashboardView',
+      component: DashboardView
+    },
+    {
+      path: '/trainersdata/:id/edit',
+      name: 'EditTrainer',
+      component: EditTrainer
+    },
+    {
+      path: '/productsdata/:id/edit',
+      name: 'EditProduct',
+      component: EditProduct
     },
   ],
   scrollBehavior(to, from, savedPosition) {
