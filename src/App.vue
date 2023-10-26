@@ -70,3 +70,16 @@ export default {
   position: fixed;
 }
 </style>
+
+
+
+
+
+<!-- <BaseModal :modalActive="modalActive" @close="toggleModal">
+
+  Modal content is placed here
+
+  <h1 class="text-2xl text-black">Our Modal</h1>
+
+</BaseModal>  -->
+<!--In script, declare the modalActive variable and make the toggleModal function-->

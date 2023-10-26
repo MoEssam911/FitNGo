@@ -19,7 +19,7 @@
 
 
 
-  <div class="fixed bottom-4 right-4 z-50">
+  <div class="fixed bottom-4 right-4 z-40">
     <button
     class=" bg-primary w-14 h-14 text-white text-4xl rounded-full animate-bounce hover:bg-red-700 btn"
     @click="showMap"
