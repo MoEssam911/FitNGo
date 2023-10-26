@@ -8,26 +8,10 @@
     v-if="isLoggedIn"></div>
     <Navbar />
   <main class="w-full h-screen relative">
-
-    <Navbar class="fixed top-0 z-50 w-full"></Navbar>
     <RouterView />
-    <!-- <UserSideBar></UserSideBar> -->
 
-    <!-- <TrainerAccount></TrainerAccount> -->
-    <!-- <AboutView></AboutView> -->
-    <!-- <Card></Card>
-    <shop></shop>
-    <TrainerSideBar></TrainerSideBar> -->
-    <!-- <CheckOut></CheckOut> -->
 
-  <!-- <TrainerStatsData></TrainerStatsData> -->
-  <!-- <LiftingBanner /> -->
-  <!-- <MacroCalc /> -->
-  <!-- <Tools /> -->
-  <!-- <HomeBanner /> -->
-    <Footer></Footer> 
-    <!-- <ShopView></ShopView> --> 
-
+    <Footer />
   </main>
 </template>
 
