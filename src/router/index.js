@@ -16,8 +16,8 @@ import TrainerAccountView from '../views/TrainerAccountView.vue'
 import UserProfile from '../views/UserProfile.vue'
 import WorkoutsView from '../views/WorkoutsView.vue'
 import WorkoutView from '../views/SingleWorkout.vue'
-// import About from '../views/AboutView.vue'
-// import shop from '../components/shop.vue'
+
+import shop from '../components/shop.vue'
 // import BodyFatTool from '../components/Tools/BodyFatTool.vue'
 // import DietPlan from '../components/Tools/DietPlanTool.vue'
 // import ToolsPage from '../components/ToolsPage.vue'
@@ -109,12 +109,6 @@ const router = createRouter({
       path: '/shop',
       name: 'shop',
       component: shop
-    },
-    {
-      path: "/bmrtool",
-      name: "BmrTool",
-      component: BmrTool,
-
     },
     {
       path: "/myplan",
