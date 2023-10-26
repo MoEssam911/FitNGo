@@ -13,7 +13,9 @@
           />
           <button
             type="submit"
-            class="absolute top-0 right-0 p-2.5 text-sm font-medium h-full text-white bg-primary rounded-lg border border-primary hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300"
+            class="absolute top-0 right-0 p-2.5 text-sm font-medium h-full text-
+             bg-primary rounded-lg border border-primary hover:bg-red-800
+              focus:ring-4 focus:outline-none focus:ring-red-300"
           >
             <svg
               class="w-4 h-4"
@@ -106,7 +108,7 @@
       >
         More To Explore
       </button>
-
+      
   </template>
   <script setup>
 

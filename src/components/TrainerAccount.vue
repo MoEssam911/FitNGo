@@ -16,25 +16,25 @@
               />
             </div>
 
-            <div class="grid grid-cols-2 md:grid-rows-1 gap-32">
-              <div class="flex">
-                <label for="" class="text-black text-sm md:text-base font-medium">Name :</label>
-                <h2 for="" class="text-primary text-sm md:text-base font-medium">Amr Sameh</h2>
+            <div class="grid grid-cols-2 lg:flex gap-20 ">
+              <div class="flex flex-wrap">
+                <label for="" class="text-black text-base font-medium">Name :</label>
+                <h2 for="" class="text-primary text-base font-medium">Amr Sameh</h2>
               </div>
-              <div class="flex">
-                <label for="" class="text-black text-sm md:text-base font-medium">Clients :</label>
-                <h2 for="" class="text-primary text-sm md:text-base font-medium">5</h2>
+              <div class="flex flex-wrap ">
+                <label for="" class="text-black text-base font-medium">Clients :</label>
+                <h2 for="" class="text-primary text-base font-medium">5</h2>
               </div>
-              <div class="flex">
-                <label for="" class="text-black text-sm md:text-base font-medium"
+              <div class="flex flex-wrap">
+                <label for="" class="text-black text-base font-medium"
                   >Work Status :</label>
-                <h2 for="" class="text-primary text-sm md:text-base font-medium">Gold's Gym</h2>
+                <h2 for="" class="text-primary text-base font-medium">Gold's Gym</h2>
               </div>
-              <div class="flex">
-                <label for="" class="text-black text-sm md:text-base font-medium"
+              <div class="flex flex-wrap">
+                <label for="" class="text-black text-base font-medium"
                   >Subscription Fees :</label
                 >
-                <h2 for="" class="text-primary text-sm md:text-base font-medium">900 EGP</h2>
+                <h2 for="" class="text-primary text-base font-medium">900 EGP</h2>
               </div>
             </div>
           </div>
