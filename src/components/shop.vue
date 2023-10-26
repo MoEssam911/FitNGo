@@ -1,4 +1,5 @@
 <template>
+
   <div class="flex flex-col">
     <div class="flex relative object-cover h-[350px]">
       <img
@@ -126,15 +127,16 @@
       More To Explore
     </button>
     </div>
-  </div>
 </template>
-
+<script setup>
+import ShopCardsandSearchVue from "./ShopCardsandSearch.vue";
+import ShopBanners from "./ShopBanners.vue";
+</script>
 <script>
-import axios from "axios";
-import { ref, computed, onMounted, watch } from "vue";
 
 export default {
   name: "shop",
+
   data() {
     return {
       itemsDb: [],
@@ -173,6 +175,7 @@ export default {
     }, 
     
   },
+
 };
 </script>
 
@@ -191,5 +194,6 @@ export default {
   right: 25px;
   transition: 0.5s;
 }
+
 
 </style>

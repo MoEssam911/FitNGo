@@ -1,24 +1,25 @@
 <template>
-  <div>
-    <BannerHome></BannerHome>
-    <TrainersFrame></TrainersFrame>
-    <GymLocations></GymLocations>
-    <!-- <Cart></Cart> -->
+  <body>
+    <HomeBanner />
+   <TrainersFrame />
+      <myMap/>
     <ToolsView />
-    <OurPartners></OurPartners>
-    <!-- <Cart></Cart> -->
-    <!-- <item></item> -->
-  </div>
+    <OurPartners />
+  </body>
 
 </template>
+
 <script setup>
+import LiftingBanner from '../components/Home/HomeBanner/LiftingBanner.vue'
+import shopBanner from '../components/Home/HomeBanner/shopBanner.vue'
+import ToolsBanner from '../components/Home/HomeBanner/ToolsBanner.vue'
+
+
+import myMap from '../components/myMap.vue'
+import HomeBanner from '../components/Home/HomeBanner.vue'
 import OurPartners from "../components/Home/OurPartners.vue"
-// import Cart from "../components/Cart.vue"
 import TrainersFrame from "../components/Home/TrainersFrames.vue"
-import GymLocations from "../components/Home/GymLocation/GymLocations.vue"
-import ToolsView from '../components/ToolsView.vue'
-import Cart from "../components/Cart.vue"
-import item from "../components/item.vue"
+import ToolsView from '../components/Home/ToolsView.vue'
 </script>
 
  
