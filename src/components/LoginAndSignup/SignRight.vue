@@ -126,7 +126,7 @@
 <script setup>
 import { ref } from "vue";
 import router from "../../router";
-
+import '../../firebaseInit'
 // import auth functions
 import {
   getAuth,
@@ -136,12 +136,9 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 
-// import firestore functions
-import { getFirestore, doc, setDoc } from "@firebase/firestore";
 import axios from "axios";
 
-//
-const db = getFirestore();
+
 const email = ref("");
 const password = ref("");
 const userName = ref("");
@@ -157,14 +154,6 @@ const register = () => {
       console.log("user:", data.user);
       router.push("./tools");
 
-      const docCollectionRef = doc(db, "users", data.user.uid);
-
-      setDoc(docCollectionRef, {
-        id: data.user.uid,
-        userName: userName.value,
-        age: age.value,
-        gender: gender.value,
-      });
       const user = {
         id: data.user.uid,
         userName: userName.value,

@@ -45,9 +45,12 @@ import SignRight from './SignRight.vue'
         if (this.test == 'login') {
           this.test = 'sign'
           this.sign = true;
+          console.log(this.test,this.sign);
         } else {
           this.test = 'login'
           this.sign = false;
+          console.log(this.test,this.sign);
+
         }
       },
       // changeStyle(){
