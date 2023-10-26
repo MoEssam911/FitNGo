@@ -10,7 +10,7 @@
     <div class="container">
 
     <!-- ad banners  -->
-    <div class="flex relative object-cover">
+    <div class="flex relative object-cover lg:flex-row md:flex-row sm:flex-col">
       <div
         class="w-1/2 "
       >

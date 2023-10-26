@@ -1,8 +1,8 @@
 <template>
 
-  <div class="container grid font-manrope mt-[50%] mb-[5%] ">
-    <div class="grid grid-cols-3 lg:grid-cols-3 md:grid-rows-2 md:grid-flow-row">
-      <div class="grid grid-flow-row col-span-2 h-5/6 ">
+  <div class="container grid font-manrope  mb-[2%] ">
+    <div class="grid grid-cols lg:grid-cols md:grid-row md:grid-flow-col gap-2">
+      <div class="grid grid-flow-row  h-5/6 ">
         <div class="container pt-[1%] grid grid-cols-10 bg-secondary rounded-xl">
           <div class="col-span-5 ml-[50%]"><p>product</p></div>
           <div class="col-span-3 ml-[5%]"><p>Price</p></div>
@@ -32,7 +32,7 @@
       <!-- total  -->
       <div
 
-        class="flex flex-col col-span-1 w-[300px] h-[200px] bg-secondary mt-[20%] rounded-xl  mx-[10%]  pt-[2%] pb-[2%]"
+        class="flex flex-col  lg:w-[300px] md:w-[300] sm:w-full h-[200px] bg-secondary md:mt-[20%] rounded-xl  mx-[10%]  pt-[2%] pb-[2%]"
 
       >
         <!-- <h2 class="flex font-bold order justify-center mb-[15%]">Cart Total</h2> -->
@@ -40,7 +40,7 @@
           <div class="text-[14px]">subtotal</div>
           <div class="text-primary text-[14px]">{{prices}}EGP</div>
         </div> -->
-        <div class="flex flex-row justify-around mt-[15%] ">
+        <div class="flex flex-row bottom-full justify-around mt-[15%] ">
           <div class="font-extrabold text-[20px]">Total</div>
           <div class="font-semibold text-[20px] text-primary">{{ prices+10 }} EGP</div>
         </div>
