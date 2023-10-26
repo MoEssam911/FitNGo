@@ -9,7 +9,7 @@
   <main class="w-full relative">
 
     <Navbar class="fixed top-0 z-50 w-full"></Navbar>
-    <RouterView />
+    <RouterView class="mt-[30%]" />
     <!-- <UserSideBar></UserSideBar> -->
     <!-- <TrainerAccount></TrainerAccount> -->
     <!-- <AboutView></AboutView> -->

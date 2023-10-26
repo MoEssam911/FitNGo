@@ -128,7 +128,7 @@
             >
               Shop Now
             </button>
-            <button
+            <button @click="addCart()"
               class="flex bg-white text-gray-600 border-gray-600 border-2 py-[1%] justify-center ml-[1%] rounded-lg w-full"
             >
               <svg
@@ -211,6 +211,12 @@ export default {
     },
     imageSwap(index) {
       this.countImg = index;
+    },
+    addCart(){
+      axios
+        .post("http://localhost:3000/cart",this.oneItem)
+        .then((res) => console.log(res))
+        .catch((err) => console.log(err));  
     },
 
     addItem() {if(this.oneItem.stock > this.counter){

@@ -42,7 +42,7 @@
             v-model="searchQuery"
             type="search"
             class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-lg border-l-gray-50 border-l-2 border border-gray-300 focus:ring-primary focus:border-primary outline-primary"
-            placeholder="Search by Exercise name ..."
+            placeholder="Search by products name ..."
           />
           <button
             type="submit"
@@ -102,11 +102,12 @@
                       {{ item.price }}
                     </p></div>
                   </div>
+                  <router-link :to="`/cart`">
                   <button
                     class="bg-primary transition rounded px-2 py-1 text-white"
                   >
                     Buy Now
-                  </button>
+                  </button> </router-link>
                 </div>
               </div>
             </div>
