@@ -104,6 +104,7 @@ export default {
       toggle: "main-side-right",
       flag: false,
       toggleComponent2:'trainer',
+    }
   },
   inject:["changeToggle","toggleComponent"],
   methods:{
