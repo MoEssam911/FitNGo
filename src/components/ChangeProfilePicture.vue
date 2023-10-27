@@ -18,7 +18,9 @@
         {{user.userName}}
       </div>
       <!-- {{ user.id }} -->
+
     </div>
+  </div>
 </template>
 
 <script>
@@ -78,9 +80,10 @@ import axios from 'axios';
             // }
         },
     }
+
 </script>
 
-<style lang="scss"  scoped>
+<style lang="scss" scoped>
 /* input {
     display: none;
 }
@@ -102,21 +105,20 @@ opacity: 1;
 
 $circleSize: 165px;
 $radius: 100px;
-$shadow: 0 0 10px 0 rgba(255,255,255,.35);
-$fontColor: rgb(250,250,250);
+$shadow: 0 0 10px 0 rgba(255, 255, 255, 0.35);
+$fontColor: rgb(250, 250, 250);
 
 .profile-pic {
   color: transparent;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   @include object-center;
   position: relative;
-  transition: all .3s ease;
-  
+  transition: all 0.3s ease;
+
   input {
     display: none;
-
   }
-  
+
   img {
     position: absolute;
     object-fit: cover;
@@ -126,25 +128,26 @@ $fontColor: rgb(250,250,250);
     border-radius: $radius;
     z-index: 0;
   }
-  
+
   .-label {
     cursor: pointer;
     height: $circleSize;
     width: $circleSize;
   }
-  
+
   &:hover {
     .-label {
       @include object-center;
-      background-color: rgba(0,0,0,.5);
+      background-color: rgba(0, 0, 0, 0.5);
       z-index: 10000;
       color: $fontColor;
-      transition: background-color .2s ease-in-out;
+      transition: background-color 0.2s ease-in-out;
       border-radius: $radius;
       margin-bottom: 0;
       
     }
   }
+
 
   .-label i {
  display: none;
@@ -166,7 +169,7 @@ body {
   height: 100vh;
   background-color: rgb(25, 24, 21);
   @include object-center;
-  
+
   a:hover {
     text-decoration: none;
   }
@@ -175,3 +178,4 @@ body {
   background-color: gray;
 }
 </style>
+

@@ -1,6 +1,6 @@
 <template>
 
-  <LoginNSignup
+  <!-- <LoginNSignup
     class="fixed z-20 top-5 left-2/4 -translate-x-1/2 w-10/12 mx-auto border border-black bg-white"
     v-if="isLoggedIn"
   ></LoginNSignup>
@@ -11,10 +11,9 @@
     <Navbar />
   <main class="w-full h-screen relative">
     <RouterView  class="mt-20"/>
-
-
     <Footer />
-  </main>
+  </main> -->
+  <UploadPhoto></UploadPhoto>
   
 </template>
 
@@ -36,12 +35,13 @@ import { RouterView } from "vue-router";
 import Navbar from "./components/utilities/Navbar.vue";
 import Footer from "./components/utilities/Footer.vue";
 import LoginNSignup from "./components/LoginAndSignup/LoginNSignup.vue";
-
+import UploadPhoto from "./components/UploadPhoto.vue";
 export default {
   components: {
     Navbar,
     Footer,
     LoginNSignup,
+    UploadPhoto
   },
   data() {
     return {

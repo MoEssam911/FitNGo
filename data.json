@@ -1411,5 +1411,17 @@
         ]
       }
     }
+  ],
+  "uploadimage": [
+    {
+      "https://firebasestorage.googleapis.com/v0/b/fitngo-project.appspot.com/o/uploadeImages?alt": "media",
+      "token": "44cafbfd-ce82-444b-a3b5-c9bca07463ae",
+      "id": 1
+    },
+    {
+      "https://firebasestorage.googleapis.com/v0/b/fitngo-project.appspot.com/o/uploadeImages?alt": "media",
+      "token": "2cccacc5-997e-48dc-80c4-57465e02530f",
+      "id": 2
+    }
   ]
 }
