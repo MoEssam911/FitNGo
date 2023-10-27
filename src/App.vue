@@ -7,16 +7,39 @@
   <div
     class="fixed z-10 bg-[#000000ee] w-full h-screen top-0"
     @click="closeLogin"
-    v-if="isLoggedIn"></div>
-    <Navbar />
-  <main class="w-full h-screen relative">
-    <RouterView class="mt-20" />
+    v-if="isLoggedIn"
+  ></div>
 
+  <Navbar />
+
+  <main class="w-full h-screen relative">
+    <RouterView class="mt-20" v-slot="{ Component }">
+
+      <Transition name="page">
+        <component :is="Component" />
+      </Transition>
+    </RouterView>
 
     <Footer />
   </main>
   
 </template>
+
+<style lang="scss">
+.login {
+  position: fixed;
+}
+.page-enter-active,
+.page-leave-active {
+  transition: 200ms ease-in-out opacity;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+}
+</style>
+
 
 <script setup>
 import { computed } from 'vue'
@@ -64,15 +87,6 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-.login {
-  position: fixed;
-}
-</style>
-
-
-
 
 
 <!-- <BaseModal :modalActive="modalActive" @close="toggleModal">

@@ -39,11 +39,17 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: HomeView,
+      meta: {
+        title: 'Home'
+      }
     },
     {
       path: "/trainers",
       name: "trainers",
       component: TrainersView,
+      meta: {
+        title: 'Trainers'
+      }
     },
     {
       path: "/trainers/:id",
@@ -55,6 +61,7 @@ const router = createRouter({
       path: '/shop/:id',
       name: 'item',
       component: item
+
     },
     {
       path: '/cart',
@@ -69,7 +76,10 @@ const router = createRouter({
     {
       path: '/workouts',
       name: 'workouts',
-      component: WorkoutsView
+      component: WorkoutsView,
+      meta: {
+        title: 'Workouts'
+      }
     },
 
     {
@@ -82,17 +92,26 @@ const router = createRouter({
       path: "/About",
       name: "about",
       component: About,
+      meta: {
+        title: 'About Us'
+      }
     },
 
     {
       path: "/shop",
       name: "shop",
       component: shop,
+      meta: {
+        title: 'Shop'
+      }
     },
     {
       path: "/tools",
       name: "ToolsPageView",
       component: ToolsPageView,
+      meta: {
+        title: 'Tools'
+      }
     },
     {
       path: "/bodyfattool",
@@ -159,7 +178,10 @@ const router = createRouter({
     {
       path: '/DashboardView',
       name: 'DashboardView',
-      component: DashboardView
+      component: DashboardView,
+      meta: {
+        title: 'Admin'
+      }
     },
     {
       path: '/trainersdata/:id/edit',
@@ -185,5 +207,13 @@ const router = createRouter({
     return { top: 0 };
   },
 });
+
+
+router.beforeEach((to, from, next) => {
+  const hasTitle = to.meta && to.meta.title;
+  document.title = hasTitle ? `Fit&Go | ${to.meta.title}` : 'Fit&Go';
+  next();
+});
+
 
 export default router;
