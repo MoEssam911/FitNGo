@@ -1,52 +1,86 @@
 <template>
-  <div class="mx-auto flex flex-col items-center mt-40 justify-center relative">
-    <div class="profile-pic">
-      <label class="-label" for="file">
-        <span
-          ><i class="fa-solid fa-camera text-white z-20 mr-3 text-lg"></i
-        ></span>
-        <span class="text-sm">Change Image</span>
-      </label>
-      <input id="file" ref="fileInput" type="file" @input="pickfile" />
-      <img :src="previewImage" id="output" width="200" @click="selectImage" />
-    </div>
-
-    <!-- <div class="w-32 h-32 rounded-full bg-black bg-opacity-50 z-10 absolute cursor-pointer show"></div>
+    <div class="mx-auto flex flex-col items-center justify-center relative ">
+        <div class="profile-pic ">
+  <label class="-label " for="file">
+    <span><i class="fa-solid fa-camera text-white z-20 mr-3 text-lg"></i></span>
+    <span class="text-sm">Change Image</span>
+  </label>
+  <input id="file" ref="fileInput" type="file" @input="pickfile"/>
+  <img :src="previewImage" id="output" width="200" @click="selectImage" :class="{bgGray : test}"/>
+</div>
+        
+        <!-- <div class="w-32 h-32 rounded-full bg-black bg-opacity-50 z-10 absolute cursor-pointer show"></div>
         <img
           class="w-32 h-32 rounded-full object-cover z-0 cursor-pointer absolute"
           src="../assets/Images/selim.jpeg" /> -->
+      
+      <div class="font-Manrope font-bold text-primary text-lg text-center py-3">
+        {{user.userName}}
+      </div>
+      <!-- {{ user.id }} -->
 
-    <div class="font-Manrope font-bold text-primary text-lg text-center py-3">
-      Selim Mohamed
     </div>
   </div>
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      previewImage: "",
-    };
-  },
-  methods: {
-    selectImage() {
-      this.$refs.fileInput.click();
-    },
-    pickfile() {
-      let input = this.$refs.fileInput;
-      let file = input.files;
-      if (file && file[0]) {
-        let reader = new FileReader();
-        reader.onload = (e) => {
-          this.previewImage = e.target.result;
-        };
-        reader.readAsDataURL(file[0]);
-        this.$emit("input", file[0]);
-      }
-    },
-  },
-};
+import axios from 'axios';
+    export default {
+        data(){
+            return {
+                previewImage: '',
+                test:true,
+                user:{},
+                file:{},
+            }
+        },
+        created(){
+          this.user = JSON.parse(localStorage.getItem('user'));
+          this.file = JSON.parse(localStorage.getItem('userImage'));
+          // this.getImage(this.file)
+          // console.log(this.user);
+        },
+        methods:{
+            selectImage() {
+                this.$refs.fileInput.click()
+            },
+            pickfile(){
+                let input = this.$refs.fileInput
+                let file = input.files
+                if (file && file[0]) {
+                    let reader = new FileReader
+                    reader.onload = e =>{
+                        this.previewImage = e.target.result
+                        this.user.imageProfile = file[0];
+                        console.log(this.user);
+                        // console.log(e.target.result);
+                        this.test = false;
+                    }
+
+                    reader.readAsDataURL(file[0])
+                    this.$emit('input',file[0])
+                    localStorage.setItem('userImage',JSON.stringify(file[0]))
+                    console.log(file[0]);
+                    console.log(this.user);
+                    // axios.put(`http://localhost:3000/users/${this.user.id}`,this.user).then((res)=>{
+                    //   console.log(res);
+                    // }).catch(err=>console.log(err))
+                }
+            },
+            // getImage(file){
+            //   let reader = new FileReader
+            //         reader.onload = e =>{
+            //             this.previewImage = e.target.result
+            //             // this.user.imageProfile = file;
+            //             // console.log(this.user);
+            //             // console.log(e.target.result);
+            //             this.test = false;
+            //         }
+            //         reader.readAsDataURL(file)
+            // }
+        },
+    }
+
 </script>
 
 <style lang="scss" scoped>
@@ -110,9 +144,18 @@ $fontColor: rgb(250, 250, 250);
       transition: background-color 0.2s ease-in-out;
       border-radius: $radius;
       margin-bottom: 0;
+      
     }
   }
 
+
+  .-label i {
+ display: none;
+  }
+  .-label:hover i {
+ display: block;
+  }
+  
   span {
     height: 2em;
   }
@@ -131,4 +174,8 @@ body {
     text-decoration: none;
   }
 }
+.bgGray{
+  background-color: gray;
+}
 </style>
+

@@ -8,14 +8,15 @@
     <div class="w-full">
       <div>
         <h3 class="float-text"><span class="bg-white ms-2 text-center px-2">Email</span></h3>
-        <input type="email" placeholder="ex:mid9653@gmail.com" class="outline outline-2 px-2 w-full rounded py-2 focus:outline-primary">
+        <input type="email" v-model="email" placeholder="ex:mid9653@gmail.com" class="outline outline-2 px-2 w-full rounded py-2 focus:outline-primary">
       </div>
       <div class="mt-3">
         <h3 class="float-text"><span class="bg-white ms-2 text-center px-2">password</span></h3>
-        <input type="password" placeholder="*********" class=" outline outline-2 px-2 w-full rounded py-2 focus:outline-primary">
+        <input type="password" v-model="password" placeholder="*********" class=" outline outline-2 px-2 w-full rounded py-2 focus:outline-primary">
       </div>
+      <p v-if="errorMsg">{{ errorMsg }}</p>
     </div>
-    <button class="border rounded-xl bg-primary hover:bg-[#e60000df] text-white py-2 w-full block mx-auto  mt-4">Login</button>
+    <button class="border rounded-xl bg-primary hover:bg-[#e60000df] text-white py-2 w-full block mx-auto  mt-4" @click="Login">Login</button>
     <h3 class="text-xl text-center my-3">Or Sign In With</h3>
     <div class="w-3/12 mx-auto flex justify-around gap-3">
       <a href=""><i class="fa-brands fa-google text-primary text-3xl "></i></a>
@@ -24,10 +25,57 @@
   </div>
   </div>
 </template>
+<script setup>
+import { ref } from "vue";
+import '../../firebaseInit'
+// import auth functions
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  // GoogleAuthProvider,
+  // FacebookAuthProvider,
+  // signInWithPopup,
+} from "firebase/auth";
+import axios from 'axios';
+import {loginUser} from '../../../public/Mixins/public'
+const { user,getUser} = loginUser();
 
+
+
+const email = ref("");
+const password = ref("");
+const errorMsg = ref("");
+const Login = () => {
+  signInWithEmailAndPassword(getAuth(), email.value, password.value)
+    .then((data) => {
+      errorMsg.value = ''
+      // console.log("user:", data.user.uid);
+      getUser(data.user.uid)
+      // console.log(user);
+    })
+    .catch((error) => {
+      console.log(error.code);
+      switch (error.code){
+        case 'auth/invalid-email':
+        errorMsg.value = 'Invalid Email/Password';
+        break;
+        case 'auth/user-not-found':
+          errorMsg.value = 'No account with this email was found';
+          break;
+          case 'auth/wrong-password':
+            errorMsg.value = 'Invalid Email/Password';
+            break;
+            default :
+            errorMsg.value = 'Invalid Email/Password';
+            break;
+      }
+    });
+};
+</script>
 <script>
   export default {
     name:'LoginLeft',
+    inject:['user']
   }
 </script>
 

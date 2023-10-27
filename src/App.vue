@@ -46,6 +46,7 @@ export default {
   data() {
     return {
       isLoggedIn: false,
+      user:{},
     };
   },
   methods: {
@@ -60,6 +61,7 @@ export default {
     return {
       isLoggedIn: this.isLoggedIn,
       apperLogin: this.apperLogin,
+      user:this.user,
     };
   },
 };
