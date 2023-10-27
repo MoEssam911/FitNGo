@@ -77,7 +77,6 @@
             </div>
             <div class="accent-primary md:w-2/4 w-full flex items-center pt-3">
               <input
-              checked
                 type="radio"
                 name="gender"
                 value="male"
@@ -160,6 +159,16 @@ const register = () => {
         userName: userName.value,
         age: age.value,
         gender: gender.value,
+        weight:'',
+        height:'',
+        bodyfat:'',
+        bmr:'',
+        imageProfile:'',
+        trainer:{},
+        plans:{
+          Workouts:[{}],
+          Diet:[{}],
+        }
       };
       axios
         .post("http://localhost:3000/users", user)
@@ -192,6 +201,7 @@ const signInWithFacebook = () => {
       console.log(err);
     });
 };
+console.log(gender)
 </script>
 
 <script>
