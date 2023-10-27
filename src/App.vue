@@ -1,6 +1,6 @@
 <template>
 
-  <!-- <LoginNSignup
+  <LoginNSignup
     class="fixed z-20 top-5 left-2/4 -translate-x-1/2 w-10/12 mx-auto border border-black bg-white"
     v-if="isLoggedIn"
   ></LoginNSignup>
@@ -12,8 +12,8 @@
   <main class="w-full h-screen relative">
     <RouterView  class="mt-20"/>
     <Footer />
-  </main> -->
-  <UploadPhoto></UploadPhoto>
+  </main>
+  <!-- <UploadPhoto></UploadPhoto> -->
   
 </template>
 

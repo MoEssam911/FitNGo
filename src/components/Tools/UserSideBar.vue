@@ -4,7 +4,10 @@
       class="my-shadow h-auto bg-secondary rounded-3xl py-9 flex flex-col "
       :class="toggle">
       <div>
-        <ChangePicture></ChangePicture>
+        <UploadPhoto></UploadPhoto>
+      </div>
+      <div class="font-Manrope font-bold text-primary text-lg text-center py-3">
+        Mohamed Elshimi
       </div>
       <!-- <div class="mx-auto">
         <img
@@ -97,17 +100,17 @@
     </div>
   </div>
 </template>
-<script setup>
+<!-- <script setup>
 import {loginUser} from '../../../public/Mixins/public'
 const { user,getUser} = loginUser();
-</script>
+</script> -->
 <script>
 import 'vue'
-import ChangePicture from '../ChangeProfilePicture.vue'
+import UploadPhoto from '../UploadPhoto.vue'
 export default {
   name:"UserSideBar",
   components:{
-    ChangePicture,
+    UploadPhoto,
   },
 
   data() {

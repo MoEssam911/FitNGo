@@ -1,13 +1,13 @@
 <template>
     <div class="mx-auto flex flex-col items-center justify-center relative ">
         <div class="profile-pic ">
-  <label class="-label " for="file">
-    <span><i class="fa-solid fa-camera text-white z-20 mr-3 text-lg"></i></span>
-    <span class="text-sm">Change Image</span>
-  </label>
-  <input id="file" ref="fileInput" type="file" @input="pickfile"/>
-  <img :src="previewImage" id="output" width="200" @click="selectImage" :class="{bgGray : test}"/>
-</div>
+          <label class="-label " for="file">
+            <span><i class="fa-solid fa-camera text-white z-20 mr-3 text-lg"></i></span>
+            <span class="text-sm">Change Image</span>
+          </label>
+          <input id="file" ref="fileInput" type="file" @input="pickfile"/>
+          <img :src="previewImage" id="output" width="200" @click="selectImage" :class="{bgGray : test}"/>
+        </div>
         
         <!-- <div class="w-32 h-32 rounded-full bg-black bg-opacity-50 z-10 absolute cursor-pointer show"></div>
         <img
@@ -20,7 +20,6 @@
       <!-- {{ user.id }} -->
 
     </div>
-  </div>
 </template>
 
 <script>

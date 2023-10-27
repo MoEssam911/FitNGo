@@ -22,6 +22,7 @@ import { storage } from "../firebaseInit";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 export default {
+  name:'UploadPhoto',
   data() {
     return {
       selectedFile: null,
@@ -152,7 +153,12 @@ $fontColor: rgb(250, 250, 250);
       margin-bottom: 0;
     }
   }
-
+  .-label i {
+ opacity: 0;
+  }
+  .-label:hover i {
+ opacity: 1;
+  }
   span {
     display: inline-flex;
     padding: 0.2em;
