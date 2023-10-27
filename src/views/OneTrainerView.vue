@@ -57,7 +57,7 @@
         </p>
           
         <div class="btn-primary-hover my-4">
-          <button class="text-white bg-primary rounded-md ">Start Now</button>
+          <button class="text-white bg-primary rounded-md " @click="SubwithTrainer">Start Now</button>
         </div>
       </div>
     </div>
@@ -70,20 +70,64 @@ export default {
   data() {
     return {
       trainers: {},
+      user:{},
       id: "",
+      Clients:[],
     };
   },
   created() {
+    this.user = JSON.parse(localStorage.getItem('user'));
     this.getTrainer();
+    this.getUser();
   },
   methods: {
     getTrainer() {
       this.id = this.$route.params.id;
+      // this.Clients = this.$route.params.id;
       axios
         .get(`http://localhost:3000/AllTrainers/${this.id}`)
-        .then((res) => (this.trainers = res.data))
+        .then((res) => {
+          this.trainers = res.data
+          console.log(this.trainers);
+          // console.log(this.trainers.Clients[0].id);
+          // console.log(this.trainers.Clients);
+          // console.log(this.trainers.Fees);
+          console.log(this.trainers.Clients.length);
+        })
         .catch((err) => console.log(err));
     },
+    getUser() {
+      axios.get(`http://localhost:3000/users/${this.user.id}`).then((res)=>{
+        // console.log(res.data)
+        this.user = res.data
+        // console.log(this.user)
+      }).catch((err)=>console.log(err))
+    },
+    async SubwithTrainer(){
+      this.trainers.Clients.push(this.user)
+      await axios.put(`http://localhost:3000/AllTrainers/${this.id}`,this.trainers).then((res)=>{
+        console.log(res);
+        // console.log(this.trainers.Clients[0].id);
+        alert("you have been subscribed successfully")
+      }).catch(err=>console.log(err))
+      this.user.trainer.push(this.trainers)
+      await axios.put(`http://localhost:3000/users/${this.user.id}`,this.user).then((res)=>{
+        console.log(res);
+      }).catch(err=>console.log(err))
+    //   for(var i=0;i<=this.trainers.Clients.length;i++){
+    //   if(!this.trainers.Clients[i].hasOwnProperty(this.user.id)){
+    //     this.trainers.Clients.push(this.user)
+    //   axios.put(`http://localhost:3000/AllTrainers/${this.id}`,this.trainers).then((res)=>{
+    //     console.log(res);
+    //     alert("you have been subscribed successfully")
+    //   }).catch(err=>console.log(err))
+   
+    //   }
+    //   else {
+    //     alert("you are already subscribed !!")
+    //   }
+    // }
+    }
   },
 };
 </script>

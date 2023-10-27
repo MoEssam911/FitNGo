@@ -116,7 +116,26 @@
       "Fees": "2200EGP/Mth",
       "Clients-Results": "",
       "Clients": [
-        {}
+        {
+          "id": "ejEPs2ZaS9hTzonyIKYzxd6mpZt1",
+          "userName": "hassan gamal",
+          "age": 24,
+          "gender": "male",
+          "weight": "",
+          "height": "",
+          "bodyfat": "",
+          "bmr": "",
+          "imageProfile": "",
+          "trainer": [],
+          "plans": {
+            "Workouts": [
+              {}
+            ],
+            "Diet": [
+              {}
+            ]
+          }
+        }
       ]
     },
     {
@@ -1355,7 +1374,7 @@
       "bodyfat": "",
       "bmr": "",
       "imageProfile": "",
-      "trainer": {},
+      "trainer": [],
       "plans": {
         "Workouts": [
           {}
@@ -1381,7 +1400,7 @@
       "bodyfat": "",
       "bmr": "",
       "imageProfile": {},
-      "trainer": {},
+      "trainer": [],
       "plans": {
         "Workouts": [
           {}
@@ -1401,7 +1420,7 @@
       "bodyfat": "",
       "bmr": "",
       "imageProfile": {},
-      "trainer": {},
+      "trainer": [],
       "plans": {
         "Workouts": [
           {}
