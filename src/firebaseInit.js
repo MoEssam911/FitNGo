@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore, getDoc } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDpP28_aTu3tKSLT55_dDeoInFpTv0w7LI",
@@ -17,17 +18,6 @@ const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
 
-export default {auth}
+const storage = getStorage(app)
 
-// init firestore service
-// const db = getFirestore();
-// const usersCollection = db.collection('users')
-
-// export const createUser = user => {
-//   return usersCollection.add(user)
-// }
-
-// export const getUser = async id => {
-//   const user = await usersCollection.doc(id).get()
-//   return user.exists ? user.data() : null
-// }
+export { auth, storage };
