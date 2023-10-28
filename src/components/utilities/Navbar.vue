@@ -5,12 +5,13 @@
     <div class="navigation ms-auto flex me-4">
       <div class="nav-list mx-4 flex text-white" v-if="this.toggle == 'open' || windowWidth > 830">
         <ul class="list-none flex">
-        <router-link to="/"><a href="" class="hover:text-primary"><li class="mx-2 ">Home</li></a></router-link>
-        <router-link to="/trainers"><a href="" class="hover:text-primary"><li class="mx-2 ">Trainers</li></a></router-link>
-        <router-link to="/shop"><a href="" class="hover:text-primary"><li class="mx-2 ">E-Shop</li></a></router-link>
-        <router-link to="/tools"><a href="" class="hover:text-primary"><li class="mx-2 ">Tools</li></a></router-link>
-        <router-link to="/workouts"><a href="" class="hover:text-primary"><li class="mx-2 ">Workouts</li></a></router-link>
-        <router-link to="/About"><a href="" class="hover:text-primary"><li class="mx-2 ">About</li></a></router-link>
+        <router-link to="/"><li class="mx-2 hover:text-primary">Home</li></router-link>
+        <router-link to="/trainers"><li class="mx-2 hover:text-primary">Trainers</li></router-link>
+        <router-link to="/shop"><li class="mx-2 hover:text-primary">E-Shop</li></router-link>
+        <li class="mx-2 hover:text-primary hover:cursor-pointer" @click="apperLogin" v-if="!loggedIN">Tools</li>
+        <router-link to="/UserProfile" v-if="loggedIN"><li class="mx-2 hover:text-primary">Tools</li></router-link>
+        <router-link to="/workouts"><li class="mx-2 hover:text-primary">Workouts</li></router-link>
+        <router-link to="/About"><li class="mx-2 hover:text-primary">About</li></router-link>
       </ul>
       
       </div>
@@ -31,37 +32,17 @@
   </div>
   </header>
 </template>
-<script setup>
-import { ref } from 'vue';
-import {loginUser} from '../../../public/Mixins/public'
-import router from '../../router';
-// const { getUser} = loginUser();
-// const user = ref({});
-// const dataFromLocalStorage = localStorage.getItem('user');
-// if (dataFromLocalStorage) {
-//       user.value = dataFromLocalStorage;
-//       if (user.value) {
-//         window.location.reload()
-        
-//       }
-// }
-// console.log(user.value);
-</script>
 <script>
 import router from '../../router';
-// import '../../../public/Mixins/public'
-// import { loginUser } from '../../../public/Mixins/public';
   export default {
     name:'Navbar',
     data(){
       return{
         toggle:'close',
         windowWidth: window.innerWidth,
-        // user:{},
         newloggedIN: false,
       }
     },
-    // mixins:['max'],
     inject: ["apperLogin","loggedIN","userLoggedIN","user"],
     beforeUnmount() {
       // Remove the resize event listener when the component is unmounted
@@ -72,12 +53,6 @@ import router from '../../router';
       window.addEventListener('resize', this.updateWindowWidth);
       window.onbeforeunload = this.handlePageReload;
       this.newloggedIN = JSON.parse(localStorage.getItem('loggedIn'))
-      // this.user = JSON.parse(localStorage.getItem('user'));
-      // console.log(this.newloggedIN);
-    },
-    created(){
-      // this.user = loginUser();
-      // console.log(this.user);
     },
     beforeDestroy() {
       window.onbeforeunload = null;
@@ -94,7 +69,6 @@ import router from '../../router';
         this.windowWidth = window.innerWidth;
       },
       handlePageReload() {
-        // this.user = JSON.parse(localStorage.getItem('user'));
         this.newloggedIN = JSON.parse(localStorage.getItem('isloggedIn'))
         console.log(this.newloggedIN);
       },
