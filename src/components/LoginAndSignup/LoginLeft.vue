@@ -59,11 +59,14 @@ const Login = () => {
             localStorage.removeItem('user')
             localStorage.setItem('user',JSON.stringify(user.value))
             console.log(user.value);
-            updateUser(user.value)
+            console.log(res.data);
+      updateUser(user.value)
+
         }).catch(err=>console.log(err))
         console.log(user.value);
       userLoggedIN();
       closeLogin();
+      // router.push('/UserProfile')
     })
     .catch((error) => {
       console.log(error.code);
@@ -81,12 +84,14 @@ const Login = () => {
             errorMsg.value = 'Invalid Email/Password';
             break;
       }
+      // console.log(user);
     });
   }
 </script>
 <script>
   export default {
     name:'LoginLeft',
+    // inject:['updateUser']
   }
 </script>
 
