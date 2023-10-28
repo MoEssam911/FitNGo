@@ -2,6 +2,15 @@ import {ref} from 'vue'
 import axios from 'axios'
 export const loginUser = () =>{
     const user = ref({})
+    
+    
+    
+    
+    
+    
+    
+    
+    
     const getUser = (uid) =>{
          axios.get(`http://localhost:3000/users/${uid}`).then(async (res)=>{
             // console.log(res.data);
@@ -29,6 +38,34 @@ export const loginUser = () =>{
         // return user.value
     }
     return {user,getUser,setUser}
+    }
+    const setUser = (uid,userObj) =>{
+        axios
+        .put(`http://localhost:3000/users/${uid}`, userObj)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => console.log(err));
+    }
+    const putTrainer = (uid,trainObj) =>{
+        axios
+        .put(`http://localhost:3000/AllTrainers/${uid}`, trainObj)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => console.log(err));
+    }
+    const getTrainer = (uid) =>{
+        axios
+        .get(`http://localhost:3000/AllTrainers/${uid}`)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => console.log(err));
+    }
+
+    
+    return {user,getUser,setUser,getTrainer,putTrainer}
 }
 
 

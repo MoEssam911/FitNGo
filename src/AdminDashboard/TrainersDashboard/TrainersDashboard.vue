@@ -34,7 +34,7 @@
                             class="px-6 py-4 font-medium text-dark whitespace-nowrap">
                           {{ trainer.TrainerNames }}</th>
                           <td class="px-6 py-4">
-                            10
+                            {{ trainer.Clients.length }}
                           </td>
                           <td class="px-6 py-4">
                            {{ trainer.Fees }}

@@ -130,6 +130,7 @@
     </div>
 </template>
 <script setup>
+import axios from "axios";
 import ShopCardsandSearchVue from "./ShopCardsandSearch.vue";
 import ShopBanners from "./ShopBanners.vue";
 </script>
