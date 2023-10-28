@@ -11,7 +11,33 @@ export const loginUser = () =>{
             localStorage.setItem('user',JSON.stringify(user.value))
         }).catch(err=>console.log(err))
     }
-    return {user,getUser}
+    const setUser = (uid,userObj) =>{
+        axios
+        .put(`http://localhost:3000/users/${uid}`, userObj)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => console.log(err));
+    }
+    const putTrainer = (uid,trainObj) =>{
+        axios
+        .put(`http://localhost:3000/AllTrainers/${uid}`, trainObj)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => console.log(err));
+    }
+    const getTrainer = (uid) =>{
+        axios
+        .get(`http://localhost:3000/AllTrainers/${uid}`)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => console.log(err));
+    }
+
+    
+    return {user,getUser,setUser,getTrainer,putTrainer}
 }
 
 
