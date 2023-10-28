@@ -26,7 +26,7 @@
   </div>
 </template>
 <script setup>
-import { ref } from "vue";
+import { inject, ref } from "vue";
 import '../../firebaseInit'
 // import auth functions
 import {
@@ -38,8 +38,11 @@ import {
 } from "firebase/auth";
 import axios from 'axios';
 import {loginUser} from '../../../public/Mixins/public'
+import router from '../../router';
 const { user,getUser} = loginUser();
-
+const closeLogin = inject('closeLogin');
+const userLoggedIN = inject('userLoggedIN')
+const updateUser = inject('updateUser')
 
 
 const email = ref("");
@@ -48,10 +51,19 @@ const errorMsg = ref("");
 const Login = () => {
   signInWithEmailAndPassword(getAuth(), email.value, password.value)
     .then((data) => {
-      errorMsg.value = ''
-      // console.log("user:", data.user.uid);
-      getUser(data.user.uid)
-      // console.log(user);
+      errorMsg.value = '';
+      axios.get(`http://localhost:3000/users/${data.user.uid}`).then(async (res)=>{
+            // console.log(res.data);
+            user.value = res.data
+            // console.log(user);
+            localStorage.removeItem('user')
+            localStorage.setItem('user',JSON.stringify(user.value))
+            console.log(user.value);
+            updateUser(user.value)
+        }).catch(err=>console.log(err))
+        console.log(user.value);
+      userLoggedIN();
+      closeLogin();
     })
     .catch((error) => {
       console.log(error.code);
@@ -70,12 +82,11 @@ const Login = () => {
             break;
       }
     });
-};
+  }
 </script>
 <script>
   export default {
     name:'LoginLeft',
-    inject:['user']
   }
 </script>
 

@@ -18,24 +18,51 @@
       <a href=""><i class="fa-solid fa-bell text-yellow-400 text-right"></i></a>
     </div>
     <div>
-        <router-link to="/UserProfile"><div class="icon-login bg-slate-300 mx-auto mb-1 hover:cursor-pointer"><i class="fa-solid fa-user"></i></div></router-link>
-        <h6 class="select-none text-sm hover:cursor-pointer hover:text-red-600" @click="apperLogin">Login</h6>
+        <div class="icon-login bg-slate-300 mx-auto mb-1 hover:cursor-pointer overflow-hidden" v-if="!loggedIN" @click="apperLogin">
+          <i class="fa-solid fa-user" ></i>
+        </div>
+        <router-link to="/UserProfile"><div class="icon-login bg-slate-300 mx-auto mb-1 hover:cursor-pointer overflow-hidden" v-if="loggedIN">
+          <img class="w-16 h-16 rounded-full object-cover" :src="user.imageProfile" alt="profile picture" />
+        </div></router-link>
+        <h6 class="select-none text-sm hover:cursor-pointer hover:text-red-600" v-if="!loggedIN" @click="apperLogin">Login</h6>
+        <h6 class="select-none text-sm hover:cursor-pointer hover:text-red-600" v-if="loggedIN" @click="logout">Logout</h6>
     </div>
     <i class="fa-solid fa-list responsive-icon hover:cursor-pointer text-right mx-4" @click="displayList"></i>
   </div>
   </header>
 </template>
-
+<script setup>
+import { ref } from 'vue';
+import {loginUser} from '../../../public/Mixins/public'
+import router from '../../router';
+// const { getUser} = loginUser();
+// const user = ref({});
+// const dataFromLocalStorage = localStorage.getItem('user');
+// if (dataFromLocalStorage) {
+//       user.value = dataFromLocalStorage;
+//       if (user.value) {
+//         window.location.reload()
+        
+//       }
+// }
+// console.log(user.value);
+</script>
 <script>
+import router from '../../router';
+// import '../../../public/Mixins/public'
+// import { loginUser } from '../../../public/Mixins/public';
   export default {
     name:'Navbar',
     data(){
       return{
         toggle:'close',
         windowWidth: window.innerWidth,
+        // user:{},
+        newloggedIN: false,
       }
     },
-    inject: ["isLoggedIn","apperLogin"],
+    // mixins:['max'],
+    inject: ["apperLogin","loggedIN","userLoggedIN","user"],
     beforeUnmount() {
       // Remove the resize event listener when the component is unmounted
       window.removeEventListener('resize', this.updateWindowWidth);
@@ -43,6 +70,17 @@
     mounted() {
       // Add a listener to update windowWidth when the window is resized
       window.addEventListener('resize', this.updateWindowWidth);
+      window.onbeforeunload = this.handlePageReload;
+      this.newloggedIN = JSON.parse(localStorage.getItem('loggedIn'))
+      // this.user = JSON.parse(localStorage.getItem('user'));
+      // console.log(this.newloggedIN);
+    },
+    created(){
+      // this.user = loginUser();
+      // console.log(this.user);
+    },
+    beforeDestroy() {
+      window.onbeforeunload = null;
     },
     methods:{
       displayList(){
@@ -55,6 +93,16 @@
       updateWindowWidth() {
         this.windowWidth = window.innerWidth;
       },
+      handlePageReload() {
+        // this.user = JSON.parse(localStorage.getItem('user'));
+        this.newloggedIN = JSON.parse(localStorage.getItem('isloggedIn'))
+        console.log(this.newloggedIN);
+      },
+      logout(){
+        this.userLoggedIN()
+        localStorage.clear();
+        router.push('/')
+      }
     }
   }
 </script>

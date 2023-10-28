@@ -10,8 +10,11 @@
       <input type="file" id="file" @change="onFileSelected" />
       <img
         class="w-32 h-32 rounded-full object-cover"
-        :src="url"
+        :src="user.imageProfile"
         alt="profile picture" />
+    </div>
+    <div class="font-Manrope font-bold text-primary text-lg text-center py-3">
+        {{ user.userName }}
     </div>
   </div>
 </template>
@@ -27,23 +30,20 @@ export default {
     return {
       selectedFile: null,
       url: "https://placehold.co/300x300",
-      users: [],
+      user: {},
     };
   },
   created() {
-    axios.get("http://localhost:3000/users").then((res) => {
-      this.users = res.data;
-      console.log(this.
-      users);
-    });
+    this.user = JSON.parse(localStorage.getItem('user'));
   },
+  inject:["updateUser"],
   methods: {
     // this will be triggered on every file change
     onFileSelected(event) {
       this.selectedFile = event.target.files[0];
 
       // creating reference to firebase storage
-      const storageRef = ref(storage, "/uploadeImages");
+      const storageRef = ref(storage, `/uploadeImages/${this.user.id}`);
 
       // to upload to firebase storage
       uploadBytes(storageRef, this.selectedFile)
@@ -51,11 +51,15 @@ export default {
           console.log(res);
 
           // after we upload the image, we will download it by getting its URL
-          getDownloadURL(ref(storage, "/uploadeImages"))
+          getDownloadURL(ref(storage, `/uploadeImages/${this.user.id}`))
             .then((downloadUrl) => {
               console.log(downloadUrl);
               this.url = downloadUrl;
-                axios.post(`http://localhost:3000/uploadimage`, this.url)
+                // axios.post(`http://localhost:3000/uploadimage`, this.url)
+                // console.log(this.url);
+                this.user.imageProfile=this.url
+                localStorage.setItem('user',JSON.stringify(this.user))
+                axios.put(`http://localhost:3000/users/${this.user.id}`,this.user);
             })
             .catch((err) => {
               console.log("download error:", err);
@@ -65,7 +69,6 @@ export default {
           console.log("upload error:", err);
         });
     },
-
     // onUpload() {
     //   // const fd = new FormData();
     //   // fd.append("image", this.selectedFile, this.selectedFile.name);

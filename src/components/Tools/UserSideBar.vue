@@ -6,9 +6,7 @@
       <div>
         <UploadPhoto></UploadPhoto>
       </div>
-      <div class="font-Manrope font-bold text-primary text-lg text-center py-3">
-        Mohamed Elshimi
-      </div>
+      
       <!-- <div class="mx-auto">
         <img
           class="w-32 h-32 rounded-full object-cover"
