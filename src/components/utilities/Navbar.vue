@@ -54,9 +54,7 @@ import router from '../../router';
     created(){
     this.role = localStorage.getItem('role')
     console.log(this.role);
-    if (!this.user.imageProfile) {
-      
-    }
+  
 
     },
     mounted() {
