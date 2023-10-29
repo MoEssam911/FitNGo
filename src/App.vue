@@ -14,7 +14,7 @@
 
   <main class="w-full h-screen relative">
 
-    <RouterView class="mt-20" v-slot="{ Component }">
+    <RouterView class="mt-28" v-slot="{ Component }">
       <Transition name="page">
         <component :is="Component" />
       </Transition>
