@@ -12,7 +12,11 @@
             <!-- macro calculator component -->
             <div
               class="flex flex-col flex-wrap h-auto p-4 w-full bg-zinc-300 bg-opacity-50 rounded-3xl">
-              <div><i class="fa-solid fa-arrow-left hover:text-primary transition duration-200 cursor-pointer text-lg" @click="ClientDPlan"></i></div>
+              <router-link :to="`/TrainerAccount/EditUser/${user.id}/DietPlans`">
+              <i
+                class="fa-solid fa-arrow-left hover:text-primary transition duration-200 cursor-pointer text-lg"
+              ></i>
+            </router-link>
               <table class="w-full text-center text-dark bg-white shadow-lg rounded-2xl mb-9" >
                       <caption class="text-dark text-center mb-2 text-2xl">
                         Diet plan:
@@ -23,7 +27,7 @@
                             class="px-6 py-4 text-center text-primary text-lg tracking-widest"
                             colspan="8">
                             <label for="">Week : </label>
-                            <input type="text" v-model="dietTable.month" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary w-10/12 p-2.5">
+                            <input type="text" v-model="dietTable.week" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary w-10/12 p-2.5">
                           </td>
                         </tr>
                         <tr class="bg-primary text-white tracking-wider">
@@ -105,11 +109,14 @@
   
   <script>
 import axios from 'axios'
+import router from '../router';
 export default {
   name:"TrainerDietPlan",
   inject:['ClientDPlan'],
   data () {
     return {
+      id:'',
+      user:{},
       dietTable:{
         week:'',
         table:[{
@@ -122,13 +129,21 @@ export default {
       id: "",
     }
   },
+  created(){
+    this.id = this.$route.params.id;
+    axios.get(`http://localhost:3000/users/${this.id}`).then((res)=>{
+      this.user = res.data;
+    }).catch(err=>console.log(err))
+  },
   methods :{
 
     submit() {
-      axios.post("http://localhost:3000/dietplans",this.dietTable).then((res)=>{
-                    console.log(res.data)
-                 }).catch((err)=>console.log(err));
-                
+      this.user.plans.Diet.push(this.dietTable)
+      axios.put(`http://localhost:3000/users/${this.id}`,this.user).then((res)=>{
+         console.log(res.data)
+         alert('Plan Submit Successfully')
+      }).catch((err)=>console.log(err));
+      router.push(`/TrainerAccount/EditUser/${this.user.id}/DietPlans`);
     },
     AddRow() {
       this.dietTable.table.push({

@@ -130,14 +130,14 @@
     </div>
 </template>
 <script setup>
+import axios from "axios";
 import ShopCardsandSearchVue from "./ShopCardsandSearch.vue";
 import ShopBanners from "./ShopBanners.vue";
 </script>
 <script>
-
+import axios from "axios";
 export default {
   name: "shop",
-
   data() {
     return {
       itemsDb: [],

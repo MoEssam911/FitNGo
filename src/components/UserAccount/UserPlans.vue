@@ -1,54 +1,55 @@
 <template>
     <div class=" relative w-full">
         <div class="flex gap-5">
-    <div class="bg-secondary w-full  p-6 rounded-2xl">
-        <div class="flex justify-between">
-            <i class="fa-solid fa-caret-left text-4xl hover:cursor-pointer hover:text-primary inline-block" @click="change('left')" v-if="planTarget > 0"></i>
-            <i class="fa-solid fa-caret-right text-4xl hover:cursor-pointer hover:text-primary inline-block ms-auto" @click="change('right')" v-if="planTarget < maxLength"></i>
+            <div class="text-dark text-2xl mb-3 text-center" v-if="!woPlans">You Don't Have Workout Plans</div>
+            <div class="bg-secondary w-full  p-6 rounded-2xl" v-if="woPlans">
+                <div class="flex justify-between">
+                    <i class="fa-solid fa-caret-left text-4xl hover:cursor-pointer hover:text-primary inline-block" @click="change('left')" v-if="planTarget > 0"></i>
+                    <i class="fa-solid fa-caret-right text-4xl hover:cursor-pointer hover:text-primary inline-block ms-auto" @click="change('right')" v-if="planTarget < maxLength"></i>
+                </div>
+                <div class=" overflow-x-auto relative" v-for="plan,index in woPlans" :key="plan">
+                            <table
+                              class="w-full text-center text-dark bg-white shadow-lg rounded-2xl mb-9"  v-if="planTarget == index">
+                              <caption class="text-dark text-2xl mb-3">
+                                My Plan - {{ plan.month }}
+                              </caption>
+                              <thead class="text-xs uppercase">
+                                <tr class="bg-primary text-white tracking-wider">
+                                  <th scope="col" class="px-6 py-3 capitalize">ID</th>
+                                  <th scope="col" class="px-6 py-3 capitalize">EXERCISE</th>
+                                  <th scope="col" class="px-6 py-3 capitalize">SETS</th>
+                                  <th scope="col" class="px-6 py-3 capitalize">REPS</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr class="border-b" v-for="ex,index in plan.table" :key="ex">
+                                    <th
+                                    scope="row"
+                                    class="px-6 py-4 font-medium text-dark lg:text-base md:text-sm text-xs">
+                                    {{ index+=1 }}
+                                  </th>
+                                  <th
+                                    scope="row"
+                                    class="px-6 py-4 font-medium text-dark lg:text-base md:text-sm text-xs">
+                                    {{ ex.exerciseName }}
+                                  </th>
+                                  <th
+                                    scope="row"
+                                    class="px-6 py-4 font-medium text-dark lg:text-base md:text-sm text-xs">
+                                    {{ ex.sets }}
+                                  </th>
+                                  <th
+                                    scope="row"
+                                    class="px-6 py-4 font-medium text-dark lg:text-base md:text-sm text-xs">
+                                    {{ ex.reps }}
+                                  </th>
+                                </tr>
+                                
+                              </tbody>
+                            </table>
+                </div>
+            </div>
         </div>
-        <div class=" overflow-x-auto relative" v-for="plan,index in plans" :key="plan">
-                    <table
-                      class="w-full text-center text-dark bg-white shadow-lg rounded-2xl mb-9"  v-if="planTarget == index">
-                      <caption class="text-dark text-2xl mb-3">
-                        My Plan - {{ plan.month }}
-                      </caption>
-                      <thead class="text-xs uppercase">
-                        <tr class="bg-primary text-white tracking-wider">
-                          <th scope="col" class="px-6 py-3 capitalize">ID</th>
-                          <th scope="col" class="px-6 py-3 capitalize">EXERCISE</th>
-                          <th scope="col" class="px-6 py-3 capitalize">SETS</th>
-                          <th scope="col" class="px-6 py-3 capitalize">REPS</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr class="border-b" v-for="ex,index in plan.table" :key="ex">
-                            <th
-                            scope="row"
-                            class="px-6 py-4 font-medium text-dark lg:text-base md:text-sm text-xs">
-                            {{ index+=1 }}
-                          </th>
-                          <th
-                            scope="row"
-                            class="px-6 py-4 font-medium text-dark lg:text-base md:text-sm text-xs">
-                            {{ ex.exerciseName }}
-                          </th>
-                          <th
-                            scope="row"
-                            class="px-6 py-4 font-medium text-dark lg:text-base md:text-sm text-xs">
-                            {{ ex.sets }}
-                          </th>
-                          <th
-                            scope="row"
-                            class="px-6 py-4 font-medium text-dark lg:text-base md:text-sm text-xs">
-                            {{ ex.reps }}
-                          </th>
-                        </tr>
-                        
-                      </tbody>
-                    </table>
-        </div>
-    </div>
-    </div>
     </div>
 </template>
 
@@ -63,25 +64,30 @@ import axios from 'axios';
             MenuIcon,
         },
         created(){
-            axios.get('http://localhost:3000/workoutplans').then((res)=>{
-                this.plans=res.data;
-                this.maxLength = this.plans.length-1;
-            }).catch(err=>console.log(err))
+            // axios.get('http://localhost:3000/workoutplans').then((res)=>{
+            //     this.plans=res.data;
+            //     this.maxLength = this.plans.length-1;
+            // }).catch(err=>console.log(err))
+            this.user = JSON.parse(localStorage.getItem('user'))
+            this.woPlans = this.user.plans.Workouts
+            console.log(this.woPlans);
+            this.maxLength = this.woPlans.length-1;
+
         },
         data(){
             return{
                 toggleUserSide: false,
                 planTarget : 0,
                 maxLength: 0,
-                plans:[
-                ]
+                user:{},
+                woPlans:[],
                  
             }
         },
         methods:{
             change(dir){
                 if (dir == 'right') {
-                    if (this.planTarget == this.plans.length-1) {
+                    if (this.planTarget == this.woPlans.length-1) {
                         return;
                     }
                     this.planTarget += 1;

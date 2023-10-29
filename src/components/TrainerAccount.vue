@@ -12,29 +12,29 @@
             <div class="my-4">
               <img
                 class="w-52 h-52 rounded-full object-cover justify-center"
-                src="../assets/Images/trainercards/amrsamehcard.png"
+                :src="user.imageProfile"
               />
             </div>
 
             <div class="grid grid-cols-2 lg:flex gap-20 ">
               <div class="flex flex-wrap">
                 <label for="" class="text-black text-base font-medium">Name :</label>
-                <h2 for="" class="text-primary text-base font-medium">Amr Sameh</h2>
+                <h2 for="" class="text-primary text-base font-medium">{{ user.TrainerNames }}</h2>
               </div>
               <div class="flex flex-wrap ">
                 <label for="" class="text-black text-base font-medium">Clients :</label>
-                <h2 for="" class="text-primary text-base font-medium">5</h2>
+                <!-- <h2 for="" class="text-primary text-base font-medium" v-if="user.Clients.length">{{ user.Clients.length }}</h2> -->
               </div>
               <div class="flex flex-wrap">
                 <label for="" class="text-black text-base font-medium"
-                  >Work Status :</label>
-                <h2 for="" class="text-primary text-base font-medium">Gold's Gym</h2>
+                  >Rate :</label>
+                <h2 for="" class="text-primary text-base font-medium">{{user.Rate}}</h2>
               </div>
               <div class="flex flex-wrap">
                 <label for="" class="text-black text-base font-medium"
                   >Subscription Fees :</label
                 >
-                <h2 for="" class="text-primary text-base font-medium">900 EGP</h2>
+                <h2 for="" class="text-primary text-base font-medium">{{ user.Fees }}</h2>
               </div>
             </div>
           </div>
@@ -49,6 +49,16 @@
 <script>
 export default {
   name: "TrainerAccount",
+  data(){
+    return{
+      user:{},
+    }
+  },
+  created(){
+    if (JSON.parse(localStorage.getItem('user')) == 'trainer') {
+      this.user = JSON.parse(localStorage.getItem('user'));
+    }
+  }
 };
 </script>
 

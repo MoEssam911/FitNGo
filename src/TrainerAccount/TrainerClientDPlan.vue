@@ -2,8 +2,18 @@
   <div class="relative w-full">
     <div class="flex gap-5">
       <div class="bg-secondary w-full p-4 rounded-2xl">
-        <div class="flex justify-between"><div><i class="fa-solid fa-arrow-left hover:text-primary transition duration-200 cursor-pointer text-lg" @click="ChangeToggleClient"></i></div>
-        <div @click="ClientDPlanMaker" class="cursor-pointer"><i class="fa-solid fa-plus text-green-500"></i> Diet Plan</div></div>
+        <div class="flex justify-between">
+          <div>
+            <router-link :to="`/TrainerAccount/EditUser/${user.id}`">
+              <i
+                class="fa-solid fa-arrow-left hover:text-primary transition duration-200 cursor-pointer text-lg"
+              ></i>
+            </router-link>
+          </div>
+          <div  class="cursor-pointer"><router-link :to="`/TrainerAccount/EditUser/${user.id}/DietMaker`">
+            <i class="fa-solid fa-plus text-green-500"></i> Diet Plan</router-link>
+          </div>
+        </div>
         <div class="flex justify-between">
           <i
             class="fa-solid fa-caret-left text-4xl hover:cursor-pointer hover:text-primary inline-block"
@@ -18,7 +28,7 @@
         </div>
         <div
           class="overflow-x-auto relative"
-          v-for="(plan, index) in plans"
+          v-for="(plan, index) in Diet"
           :key="plan"
         >
           <table
@@ -38,7 +48,6 @@
                 <th scope="col" class="px-6 py-3 w-4/12">Snack</th>
                 <th scope="col" class="px-6 py-3 w-4/12">Launch</th>
                 <th scope="col" class="px-6 py-3 w-4/12">Dinner</th>
-
               </tr>
             </thead>
             <tbody>
@@ -73,7 +82,6 @@
                 >
                   {{ ex.dinner }}
                 </th>
-                
               </tr>
             </tbody>
           </table>
@@ -89,32 +97,54 @@
 import axios from "axios";
 export default {
   name: "TrainerClientWPlans",
-inject:["ClientDPlanMaker",'ChangeToggleClient'],
+  inject: ["ClientDPlanMaker", "ChangeToggleClient"],
   components: {
     // UserSideBar,
     // MenuIcon,
   },
+  data() {
+    return {
+      user: {},
+      id: "",
+      planTarget: 0,
+      maxLength: 0,
+      Diet:{}
+    };
+  },
   created() {
+    this.id = this.$route.params.id;
     axios
-      .get("http://localhost:3000/dietplans")
+      .get(`http://localhost:3000/users/${this.id}`)
       .then((res) => {
-        this.plans = res.data;
-        this.maxLength = this.plans.length - 1;
+        console.log(res);
+        this.user = res.data;
+        this.Diet = res.data.plans.Diet;
+        this.maxLength = this.Diet.length - 1;
+        // console.log(this.user.plans.Diet);
       })
       .catch((err) => console.log(err));
   },
-  data() {
-    return {
-      toggleUserSide: false,
-      planTarget: 0,
-      maxLength: 0,
-      plans: [],
-    };
-  },
+  // created() {
+  //   axios
+  //     .get("http://localhost:3000/dietplans")
+  //     .then((res) => {
+  //       this.plans = res.data;
+  //       this.maxLength = this.plans.length - 1;
+  //     })
+  //     .catch((err) => console.log(err));
+  // },
+  // data() {
+  //   return {
+  //     toggleUserSide: false,
+  //     planTarget: 0,
+  //     maxLength: 0,
+  //     plans: [],
+  //   };
+  // },
   methods: {
     change(dir) {
       if (dir == "right") {
-        if (this.planTarget == this.plans.length - 1) {
+        if (this.planTarget == this.Diet.length - 1) {
           return;
         }
         this.planTarget += 1;

@@ -13,6 +13,11 @@ import TrainerClientPlan from '../components/TrainerClientPlan.vue'
 import TrainerDietPlan from '../components/TrainerDietPlanMaker.vue'
 import EditProfile from '../components/UserAccount/EditProfile.vue'
 import TrainerAccountView from '../views/TrainerAccountView.vue'
+import TrainerEditsUser from '../views/TrainerEditsUser.vue'
+import EditWorkout from '../views/EditWorkout.vue'
+import EditDiet from '../views/EditDiet.vue'
+import DietMaker from '../views/DietMaker.vue'
+import woMaker from '../views/woMaker.vue'
 import UserProfile from '../views/UserProfile.vue'
 import WorkoutsView from '../views/WorkoutsView.vue'
 import WorkoutView from '../views/SingleWorkout.vue'
@@ -164,6 +169,36 @@ const router = createRouter({
       path: '/TrainerAccount',
       name: 'TrainerAccount',
       component: TrainerAccountView
+    },
+    {
+
+      path: '/TrainerAccount/EditUser/:id',
+      name: 'TrainerEditsUser',
+      component: TrainerEditsUser
+    },
+    {
+
+      path: '/TrainerAccount/EditUser/:id/WorkoutsPlans',
+      name: 'EditWorkout',
+      component: EditWorkout
+    },
+    {
+
+      path: '/TrainerAccount/EditUser/:id/DietPlans',
+      name: 'EditDiet',
+      component: EditDiet
+    },
+    {
+
+      path: '/TrainerAccount/EditUser/:id/DietMaker',
+      name: 'DietMaker',
+      component: DietMaker
+    },
+    {
+
+      path: '/TrainerAccount/EditUser/:id/woMaker',
+      name: 'woMaker',
+      component: woMaker
     },
     {
       path: '/UserProfile',

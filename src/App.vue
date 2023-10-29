@@ -13,8 +13,8 @@
   <Navbar />
 
   <main class="w-full h-screen relative">
-    <RouterView class="mt-20" v-slot="{ Component }">
 
+    <RouterView class="mt-20" v-slot="{ Component }">
       <Transition name="page">
         <component :is="Component" />
       </Transition>
@@ -59,7 +59,7 @@ import { RouterView } from "vue-router";
 import Navbar from "./components/utilities/Navbar.vue";
 import Footer from "./components/utilities/Footer.vue";
 import LoginNSignup from "./components/LoginAndSignup/LoginNSignup.vue";
-
+import '../public/Mixins/public'
 export default {
   components: {
     Navbar,
@@ -69,7 +69,22 @@ export default {
   data() {
     return {
       isLoggedIn: false,
+      loggedIN: false,
+      // newLog:false,
+      user:{
+        role:'user'
+      },
     };
+  },
+  created(){
+    this.loggedIN = JSON.parse(localStorage.getItem('loggedIn'));
+    this.user = JSON.parse(localStorage.getItem('user'));
+
+  },
+  updateded(){
+    this.loggedIN = JSON.parse(localStorage.getItem('loggedIn'));
+    this.user = JSON.parse(localStorage.getItem('user'));
+    // console.log(this.user);
   },
   methods: {
     apperLogin() {
@@ -78,11 +93,28 @@ export default {
     closeLogin() {
       this.isLoggedIn = false;
     },
+    userLoggedIN(){
+      this.loggedIN = !this.loggedIN;
+      localStorage.setItem('loggedIn',JSON.stringify(this.loggedIN))
+      this.user = JSON.parse(localStorage.getItem('user'));
+      // window.location.reload();
+      // console.log(this.user);
+    },
+    updateUser(user){
+      this.user = user;
+      console.log(user);
+    },
   },
   provide() {
     return {
       isLoggedIn: this.isLoggedIn,
       apperLogin: this.apperLogin,
+      closeLogin: this.closeLogin,
+      userLoggedIN:this.userLoggedIN,
+      updateUser:this.updateUser,
+      loggedIN: computed(()=>this.loggedIN),
+      user: computed(()=>this.user),
+
     };
   },
 };

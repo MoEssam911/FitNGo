@@ -2,13 +2,13 @@
     <div class=" relative w-full">
         <div class="flex gap-5">
     <div class="bg-secondary w-full  p-4 rounded-2xl">
-      <div class="flex justify-between"><div><i class="fa-solid fa-arrow-left hover:text-primary transition duration-200 cursor-pointer text-lg" @click="ChangeToggleClient"></i></div>
-        <div @click="ClientWPlanMaker" class="cursor-pointer"><i class="fa-solid fa-plus text-green-500"></i> Workout Plan</div></div>
+      <div class="flex justify-between"><div><router-link :to="`/TrainerAccount/EditUser/${user.id}`"><i class="fa-solid fa-arrow-left hover:text-primary transition duration-200 cursor-pointer text-lg"></i></router-link></div>
+        <div @click="ClientWPlanMaker" class="cursor-pointer"><router-link :to="`/TrainerAccount/EditUser/${user.id}/woMaker`"><i class="fa-solid fa-plus text-green-500"></i> Workout Plan</router-link></div></div>
         <div class="flex justify-between">
             <i class="fa-solid fa-caret-left text-4xl hover:cursor-pointer hover:text-primary inline-block" @click="change('left')" v-if="planTarget > 0"></i>
             <i class="fa-solid fa-caret-right text-4xl hover:cursor-pointer hover:text-primary inline-block ms-auto" @click="change('right')" v-if="planTarget < maxLength"></i>
         </div>
-        <div class=" overflow-x-auto relative" v-for="plan,index in plans" :key="plan">
+        <div class=" overflow-x-auto relative" v-for="plan,index in Workouts" :key="plan">
                     <table
                       class="w-full text-center text-dark bg-white shadow-lg rounded-2xl mb-9"  v-if="planTarget == index">
                       <caption class="text-dark text-2xl mb-3">
@@ -65,26 +65,33 @@ import axios from 'axios';
             // UserSideBar,
             // MenuIcon,
         },
-        created(){
-            axios.get('http://localhost:3000/workoutplans').then((res)=>{
-                this.plans=res.data;
-                this.maxLength = this.plans.length-1;
-            }).catch(err=>console.log(err))
-        },
-        data(){
-            return{
-                toggleUserSide: false,
-                planTarget : 0,
-                maxLength: 0,
-                plans:[
-                ]
-                 
-            }
-        },
+        data() {
+    return {
+      user: {},
+      id: "",
+      planTarget: 0,
+      maxLength: 0,
+      Workouts:{}
+    };
+  },
+        created() {
+    this.id = this.$route.params.id;
+    axios
+      .get(`http://localhost:3000/users/${this.id}`)
+      .then((res) => {
+        console.log(res);
+        this.user = res.data;
+        this.Workouts = res.data.plans.Workouts;
+        this.maxLength = this.Workouts.length - 1;
+        // console.log(this.user.plans.Diet);
+      })
+      .catch((err) => console.log(err));
+  },
+        
         methods:{
             change(dir){
                 if (dir == 'right') {
-                    if (this.planTarget == this.plans.length-1) {
+                    if (this.planTarget == this.Workouts.length-1) {
                         return;
                     }
                     this.planTarget += 1;

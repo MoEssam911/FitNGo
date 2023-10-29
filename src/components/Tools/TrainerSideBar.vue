@@ -76,6 +76,7 @@
   </div>
 </template>
 <script>
+import router from '../../router';
 export default {
   name: "TrainerSideBar",
   inject: ["ChangeToggle1","ChangeToggle2","toggleComp"],
@@ -97,14 +98,16 @@ export default {
       }
       this.flag = !this.flag;
     },
-    ChangeTest1 () {
+    async ChangeTest1 () {
+      router.push('/TrainerAccount')
       this.toggleComp="info"
-      this.ChangeToggle1()
+      await this.ChangeToggle1()
       console.log(this.toggleComp)
     },
-    ChangeTest2 () {
+    async ChangeTest2 () {
+      router.push('/TrainerAccount')
       this.toggleComp = "myclients"
-      this.ChangeToggle2()
+      await this.ChangeToggle2()
       console.log(this.toggleComp)
     }
   },

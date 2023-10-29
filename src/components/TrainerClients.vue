@@ -14,23 +14,24 @@
               </tr>
             </thead>
             <tbody>
-              <tr class="border-b" v-for="cli in 10" :key="cli">
+              <tr class="border-b" v-for="cli,indx in trainer.Clients" :key="cli">
                 <th
                   scope="row"
                   class="px-6 py-4 font-medium text-dark whitespace-nowrap ">
-                  {{ cli }} 
+                  {{ ++indx }} 
                 </th>
                 <td class="px-6 py-4">
-                  Selim Mohamed
+                  {{ cli.userName }}
                 </td>
                 <td class="px-6 py-4">
-                  84 kg
+                  {{ cli.weight }}
                 </td>
                 <td class="px-6 py-4">
-                  27
+                  {{ cli.age }}
+                  <!-- {{ cli.id }} -->
                 </td>
                 <td class="px-6 py-4">
-                  <i class="fa-solid fa-pen ml-5 cursor-pointer" @click="ChangeToggleClient"></i>
+                  <router-link :to="`/TrainerAccount/EditUser/${cli.id}`"><i class="fa-solid fa-pen ml-5 cursor-pointer"></i></router-link>
                   <i class="fa-solid fa-trash ml-5 text-red-700 cursor-pointer"></i>
                 </td>
               </tr>
@@ -51,9 +52,21 @@ export default {
   components: {
     
   },
+  
+  created(){
+    // axios
+    //     .get(`http://localhost:3000/AllTrainers/${uid}`)
+    //     .then((res) => {
+    //         this.trainer = res.data
+    //       console.log(res);
+    //     })
+    //     .catch((err) => console.log(err));
+    this.trainer = JSON.parse(localStorage.getItem('user'))
+    console.log(this.trainer);
+  },
   data() {
     return {
-      
+      trainer:{},
     };
   },
 };

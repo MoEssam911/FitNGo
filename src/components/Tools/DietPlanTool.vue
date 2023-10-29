@@ -1,73 +1,172 @@
 <template>
-  <section>
-    <div
-      class="flex flex-col flex-wrap h-auto w-full bg-secondary  rounded-3xl p-9 mb-9">
-      <table
-        class="w-full text-center text-dark bg-white shadow-lg rounded-2xl mb-9">
-        <caption class="text-dark text-2xl">
-          Your diet plan is
-        </caption>
-        <thead class="text-xs uppercase">
-          <tr class="bg-primary text-white tracking-wider">
-            <th scope="col" class="px-6 py-3">Balanced</th>
-            <th scope="col" class="px-6 py-3">High Protein</th>
-            <th scope="col" class="px-6 py-3">Low Carbs</th>
-            <th scope="col" class="px-6 py-3">Low Fat</th>
-            <th scope="col" class="px-6 py-3">Plan</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="border-b">
-            <th scope="row" class="px-6 py-4 font-medium text-dark">Calorie</th>
-            <td
-              class="px-6 py-4 text-center text-primary text-lg tracking-widest"
-              colspan="4">
-              Fit&Go Calorie
-            </td>
-          </tr>
-          <tr class="border-b">
-            <th
-              scope="row"
-              class="px-6 py-4 font-medium text-dark whitespace-nowrap dark:text-white">
-              Protein
-            </th>
-            <td class="px-6 py-4">Fit&Go gm</td>
-            <td class="px-6 py-4">Fit&Go gm</td>
-            <td class="px-6 py-4">Fit&Go gm</td>
-            <td class="px-6 py-4">Fit&Go gm</td>
-          </tr>
-          <tr class="border-b">
-            <th
-              scope="row"
-              class="px-6 py-4 font-medium text-dark whitespace-nowrap">
-              Fat
-            </th>
-            <td class="px-6 py-4">Fit&Go gm</td>
-            <td class="px-6 py-4">Fit&Go gm</td>
-            <td class="px-6 py-4">Fit&Go gm</td>
-            <td class="px-6 py-4">Fit&Go gm</td>
-          </tr>
-          <tr class="">
-            <th
-              scope="row"
-              class="px-6 py-4 font-medium text-dark whitespace-nowrap">
-              Carbs
-            </th>
-            <td class="px-6 py-4">Fit&Go gm</td>
-            <td class="px-6 py-4">Fit&Go gm</td>
-            <td class="px-6 py-4">Fit&Go gm</td>
-            <td class="px-6 py-4">Fit&Go gm</td>
-          </tr>
-        </tbody>
-      </table>
+  <div class="relative w-full">
+    <div class="flex gap-5">
+      <div class="text-dark text-2xl mb-3 text-center" v-if="Diet.length == 0">You Don't Have Diet</div>
+      <div class="bg-secondary w-full p-4 rounded-2xl" v-if="Diet.length > 0">
+        <div class="flex justify-between" >
+          <i
+            class="fa-solid fa-caret-left text-4xl hover:cursor-pointer hover:text-primary inline-block"
+            @click="change('left')"
+            v-if="planTarget > 0"
+          ></i>
+          <i
+            class="fa-solid fa-caret-right text-4xl hover:cursor-pointer hover:text-primary inline-block ms-auto"
+            @click="change('right')"
+            v-if="planTarget < maxLength"
+          ></i>
+        </div>
+        <div
+          class="overflow-x-auto relative"
+          v-for="(plan, index) in Diet"
+          :key="plan"
+        >
+          <table
+            class="w-full text-center text-dark bg-white shadow-lg rounded-2xl mb-9"
+            v-if="planTarget == index"
+          >
+            <caption class="text-dark text-2xl mb-3">
+              My Plan -
+              {{
+                plan.week
+              }}
+            </caption>
+            <thead class="text-xs uppercase">
+              <tr class="bg-primary text-white tracking-wider">
+                <th scope="col" class="px-6 py-3 w-1/12">Id</th>
+                <th scope="col" class="px-6 py-3 w-4/12">Breakfast</th>
+                <th scope="col" class="px-6 py-3 w-4/12">Snack</th>
+                <th scope="col" class="px-6 py-3 w-4/12">Launch</th>
+                <th scope="col" class="px-6 py-3 w-4/12">Dinner</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b" v-for="(ex, index) in plan.table" :key="ex">
+                <th
+                  scope="row"
+                  class="px-6 py-4 font-medium text-dark lg:text-base md:text-sm text-xs"
+                >
+                  {{ (index += 1) }}
+                </th>
+                <th
+                  scope="row"
+                  class="px-6 py-4 font-medium text-dark lg:text-base md:text-sm text-xs"
+                >
+                  {{ ex.breakfast }}
+                </th>
+                <th
+                  scope="row"
+                  class="px-6 py-4 font-medium text-dark lg:text-base md:text-sm text-xs"
+                >
+                  {{ ex.snacks }}
+                </th>
+                <th
+                  scope="row"
+                  class="px-6 py-4 font-medium text-dark lg:text-base md:text-sm text-xs"
+                >
+                  {{ ex.launch }}
+                </th>
+                <th
+                  scope="row"
+                  class="px-6 py-4 font-medium text-dark lg:text-base md:text-sm text-xs"
+                >
+                  {{ ex.dinner }}
+                </th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
+// import UserSideBar from '../Tools/UserSideBar.vue'
+// import MenuIcon from '../Tools/MenuIcon.vue'
+import axios from "axios";
 export default {
-  name: "DietPlan",
+  name: "TrainerClientWPlans",
+  inject: ["ClientDPlanMaker", "ChangeToggleClient"],
+  components: {
+    // UserSideBar,
+    // MenuIcon,
+  },
+  data() {
+    return {
+      user: {},
+      id: "",
+      planTarget: 0,
+      maxLength: 0,
+      Diet:{}
+    };
+  },
+  created() {
+    // this.id = this.$route.params.id;
+    // axios
+    //   .get(`http://localhost:3000/users/${this.id}`)
+    //   .then((res) => {
+    //     console.log(res);
+    //     this.user = res.data;
+    //     this.Diet = res.data.plans.Diet;
+    //     this.maxLength = this.Diet.length - 1;
+    //     // console.log(this.user.plans.Diet);
+    //   })
+    //   .catch((err) => console.log(err));
+    this.user = JSON.parse(localStorage.getItem('user'))
+    this.Diet = this.user.plans.Diet;
+    this.maxLength = this.Diet.length - 1;
+
+  },
+  // created() {
+  //   axios
+  //     .get("http://localhost:3000/dietplans")
+  //     .then((res) => {
+  //       this.plans = res.data;
+  //       this.maxLength = this.plans.length - 1;
+  //     })
+  //     .catch((err) => console.log(err));
+  // },
+  // data() {
+  //   return {
+  //     toggleUserSide: false,
+  //     planTarget: 0,
+  //     maxLength: 0,
+  //     plans: [],
+  //   };
+  // },
+  methods: {
+    change(dir) {
+      if (dir == "right") {
+        if (this.planTarget == this.Diet.length - 1) {
+          return;
+        }
+        this.planTarget += 1;
+      } else {
+        if (this.planTarget == 0) {
+          return;
+        }
+        this.planTarget -= 1;
+      }
+    },
+    toggleUserSideHandler() {
+      this.toggleUserSide = !this.toggleUserSide;
+    },
+  },
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+@media (max-width: 768px) {
+  .hide-user-sidebar {
+    position: absolute;
+    left: -60%;
+    z-index: 10;
+  }
+  .show-user-sidebar {
+    position: absolute;
+    left: 0;
+    z-index: 10;
+    /* box-shadow: 1rem 0px 5px 0px black; */
+  }
+}
+</style>

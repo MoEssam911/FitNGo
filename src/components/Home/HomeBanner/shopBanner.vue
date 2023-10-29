@@ -15,7 +15,7 @@
         with competitive prices.
       </h3>
       <div class="flex gap-3 mt-3">
-        <button class="bg-primary rounded-lg px-3 py-1 text-center text-white hover:bg-red-800 text-sm font-medium">Shop Now</button>
+        <router-link to="/shop" class="bg-primary rounded-lg px-3 py-1 text-center text-white hover:bg-red-800 text-sm font-medium">Shop Now</router-link>
       </div>
     </div>
 

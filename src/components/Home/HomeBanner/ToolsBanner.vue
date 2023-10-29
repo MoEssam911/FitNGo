@@ -15,7 +15,7 @@
         Life gets easier with the right tools.
       </h3>
       <div class="flex gap-3 mt-3">
-        <button class="bg-primary rounded-lg px-3 py-1 text-center text-white hover:bg-red-800 text-sm font-medium">Start Now</button>
+        <router-link to="/UserProfile" class="bg-primary rounded-lg px-3 py-1 text-center text-white hover:bg-red-800 text-sm font-medium">Start Now</router-link>
       </div>
       </div>
 

@@ -77,7 +77,6 @@
             </div>
             <div class="accent-primary md:w-2/4 w-full flex items-center pt-3">
               <input
-              checked
                 type="radio"
                 name="gender"
                 value="male"
@@ -124,7 +123,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { inject, ref } from "vue";
 import router from "../../router";
 import '../../firebaseInit'
 // import auth functions
@@ -135,9 +134,10 @@ import {
   FacebookAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
-
-import axios from "axios";
-
+import {loginUser} from '../../../public/Mixins/public'
+const { setUser} = loginUser();
+const closeLogin = inject('closeLogin');
+const userLoggedIN = inject('userLoggedIN')
 
 const email = ref("");
 const password = ref("");
@@ -160,11 +160,21 @@ const register = () => {
         userName: userName.value,
         age: age.value,
         gender: gender.value,
+        weight:'',
+        height:'',
+        bodyfat:'',
+        bmr:'',
+        imageProfile:'https://placehold.co/300x300',
+        trainer:{},
+        plans:{
+          Workouts:[{}],
+          Diet:[{}],
+        }
       };
-      axios
-        .post("http://localhost:3000/users", user)
-        .then((res) => console.log(res.data))
-        .catch((err) => console.log(err.message));
+      setUser(user);
+      closeLogin();
+      userLoggedIN();
+      // router.push("/profile")
     })
     .catch((err) => {
       console.log(err.message);
@@ -177,6 +187,9 @@ const signInWithGoogle = () => {
       console.log(result);
       const user = result.user;
       console.log(user);
+      setUser(user)
+      closeLogin()
+      userLoggedIN()
     })
     .catch((err) => {
       console.log(err);
@@ -187,11 +200,15 @@ const signInWithFacebook = () => {
   signInWithPopup(getAuth(), provider)
     .then((res) => {
       console.log(res);
+      setUser(res.user)
+      closeLogin()
+      userLoggedIN()
     })
     .catch((err) => {
       console.log(err);
     });
 };
+console.log(gender)
 </script>
 
 <script>

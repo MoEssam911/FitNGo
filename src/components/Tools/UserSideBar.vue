@@ -3,14 +3,18 @@
     <div
       class="my-shadow h-auto bg-secondary rounded-3xl py-9 flex flex-col "
       :class="toggle">
-      <div class="mx-auto">
+      <div>
+        <UploadPhoto></UploadPhoto>
+      </div>
+      
+      <!-- <div class="mx-auto">
         <img
           class="w-32 h-32 rounded-full object-cover"
           src="../../assets/Images/selim.jpeg " />
       </div>
       <p class="font-Manrope font-bold text-primary text-lg text-center py-3">
         Selim Mohamed
-      </p>
+      </p> -->
 
       <hr />
 
@@ -94,10 +98,18 @@
     </div>
   </div>
 </template>
+<!-- <script setup>
+import {loginUser} from '../../../public/Mixins/public'
+const { user,getUser} = loginUser();
+</script> -->
 <script>
 import 'vue'
+import UploadPhoto from '../UploadPhoto.vue'
 export default {
   name:"UserSideBar",
+  components:{
+    UploadPhoto,
+  },
 
   data() {
     return {
