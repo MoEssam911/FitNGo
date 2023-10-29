@@ -4,10 +4,8 @@ import TrainersView from "../views/TrainersView.vue";
 import OneTrainerView from "../views/OneTrainerView.vue";
 import ToolsPageView from "../views/ToolsPageView.vue";
 import About from "../views/AboutView.vue";
-import shop from "../components/shop.vue";
 import BodyFatTool from "../components/Tools/BodyFatTool.vue";
 import DietPlanTool from "../components/Tools/DietPlanTool.vue";
-import BmrTool from '../components/Tools/BmrTool.vue'
 import MyPlan from "../components/MyPlan.vue";
 import TrainerPlanMaker from "../components/TrainerPlanMaker.vue";
 import UserPlans from '../components/UserAccount/UserPlans.vue'
@@ -23,8 +21,8 @@ import woMaker from '../views/woMaker.vue'
 import UserProfile from '../views/UserProfile.vue'
 import WorkoutsView from '../views/WorkoutsView.vue'
 import WorkoutView from '../views/SingleWorkout.vue'
-// import About from '../views/AboutView.vue'
-// import shop from '../components/shop.vue'
+
+import shop from '../components/shop.vue'
 // import BodyFatTool from '../components/Tools/BodyFatTool.vue'
 // import DietPlan from '../components/Tools/DietPlanTool.vue'
 // import ToolsPage from '../components/ToolsPage.vue'
@@ -46,11 +44,17 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: HomeView,
+      meta: {
+        title: 'Home'
+      }
     },
     {
       path: "/trainers",
       name: "trainers",
       component: TrainersView,
+      meta: {
+        title: 'Trainers'
+      }
     },
     {
       path: "/trainers/:id",
@@ -62,6 +66,7 @@ const router = createRouter({
       path: '/shop/:id',
       name: 'item',
       component: item
+
     },
     {
       path: '/cart',
@@ -76,7 +81,10 @@ const router = createRouter({
     {
       path: '/workouts',
       name: 'workouts',
-      component: WorkoutsView
+      component: WorkoutsView,
+      meta: {
+        title: 'Workouts'
+      }
     },
 
     {
@@ -89,17 +97,26 @@ const router = createRouter({
       path: "/About",
       name: "about",
       component: About,
+      meta: {
+        title: 'About Us'
+      }
     },
 
     {
       path: "/shop",
       name: "shop",
       component: shop,
+      meta: {
+        title: 'Shop'
+      }
     },
     {
       path: "/tools",
       name: "ToolsPageView",
       component: ToolsPageView,
+      meta: {
+        title: 'Tools'
+      }
     },
     {
       path: "/bodyfattool",
@@ -116,12 +133,6 @@ const router = createRouter({
       path: '/shop',
       name: 'shop',
       component: shop
-    },
-    {
-      path: "/bmrtool",
-      name: "BmrTool",
-      component: BmrTool,
-
     },
     {
       path: "/myplan",
@@ -202,7 +213,10 @@ const router = createRouter({
     {
       path: '/DashboardView',
       name: 'DashboardView',
-      component: DashboardView
+      component: DashboardView,
+      meta: {
+        title: 'Admin'
+      }
     },
     {
       path: '/trainersdata/:id/edit',
@@ -228,5 +242,13 @@ const router = createRouter({
     return { top: 0 };
   },
 });
+
+
+router.beforeEach((to, from, next) => {
+  const hasTitle = to.meta && to.meta.title;
+  document.title = hasTitle ? `Fit&Go | ${to.meta.title}` : 'Fit&Go';
+  next();
+});
+
 
 export default router;

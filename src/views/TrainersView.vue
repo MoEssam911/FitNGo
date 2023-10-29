@@ -1,27 +1,11 @@
-<script setup>
-import TrainersBanner from "../components/TrainersBanner.vue";
-import TrainersFromJson from "../components/TrainersFromJson.vue";
-</script>
-
 <template>
-  <section class="container h-full mt-12">
-   <TrainersBanner></TrainersBanner>
-<TrainersFromJson></TrainersFromJson>
-  </section>
+  <div>
+    <TrainersBanner />
+    <TrainersFromJson />
+  </div>
 </template>
 
-<script>
-import axios from "axios";
-export default {
-  name: "TrainersView",
-  data() {
-    return {
-      
-    }; 
-  },
-  
-};
-</script>
+
 
 <style scoped>
 
@@ -36,3 +20,7 @@ export default {
     to   { transform: translate(0, -0px); }    
 } */
 </style>
+<script setup>
+import TrainersBanner from "../components/TrainersBanner.vue";
+import TrainersFromJson from "../components/TrainersFromJson.vue";
+</script>

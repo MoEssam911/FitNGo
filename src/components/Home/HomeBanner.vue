@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-black" >
+  <div class="bg-black z-50 sticky">
     <keep-alive>
       <transition name="fade" mode="out-in">
         <component :is="currentSlide" />

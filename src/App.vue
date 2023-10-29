@@ -7,15 +7,39 @@
   <div
     class="fixed z-10 bg-[#000000ee] w-full h-screen top-0"
     @click="closeLogin"
-    v-if="isLoggedIn"></div>
-    <Navbar />
+    v-if="isLoggedIn"
+  ></div>
+
+  <Navbar />
+
   <main class="w-full h-screen relative">
-    <RouterView  class="mt-20"/>
+
+    <RouterView class="mt-20" v-slot="{ Component }">
+      <Transition name="page">
+        <component :is="Component" />
+      </Transition>
+    </RouterView>
+
     <Footer />
   </main>
-  <!-- <UploadPhoto></UploadPhoto> -->
   
 </template>
+
+<style lang="scss">
+.login {
+  position: fixed;
+}
+.page-enter-active,
+.page-leave-active {
+  transition: 200ms ease-in-out opacity;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+}
+</style>
+
 
 <script setup>
 import { computed } from 'vue'
@@ -35,14 +59,12 @@ import { RouterView } from "vue-router";
 import Navbar from "./components/utilities/Navbar.vue";
 import Footer from "./components/utilities/Footer.vue";
 import LoginNSignup from "./components/LoginAndSignup/LoginNSignup.vue";
-import UploadPhoto from "./components/UploadPhoto.vue";
 import '../public/Mixins/public'
 export default {
   components: {
     Navbar,
     Footer,
     LoginNSignup,
-    UploadPhoto
   },
   data() {
     return {
@@ -98,8 +120,12 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.login {
-  position: fixed;
-}
-</style>
+
+<!-- <BaseModal :modalActive="modalActive" @close="toggleModal">
+
+  Modal content is placed here
+
+  <h1 class="text-2xl text-black">Our Modal</h1>
+
+</BaseModal>  -->
+<!--In script, declare the modalActive variable and make the toggleModal function-->
