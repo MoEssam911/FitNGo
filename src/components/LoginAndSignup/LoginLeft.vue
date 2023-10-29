@@ -52,17 +52,40 @@ const Login = () => {
   signInWithEmailAndPassword(getAuth(), email.value, password.value)
     .then((data) => {
       errorMsg.value = '';
-      axios.get(`http://localhost:3000/users/${data.user.uid}`).then(async (res)=>{
+      axios.get(`http://localhost:3000/users/${data.user.uid}`).then( (res)=>{
             // console.log(res.data);
             user.value = res.data
             // console.log(user);
             localStorage.removeItem('user')
             localStorage.setItem('user',JSON.stringify(user.value))
+            localStorage.removeItem('role')
+            localStorage.setItem('role','user')
             console.log(user.value);
             console.log(res.data);
-      updateUser(user.value)
+            updateUser(user.value)
+            router.push('/')
+            window.location.reload()
 
-        }).catch(err=>console.log(err))
+
+        }).catch((err)=>{
+          axios.get(`http://localhost:3000/AllTrainers/${data.user.uid}`).then( (res)=>{
+            // console.log(res.data);
+            user.value = res.data
+            // console.log(user);
+            localStorage.removeItem('user')
+            localStorage.setItem('user',JSON.stringify(user.value))
+            localStorage.removeItem('role')
+            localStorage.setItem('role','trainer')
+            console.log(user.value);
+            console.log(res.data);
+            updateUser(user.value)
+            router.push('/')
+            window.location.reload()
+
+        }).catch((err)=>{
+          console.log(err);
+        })
+        })
         console.log(user.value);
       userLoggedIN();
       closeLogin();

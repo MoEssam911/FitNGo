@@ -3,7 +3,6 @@
         id="popup-modal"
         tabindex="-1"
         class="fixed top-0 left-0 right-0 z-50 p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
-        :class="{ show: showPop == 'shown', hide: showPop == 'hide' }"
       >
         <div class="relative w-full max-w-md max-h-full">
           <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
@@ -79,7 +78,7 @@ import axios from 'axios';
         name:'PopTrainer',
 data(){
     return {
-        showPop: "shown",
+        // showPop: "shown",
         trainers: {},
       user: {},
       id: "",
@@ -87,7 +86,8 @@ data(){
       conf: "",
     }
 },
-mounted() {
+inject:["changePop"],
+created() {
     this.user = JSON.parse(localStorage.getItem("user"));
     this.getTrainer();
     this.getUser();
@@ -119,17 +119,20 @@ methods:{
         .catch((err) => console.log(err));
     },
     settrainerinuser() {
+      this.changePop()
       this.user.trainer.push(this.trainers);
+      // console.log(this.user);
       axios
         .put(`http://localhost:3000/users/${this.user.id}`, this.user)
         .then((res) => {
           console.log(res);
         })
         .catch((err) => console.log(err));
-      this.showPop = "hide";
+      // this.showPop = "hide";
     },
     deleteuserifNo() {
-      this.showPop = "hide";
+      // this.showPop = "hide";
+      this.changePop()
       this.trainers.Clients.pop();
       axios
         .put(`http://localhost:3000/AllTrainers/${this.id}`, this.trainers)
@@ -144,11 +147,11 @@ methods:{
 </script>
 
 <style scoped>
-.show {
+/* .show {
   display: block;
 }
 
 .hide {
   display: none;
-}
+} */
 </style>

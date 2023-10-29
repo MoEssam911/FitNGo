@@ -12,7 +12,7 @@
             <!-- macro calculator component -->
             <div
               class="flex flex-col flex-wrap h-auto p-4 w-full bg-zinc-300 bg-opacity-50 rounded-3xl">
-              <div><i class="fa-solid fa-arrow-left hover:text-primary transition duration-200 cursor-pointer text-lg" @click="ClientWPlan"></i></div>
+              <div><router-link :to="`/TrainerAccount/EditUser/${user.id}/WorkoutsPlans`"><i class="fa-solid fa-arrow-left hover:text-primary transition duration-200 cursor-pointer text-lg"></i></router-link></div>
               <table class="w-full text-center text-dark bg-white shadow-lg rounded-2xl mb-9" >
                       <caption class="text-dark text-2xl mb-2">
                       Workout plan:
@@ -96,6 +96,7 @@
   
   <script>
 import axios from 'axios'
+import router from '../router';
 export default {
   name:"TrainerPlan",
   inject:['ClientWPlan'],
@@ -108,16 +109,26 @@ export default {
       sets : "",
       reps : "",
       }]
-      },    
+      },
+      user:{},  
       id: "",
     }
+  },
+  created(){
+    this.id = this.$route.params.id;
+    axios.get(`http://localhost:3000/users/${this.id}`).then((res)=>{
+      this.user = res.data;
+    }).catch(err=>console.log(err))
   },
   methods :{
 
     submit() {
-      axios.post("http://localhost:3000/workoutplans",this.fullTable).then((res)=>{
+      this.user.plans.Workouts.push(this.fullTable)
+      axios.put(`http://localhost:3000/users/${this.id}`,this.user).then((res)=>{
                     console.log(res.data)
-                 }).catch((err)=>console.log(err));
+                    alert("Submit Workout Successfully");
+                  }).catch((err)=>console.log(err));
+                  router.push(`/TrainerAccount/EditUser/${this.user.id}/WorkoutsPlans`)
                 
     },
     AddRow() {

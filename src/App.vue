@@ -49,12 +49,15 @@ export default {
       isLoggedIn: false,
       loggedIN: false,
       // newLog:false,
-      user:{},
+      user:{
+        role:'user'
+      },
     };
   },
   created(){
     this.loggedIN = JSON.parse(localStorage.getItem('loggedIn'));
     this.user = JSON.parse(localStorage.getItem('user'));
+
   },
   updateded(){
     this.loggedIN = JSON.parse(localStorage.getItem('loggedIn'));

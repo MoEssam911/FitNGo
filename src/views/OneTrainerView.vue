@@ -111,7 +111,15 @@ export default {
     this.getTrainer();
     this.getUser();
   },
+  provide(){
+    return{
+      changePop : this.changePop
+    }
+  },
   methods: {
+    changePop(){
+      this.showPop = !this.showPop;
+    },
     getTrainer() {
       this.id = this.$route.params.id;
       // this.Clients = this.$route.params.id;
@@ -138,6 +146,16 @@ export default {
         .catch((err) => console.log(err));
     },
     SubwithTrainer() {
+      // console.log(this.trainers.Clients);
+      // if (this.trainers.Clients.length < 1) {
+        
+      // }
+      // console.log(Object.is(this.trainers.Clients[0],this.user));
+      // console.log(this.user);
+      // if (this.trainers.Clients.findIndex(object => object === this.user)) {
+      //     alert('You Already Have Sub');
+      //     return
+      //   }
       this.showPop = true;
       this.trainers.Clients.push(this.user);
       axios

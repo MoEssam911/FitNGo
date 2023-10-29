@@ -23,6 +23,7 @@
 import axios from "axios";
 import { storage } from "../firebaseInit";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import router from '../router';
 
 export default {
   name:'UploadPhoto',
@@ -68,6 +69,7 @@ export default {
         .catch((err) => {
           console.log("upload error:", err);
         });
+        // window.location.reload();
     },
     // onUpload() {
     //   // const fd = new FormData();
@@ -103,6 +105,9 @@ export default {
     //     });
     // },
   },
+  updated(){
+    window.location.reload();
+  }
 };
 </script>
 

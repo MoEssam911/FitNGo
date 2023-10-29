@@ -44,10 +44,11 @@ export const loginUser = () =>{
         })
         .catch((err) => console.log(err));
     }
-    const getTrainer = (uid) =>{
+    const getTrainer = (uid,obj) =>{
         axios
         .get(`http://localhost:3000/AllTrainers/${uid}`)
         .then((res) => {
+            obj = res.data
           console.log(res);
         })
         .catch((err) => console.log(err));

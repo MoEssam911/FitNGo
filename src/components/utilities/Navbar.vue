@@ -6,23 +6,25 @@
       <div class="nav-list mx-4 flex text-white" v-if="this.toggle == 'open' || windowWidth > 830">
         <ul class="list-none flex">
         <router-link to="/"><li class="mx-2 hover:text-primary">Home</li></router-link>
-        <router-link to="/trainers"><li class="mx-2 hover:text-primary">Trainers</li></router-link>
+        <router-link to="/trainers"><li class="mx-2 hover:text-primary" v-if="role=='user'">Trainers</li></router-link>
         <router-link to="/shop"><li class="mx-2 hover:text-primary">E-Shop</li></router-link>
-        <li class="mx-2 hover:text-primary hover:cursor-pointer" @click="apperLogin" v-if="!loggedIN">Tools</li>
-        <router-link to="/UserProfile" v-if="loggedIN"><li class="mx-2 hover:text-primary">Tools</li></router-link>
+        <li class="mx-2 hover:text-primary hover:cursor-pointer" @click="apperLogin" v-if="!loggedIN && role=='user'">Tools</li>
+        <router-link to="/UserProfile" v-if="loggedIN && role=='user'"><li class="mx-2 hover:text-primary">Tools</li></router-link>
         <router-link to="/workouts"><li class="mx-2 hover:text-primary">Workouts</li></router-link>
         <router-link to="/About"><li class="mx-2 hover:text-primary">About</li></router-link>
       </ul>
       
       </div>
       <router-link to="/cart"><a href=""><i class="fa-solid fa-cart-shopping mx-6 text-right"></i></a></router-link>
-      <a href=""><i class="fa-solid fa-bell text-yellow-400 text-right"></i></a>
     </div>
     <div>
         <div class="icon-login bg-slate-300 mx-auto mb-1 hover:cursor-pointer overflow-hidden" v-if="!loggedIN" @click="apperLogin">
           <i class="fa-solid fa-user" ></i>
         </div>
-        <router-link to="/UserProfile"><div class="icon-login bg-slate-300 mx-auto mb-1 hover:cursor-pointer overflow-hidden" v-if="loggedIN">
+        <router-link to="/UserProfile"><div class="icon-login bg-slate-300 mx-auto mb-1 hover:cursor-pointer overflow-hidden" v-if="loggedIN && role == 'user'">
+          <img class="w-16 h-16 rounded-full object-cover" :src="user.imageProfile" alt="profile picture" />
+        </div></router-link>
+        <router-link to="/TrainerAccount"><div class="icon-login bg-slate-300 mx-auto mb-1 hover:cursor-pointer overflow-hidden" v-if="loggedIN && role == 'trainer'">
           <img class="w-16 h-16 rounded-full object-cover" :src="user.imageProfile" alt="profile picture" />
         </div></router-link>
         <h6 class="select-none text-sm hover:cursor-pointer hover:text-red-600" v-if="!loggedIN" @click="apperLogin">Login</h6>
@@ -41,12 +43,21 @@ import router from '../../router';
         toggle:'close',
         windowWidth: window.innerWidth,
         newloggedIN: false,
+        role:'user'
       }
     },
     inject: ["apperLogin","loggedIN","userLoggedIN","user"],
     beforeUnmount() {
       // Remove the resize event listener when the component is unmounted
       window.removeEventListener('resize', this.updateWindowWidth);
+    },
+    created(){
+    this.role = localStorage.getItem('role')
+    console.log(this.role);
+    if (!this.user.imageProfile) {
+      
+    }
+
     },
     mounted() {
       // Add a listener to update windowWidth when the window is resized
@@ -75,7 +86,10 @@ import router from '../../router';
       logout(){
         this.userLoggedIN()
         localStorage.clear();
+        localStorage.removeItem('role')
+        localStorage.setItem('role','user')
         router.push('/')
+        this.role='user'
       }
     }
   }
