@@ -1,4 +1,8 @@
 <template>
+  <template v-if="trainerscards.length === 0">
+    <TrainersSkeleton />
+  </template>
+  <template v-else>
     <div class="flex flex-wrap container gap-2">
     <div v-for="card in trainerscards" :key="card">
       <div class="cards w-full">
@@ -23,25 +27,34 @@
       </div>
     
   </div>
-</div>
+    </div>
+  </template>
+
 </template>
 
 <script>
 import axios from "axios";
+import TrainersSkeleton from '../components/SkeletonPlaceholders/TrainersSkeleton.vue'
     export default {
         name:'TrainersFromJson',
+        components: {
+          TrainersSkeleton
+        },
         data() {
     return {
       trainerscards: [],
     };
   },
   created() {
-    axios
+    setTimeout(() => {
+      axios
       .get("http://localhost:3000/AllTrainers")
       .then((res) => {
         this.trainerscards = res.data;
       })
       .catch((err) => console.log(err));
+    }, 1000)
+
   },
     }
 </script>

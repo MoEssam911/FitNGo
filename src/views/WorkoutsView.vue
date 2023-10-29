@@ -1,12 +1,15 @@
 <template>
-  <div>
-  <WorkoutsBanner />
-  <div class="container flex flex-col">
+  <template v-if="exerciseDb.length === 0">
+      <WorkoutsSkeleton/>
+  </template>
+  <template v-else>
+  <!-- <WorkoutsBanner /> -->
+  <div class="container flex flex-col mt-20">
     <FilterSearch :data="searchValues" @update="handleUpdate"/>
     <WorkoutsList :exercises="exercises"/>
     <LoadMoreBtn :load-more="loadMore" @click="loadMore"/>
   </div>
-</div>
+  </template>
 </template>
 
 <script setup>
@@ -14,6 +17,8 @@
   import FilterSearch from '../components/WorkoutsView/FilterSearch.vue'
   import WorkoutsList from '../components/WorkoutsView/WorkoutsList.vue'
   import LoadMoreBtn from '../components/WorkoutsView/LoadMoreBtn.vue'
+
+  import WorkoutsSkeleton from '../components/SkeletonPlaceholders/WorkoutsSkeleton.vue'
 
   import axios from 'axios'
   import { ref, computed } from 'vue'
@@ -35,7 +40,7 @@ const options = {
   params: { limit: "1300" },
   headers: {
 
-    'X-RapidAPI-Key': '0daf7c767cmsh4df62db306d693cp121d48jsne1b23e6b766aa',
+    'X-RapidAPI-Key': '0daf7c767cmsh4df62db306d693cp121d48jsne1b23e6b766a',
     'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
   }
 };
@@ -44,14 +49,12 @@ async function fetchAPI() {
   try {
     const response = await axios.request(options);
     exerciseDb.value = response.data;
-    console.log(exerciseDb);
   } catch (error) {
     console.error(error);
   }
 }
 
-fetchAPI();
-
+setTimeout(fetchAPI, 1000)
 let currentIndex = ref(0);
 let exercises = computed(() => {
   return exerciseDb.value
