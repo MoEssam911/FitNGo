@@ -206,7 +206,7 @@ export default {
     getTrainer() {
       this.id = this.$route.params.id;
       axios
-        .get(`http://localhost:7071/products/${this.id}`)
+        .get(`http://localhost:3000/products/${this.id}`)
         .then((res) => (this.oneItem = res.data))
         .catch((err) => console.log(err));
     },

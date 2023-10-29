@@ -65,9 +65,16 @@
 
 <script>
 import axios from "axios";
+import { inject } from 'vue';
 
 export default {
   name: "CartComponent",
+  
+  setup() {
+    const router = inject('$router');
+    return {
+      router
+    }},
   data(){
     return{
       oneItem:[],
@@ -107,7 +114,9 @@ export default {
         if (conf==true){
           axios.delete(`http://localhost:3000/cart/${id}`).then((res)=>{console.log(res)}).catch((err)=>{console.log(err)});
             this.getData()
+            this.$router.reload();
         }
+
   }
   }
 };
