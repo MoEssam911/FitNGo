@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="font-Manrope">
     <div class="flex flex-col">
       <div class="flex relative object-cover h-[350px]">
         <img
-          class="w-full object-"
-          src="../../src/assets/Images/WhatsApp Image 2023-10-19 at 17.23.47_e920d04d.jpg"
+          class="w-full object-fit"
+          src="../../src/assets/Images/64bf6a6653ad2-1690266214.jpg"
         />
       </div>
     </div>
@@ -22,7 +22,7 @@
           <p
             class="flex font-Manrope whitespace-pre-line p-[5%] text-primary lg:text-2xl md:text-2xl sm:text-base font-extrabold"
           >
-            SALE 15% ON SPORT SHOES
+            Enjoy! 10% OFF For Your supplements
           </p>
         </div>
         <div class="w-1/2 h-1/4">
@@ -30,7 +30,7 @@
           <p
             class="absolute left-[50%] inset-0 flex font-Manrope whitespace-pre-line p-[5%] text-primary lg:text-4xl md:text-2xl sm:text-xl font-extrabold transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
           >
-            SALE 15% ON SPORT SHOES
+            SALE 15% ON SPORT Items
           </p>
         </div>
       </div>
@@ -154,26 +154,39 @@ export default {
   data() {
     return {
       itemsDb: [],
+      user:{},
       currentIndex: 0,
       nameI: "",
       searchQuery: "",
     };
   },
   created() {
+    this.user = JSON.parse(localStorage.getItem("user"));
     axios
       .get("http://localhost:3000/products")
       .then((res) => {
         this.itemsDb = res.data;
       })
       .catch((err) => console.log(err));
+      
+    axios
+      .get(`http://localhost:3000/users/${this.user.id}`)
+      .then((res) => {
+        this.user = res.data;
+      })
+      .catch((err) => console.log(err));
+
   },
   methods: {
     loadMore() {
       this.currentIndex += 12;
     },
+
     addCart(item) {
+      this.user.cart.push(item);
+
       axios
-        .post("http://localhost:3000/cart", item)
+      .put(`http://localhost:3000/users/${this.user.id}`, this.user)
         .then((res) => console.log(res))
         .catch((err) => console.log(err));
     },

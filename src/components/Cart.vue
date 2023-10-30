@@ -25,7 +25,7 @@
             </div>
 
             <!-- For more settings use the AutoHTML plugin tab ... -->
-            <i @click="remove(item.id)" class="fa-solid fa-trash text-notify-color text-xl cursor-pointer"></i>
+            <i @click="remove(index)" class="fa-solid fa-trash text-notify-color text-xl cursor-pointer"></i>
           </div>
         </div>
       </div>
@@ -69,22 +69,20 @@ import { inject } from 'vue';
 
 export default {
   name: "CartComponent",
-  
-  setup() {
-    const router = inject('$router');
-    return {
-      router
-    }},
+  created(){
+    this.user = JSON.parse(localStorage.getItem("user"));
+    this.getCartItem();
+  },
+
   data(){
     return{
       oneItem:[],
       id: "",
+      user:{},
       total:0,
     }
   },
-  created() {
-    this.getItem();
-  },
+
   computed:{
     prices(){
       for(var i=0;i<this.oneItem.length;i++){
@@ -98,27 +96,33 @@ export default {
     }
   },
   methods: {
-    getItem() {
+    getCartItem() {
       axios
-        .get("http://localhost:3000/cart")
+        .get(`http://localhost:3000/users/${this.user.id}`)
         .then((res) => {
-          this.oneItem = res.data
+          this.oneItem = res.data.cart
           console.log(this.oneItem)
           
         })
         .catch((err) => console.log(err));
     },
-  remove(id){
+  remove(index){
 
        let conf = confirm(`Are you sure you want to delete ?`)
         if (conf==true){
-          axios.delete(`http://localhost:3000/cart/${id}`).then((res)=>{console.log(res)}).catch((err)=>{console.log(err)});
-            this.getData()
-            this.$router.reload();
-        }
+this.oneItem.splice(index,1)
+this.user.cart=this.oneItem
+axios
+      .put(`http://localhost:3000/users/${this.user.id}`, this.user)
+        .then((res) => console.log(res))
+        .catch((err) => console.log(err));
+    }
+
+          this.getData()
+ }
 
   }
-  }
+  
 };
 </script>
 

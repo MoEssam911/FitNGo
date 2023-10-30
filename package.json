@@ -27,7 +27,8 @@
     "vue": "^3.3.4",
     "vue-axios": "^3.5.2",
     "vue-browser-geolocation": "^1.8.0",
-    "vue-router": "^4.2.4"
+    "vue-router": "^4.2.4",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.3.4",

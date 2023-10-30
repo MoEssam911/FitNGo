@@ -164,6 +164,7 @@ const register = () => {
         height:'',
         bodyfat:'',
         bmr:'',
+        cart:[{}],
         imageProfile:'https://placehold.co/300x300',
         trainer:{},
         plans:{

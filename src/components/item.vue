@@ -124,10 +124,12 @@
           <!-- btns of add item  -->
           <div class="flex flex-row mt-[2%]">
             
-            <button @click="addCart()"
+            <button @click="goCart()"
               class="bg-primary w-full rounded-md py-[1%] self-center mr-[1%]"
-            ><router-link :to="`/cart`">
-              Buy Now</router-link>
+            >
+            <!-- <router-link :to="`/cart`"> -->
+              Buy Now
+            <!-- </router-link> -->
             </button>
             <button @click="addCart()"
               class="flex bg-white text-gray-600 border-gray-600 border-2 py-[1%] justify-center ml-[1%] rounded-lg w-full"
@@ -189,6 +191,7 @@
 
 <script>
 import axios from "axios";
+import router from "../router";
 export default {
   name: "item",
   data() {
@@ -197,13 +200,21 @@ export default {
       oneItem: {},
       id: "",
       countImg: 0,
+      user:{},
     };
   },
   created() {
-    this.getTrainer();
+    this.user = JSON.parse(localStorage.getItem("user"));
+    this.getOneITem();
+    axios
+      .get(`http://localhost:3000/users/${this.user.id}`)
+      .then((res) => {
+        this.user = res.data;
+      })
+      .catch((err) => console.log(err));
   },
   methods: {
-    getTrainer() {
+    getOneITem() {
       this.id = this.$route.params.id;
       axios
         .get(`http://localhost:3000/products/${this.id}`)
@@ -214,10 +225,16 @@ export default {
       this.countImg = index;
     },
     addCart(){
+      this.user.cart.push(this.oneItem);
       axios
-        .post("http://localhost:3000/cart",this.oneItem)
+      .put(`http://localhost:3000/users/${this.user.id}`, this.user)
         .then((res) => console.log(res))
-        .catch((err) => console.log(err));  
+        .catch((err) => console.log(err));
+    },  
+    goCart(){
+      this.addCart()
+      router.push('/cart')
+    }
     },
 
     addItem() {if(this.oneItem.stock > this.counter){
@@ -232,7 +249,7 @@ export default {
         return this.counter--;
       }
     },
-  },
+  
 };
 </script>
 
