@@ -10,19 +10,18 @@
     v-if="isLoggedIn"
   ></div>
 
-  <!-- <Navbar /> -->
-
+  <Navbar v-if="fullData || !loggedIN"/>
   <main class="w-full h-screen relative">
 
-    <!-- <RouterView class="mt-28" v-slot="{ Component }">
+    <RouterView class="mt-20" v-slot="{ Component }">
       <Transition name="page">
         <component :is="Component" />
       </Transition>
-    </RouterView> -->
-    <Checkout></Checkout>
-    <Address></Address>
+    </RouterView>
+    <!-- <Checkout></Checkout> -->
+    <!-- <Address></Address> -->
 
-    <!-- <Footer /> -->
+    <Footer />
   </main>
 </template>
 
@@ -80,11 +79,14 @@ export default {
       user:{
         role:'user'
       },
+      fullData:false
     };
   },
   created(){
     this.loggedIN = JSON.parse(localStorage.getItem('loggedIn'));
     this.user = JSON.parse(localStorage.getItem('user'));
+    this.fullData = JSON.parse(localStorage.getItem('fullData'));
+    console.log(this.fullData);
 
   },
   updateded(){

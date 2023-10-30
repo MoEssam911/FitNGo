@@ -87,7 +87,7 @@ export default {
     };
   },
   created() {
-    this.getItem();
+    this.getCartItem();
   },
   computed: {
     prices() {

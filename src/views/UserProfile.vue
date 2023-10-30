@@ -1,5 +1,5 @@
 <template>
-    <div class="h-screen container relative gap-4">
+    <div class="min-h-screen container relative gap-4">
         <div class="flex gap-2 pb-6 items-center cursor-pointer">
                 <div class="md:hidden">
                     <MenuIcon @click="toggleUserSideHandler"></MenuIcon>
@@ -61,8 +61,10 @@ import UserTrainer from '../components/UserTrainer.vue'
         },
         methods:{
             changeToggle(cname){
-                this.toggleComponent = cname;
-                console.log(this.toggleComponent);
+                if (JSON.parse(localStorage.getItem('fullData'))) {
+                    this.toggleComponent = cname;
+                    console.log(this.toggleComponent);
+                }
             },
             toggleUserSideHandler() {
                 this.toggleUserSide = !this.toggleUserSide;
@@ -74,6 +76,11 @@ import UserTrainer from '../components/UserTrainer.vue'
             changeToggle: this.changeToggle
             }
         },
+        created(){
+            if(!(JSON.parse(localStorage.getItem('fullData')))){
+                this.toggleComponent = 'mydata'
+            }
+        }
     }
 </script>
 

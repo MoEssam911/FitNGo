@@ -121,9 +121,18 @@ export default {
   inject:["changeToggle","toggleComponent"],
   methods:{
     changeAll(cname){
-      this.changeToggle(cname);
-      this.toggleComponent2=cname;
+      if ((JSON.parse(localStorage.getItem('fullData')))) {
+        this.changeToggle(cname);
+        this.toggleComponent2=cname;
+      }else{
+        alert('Pleae enter all Data')
+      }
     }
+  },
+  created(){
+    if (!(JSON.parse(localStorage.getItem('fullData')))) {
+        this.toggleComponent2='mydata';
+      }
   }
   
 };

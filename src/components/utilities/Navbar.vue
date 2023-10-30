@@ -2,7 +2,7 @@
   <header>
     <div class="navbar flex px-10 items-center bg-black text-white fixed w-full z-50 top-0">
     <div class="logo"><a href=""><img src="../../assets/Images/Logo-Fit&go version 2-white.png" alt=""></a></div>
-    <div class="navigation ms-auto flex me-4">
+    <nav class="navigation ms-auto flex me-4">
       <div class="nav-list mx-4 flex text-white" v-if="this.toggle == 'open' || windowWidth > 830">
         <ul class="list-none flex">
         <router-link to="/"><li class="mx-2 hover:text-primary">Home</li></router-link>
@@ -16,7 +16,7 @@
       
       </div>
       <router-link to="/cart"><a href=""><i class="fa-solid fa-cart-shopping mx-6 text-right"></i></a></router-link>
-    </div>
+    </nav>
     <div>
         <div class="icon-login bg-slate-300 mx-auto mb-1 hover:cursor-pointer overflow-hidden" v-if="!loggedIN" @click="apperLogin">
           <i class="fa-solid fa-user" ></i>
@@ -43,7 +43,8 @@ import router from '../../router';
         toggle:'close',
         windowWidth: window.innerWidth,
         newloggedIN: false,
-        role:'user'
+        role:'user',
+        fullData : false,
       }
     },
     inject: ["apperLogin","loggedIN","userLoggedIN","user"],
@@ -54,7 +55,8 @@ import router from '../../router';
     created(){
     this.role = localStorage.getItem('role')
     console.log(this.role);
-  
+    this.fullData = JSON.parse(localStorage.getItem('fullData'));
+    // console.log(this.fullData);
 
     },
     mounted() {
@@ -81,6 +83,16 @@ import router from '../../router';
         this.newloggedIN = JSON.parse(localStorage.getItem('isloggedIn'))
         console.log(this.newloggedIN);
       },
+      handleData(event){
+        if (this.fullData) {
+          
+          console.log('1');
+        } else {
+          event.preventDefault();
+          console.log('2');
+          console.log(event);
+        }
+      },
       logout(){
         this.userLoggedIN()
         localStorage.clear();
@@ -88,7 +100,7 @@ import router from '../../router';
         localStorage.setItem('role','user')
         router.push('/')
         this.role='user'
-      }
+      },
     }
   }
 </script>

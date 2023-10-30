@@ -52,6 +52,7 @@ const Login = () => {
   signInWithEmailAndPassword(getAuth(), email.value, password.value)
     .then((data) => {
       errorMsg.value = '';
+      console.log(data.user.uid);
       axios.get(`http://localhost:3000/users/${data.user.uid}`).then( (res)=>{
             // console.log(res.data);
             user.value = res.data
@@ -60,11 +61,12 @@ const Login = () => {
             localStorage.setItem('user',JSON.stringify(user.value))
             localStorage.removeItem('role')
             localStorage.setItem('role','user')
+            localStorage.setItem('fullData',JSON.stringify(true));
             console.log(user.value);
             console.log(res.data);
             updateUser(user.value)
             router.push('/')
-            window.location.reload()
+            // window.location.reload()
 
 
         }).catch((err)=>{
@@ -76,6 +78,7 @@ const Login = () => {
             localStorage.setItem('user',JSON.stringify(user.value))
             localStorage.removeItem('role')
             localStorage.setItem('role','trainer')
+            localStorage.setItem('fullData',JSON.stringify(true));
             console.log(user.value);
             console.log(res.data);
             updateUser(user.value)
@@ -86,9 +89,10 @@ const Login = () => {
           console.log(err);
         })
         })
-        console.log(user.value);
+      console.log(user.value);
       userLoggedIN();
       closeLogin();
+      // window.location.reload();
       // router.push('/UserProfile')
     })
     .catch((error) => {

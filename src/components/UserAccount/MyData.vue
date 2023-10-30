@@ -4,18 +4,18 @@
     <div v-if="isSaved">
       <div class="grid md:grid-cols-2 md:gap-6">
         <p class="relative z-0 w-full mb-6">
-          <span class="text-primary font-bold">Weight</span>: {{ weight }}
+          <span class="text-primary font-bold">Weight</span> : {{ user.weight }} kg
         </p>
         <p class="relative z-0 w-full mb-6">
-          <span class="text-primary font-bold">Height</span>: {{ height }}
+          <span class="text-primary font-bold">Height</span> : {{ user.height }} cm
         </p>
       </div>
       <div class="grid md:grid-cols-2 md:gap-6">
         <p class="relative z-0 w-full mb-6">
-          <span class="text-primary font-bold">Body Fat</span>: {{ bodyfat }}
+          <span class="text-primary font-bold">Body Fat</span> : {{ user.bodyfat }} %
         </p>
         <p class="relative z-0 w-full mb-6">
-          <span class="text-primary font-bold">BMR</span>: {{ bmr }}
+          <span class="text-primary font-bold">BMR</span> : {{ user.bmr }} %
         </p>
       </div>
     </div>
@@ -113,6 +113,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+import router from '../../router';
 export default {
   name:'MyData',
   data() {
@@ -122,13 +124,35 @@ export default {
       height: "",
       bodyfat: "",
       bmr: "",
+      user:{}
     };
   },
   methods: {
     saveInfo() {
+      this.user.weight = this.weight
+      this.user.height = this.height
+      this.user.bodyfat = this.bodyfat
+      this.user.bmr = this.bmr;
+      localStorage.setItem('user',JSON.stringify(this.user));
+      localStorage.setItem('fullData',JSON.stringify(true));
+      axios.put(`http://localhost:3000/users/${this.user.id}`,this.user);
+      router.push('/')
       this.isSaved = !this.isSaved;
+      window.location.reload();
     },
   },
+  created(){
+    this.user = JSON.parse(localStorage.getItem('user'))
+    this.weight = this.user.weight
+    this.height = this.user.height
+    this.bodyfat = this.user.bodyfat
+    this.bmr = this.user.bmr
+    if (!this.user.weight) {
+        this.isSaved = false;
+    }else{
+      this.isSaved = true
+    }
+  }
 };
 </script>
 
