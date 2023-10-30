@@ -1,8 +1,8 @@
 <template>
-  <section class="mt-16">
+  <section class="mt-28">
     <div class="container">
-      <div class="about h-80 rounded-3xl overflow-hidden">
-        <div class="mt-16 ml-28 z-10 relative">
+      <div class="about h-auto rounded-3xl overflow-hidden">
+        <div class="py-16 ml-28 z-10 relative">
           <h2 class="text-primary font-semibold text-3xl">About Us</h2>
           <p class="text-white mt-9 w-96 md:w-full lg:w-[700px] pr-6">
             We are a fitness community dedicated to helping people achieve their
@@ -12,13 +12,14 @@
           </p>
         </div>
       </div>
-      <div class="flex gap-3 mt-12">
-        
-        <div class="flex flex-col justify-between our-mission w-6/12
-         md:w-4/12  bg-[#eee] rounded-3xl p-9 text-2xl">
-          <h3 class="text-center text-primary font-semibold">Our Mission</h3>
-          <div class="icon text-center">
-            <i class="fa-solid fa-medal text-primary text-7xl"></i>
+      <div class="flex flex-col md:flex-row gap-3 mt-12">
+        <div
+          class="flex flex-col justify-between our-mission w-full md:w-4/12 bg-secondary rounded-3xl p-6 text-2xl">
+          <div class="flex flex-col gap-4">
+            <h3 class="text-center text-primary font-semibold">Our Mission</h3>
+            <div class="icon text-center">
+              <i class="fa-solid fa-medal text-primary text-7xl"></i>
+            </div>
           </div>
           <p class="text-base text-dark leading-7 text-center">
             We help you reach your fitness goals with our online platform. You
@@ -27,26 +28,29 @@
           </p>
         </div>
         <div
-          class="flex flex-col justify-between our-mission w-6/12 md:w-4/12 
-           bg-[#eee] rounded-3xl p-9 text-2xl">
-          <h3 class="text-center text-primary font-semibold">Our Goals</h3>
-          <div class="icon text-center">
-            <i class="fa-solid fa-bullseye text-primary text-7xl"></i>
+          class="flex flex-col justify-between our-mission w-full md:w-4/12 bg-secondary rounded-3xl p-6 text-2xl">
+          <div class="flex flex-col gap-4">
+            <h3 class="text-center text-primary font-semibold">Our Goals</h3>
+            <div class="icon text-center">
+              <i class="fa-solid fa-bullseye text-primary text-7xl"></i>
+            </div>
           </div>
           <p class="text-base text-dark leading-7 text-center">
             To link you with expert trainers who can guide you to your fitness
-            goals and wellness. <br />
+            goals.
             To provide you with a wide range of supplements that can boost your
             performance.
           </p>
         </div>
         <div
-          class="flex flex-col justify-between our-mission w-6/12 md:w-4/12  bg-secondary rounded-3xl p-9 text-2xl">
-          <h3 class="text-center text-primary font-semibold">Our Message</h3>
-          <div class="icon text-center">
-            <i class="fa-solid fa-heart text-primary text-7xl"></i>
+          class="flex flex-col justify-between our-mission w-full md:w-4/12 bg-secondary rounded-3xl p-6 text-2xl">
+          <div class="flex flex-col gap-4">
+            <h3 class="text-center text-primary font-semibold">Our Message</h3>
+            <div class="icon text-center">
+              <i class="fa-solid fa-heart text-primary text-7xl"></i>
+            </div>
           </div>
-          <p class="text-base text-dark leading-7 text-center">
+          <p class="text-base text-dark leading-7  text-center">
             We are your online fitness partner. We have everything you need to
             get fit and healthy. Trainer, supplements, gym. Join us now and
             start your fitness journey.
@@ -60,15 +64,15 @@
       <h3 class="text-primary text-center font-semibold text-3xl">
         Principles
       </h3>
-      <div class="flex gap-3 mt-6">
-        <div class="w-6/12 bg-secondary  rounded-3xl p-9">
+      <div class="flex flex-col md:flex-row gap-3 mt-6">
+        <div class="flex flex-col gap-5 w-full bg-secondary rounded-3xl p-9">
           <h3 class="text-center text-primary text-2xl">Remove Barriers</h3>
           <p class="text-center mt-5">
             Just grab your phone and start when you are ready we’ll build up the
             rest from there.
           </p>
         </div>
-        <div class="w-6/12 bg-secondary  rounded-3xl p-9">
+        <div class="flex flex-col gap-5 w-full bg-secondary rounded-3xl p-9">
           <h3 class="text-center text-primary text-2xl">Act as a coach</h3>
           <p class="text-center mt-5">
             We build personalized workout and meal plans, track your progress,
@@ -77,8 +81,8 @@
           </p>
         </div>
       </div>
-      <div class="flex gap-3 mt-3">
-        <div class="w-6/12 bg-secondary rounded-3xl p-9">
+      <div class="flex flex-col md:flex-row gap-3 mt-3">
+        <div class="flex flex-col gap-5 w-full bg-secondary rounded-3xl p-9">
           <h3 class="text-center text-primary text-2xl">
             Spread the knowledge
           </h3>
@@ -87,7 +91,7 @@
             learn about your body and the workout process.
           </p>
         </div>
-        <div class="w-6/12 bg-secondary  rounded-3xl p-9">
+        <div class="flex flex-col gap-5 w-full bg-secondary rounded-3xl p-9">
           <h3 class="text-center text-primary text-2xl">Foster the habit</h3>
           <p class="text-center mt-5">
             Besides getting you the body you want, we aim to make you embrace a
@@ -108,8 +112,8 @@ import OurPartners from "../components/Home/OurPartners.vue";
 export default {
   name: "About",
   components: {
-    OurPartners
-  }
+    OurPartners,
+  },
 };
 </script>
 

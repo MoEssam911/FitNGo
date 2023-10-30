@@ -9,6 +9,7 @@ import "./assets/global.css";
 import 'tailwindcss/tailwind.css'
 
 
+
 /* import the fontawesome core */
 import { library } from "@fortawesome/fontawesome-svg-core";
 

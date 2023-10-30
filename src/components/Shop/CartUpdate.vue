@@ -37,7 +37,6 @@
                 @click="remove(item.id)"
                 class="fa-solid fa-trash text-dark text-xl cursor-pointer hover:text-red-600"></i>
             </div>
-
           </div>
         </div>
       </div>
@@ -102,9 +101,9 @@ export default {
     },
   },
   methods: {
-    getCartItem() {
+    getItem() {
       axios
-        .get(`http://localhost:3000/users/${this.user.id}`)
+        .get("http://localhost:3000/cart")
         .then((res) => {
           this.oneItem = res.data;
           console.log(this.oneItem);
