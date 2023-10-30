@@ -26886,38 +26886,10 @@
   ],
   "users": [
     {
-      "userName": "asdasjh",
-      "id": "RLxUaPFTi3Qh3yqeImhc3ZwBwjp1",
-      "age": 25,
-      "role": "",
-      "gender": "male",
-      "cart": [
-        {}
-      ]
-    },
-    {
       "id": "o5yyVPfzGxcgOG6FhwziOY1ZyoE2",
       "userName": "Mohamed Essam",
       "age": 25,
       "gender": "male",
-      "cart": [
-        {}
-      ]
-    },
-    {
-      "id": "4vlRy8LiqPXgW2OpRaKqdUpp1Dn1",
-      "userName": "e",
-      "age": 24,
-      "gender": "",
-      "cart": [
-        {}
-      ]
-    },
-    {
-      "id": "x12RniKn6JSTEGsKv35Q8qgka962",
-      "userName": "ddsd",
-      "age": 24,
-      "gender": "",
       "cart": [
         {}
       ]
