@@ -15,10 +15,17 @@
       </div>
       <div class="text-lg font-semibold">|</div>
       <div
-        class="text-lg font-semibold hover:text-primary transition duration-200 cursor-pointer" @click="changetoggle('workouts')"
-        :class="{activeCol : toggle=='workouts'}"
+        class="text-lg font-semibold hover:text-primary transition duration-200 cursor-pointer" @click="changetoggle('users')"
+        :class="{activeCol : toggle=='users'}"
       >
-        Workouts
+        Users
+      </div>
+      <div class="text-lg font-semibold">|</div>
+      <div
+        class="text-lg font-semibold hover:text-primary transition duration-200 cursor-pointer" @click="changetoggle('admin')"
+        :class="{activeCol : toggle=='admin'}"
+      >
+        Admins
       </div>
     </div>
 </template>

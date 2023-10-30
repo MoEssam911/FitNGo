@@ -425,6 +425,26 @@
       "price": "60.00",
       "stock": 1,
       "color": "white"
+    },
+    {
+      "id": 3,
+      "images": [
+        "https://www.maxmuscleelite.com/web/image/product.product/5294/image_128/%5B6224009363308%5D%20Gaspari%20Nutrition%20MyoFusion%20Advanced%20protein-24Serv.-907G-Milk%20Chocolate?unique=8744e39",
+        "https://www.maxmuscleelite.com/web/image/product.image/1721/image_128/Gaspari%20Nutrition%20MyoFusion%20Advanced%20protein-24Serv.-907G-Milk%20Chocolate?unique=1ffa165"
+      ],
+      "title": "Gaspari Nutrition MyoFusion Advanced protein-24Serv.-907G-Milk Chocolate",
+      "description": "Gaspari Nutrition MyoFusion Advanced protein-24Serv.-907G-Milk Chocolate",
+      "overview": {
+        "Company": "Gaspari Nutrition",
+        "Origin": "Egypt",
+        "Weight": "907 G",
+        "Servings": "24 serving",
+        "Flavor": "Milk Chocolate",
+        "Formation": "Powder"
+      },
+      "price": "649.00",
+      "stock": 1,
+      "color": "white"
     }
   ],
   "supplements": [
@@ -1402,6 +1422,7 @@
     {
       "id": "ejEPs2ZaS9hTzonyIKYzxd6mpZt1",
       "userName": "hassan gamal",
+      "Email": "ahlwey2010@hotmail.com",
       "age": 24,
       "role": "user",
       "gender": "male",
@@ -1538,6 +1559,45 @@
               }
             ],
             "month": "week 13"
+          },
+          {
+            "week": "22",
+            "table": [
+              {
+                "breakfast": "df",
+                "snacks": "fdg",
+                "launch": "fdg",
+                "dinner": "dfg"
+              },
+              {
+                "breakfast": "fdg",
+                "snacks": "gfd",
+                "launch": "gf",
+                "dinner": "gdfg"
+              }
+            ]
+          },
+          {
+            "week": "23",
+            "table": [
+              {
+                "breakfast": "fgh",
+                "snacks": "hgf",
+                "launch": "h",
+                "dinner": "fgh"
+              }
+            ]
+          },
+          {
+            "week": "45",
+            "table": [
+              {
+                "breakfast": "fhhg",
+                "snacks": "hgfh",
+                "launch": "fgh",
+                "dinner": "fgh"
+              }
+            ]
           }
         ]
       }
@@ -1545,37 +1605,35 @@
     {
       "id": "mWXjfb4D8TPbIlpTgEB5dfiIZ973",
       "userName": "mohamed elshimi",
+      "Email": "mohamedelshimi@gmail.com",
       "age": 24,
-      "gender": ""
+      "gender": "male"
     },
     {
       "id": "pqCImuwC3VWFRenyHU0et8smaWt2",
       "userName": "alimaher",
+      "Email": "alimaher@gmail.com",
       "age": 24,
-      "gender": ""
-
       "gender": "male",
       "weight": "",
       "height": "",
       "bodyfat": "",
       "bmr": "",
       "imageProfile": "https://firebasestorage.googleapis.com/v0/b/fitngo-project.appspot.com/o/uploadeImages%2FmWXjfb4D8TPbIlpTgEB5dfiIZ973?alt=media&token=6710cd29-d98c-4d8f-827a-770aaecccb7f",
-      "trainer": [
-        {
-          "id": "hzRnyJnSRdeMP6UVZU2wDn5vJAU2",
-          "TrainerNames": "Amr Sameh",
-          "role": "trainer",
-          "age": 37,
-          "gender": "male",
-          "TrainerImg": "https://drive.google.com/uc?id=1x4CgolDit7FdbScOUToakuaSDXaiTuhL",
-          "imageProfile": "https://drive.google.com/uc?id=1PGHFkY7_u3Sx1hjyUMA9GU-PBNWa_Ev4",
-          "Rate": "",
-          "Description": "I'm Amr Sameh, your fitness fairy godmother. I'm here to help you transform your body and mind, and become the best version of yourself.\\nI believe that fitness should be fun and rewarding, so I create workouts that are challenging but enjoyable. And I'm always here to support you and motivate you along the way.",
-          "Fees": "3100EGP/Mth",
-          "PhoneNumber": "01222406867",
-          "Clients": []
-        }
-      ],
+      "trainer": {
+        "id": "hzRnyJnSRdeMP6UVZU2wDn5vJAU2",
+        "TrainerNames": "Amr Sameh",
+        "role": "trainer",
+        "age": 37,
+        "gender": "male",
+        "TrainerImg": "https://drive.google.com/uc?id=1x4CgolDit7FdbScOUToakuaSDXaiTuhL",
+        "imageProfile": "https://drive.google.com/uc?id=1PGHFkY7_u3Sx1hjyUMA9GU-PBNWa_Ev4",
+        "Rate": "",
+        "Description": "I'm Amr Sameh, your fitness fairy godmother. I'm here to help you transform your body and mind, and become the best version of yourself.\\nI believe that fitness should be fun and rewarding, so I create workouts that are challenging but enjoyable. And I'm always here to support you and motivate you along the way.",
+        "Fees": "3100EGP/Mth",
+        "PhoneNumber": "01222406867",
+        "Clients": []
+      },
       "plans": {
         "Workouts": [
           {
@@ -1742,6 +1800,7 @@
     {
       "id": "3gGcsFXGGlWteK0j5N7fIfVF7nX2",
       "userName": "essam",
+      "Email": "mohameessam@gmail.com",
       "age": 25,
       "gender": "male",
       "weight": "",
@@ -1758,7 +1817,43 @@
           {}
         ]
       }
-
+    }
+  ],
+  "Admins": [
+    {
+      "id": "qf9iU4oTaLfmERCMQoq1GnACmz83",
+      "userName": "Hassan731",
+      "Email": "hassan-admin2@gmail.com"
+    },
+    {
+      "id": "HelcyTr6mxRhVA4eZOYsxUswWBk1",
+      "userName": "hassan831",
+      "Email": "hassan-admin3@gmail.com"
+    },
+    {
+      "id": "xeMdY6KM8bNH18RzlwMx0FpV4s02",
+      "userName": "Hassan931",
+      "Email": "hassan-admin4@gmail.com"
+    },
+    {
+      "id": "wAFLTyJHECZ12qETQGJP0D5UPV72",
+      "userName": "Hassan031",
+      "Email": "hassan-admin5@gmail.com"
+    },
+    {
+      "id": "7XGzuz3kf8Qh9wERm9dZ4GyJB9y1",
+      "userName": "Hassan631",
+      "Email": "hassan-admin6@gmail.com"
+    },
+    {
+      "id": "M4HhP707MTbxBar8pU8yi7ixoyk1",
+      "userName": "Hassan431",
+      "Email": "Hassan-Admin7@gmail.com"
+    },
+    {
+      "id": "aS1f11ZRB3e962A2kpgWSdrBebt1",
+      "userName": "Hassan321",
+      "Email": "hassan-admin9@gmail.com"
     }
   ]
 }

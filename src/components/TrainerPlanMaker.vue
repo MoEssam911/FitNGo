@@ -129,6 +129,7 @@ export default {
                     alert("Submit Workout Successfully");
                   }).catch((err)=>console.log(err));
                   router.push(`/TrainerAccount/EditUser/${this.user.id}/WorkoutsPlans`)
+                  window.location.reload()
                 
     },
     AddRow() {

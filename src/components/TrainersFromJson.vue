@@ -9,7 +9,7 @@
         <div class="card mb-5">
           <div class="product flex flex-col justify-center items-center">
             <img
-              :src="card.TrainerCard"
+              :src="card.imageProfile"
               width="250"
               class="mt-20 transition-all duration-500"
               alt="product" />

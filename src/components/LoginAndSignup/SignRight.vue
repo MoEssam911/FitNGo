@@ -157,7 +157,7 @@ const register = () => {
       const user = {
         id: data.user.uid,
         userName: userName.value,
-        userName: userName.value,
+        Email: email.value,
         age: age.value,
         gender: gender.value,
         weight:'',
@@ -167,8 +167,8 @@ const register = () => {
         imageProfile:'https://placehold.co/300x300',
         trainer:{},
         plans:{
-          Workouts:[{}],
-          Diet:[{}],
+          Workouts:[],
+          Diet:[],
         }
       };
       setUser(user);

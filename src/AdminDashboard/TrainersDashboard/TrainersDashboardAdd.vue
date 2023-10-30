@@ -210,7 +210,7 @@ const register = () => {
         .post("http://localhost:3000/AllTrainers", trainer)
         .then((res) =>{ 
           console.log(res.data)
-          alert("Trainer Has Been Added Succefully")
+          alert("Trainer Has Been Added Successfully")
         })
         .catch((err) => console.log(err.message));
     })
