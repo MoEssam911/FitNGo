@@ -126,6 +126,7 @@
 import { inject, ref } from "vue";
 import router from "../../router";
 import '../../firebaseInit'
+// import axios from "axios"
 // import auth functions
 import {
   getAuth,
@@ -135,6 +136,7 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import {loginUser} from '../../../public/Mixins/public'
+import axios from 'axios';
 const { setUser} = loginUser();
 const closeLogin = inject('closeLogin');
 const userLoggedIN = inject('userLoggedIN')
@@ -152,7 +154,6 @@ const register = () => {
       data.user.phoneNumber = phone.value;
       data.user.photoURL = "../../assets/Images/Logo-Fit&go version 2.png";
       console.log("user:", data.user);
-      router.push("./tools");
 
       const user = {
         id: data.user.uid,
@@ -164,6 +165,7 @@ const register = () => {
         height:'',
         bodyfat:'',
         bmr:'',
+        cart:[],
         imageProfile:'https://placehold.co/300x300',
         trainer:{},
         plans:{
@@ -171,9 +173,21 @@ const register = () => {
           Diet:[],
         }
       };
-      setUser(user);
-      closeLogin();
-      userLoggedIN();
+      // setUser(user);
+      axios
+        .post("http://localhost:3000/users", user)
+        .then((res) => {
+            user.value = res.data;
+            localStorage.removeItem('user')
+            localStorage.setItem('user',JSON.stringify(user.value));
+            localStorage.setItem('fullData',JSON.stringify(false));
+            closeLogin();
+            userLoggedIN();
+            router.push('/UserProfile');
+            // setTimeout(window.location.reload(),2000)
+        })
+        .catch((err) => console.log(err.message));
+      // window.location.reload();
       // router.push("/profile")
     })
     .catch((err) => {

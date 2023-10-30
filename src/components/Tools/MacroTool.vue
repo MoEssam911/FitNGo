@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-secondary rounded-3xl h-auto p-9 mb-9">
+  <div class="bg-secondary rounded-3xl h-auto p-9 mb-9 block static">
     <div>
       <h2 class="text-2xl font-bold pb-5">Macro Calculator</h2>
       <form @submit.prevent="fetchAPI">

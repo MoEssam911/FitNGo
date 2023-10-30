@@ -157,6 +157,7 @@
 <script>
 import axios from "axios";
 
+
 export default {
   name: "CheckOut",
   data() {
@@ -199,6 +200,7 @@ export default {
         if (conf==true){
           axios.delete(`http://localhost:3000/cart/${id}`).then((res)=>{console.log(res)}).catch((err)=>{console.log(err)});
             this.getData()
+            this.$router.go(0)
         }
   }
 }};

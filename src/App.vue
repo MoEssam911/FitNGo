@@ -10,8 +10,7 @@
     v-if="isLoggedIn"
   ></div>
 
-  <Navbar />
-
+  <Navbar v-if="fullData || !loggedIN"/>
   <main class="w-full h-screen relative">
 
     <RouterView class="mt-20" v-slot="{ Component }">
@@ -19,10 +18,11 @@
         <component :is="Component" />
       </Transition>
     </RouterView>
+    <!-- <Checkout></Checkout> -->
+    <!-- <Address></Address> -->
 
     <Footer />
   </main>
-  
 </template>
 
 <style lang="scss">
@@ -60,11 +60,16 @@ import Navbar from "./components/utilities/Navbar.vue";
 import Footer from "./components/utilities/Footer.vue";
 import LoginNSignup from "./components/LoginAndSignup/LoginNSignup.vue";
 import '../public/Mixins/public'
+import Checkout from "./components/Shop/Checkout.vue"; 
+import Address from "./components/Shop/Address.vue"; 
+
 export default {
   components: {
     Navbar,
     Footer,
     LoginNSignup,
+    Checkout,
+    Address
   },
   data() {
     return {
@@ -74,11 +79,14 @@ export default {
       user:{
         role:'user'
       },
+      fullData:false
     };
   },
   created(){
     this.loggedIN = JSON.parse(localStorage.getItem('loggedIn'));
     this.user = JSON.parse(localStorage.getItem('user'));
+    this.fullData = JSON.parse(localStorage.getItem('fullData'));
+    console.log(this.fullData);
 
   },
   updateded(){

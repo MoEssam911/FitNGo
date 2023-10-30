@@ -28,28 +28,45 @@
         Admins
       </div>
     </div>
+    <div class="text-lg font-semibold">|</div>
+    <div
+      class="text-lg font-semibold hover:text-primary transition duration-200 cursor-pointer"
+      @click="changetoggle('products')"
+      :class="{ activeCol: toggle == 'products' }"
+    >
+      Products
+    </div>
+    <div class="text-lg font-semibold">|</div>
+    <div
+      class="text-lg font-semibold hover:text-primary transition duration-200 cursor-pointer"
+      @click="changetoggle('Users')"
+      :class="{ activeCol: toggle == 'Users' }"
+    >
+      Users
+    </div>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: 'lists',
-        data(){
-            return {
-            toggle:'trainers'
-            }
-        },
-        inject:['changeView'],
-        methods:{
-            changetoggle(togg){
-                this.changeView(togg)
-               this.toggle = togg
-            }
-        }
-    }
+export default {
+  name: "lists",
+  data() {
+    return {
+      toggle: "trainers",
+    };
+  },
+  inject: ["changeView"],
+  methods: {
+    changetoggle(togg) {
+      this.changeView(togg);
+      this.toggle = togg;
+    },
+  },
+};
 </script>
 
 <style scoped>
 .activeCol {
-    color: #E60000;
+  color: #e60000;
 }
 </style>
