@@ -165,6 +165,7 @@ export default {
     axios
       .get("http://localhost:3000/products")
       .then((res) => {
+        console.log(res)
         this.itemsDb = res.data;
       })
       .catch((err) => console.log(err));
