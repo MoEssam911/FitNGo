@@ -10,19 +10,20 @@
     v-if="isLoggedIn"
   ></div>
 
-  <Navbar />
+  <!-- <Navbar /> -->
 
   <main class="w-full h-screen relative">
 
-    <RouterView class="mt-28" v-slot="{ Component }">
+    <!-- <RouterView class="mt-28" v-slot="{ Component }">
       <Transition name="page">
         <component :is="Component" />
       </Transition>
-    </RouterView>
+    </RouterView> -->
+    <Checkout></Checkout>
+    <Address></Address>
 
-    <Footer />
+    <!-- <Footer /> -->
   </main>
-  
 </template>
 
 <style lang="scss">
@@ -60,11 +61,16 @@ import Navbar from "./components/utilities/Navbar.vue";
 import Footer from "./components/utilities/Footer.vue";
 import LoginNSignup from "./components/LoginAndSignup/LoginNSignup.vue";
 import '../public/Mixins/public'
+import Checkout from "./components/Shop/Checkout.vue"; 
+import Address from "./components/Shop/Address.vue"; 
+
 export default {
   components: {
     Navbar,
     Footer,
     LoginNSignup,
+    Checkout,
+    Address
   },
   data() {
     return {
