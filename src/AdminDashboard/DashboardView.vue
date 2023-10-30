@@ -6,12 +6,14 @@
     <div class="">
 <TrainersDashboard v-if="toggle==='trainers'"></TrainersDashboard>
 <ProductsDashboardVue v-if="toggle==='products'"></ProductsDashboardVue>
+<WorkoutsDashboard v-if="toggle==='Users'"></WorkoutsDashboard>
     </div>
 </div>
   </div>
 </template>
 
 <script>
+import WorkoutsDashboard from './WorkoutsDashboard/WorkoutsDashboard.vue';
 import lists from '../AdminDashboard/Lists.vue';
 import TrainersDashboard from '../AdminDashboard/TrainersDashboard/TrainersDashboard.vue'
 import ProductsDashboardVue from './ProductsDashboard/ProductsDashboard.vue';
@@ -22,6 +24,7 @@ export default {
     TrainersDashboard,
     ProductsDashboardVue,
     lists,
+    WorkoutsDashboard,
   },
 provide() {
     return {
