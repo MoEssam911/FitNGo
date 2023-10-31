@@ -14,10 +14,9 @@
       <h3 class="text-white text-lg text-left mt-1">
         Choose your trainer and start now.
       </h3>
-      <div class="flex gap-3 mt-3">
+      <router-link tag="div" to="/UserProfile" class="flex gap-3 mt-3">
         <button class="bg-primary rounded-lg px-3 py-1 text-center text-white hover:bg-red-800 text-sm font-medium">Start Now</button>
-        <button class="border-white border-2 px-2 py-1 text-white rounded-lg hover:bg-primary">Learn More</button>
-      </div>
+      </router-link>
       </div>
 
     </div>

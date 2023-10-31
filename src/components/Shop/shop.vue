@@ -1,9 +1,23 @@
 <template>
   <div class="flex flex-col">
-    <div class="flex relative object-cover h-[350px]">
-      <img
-        class="w-full object-"
-        src="../../../src/assets/Images/WhatsApp Image 2023-10-19 at 17.23.47_e920d04d.jpg" />
+    <div class="container flex lg:flex-wrap justify-center items-center">
+      <div class="lg:w-6/12 md:w-full sm:w-full">
+        <img
+          src="../../assets/Images/trainercards/shop-banner-redcircle.png"
+          alt=""
+        />
+      </div>
+      <div class="lg:w-6/12 md:w-12/12 sm:w-full">
+        <h2 class="text-2xl font-bold">
+          THE BEST SUPPLEMENTS HOUSE
+        </h2>
+        <h2 class="text-lg">Gain More, Diffrents Sizes, New Offers!</h2>
+        <a href="#srch"><button
+          class="w-36 h-9 btn-primary-hover text-white transition duration-150 mt-7"
+        >
+          Shop Now
+        </button></a>
+      </div>
     </div>
 
     <div class="container">
@@ -20,7 +34,9 @@
           </p>
         </div>
         <div class="w-1/2 h-1/4">
-          <img class="blur-[0.5px]" src="../../../src/assets/Images/zegama.jpg" />
+          <img
+            class="blur-[0.5px]"
+            src="../../../src/assets/Images/zegama.jpg" />
           <p
             class="absolute left-[50%] inset-0 flex font-Manrope whitespace-pre-line p-[5%] text-primary lg:text-4xl md:text-2xl sm:text-xl font-extrabold transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300">
             SALE 15% ON SPORT SHOES
@@ -79,7 +95,7 @@
                   alt="product" />
                 <div class="h-[70px]">
                   <p class="text-center md:text-xl text-md font-bold text-dark">
-                    {{ item.title.substr(0, 20) }}
+                    {{ item.title.substr(0, 35) }}
                   </p>
                 </div>
                 <div class="h-30px pb-[5%]">
@@ -90,35 +106,39 @@
               </div></router-link
             >
             <button
-              @click="addCart(item)"
               class="bg-primary transition rounded px-2 py-1 text-white">
               <router-link :to="`/shop/${item.id}`"> Buy Now</router-link>
             </button>
           </div>
         </div>
 
-        <!-- <div  v-for="(item, index) in itemsDb" :key="index" class=" card col-span-3">
-      {{ item.desc}}
-      <div class=" "></div>
-    </div> -->
       </div>
-      <button
-        @click="loadMore"
-        class="btn-more-to-explore w-40 h-12 self-center m-5">
-        More To Explore
-      </button>
+      <div class="text-center">
+        <button
+          @click="loadMore"
+          class="btn-more-to-explore w-40 h-12 justify-center m-5">
+          More To Explore
+        </button>
+      </div>
     </div>
+    <PopShop v-if="showPop==true"></PopShop>
   </div>
 </template>
-<script setup>
-import ShopCardsandSearchVue from "./ShopCardsandSearch.vue";
-import ShopBanners from "./ShopBanners.vue";
-import axios from "axios";
-</script>
+
 <script>
+import axios from "axios";
+import PopShop from "./PopShop.vue";
+
 export default {
   name: "shop",
-
+  components: {
+    PopShop,
+  },
+  provide() {
+    return {
+      changePop: this.changePop,
+    };
+  },
   data() {
     return {
       itemsDb: [],
@@ -126,6 +146,7 @@ export default {
       currentIndex: 0,
       nameI: "",
       searchQuery: "",
+      showPop: false,
     };
   },
   created() {
@@ -137,23 +158,23 @@ export default {
         this.itemsDb = res.data;
       })
       .catch((err) => console.log(err));
-
-    // axios
-    //   .get(`http://localhost:3000/users/${this.user.id}`)
-    //   .then((res) => {
-    //     this.user = res.data;
-    //   })
-    //   .catch((err) => console.log(err));
   },
+
   methods: {
     loadMore() {
       this.currentIndex += 12;
     },
+    changePop(){
+      this.showPop = !this.showPop;
+      
+    },
     addCart(item) {
       this.user.cart.push(item);
-      localStorage.setItem("user", JSON.stringify(this.user))
+      this.showPop = true;
+      localStorage.setItem('user',JSON.stringify(this.user))
+
       axios
-        .put(`http://localhost:3000/users/${this.user.id}`, this.user)
+      .put(`http://localhost:3000/users/${this.user.id}`, this.user)
         .then((res) => console.log(res))
         .catch((err) => console.log(err));
     },
@@ -162,6 +183,7 @@ export default {
     items() {
       return (
         this.itemsDb
+          // .filter((item) => item.title.toLowerCase().includes(this.searchQuery.toLowerCase()))
           .filter((item) =>
             item.title.toLowerCase().includes(this.searchQuery.toLowerCase())
           )

@@ -5,8 +5,9 @@
       class="flex lg:flex-nowrap sm:flex-wrap justify-center lg:gap-1 md:gap-4">
       <div
         class="overflow-hidden transition-width frame lg:w-2/12 lg:hover:w-5/12 md:w-3/12 md:hover:w-5/12 sm:w-9/12 sm:hover:w-10/12 duration-1000 rounded-xl relative text-white text-center leading-[612px] hover:text-left hover:leading-none pt-5 pl-5"
-        v-for="da in data"
-        :key="da">
+        v-for="(da,index) in data"
+        :key="index">
+        
         <img
           :src="da.TrainerImg"
           alt=""
@@ -16,11 +17,12 @@
           <div v-html="da.rate" class="rate mt-40 text-primary"></div>
 
           <p class="w-10/12 mx-auto">{{ da.Description }}</p>
-          <button
+         <router-link :to="`/trainers/${da.id}`"><button
             class="rounded-xl bg-primary text-white px-10 py-2 block mx-auto mt-6 transition duration-200">
-            Info
-          </button>
+            Start Now
+          </button></router-link>
         </div>
+     
       </div>
 
       <!-- {{ data }} -->
@@ -51,16 +53,19 @@ export default {
       //     'C-Omar Ibrahim',
       // ]
       data: [],
+      currentIndex:0,
+
     };
   },
   created() {
     axios
-      .get("http://localhost:3000/trainer")
+      .get("http://localhost:3000/AllTrainers")
       .then((res) => {
-        this.data = res.data;
+        this.data = res.data.slice(0, this.currentIndex + 6);
       })
       .catch((err) => console.log(err));
   },
+
 };
 </script>
 

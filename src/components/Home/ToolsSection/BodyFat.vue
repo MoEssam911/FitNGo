@@ -1,5 +1,5 @@
 <template>
-    <div class=" flex justify-center lg:col-span-3 md:row-span-2 col-span-12 row-span-2 md:col-span-6  rounded-[40px] bg-[url(/src/assets/Images/HomeTools/4.jpg)] object-cover bg-center bg-cover opacity-80 hover:opacity-100 hover:text-primary hover:cursor-pointer group transition-all duration-500 ease-in">
+    <RouterLink tag="div" to="/UserProfile" class=" flex justify-center lg:col-span-3 md:row-span-2 col-span-12 row-span-2 md:col-span-6  rounded-[40px] bg-[url(/src/assets/Images/HomeTools/4.jpg)] object-cover bg-center bg-cover opacity-80 hover:opacity-100 hover:text-primary hover:cursor-pointer group transition-all duration-500 ease-in">
       <div class="my-gradient self-center w-full h-full rounded-[40px]"></div>
       <div class="self-center absolute flex flex-col">
         <svg fill="white" class="w-1/2 h-1/2 self-center md:w-3/4 md:h-3/4 group-hover:fill-primary transition-all duration-200 ease-in" width="176" height="167" viewBox="0 0 176 167"  xmlns="http://www.w3.org/2000/svg">
@@ -15,7 +15,7 @@
         </svg>
         <p class="self-center relative text-white font-Manrope text-xl font-bold group-hover:text-primary pt-4 transition-all duration-200 ease-in">Body Fat Calculator</p>
       </div>
-    </div>
+    </RouterLink>
 </template>
 
 <style scoped>

@@ -10,6 +10,7 @@
 </template>
 
 <script setup>
+// const myMap = () => import('../components/myMap.vue')
 import myMap from '../components/myMap.vue'
 import HomeBanner from '../components/Home/HomeBanner.vue'
 import OurPartners from "../components/Home/OurPartners.vue"

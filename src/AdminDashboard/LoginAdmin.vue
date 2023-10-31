@@ -60,13 +60,14 @@ const Login = () => {
             console.log(user.value);
             console.log(res.data);
             updateUser(user.value)
+            localStorage.setItem('adminLogin',JSON.stringify(true))
             router.push('/DashboardView')
 
         }).catch((err)=>{
           console.log(err);
         })
         console.log(user.value);
-      userLoggedIN();
+      // userLoggedIN();
       closeLogin();
       // router.push('/UserProfile')
     })
