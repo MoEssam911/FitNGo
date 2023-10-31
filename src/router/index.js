@@ -210,23 +210,19 @@ const router = createRouter({
     {
       path: '/DashboardView',
       name: 'DashboardView',
-      meta:{
-        hideNavbar:true
-    },
       component: DashboardView,
       meta: {
-        title: 'Admin'
+
+        title:'Admin'
       }
     },
     {
       path: '/Admin',
       name: 'LoginOrSignUp',
-      meta:{
-        hideNavbar:true
-    },
       component: LoginOrSignUp,
       meta: {
-        title: 'Admin'
+
+        title:'Admin'
       }
     },
     {
@@ -255,11 +251,11 @@ const router = createRouter({
 });
 
 
-router.beforeEach((to, from, next) => {
-  const hasTitle = to.meta && to.meta.title;
-  document.title = hasTitle ? `Fit&Go | ${to.meta.title}` : 'Fit&Go';
-  next();
-});
+// router.beforeEach((to, from, next) => {
+//   const hasTitle = to.meta && to.meta.title;
+//   document.title = hasTitle ? `Fit&Go | ${to.meta.title}` : 'Fit&Go';
+//   next();
+// });
 
 
 export default router;

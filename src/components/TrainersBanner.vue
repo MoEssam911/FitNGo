@@ -12,11 +12,11 @@
           HERE IS AN OPPORTUNITY TO GET IN SHAPE WITH THE BEST TRAINERS IN EGYPT
         </h2>
         <h2 class="text-lg">Choose Your Trainer And Start Now</h2>
-        <button
+        <a><button
           class="w-36 h-9 btn-primary-hover text-white transition duration-150 mt-7"
         >
           Start Now
-        </button>
+        </button></a>
       </div>
     </div>
   </template>

@@ -1,7 +1,6 @@
 <template>
   <div class="container">
-    <div><h2 class="text-2xl font-bold">Dashboard</h2></div>
-    <lists></lists>
+    <router-link to="/DashboardView"><div class="flex items-center gap-3"><i class="fa-solid fa-arrow-left cursor-pointer"></i><div class="text-xl font-semibold">Edit Trainer</div></div></router-link>
     <div class="">
       <form @submit.prevent="EditTrainer">
         <div class="mt-8 relative z-0 w-full mb-6 group">
@@ -107,7 +106,7 @@
           >
         </div>
 
-        <button class="btn-primary-hover text-white font-bold p-2 w-full">
+        <button class="btn-primary-hover  bg-gray-800 hover:bg-[#e60000df] text-white font-bold p-2 w-full">
           Submit Edits
         </button>
       </form>

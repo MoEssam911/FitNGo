@@ -1,5 +1,10 @@
 <template>
     <div>
+      <div class="flex justify-between cursor-pointer mt-10" >
+        <div v-if="showadd==='crt'" @click="showadd=''"><i class="fa-solid fa-arrow-left"></i></div>
+        <div v-if="showadd===''" @click="showadd='crt'" class="flex items-center"><i class="fa-solid fa-plus text-green-500 mr-2"></i><div>Create Admin</div></div>
+      </div>
+<SignUpAdmin v-if="showadd==='crt'"></SignUpAdmin>
         <table
                       class="w-full text-center text-dark bg-white shadow-lg rounded-2xl mb-9" v-if="showadd===''">
                      
@@ -47,7 +52,7 @@
 
 <script>
 import axios from 'axios'
-
+import SignUpAdmin from '../SignUpAdmin.vue'
     export default {
         name:'AdminDashboard',
         data(){
@@ -57,6 +62,9 @@ import axios from 'axios'
           showadd:'',
           
             }
+        },
+        components:{
+          SignUpAdmin,
         },
         created(){
           axios.get("http://localhost:3000/Admins").then((res)=>{

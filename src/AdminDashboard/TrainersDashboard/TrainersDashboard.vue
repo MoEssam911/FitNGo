@@ -1,6 +1,9 @@
 <template>
     <div>
-      <div class="flex justify-end cursor-pointer" @click="showadd='show'"><div><i class="fa-solid fa-plus text-green-500 mr-2"></i></div><div>Add Trainer</div></div>
+      <div class="flex justify-between cursor-pointer mt-10" >
+        <div v-if="showadd==='show'" @click="showadd=''"><i class="fa-solid fa-arrow-left"></i></div>
+        <div v-if="showadd===''" @click="showadd='show'" class="flex items-center"><i class="fa-solid fa-plus text-green-500 mr-2"></i><div>Add Trainer</div></div>
+      </div>
       <AddTrainer v-if="showadd==='show'"></AddTrainer>
         <table
                       class="w-full text-center text-dark bg-white shadow-lg rounded-2xl mb-9" v-if="showadd===''">

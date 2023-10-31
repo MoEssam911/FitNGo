@@ -155,7 +155,7 @@
               >
             </div>
    
-        <button class="btn-primary-hover text-white font-bold  p-2 w-full">Add Trainer</button>
+        <button class="btn-primary-hover  bg-gray-800 hover:bg-[#e60000df] text-white font-bold  p-2 w-full">Add Trainer</button>
 </form>
 </div>
     </div>

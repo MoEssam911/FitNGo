@@ -62,3 +62,6 @@
 }
 
 
+* {
+  scroll-behavior: smooth;
+}

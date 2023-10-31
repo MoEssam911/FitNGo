@@ -40,23 +40,33 @@ provide() {
   data(){
     return {
         toggle:'trainers',
+       
         loggedIN:true
+    }
+  },
+  created(){
+    JSON.parse(localStorage.getItem('adminLogin'));
+console.log(JSON.parse(localStorage.getItem('adminLogin')));
+    if (JSON.parse(localStorage.getItem('adminLogin'))) {
+      router.push('/DashboardView')
+    } else {
+      router.push('/Admin')
     }
   },
   methods:{
     logout(){
-        this.userLoggedIN()
+        // this.userLoggedIN()
         localStorage.clear();
         localStorage.removeItem('role')
         localStorage.setItem('role','user')
         this.role='user'
         alert("Redirect")
         router.push('/')
-        window.location.reload()
+        localStorage.setItem('loggedIn',JSON.stringify(false))
+   
       },
       userLoggedIN(){
-      this.loggedIN = !this.loggedIN;
-      localStorage.setItem('loggedIn',JSON.stringify(this.loggedIN))
+      // this.loggedIN = !this.loggedIN;
       this.user = JSON.parse(localStorage.getItem('user'));
       // window.location.reload();
       // console.log(this.user);
