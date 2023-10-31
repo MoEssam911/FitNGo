@@ -75,14 +75,13 @@
         progress and makes course adjustment You get fit, yay!
       </p>
 
-      <div class="btn-primary-hover my-4">
+
         <button
-          class="text-white bg-primary rounded-md"
+          class="text-white font-Manrope text-justify px-3 py-2 m-3 hover:bg-red-500 bg-primary rounded-md"
           @click="SubwithTrainer"
         >
           Start Now
         </button>
-      </div>
       <PopTrainer v-if="showPop==true"></PopTrainer>
     </div>
   </div>

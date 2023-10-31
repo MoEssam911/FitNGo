@@ -1,40 +1,34 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
-import TrainersView from "../views/TrainersView.vue";
-import OneTrainerView from "../views/OneTrainerView.vue";
-import ToolsPageView from "../views/ToolsPageView.vue";
-import About from "../views/AboutView.vue";
-import BodyFatTool from "../components/Tools/BodyFatTool.vue";
-import DietPlanTool from "../components/Tools/DietPlanTool.vue";
-import MyPlan from "../components/MyPlan.vue";
-import TrainerPlanMaker from "../components/TrainerPlanMaker.vue";
-import UserPlans from '../components/UserAccount/UserPlans.vue'
-import TrainerClientPlan from '../components/TrainerClientPlan.vue'
-import TrainerDietPlan from '../components/TrainerDietPlanMaker.vue'
-import EditProfile from '../components/UserAccount/EditProfile.vue'
-import TrainerAccountView from '../views/TrainerAccountView.vue'
-import TrainerEditsUser from '../views/TrainerEditsUser.vue'
-import EditWorkout from '../views/EditWorkout.vue'
-import EditDiet from '../views/EditDiet.vue'
-import DietMaker from '../views/DietMaker.vue'
-import woMaker from '../views/woMaker.vue'
-import UserProfile from '../views/UserProfile.vue'
-import WorkoutsView from '../views/WorkoutsView.vue'
-import WorkoutView from '../views/SingleWorkout.vue'
-import LoginOrSignUp from '../views/DashboardAdminLogin&signapp.vue'
 
-import shop from '../components/shop.vue'
-// import BodyFatTool from '../components/Tools/BodyFatTool.vue'
-// import DietPlan from '../components/Tools/DietPlanTool.vue'
-// import ToolsPage from '../components/ToolsPage.vue'
-import item from '../components/item.vue'
-import cart from '../components/Cart.vue'
-import checkout from '../views/CheckOut.vue'
-import SingleWorkout from '../views/SingleWorkout.vue'
-import ChangeProfilePicture from '../components/ChangeProfilePicture.vue'
-import DashboardView from '../AdminDashboard/DashboardView.vue'
-import EditTrainer from '../AdminDashboard/TrainersDashboard/TrainersDashboardEdit.vue'
-import EditProduct from '../AdminDashboard/ProductsDashboard/ProductsDashboardEdit.vue'
+const  HomeView = () => import("../views/HomeView.vue") ;
+const TrainersView = () => import("../views/TrainersView.vue") ;
+const OneTrainerView = () => import("../views/OneTrainerView.vue");
+const  ToolsPageView = () => import("../views/ToolsPageView.vue");
+const About = () => import("../views/AboutView.vue");
+const TrainerPlanMaker = () => import("../components/TrainerPlanMaker.vue");
+const UserPlans = () => import('../components/UserAccount/UserPlans.vue')
+const TrainerClientPlan = () => import('../components/TrainerClientPlan.vue')
+const TrainerDietPlan = () => import('../components/TrainerDietPlanMaker.vue')
+const EditProfile = () => import('../components/UserAccount/EditProfile.vue')
+const TrainerAccountView = () => import('../views/TrainerAccountView.vue')
+const TrainerEditsUser = () => import('../views/TrainerEditsUser.vue')
+const EditWorkout = () => import('../views/EditWorkout.vue')
+const EditDiet = () => import('../views/EditDiet.vue')
+const DietMaker = () => import('../views/DietMaker.vue')
+const woMaker = () => import('../views/woMaker.vue')
+const UserProfile = () => import('../views/UserProfile.vue')
+const WorkoutsView = () => import('../views/WorkoutsView.vue') 
+const LoginOrSignUp = () => import('../views/DashboardAdminLogin&signapp.vue')
+
+const shop = () => import ('../components/shop.vue') 
+const item = () => import ('../components/item.vue')
+const cart = () => import ('../components/Cart.vue')
+const checkout = () => import ('../views/CheckOut.vue')
+const SingleWorkout = () => import ('../views/SingleWorkout.vue')
+const ChangeProfilePicture = () => import ('../components/ChangeProfilePicture.vue')
+const DashboardView = () => import ('../AdminDashboard/DashboardView.vue')
+const EditTrainer = () => import ('../AdminDashboard/TrainersDashboard/TrainersDashboardEdit.vue')
+const EditProduct = () => import ('../AdminDashboard/ProductsDashboard/ProductsDashboardEdit.vue')
 
 
 
@@ -112,35 +106,6 @@ const router = createRouter({
       }
     },
     {
-      path: "/tools",
-      name: "ToolsPageView",
-      component: ToolsPageView,
-      meta: {
-        title: 'Tools'
-      }
-    },
-    {
-      path: "/bodyfattool",
-      name: "BodyFatTool",
-      component: BodyFatTool,
-    },
-    {
-      path: "/dietplan",
-      name: "DietPlanTool",
-      component: DietPlanTool,
-    },
-    {
-
-      path: '/shop',
-      name: 'shop',
-      component: shop
-    },
-    {
-      path: "/myplan",
-      name: "myplan",
-      component: MyPlan,
-    },
-    {
       path: '/TrainerPlanMaker',
       name: 'TrainerPlanMaker',
       component: TrainerPlanMaker
@@ -214,9 +179,6 @@ const router = createRouter({
     {
       path: '/DashboardView',
       name: 'DashboardView',
-      meta:{
-        hideNavbar:true
-    },
       component: DashboardView,
       meta: {
         title: 'Admin'
@@ -225,9 +187,6 @@ const router = createRouter({
     {
       path: '/Admin',
       name: 'LoginOrSignUp',
-      meta:{
-        hideNavbar:true
-    },
       component: LoginOrSignUp,
       meta: {
         title: 'Admin'
