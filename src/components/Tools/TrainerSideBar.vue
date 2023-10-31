@@ -10,11 +10,11 @@
       <div class="mx-auto">
         <img
           class="w-32 h-32 rounded-full object-cover"
-          src="../../assets/Images/trainercards/amrsamehcard.png "
+          :src="user.TrainerImg"
         />
       </div>
       <p class="font-Manrope font-bold text-primary text-lg text-center py-3">
-        Amr Sameh
+        {{ user.TrainerNames }}
       </p>
 
       <hr />
@@ -87,8 +87,15 @@ export default {
       flag: false,
       test: "",
       toggleComp:"info",
+      user:{}
     };
   },
+  created(){
+    if (JSON.parse(localStorage.getItem('user')) == 'trainer') {
+      this.user = JSON.parse(localStorage.getItem('user'));
+    }
+  },
+
   methods: {
     drag() {
       if (this.flag) {

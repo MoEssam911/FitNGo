@@ -21,6 +21,7 @@ import woMaker from '../views/woMaker.vue'
 import UserProfile from '../views/UserProfile.vue'
 import WorkoutsView from '../views/WorkoutsView.vue'
 import WorkoutView from '../views/SingleWorkout.vue'
+import LoginOrSignUp from '../views/DashboardAdminLogin&signapp.vue'
 
 import shop from '../components/shop.vue'
 // import BodyFatTool from '../components/Tools/BodyFatTool.vue'
@@ -213,7 +214,21 @@ const router = createRouter({
     {
       path: '/DashboardView',
       name: 'DashboardView',
+      meta:{
+        hideNavbar:true
+    },
       component: DashboardView,
+      meta: {
+        title: 'Admin'
+      }
+    },
+    {
+      path: '/Admin',
+      name: 'LoginOrSignUp',
+      meta:{
+        hideNavbar:true
+    },
+      component: LoginOrSignUp,
       meta: {
         title: 'Admin'
       }

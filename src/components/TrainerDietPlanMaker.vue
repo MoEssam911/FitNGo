@@ -144,6 +144,7 @@ export default {
          alert('Plan Submit Successfully')
       }).catch((err)=>console.log(err));
       router.push(`/TrainerAccount/EditUser/${this.user.id}/DietPlans`);
+      
     },
     AddRow() {
       this.dietTable.table.push({

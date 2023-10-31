@@ -158,6 +158,7 @@ const register = () => {
       const user = {
         id: data.user.uid,
         userName: userName.value,
+        Email: email.value,
         age: age.value,
         gender: gender.value,
         weight:'',
