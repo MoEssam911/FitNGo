@@ -19,6 +19,7 @@ import EditDiet from '../views/EditDiet.vue'
 import DietMaker from '../views/DietMaker.vue'
 import woMaker from '../views/woMaker.vue'
 import UserProfile from '../views/UserProfile.vue'
+import ErrorPage from '../views/ErrorPage.vue'
 import WorkoutsView from '../views/WorkoutsView.vue'
 import WorkoutView from '../views/SingleWorkout.vue' 
 import LoginOrSignUp from '../views/DashboardAdminLogin&signapp.vue'
@@ -96,6 +97,14 @@ const router = createRouter({
       component: About,
       meta: {
         title: 'About Us'
+      }
+    },
+    {
+      path: "/:NotFound(.*)*", 
+      name: "ErrorPage",
+      component: ErrorPage,
+      meta: {
+        title: 'Error'
       }
     },
 
