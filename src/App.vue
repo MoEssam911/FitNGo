@@ -10,7 +10,7 @@
     v-if="isLoggedIn"
   ></div>
 
-  <Navbar v-if="fullData || !loggedIN"/>
+  <Navbar/>
   <main class="w-full h-screen relative">
 
     <RouterView class="mt-20" v-slot="{ Component }">

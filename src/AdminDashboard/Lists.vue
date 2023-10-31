@@ -44,7 +44,6 @@
     >
       Users
     </div>
-  </div>
 </template>
 
 <script>

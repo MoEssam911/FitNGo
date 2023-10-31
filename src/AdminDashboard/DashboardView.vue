@@ -29,7 +29,6 @@ export default {
     UsersDashboard,
     AdminDashboard,
     lists,
-    WorkoutsDashboard,
   },
 provide() {
     return {
