@@ -19,15 +19,12 @@ import EditDiet from '../views/EditDiet.vue'
 import DietMaker from '../views/DietMaker.vue'
 import woMaker from '../views/woMaker.vue'
 import UserProfile from '../views/UserProfile.vue'
+import ErrorPage from '../views/ErrorPage.vue'
 import WorkoutsView from '../views/WorkoutsView.vue'
-import WorkoutView from '../views/SingleWorkout.vue'
+import WorkoutView from '../views/SingleWorkout.vue' 
 import LoginOrSignUp from '../views/DashboardAdminLogin&signapp.vue'
-
-import shop from '../components/shop.vue'
-// import BodyFatTool from '../components/Tools/BodyFatTool.vue'
-// import DietPlan from '../components/Tools/DietPlanTool.vue'
-// import ToolsPage from '../components/ToolsPage.vue'
-import item from '../components/item.vue'
+import shop from '../components/Shop/shop.vue'
+import item from '../components/Shop/item.vue'
 import cart from '../components/Shop/CartUpdate.vue'
 import checkout from '../components/Shop/CheckoutUpdated.vue'
 import SingleWorkout from '../views/SingleWorkout.vue'
@@ -100,6 +97,14 @@ const router = createRouter({
       component: About,
       meta: {
         title: 'About Us'
+      }
+    },
+    {
+      path: "/:NotFound(.*)*", 
+      name: "ErrorPage",
+      component: ErrorPage,
+      meta: {
+        title: 'Error'
       }
     },
 

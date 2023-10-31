@@ -24,7 +24,7 @@
         <!-- /* end of  image div to display item */ -->
         <!-- /* start of item data flex container  */ -->
 
-        <div class="col-span-6 container flex flex-col p-[4%]">
+        <div class="col-span-6 container flex flex-col p-[4%] gap-2">
           <div
             class="text-zinc-900 md:text-xl text-base font-semibold leading-7">
             {{ oneItem.title }}
@@ -33,43 +33,6 @@
             {{ oneItem.description }}
           </div>
 
-          <!-- quantity counter -->
-          <div class="flex flex-row mt-[2%] text-neutral-800 md:font-medium">
-            <div class="mr-[5%]">{{ oneItem.stock }} in stock</div>
-            <!-- counter -->
-            <div class="mt-[1%] border-black">
-              <div class="max-w-fit p-0">
-                <button @click="removeItem" class="fill-[#C4C4C4]">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="1em"
-                    viewBox="0 0 448 512">
-                    <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                    <path
-                      d="M64 80c-8.8 0-16 7.2-16 16V416c0 8.8 7.2 16 16 16H384c8.8 0 16-7.2 16-16V96c0-8.8-7.2-16-16-16H64zM0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zM152 232H296c13.3 0 24 10.7 24 24s-10.7 24-24 24H152c-13.3 0-24-10.7-24-24s10.7-24 24-24z" />
-                  </svg>
-                </button>
-                <input
-                  class="ml-[1%] w-1/6 border-gray-bar pl-[5%]"
-                  v-model="counter" />
-                <button @click="addItem" class="fill-[#C4C4C4]">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    height="1em"
-                    viewBox="0 0 448 512">
-                    <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                    <path
-                      d="M64 80c-8.8 0-16 7.2-16 16V416c0 8.8 7.2 16 16 16H384c8.8 0 16-7.2 16-16V96c0-8.8-7.2-16-16-16H64zM0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zM200 344V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H248v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <!-- quantity in stock -->
-            <div
-              class="ml-[-20%] mt-[1%] text-neutral-600 text-sm font-normal leading-tight">
-              {{ oneItem.stock }} available / 50 sold
-            </div>
-          </div>
           <!-- total item cost idk what is it  -->
           <div class="flex flex-col bg-gray-bar mt-[2%] rounded-md">
             <div class="text-black md:text-2xl text-xl border-b-2 pb-[2%]">
@@ -97,9 +60,9 @@
             <button
               @click="goCart()"
               class="bg-primary w-full rounded-md py-[1%] self-center mr-[1%]">
-              <!-- <router-link :to="`/cart`"> -->
+              <router-link :to="`/cart`">
               Buy Now
-              <!-- </router-link> -->
+              </router-link>
             </button>
             <button
               @click="addCart()"
@@ -152,23 +115,35 @@
         </ul>
       </div>
     </div>
+    <PopShop v-if="showPop==true" class=""></PopShop>
   </div>
   <!-- /*  container  of page*/ -->
 </template>
 
 <script>
+import PopShop from './PopShop.vue'
 import axios from "axios";
-import router from "../router";
+
 export default {
   name: "item",
-  data() {
+  provide() {
+    return {
+      changePop : this.changePop
+    };},
+
+    data() {
     return {
       counter: 1,
       oneItem: {},
       id: "",
       countImg: 0,
       user: {},
+      showPop: false,
     };
+  },
+  
+  components:{
+    PopShop
   },
   created() {
     this.user = JSON.parse(localStorage.getItem("user"));
@@ -181,10 +156,20 @@ export default {
       .catch((err) => console.log(err));
   },
   methods: {
+    changePop(){
+      this.showPop = !this.showPop;
+    },
     getOneITem() {
       this.id = this.$route.params.id;
       axios
         .get(`http://localhost:3000/products/${this.id}`)
+        .then((res) => (this.oneItem = res.data))
+        .catch((err) => console.log(err));
+    },
+    getRandITem() {
+      this.id = this.$route.params.id;
+      axios
+        .get(`http://localhost:3000/products/`)
         .then((res) => (this.oneItem = res.data))
         .catch((err) => console.log(err));
     },
@@ -193,16 +178,18 @@ export default {
     },
     addCart() {
       this.user.cart.push(this.oneItem);
-      localStorage.setItem("user", JSON.stringify(this.user))
       axios
         .put(`http://localhost:3000/users/${this.user.id}`, this.user)
         .then((res) => console.log(res))
         .catch((err) => console.log(err));
+        this.showPop = true;
     },
     goCart() {
       this.addCart();
       router.push("/cart");
     },
+  
+
   },
 
   addItem() {

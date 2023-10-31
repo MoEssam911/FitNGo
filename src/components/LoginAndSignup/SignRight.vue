@@ -165,6 +165,7 @@ const register = () => {
         height: "",
         bodyfat: "",
         bmr: "",
+        phoneNumber: '',
         address: {
           street: "",
           building: "",
