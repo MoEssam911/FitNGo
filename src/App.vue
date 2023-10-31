@@ -18,9 +18,6 @@
         <component :is="Component" />
       </Transition>
     </RouterView>
-    <!-- <Checkout></Checkout> -->
-    <!-- <Address></Address> -->
-
     <Footer />
   </main>
 </template>
