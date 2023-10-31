@@ -150,8 +150,10 @@ export default {
       this.currentIndex += 12;
     },
     addCart(item) {
+      this.user.cart.push(item);
+      localStorage.setItem("user", JSON.stringify(this.user))
       axios
-        .post("http://localhost:3000/cart", item)
+        .put(`http://localhost:3000/users/${this.user.id}`, this.user)
         .then((res) => console.log(res))
         .catch((err) => console.log(err));
     },
