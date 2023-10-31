@@ -1,9 +1,23 @@
 <template>
   <div class="flex flex-col">
-    <div class="flex relative object-cover h-[350px]">
-      <img
-        class="w-full object-"
-        src="../../../src/assets/Images/WhatsApp Image 2023-10-19 at 17.23.47_e920d04d.jpg" />
+    <div class="container flex lg:flex-wrap justify-center items-center">
+      <div class="lg:w-6/12 md:w-full sm:w-full">
+        <img
+          src="../../assets/Images/trainercards/shop-banner-redcircle.png"
+          alt=""
+        />
+      </div>
+      <div class="lg:w-6/12 md:w-12/12 sm:w-full">
+        <h2 class="text-2xl font-bold">
+          THE BEST SUPPLEMENTS HOUSE
+        </h2>
+        <h2 class="text-lg">Gain More, Diffrents Sizes, New Offers!</h2>
+        <a href="#srch"><button
+          class="w-36 h-9 btn-primary-hover text-white transition duration-150 mt-7"
+        >
+          Shop Now
+        </button></a>
+      </div>
     </div>
 
     <div class="container">

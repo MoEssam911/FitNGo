@@ -19,6 +19,7 @@ const woMaker = () => import('../views/woMaker.vue')
 const UserProfile = () => import('../views/UserProfile.vue')
 const WorkoutsView = () => import('../views/WorkoutsView.vue') 
 const LoginOrSignUp = () => import('../views/DashboardAdminLogin&signapp.vue')
+const ErrorPage = () => import('../views/ErrorPage.vue')
 
 const shop = () => import ('../components/Shop/shop.vue') 
 const item = () => import ('../components/Shop/item.vue')
