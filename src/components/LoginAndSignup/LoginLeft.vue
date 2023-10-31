@@ -14,7 +14,27 @@
         <h3 class="float-text"><span class="bg-white ms-2 text-center px-2">password</span></h3>
         <input type="password" v-model="password" placeholder="*********" class=" outline outline-2 px-2 w-full rounded py-2 focus:outline-primary">
       </div>
-      <p v-if="errorMsg">{{ errorMsg }}</p>
+      <div
+          v-if="errorMsg"
+          class="flex items-center my-2 text-sm text-red-800"
+          role="alert"
+        >
+          <svg
+            class="flex-shrink-0 inline w-4 h-4 mr-3"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+            />
+          </svg>
+          <span class="sr-only">Info</span>
+          <div>
+            <span class="font-medium">{{ errorMsg }} </span>
+          </div>
+        </div>
     </div>
     <button class="border rounded-xl bg-primary hover:bg-[#e60000df] text-white py-2 w-full block mx-auto  mt-4" @click="Login">Login</button>
     <h3 class="text-xl text-center my-3">Or Sign In With</h3>
@@ -97,21 +117,9 @@ const Login = () => {
     })
     .catch((error) => {
       console.log(error.code);
-      switch (error.code){
-        case 'auth/invalid-email':
-        errorMsg.value = 'Invalid Email/Password';
-        break;
-        case 'auth/user-not-found':
-          errorMsg.value = 'No account with this email was found';
-          break;
-          case 'auth/wrong-password':
-            errorMsg.value = 'Invalid Email/Password';
-            break;
-            default :
-            errorMsg.value = 'Invalid Email/Password';
-            break;
+      if (error.code) {
+        errorMsg.value = 'Invalid Email / Password.';
       }
-      // console.log(user);
     });
   }
 </script>

@@ -13,6 +13,7 @@
   <!-- <Navbar v-if="fullData || !loggedIN"/> -->
   <Navbar v-if="['LoginOrSignUp'].indexOf($route.name) && ['DashboardView'].indexOf($route.name)"/>
 
+
   <main class="w-full h-screen relative">
 
     <RouterView class="mt-20" v-slot="{ Component }">
@@ -23,6 +24,7 @@
     <!-- <Checkout></Checkout> -->
 
     <Footer v-if="['LoginOrSignUp'].indexOf($route.name) && ['DashboardView'].indexOf($route.name)"/>
+    <!-- <Footer /> -->
   </main>
 </template>
 
