@@ -102,16 +102,12 @@
           </div>
           <!-- subtotal -->
           <div class="p-4">
-            <div class="flex justify-between py-2">
-              <p class="lg:text-lg md:text-base font-semibold">Subtotal:</p>
-              <p  class="lg:text-lg md:text-base font-semibold text-primary">{{ prices }} <span class="font-bold text-base text-dark">EGP</span></p>
-            </div>
-            <div class="flex justify-between py-2">
+            <!-- <div class="flex justify-between py-2">
               <p class="lg:text-lg md:text-base font-semibold">Shipping:</p>
               <p  class="lg:text-lg md:text-base font-semibold text-primary">Free</p>
-            </div>
-            <div class="flex justify-between py-2">
-              <p class="lg:text-lg md:text-base font-semibold">Total:</p>
+            </div> -->
+            <div class="flex flex-col justify-center items-center py-2">
+              <p class="lg:text-xl md:text-base font-bold ">Total:</p>
               <p  class="lg:text-lg md:text-base font-semibold text-primary">{{ prices }} <span class="font-bold text-base text-dark">EGP</span></p>
             </div>
           </div>
