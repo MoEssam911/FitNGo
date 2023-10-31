@@ -14,7 +14,6 @@
                 </svg>
               </button>
 
-
                 <div class="p-6 text-center">
                   <!--Content is placed here-->
                   <slot />

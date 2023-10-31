@@ -201,6 +201,11 @@ const register = () => {
         height: "",
         bodyfat: "",
         bmr: "",
+        address: {
+          street: "",
+          building: "",
+          area: "",
+        },
         cart: [],
         imageProfile: "https://placehold.co/300x300",
         trainer: {},

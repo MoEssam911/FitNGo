@@ -85,7 +85,7 @@ import SignRight from './SignRight.vue'
   width: 50%;
   height: 100%;
   transition: right 0.5s ease, left 0.5s ease;
-  z-index: 12;
+  z-index: 101;
 }
 .red-card-right{
   position: absolute;
@@ -94,7 +94,7 @@ import SignRight from './SignRight.vue'
   width: 50%;
   height: 100%;
   transition: right 0.5s ease, left 0.5s ease;
-  z-index: 12;
+  z-index: 101;
 }
 @media (max-width: 768px) {
   .red-card-left{
@@ -104,7 +104,7 @@ import SignRight from './SignRight.vue'
   width: 25%;
   height: 100%;
   transition: right 0.5s ease, left 0.5s ease;
-  z-index: 12;
+  z-index: 101;
 }
 .red-card-right{
   position: absolute;
@@ -113,7 +113,7 @@ import SignRight from './SignRight.vue'
   width: 25%;
   height: 100%;
   transition: right 0.5s ease, left 0.5s ease;
-  z-index: 12;
+  z-index: 101;
 }
 }
 .fade-enter-active, .fade-leave-active {

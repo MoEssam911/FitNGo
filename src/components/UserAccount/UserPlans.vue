@@ -1,8 +1,8 @@
 <template>
     <div class=" relative w-full">
         <div class="flex gap-5">
-            <div class="text-dark text-2xl mb-3 text-center" v-if="!woPlans">You Don't Have Workout Plans</div>
-            <div class="bg-secondary w-full  p-6 rounded-2xl" v-if="woPlans">
+            <div class="text-dark text-2xl mb-3 text-center" v-if="!!woPlans">You Don't Have Workout Plans</div>
+            <div class="bg-secondary w-full  p-6 rounded-2xl" v-if="!!!woPlans">
                 <div class="flex justify-between">
                     <i class="fa-solid fa-caret-left text-4xl hover:cursor-pointer hover:text-primary inline-block" @click="change('left')" v-if="planTarget > 0"></i>
                     <i class="fa-solid fa-caret-right text-4xl hover:cursor-pointer hover:text-primary inline-block ms-auto" @click="change('right')" v-if="planTarget < maxLength"></i>

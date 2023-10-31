@@ -14,7 +14,7 @@
             <div class="my-4">
               <img
                 class="w-52 h-52 rounded-full object-cover justify-center"
-                :src="user.trainer.TrainerCard"
+                :src="user.trainer.imageProfile"
               />
             </div>
 

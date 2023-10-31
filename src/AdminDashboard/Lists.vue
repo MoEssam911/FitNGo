@@ -28,14 +28,14 @@
         Admins
       </div>
     </div>
-    <div class="text-lg font-semibold">|</div>
-    <div
+      <div class="text-lg font-semibold">|</div>
+      <div
       class="text-lg font-semibold hover:text-primary transition duration-200 cursor-pointer"
       @click="changetoggle('products')"
       :class="{ activeCol: toggle == 'products' }"
     >
       Products
-    </div>
+      </div>
     <div class="text-lg font-semibold">|</div>
     <div
       class="text-lg font-semibold hover:text-primary transition duration-200 cursor-pointer"
