@@ -157,16 +157,18 @@ export default {
     },
     SubwithTrainer() {
       this.modalActive = true;
-      this.trainers.Clients.push(this.user);
-      
+      if (this.trainers.Clients.indexOf(this.user) === -1) {
+        this.trainers.Clients.push(this.user);
       axios
         .put(`http://localhost:3000/AllTrainers/${this.id}`, this.trainers)
         .then((res) => {
           console.log(res);
         })
         .catch((err) => console.log(err));
+      }
     },
     settrainerinuser() {
+      this.modalActive = false
       this.user.trainer = this.trainers;
       localStorage.setItem("user", JSON.stringify(this.user))
       console.log(this.user);
