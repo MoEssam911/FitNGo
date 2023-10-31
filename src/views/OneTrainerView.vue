@@ -14,7 +14,7 @@
       class="md:w-6/12 sm:w-12/12 md:shadow-lg md:border rounded-md mt-8"
       style="backdrop-filter: blur(0.5)"
     >
-      <img :src="trainers.TrainerCard" class="h-4/12" alt="" />
+      <img :src="trainers.imageProfile" class="h-4/12" alt="" />
     </div>
     <div class="ml-10 md:w-5/12 sm:w-12/12 mt-8">
       <h2 class="text-3xl font-bold uppercase text-primary">

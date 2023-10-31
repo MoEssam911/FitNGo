@@ -21,7 +21,7 @@
             </p>
           </div>
           <router-link :to="`/trainers/${card.id}`"><button class="bg-primary transition rounded px-2 py-1 text-white">
-            Hire Now
+            Start Now
           </button></router-link>
         </div>
       </div>

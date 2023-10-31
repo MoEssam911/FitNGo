@@ -59,7 +59,7 @@
             >Price</label
           >
         </div>
-        <button class="btn-primary-hover text-white font-bold  p-2 w-full">Add Product</button>
+        <button class="btn-primary-hover  bg-gray-800 hover:bg-[#e60000df] text-white font-bold  p-2 w-full">Add Product</button>
 </form>
 </div>
     </div>

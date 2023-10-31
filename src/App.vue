@@ -10,7 +10,7 @@
     v-if="isLoggedIn"
   ></div>
 
-  <Navbar />
+  <Navbar v-if="['LoginOrSignUp'].indexOf($route.name) && ['DashboardView'].indexOf($route.name)"/>
 
   <main class="w-full h-screen relative">
 

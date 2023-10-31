@@ -7,7 +7,7 @@
         alt="Fit and Go"
         class="image-login mx-auto md:w-[69px] w-[50px]" />
       <h2 class="text-3xl font-bold text-center text-primary md:my-3 my-1">
-        Admin Sign Up
+        Admin Creation
       </h2>
       <form @submit.prevent="register">
         <div class="w-full">
@@ -47,7 +47,7 @@
             </div>
             <button
           class="border rounded-xl bg-gray-800 hover:bg-[#e60000df] text-white py-2 w-2/4 block mx-auto mt-4">
-          Sign Up
+          Create Admin
         </button>
           </div>
           
@@ -95,7 +95,6 @@ const register = () => {
         .then((res) =>{ 
           console.log(res.data)
           alert("Admin Has Been Created Successfully")
-          router.push('/Admin')
             window.location.reload()
         })
         .catch((err) => console.log(err.message));
