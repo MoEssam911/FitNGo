@@ -116,31 +116,7 @@ export default {
         })
         .catch((err) => console.log(err));
     },
-    settrainerinuser() {
-      this.changePop();
-      this.user.trainer = this.trainers;
-      localStorage.setItem("user", JSON.stringify(this.user))
-      console.log(this.user);
-      axios
-        .put(`http://localhost:3000/users/${this.user.id}`, this.user)
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((err) => console.log(err));
-      // this.showPop = "hide";
-    },
-    deleteuserifNo() {
-      // this.showPop = "hide";
-      this.changePop();
-      this.trainers.Clients.pop();
-      axios
-        .put(`http://localhost:3000/AllTrainers/${this.id}`, this.trainers)
-        .then((res) => {
-          console.log(res);
-          // console.log(this.trainers.Clients[0].id);
-        })
-        .catch((err) => console.log(err));
-    },
+
   },
 };
 </script>

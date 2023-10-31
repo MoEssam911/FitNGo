@@ -3,15 +3,15 @@
     <TrainersSkeleton />
   </template>
   <template v-else>
-    <div class="flex flex-wrap container gap-2">
+    <div class="container grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-4">
     <div v-for="card in trainerscards" :key="card">
-      <div class="cards w-full">
-        <div class="card mb-5">
-          <div class="product flex flex-col justify-center items-center">
+      <div class="cards w-full mb-5">
+        <div class="card my-2 h-fit">
+          <div class="product flex flex-col justify-center items-center my-6">
             <img
               :src="card.imageProfile"
               width="250"
-              class="mt-20 transition-all duration-500"
+              class="mt-2 transition-all duration-500"
               alt="product" />
             <p class="text-center text-xl font-bold text-dark">
               {{ card.TrainerNames }}
@@ -19,8 +19,9 @@
             <p class="price text-primary text-center text-xl font-bold">
               {{ card.Fees }}
             </p>
+            <span v-html="card.Rate" class="price text-red-500 hover:text-primary text-center text-md"></span>
           </div>
-          <router-link :to="`/trainers/${card.id}`"><button class="bg-primary transition rounded px-2 py-1 text-white">
+          <router-link :to="`/trainers/${card.id}`"><button class="bg-primary transition rounded px-2 py-1 text-white mb-3">
             Hire Now
           </button></router-link>
         </div>
@@ -53,7 +54,7 @@ import TrainersSkeleton from '../components/SkeletonPlaceholders/TrainersSkeleto
         this.trainerscards = res.data;
       })
       .catch((err) => console.log(err));
-    }, 1000)
+    }, 2000)
 
   },
     }
