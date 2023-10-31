@@ -9,7 +9,7 @@
     <div style="transition-delay:1s; opacity:0;" class="absolute inset-0 flex  justify-center animate-fade-in flex-col mt-52  bg-black bg-opacity-25 h-2/4">
       <div class="ml-20">
         <h1 class="text-3xl font-bold uppercase text-white">
-        Gain more. New sizes, New prices.
+        Calculate whaever, whenever!
       </h1>
       <h3 class="text-white text-lg text-left mt-1">
         Life gets easier with the right tools.

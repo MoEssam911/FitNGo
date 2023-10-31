@@ -6,17 +6,19 @@
       <img class="w-full h-full object-fit" src="../../../assets/Images/HomeBanner/banner-shoppp.jpg" >
     </div>
 
-    <div style="transition-delay:1s; opacity:0;" class="absolute inset-0 flex  justify-center animate-fade-in flex-col mt-44 ml-20">
-      <h1 class="text-3xl font-bold uppercase text-white">
-        Gain more. new sizes, new prices!
+    <div style="transition-delay:1s; opacity:0;" class="absolute inset-0 flex  justify-center animate-fade-in flex-col mt-52  bg-black bg-opacity-25 h-2/4">
+      <div class="ml-20">
+        <h1 class="text-3xl font-bold uppercase text-white">
+        Gain more. New sizes, New prices.
       </h1>
       <h3 class="text-white text-lg text-left mt-1">
-        Navigate through variety of supplements <br>
-        with competitive prices.
+        Life gets easier with the right tools.
       </h3>
       <div class="flex gap-3 mt-3">
-        <router-link to="/shop" class="bg-primary rounded-lg px-3 py-1 text-center text-white hover:bg-red-800 text-sm font-medium">Shop Now</router-link>
+        <router-link to="/shop" class="bg-primary rounded-lg px-3 py-1 text-center text-white hover:bg-red-800 text-sm font-medium">Start Now</router-link>
       </div>
+      </div>
+
     </div>
 
   </div>
