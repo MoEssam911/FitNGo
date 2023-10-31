@@ -19,7 +19,6 @@
       </Transition>
     </RouterView>
     <!-- <Checkout></Checkout> -->
-    <!-- <Address></Address> -->
 
     <Footer />
   </main>
@@ -60,8 +59,8 @@ import Navbar from "./components/utilities/Navbar.vue";
 import Footer from "./components/utilities/Footer.vue";
 import LoginNSignup from "./components/LoginAndSignup/LoginNSignup.vue";
 import '../public/Mixins/public'
-import Checkout from "./components/Shop/Checkout.vue"; 
-import Address from "./components/Shop/Address.vue"; 
+import Checkout from "./components/Shop/CheckoutUpdated.vue"; 
+
 
 export default {
   components: {
@@ -69,7 +68,6 @@ export default {
     Footer,
     LoginNSignup,
     Checkout,
-    Address
   },
   data() {
     return {

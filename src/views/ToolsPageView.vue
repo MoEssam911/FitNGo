@@ -1,7 +1,7 @@
 <template>
    <div class="relative">
 
-<main class="">
+<main class="container">
   <div class="flex gap-9">
     <!-- User side bar -->
 
