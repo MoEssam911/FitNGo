@@ -3,7 +3,7 @@
     <div class="flex relative object-cover h-[350px]">
       <img
         class="w-full object-"
-        src="../../src/assets/Images/WhatsApp Image 2023-10-19 at 17.23.47_e920d04d.jpg" />
+        src="../../../src/assets/Images/WhatsApp Image 2023-10-19 at 17.23.47_e920d04d.jpg" />
     </div>
 
     <div class="container">
@@ -12,7 +12,7 @@
         class="flex relative object-cover lg:flex-row md:flex-row sm:flex-col">
         <div class="w-1/2">
           <img
-            src="../../src/assets/Images/08f1c52293c3de74e6874e9dbc83aceb.png"
+            src="../../../src/assets/Images/08f1c52293c3de74e6874e9dbc83aceb.png"
             class="transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300" />
           <p
             class="flex font-Manrope whitespace-pre-line p-[5%] text-primary lg:text-2xl md:text-2xl sm:text-base font-extrabold">
@@ -20,7 +20,7 @@
           </p>
         </div>
         <div class="w-1/2 h-1/4">
-          <img class="blur-[0.5px]" src="../../src/assets/Images/zegama.jpg" />
+          <img class="blur-[0.5px]" src="../../../src/assets/Images/zegama.jpg" />
           <p
             class="absolute left-[50%] inset-0 flex font-Manrope whitespace-pre-line p-[5%] text-primary lg:text-4xl md:text-2xl sm:text-xl font-extrabold transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300">
             SALE 15% ON SPORT SHOES
@@ -63,7 +63,6 @@
           v-for="(item, index) in items"
           :key="index"
           class="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3">
-
           <div class="card">
             <div class="icon z-10">
               <!-- <i class="fa-solid fa-cart-shopping text-xl text-white"></i> -->
@@ -93,10 +92,9 @@
             <button
               @click="addCart(item)"
               class="bg-primary transition rounded px-2 py-1 text-white">
-              <router-link :to="`/cart`"> Buy Now</router-link>
+              <router-link :to="`/shop/${item.id}`"> Buy Now</router-link>
             </button>
           </div>
-
         </div>
 
         <!-- <div  v-for="(item, index) in itemsDb" :key="index" class=" card col-span-3">
@@ -124,7 +122,7 @@ export default {
   data() {
     return {
       itemsDb: [],
-      user:{},
+      user: {},
       currentIndex: 0,
       nameI: "",
       searchQuery: "",
@@ -135,18 +133,17 @@ export default {
     axios
       .get("http://localhost:3000/products")
       .then((res) => {
-        console.log(res)
+        console.log(res);
         this.itemsDb = res.data;
       })
       .catch((err) => console.log(err));
-      
-    axios
-      .get(`http://localhost:3000/users/${this.user.id}`)
-      .then((res) => {
-        this.user = res.data;
-      })
-      .catch((err) => console.log(err));
 
+    // axios
+    //   .get(`http://localhost:3000/users/${this.user.id}`)
+    //   .then((res) => {
+    //     this.user = res.data;
+    //   })
+    //   .catch((err) => console.log(err));
   },
   methods: {
     loadMore() {
@@ -163,7 +160,6 @@ export default {
     items() {
       return (
         this.itemsDb
-          // .filter((item) => item.title.toLowerCase().includes(this.searchQuery.toLowerCase()))
           .filter((item) =>
             item.title.toLowerCase().includes(this.searchQuery.toLowerCase())
           )

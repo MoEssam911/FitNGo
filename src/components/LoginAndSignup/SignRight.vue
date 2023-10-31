@@ -42,7 +42,7 @@
                 <span class="bg-white ms-2 text-center px-2">Password</span>
               </h3>
               <input
-              required
+                required
                 v-model="password"
                 type="password"
                 placeholder="***********"
@@ -53,7 +53,7 @@
                 <span class="bg-white ms-2 text-center px-2">Age</span>
               </h3>
               <input
-              required
+                required
                 type="number"
                 min="0"
                 max="100"
@@ -125,7 +125,7 @@
 <script setup>
 import { inject, ref } from "vue";
 import router from "../../router";
-import '../../firebaseInit'
+import "../../firebaseInit";
 // import auth functions
 import {
   getAuth,
@@ -134,10 +134,10 @@ import {
   FacebookAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
-import {loginUser} from '../../../public/Mixins/public'
-const { setUser} = loginUser();
-const closeLogin = inject('closeLogin');
-const userLoggedIN = inject('userLoggedIN')
+import { loginUser } from "../../../public/Mixins/public";
+const { setUser } = loginUser();
+const closeLogin = inject("closeLogin");
+const userLoggedIN = inject("userLoggedIN");
 
 const email = ref("");
 const password = ref("");
@@ -160,17 +160,22 @@ const register = () => {
         userName: userName.value,
         age: age.value,
         gender: gender.value,
-        weight:'',
-        height:'',
-        bodyfat:'',
-        bmr:'',
-        cart:[{}],
-        imageProfile:'https://placehold.co/300x300',
-        trainer:{},
-        plans:{
-          Workouts:[{}],
-          Diet:[{}],
-        }
+        weight: "",
+        height: "",
+        bodyfat: "",
+        bmr: "",
+        address: {
+          street: "",
+          building: "",
+          area: "",
+        },
+        cart: [],
+        imageProfile: "https://placehold.co/300x300",
+        trainer: {},
+        plans: {
+          Workouts: [],
+          Diet: [],
+        },
       };
       setUser(user);
       closeLogin();
@@ -188,9 +193,9 @@ const signInWithGoogle = () => {
       console.log(result);
       const user = result.user;
       console.log(user);
-      setUser(user)
-      closeLogin()
-      userLoggedIN()
+      setUser(user);
+      closeLogin();
+      userLoggedIN();
     })
     .catch((err) => {
       console.log(err);
@@ -201,15 +206,15 @@ const signInWithFacebook = () => {
   signInWithPopup(getAuth(), provider)
     .then((res) => {
       console.log(res);
-      setUser(res.user)
-      closeLogin()
-      userLoggedIN()
+      setUser(res.user);
+      closeLogin();
+      userLoggedIN();
     })
     .catch((err) => {
       console.log(err);
     });
 };
-console.log(gender)
+console.log(gender);
 </script>
 
 <script>

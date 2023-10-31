@@ -16,7 +16,7 @@
           </div>
         </div>
         <!-- items -->
-        <div v-for="(item, index) in itemsIN" :key="index">
+        <div v-for="(item, index) in cart" :key="index">
           <div
             class="flex justify-between items-center px-5 py-1 gap-2 mx-auto bg-secondary rounded-lg mt-4">
             <div class="flex items-center">
@@ -34,7 +34,7 @@
             <!-- For more settings use the AutoHTML plugin tab ... -->
             <div>
               <i
-                @click="remove(item.id)"
+                @click="remove(index)"
                 class="fa-solid fa-trash text-dark text-xl cursor-pointer hover:text-red-600"></i>
             </div>
           </div>
@@ -43,18 +43,13 @@
       <!-- total  -->
       <div
         class="flex flex-col justify-around p-4 max-h-56 bg-secondary rounded-xl">
-        <!-- <h2 class="flex font-bold order justify-center mb-[15%]">Cart Total</h2> -->
-        <!-- <div class="flex flex-row justify-around">
-          <div class="text-[14px]">subtotal</div>
-          <div class="text-primary text-[14px]">{{prices}}EGP</div>
-        </div> -->
         <h3 class="text-xl font-semibold text-center p-2 border-b">
           Cart Summary
         </h3>
         <div class="flex justify-around">
           <div class="font-bold text-lg">Total</div>
           <div class="font-semibold text-lg text-primary">
-            {{ prices + 10 }} EGP
+            {{ prices}} EGP
           </div>
         </div>
         <div class="flex flex-row justify-around gap-2">
@@ -64,7 +59,7 @@
           </button>
           <button
             class="w-1/2 bg-transparent opacity-60 border-primary border text-primary py-2 font-semibold text-sm rounded-lg">
-            <router-link to="/shop"> Continue Shopping</router-link>
+            <router-link to="/shop">Continue Shopping</router-link>
           </button>
         </div>
       </div>
@@ -74,7 +69,7 @@
 
 <script>
 import axios from "axios";
-import router from "../router";
+import router from '../../router';
 
 export default {
   name: "CartComponent",
@@ -83,47 +78,44 @@ export default {
       oneItem: [],
       id: "",
       total: 0,
+      user: {},
+      cart: []
     };
   },
   created() {
-    this.getItem();
+    this.user = JSON.parse(localStorage.getItem('user'))
+    this.cart = this.user.cart
+    console.log(this.user);
+    console.log(this.cart);
   },
   computed: {
     prices() {
-      for (var i = 0; i < this.oneItem.length; i++) {
+      this.total = 0
+      for (var i = 0; i < this.cart.length; i++) {
         console.log(this.total);
-        this.total += parseInt(this.oneItem[i].price.split(",").join(""));
+        this.total += parseInt(this.cart[i].price.split(",").join(""));
       }
       return this.total;
     },
-    itemsIN() {
-      return this.oneItem;
-    },
   },
   methods: {
-    getItem() {
-      axios
-        .get("http://localhost:3000/cart")
-        .then((res) => {
-          this.oneItem = res.data;
-          console.log(this.oneItem);
-        })
-        .catch((err) => console.log(err));
-    },
-    remove(id) {
+    remove(index) {
       let conf = confirm(`Are you sure you want to delete ?`);
       if (conf == true) {
+        this.cart.splice(index, 1)
+        this.user.cart = this.cart
+        localStorage.setItem("user", JSON.stringify(this.user))
+
         axios
-          .delete(`http://localhost:3000/cart/${id}`)
+          .put(`http://localhost:3000/users/${this.user.id}`, this.user)
           .then((res) => {
-            this.$route.router.reload();
             console.log(res);
           })
           .catch((err) => {
             console.log(err);
           });
-        this.getData();
       }
+      this.prices()
     },
   },
 };
