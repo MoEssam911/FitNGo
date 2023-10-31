@@ -2,7 +2,7 @@
 
   <Teleport to="body">
     <Transition name="modal-outer">
-      <div v-show="modalActive" class="absolute w-full bg-black bg-opacity-30 h-screen top-0 left-0 flex justify-center px-8 font-Manrope">
+      <div v-show="modalActive" class="fixed z-50 top-0 right-0 bottom-0 left-0 bg-black bg-opacity-50 w-screen h-screen">
     
         <Transition name="modal-inner">
           <div v-if="modalActive" tabindex="-1" class="fixed top-0 left-0 right-0 z-50  p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">

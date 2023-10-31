@@ -19,9 +19,9 @@
     }
     &::before {
       content: "";
-      width: 330px;
-      height: 330px;
-      background-color:white;
+      width: 16rem;
+      height: 16rem;
+      background-color:rgb(255, 18, 18);
       position: absolute;
       top: -100px;
       right: -130px;
@@ -31,8 +31,8 @@
     }
     &:hover:before {
       content: "";
-      width: 464px;
-      height: 458px;
+      width: 25rem;
+      height: 25rem;
       top: -230px;
     }
     & .product {

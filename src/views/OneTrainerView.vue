@@ -1,10 +1,4 @@
 <template>
-  <!-- <div class="mt-20 bg-black min-h-screen flex" :style="`background:#777 url(${trainers.TrainerImg}) no-repeat`" style="background-size: 100% 150%; background-blend-mode: multiply;">
-      <div class="w-4/12 backdrop-opacity-75 bg-white/30 h-[540px]">
-      <img :src="trainers.TrainerCard" alt="">
-      </div>
-      </div> -->
-
   <div
     class="container flex-wrap mt-20 bg-white min-h-screen flex"
     :style="`background: #ebe7e7 url(${trainers.TrainerImg}) no-repeat`"
@@ -82,18 +76,48 @@
         >
           Start Now
         </button>
-      <PopTrainer v-if="showPop==true"></PopTrainer>
+      
     </div>
   </div>
+  <BaseModal :modalActive="modalActive" @close="deleteuserifNo">
+    <div class="flex flex-col m-2 ">
+      <div class="flex justify-around items-center mb-2">
+        <h1 class="text-2xl font-bold font-Manrope text-gray-600 text-left">Payment</h1>
+        <h2 class="text-lg font-medium font-Manrope text-gray-600 text-right">{{ trainers.Fees }}</h2>
+      </div>
+      <label class="text-left font-Manrope text-gray-600 my-2">Full Name:</label>
+      <input class="w-full border border-gray-200 h-8 rounded-md bg-gray-100 mb-2" type="text">
+      <div class="flex gap-2">
+        <div class="flex flex-col w-8/12">
+        <label class="text-left font-Manrope text-gray-600 my-2">Card Number:</label>
+        <input type="number" class="border border-gray-200 h-8 rounded-md bg-gray-100">
+        </div>
+        <div class="flex flex-col w-4/12">
+          <label class="text-left font-Manrope text-gray-600 my-2">CVV:</label>
+          <input type="number" class=" border border-gray-200 h-8 rounded-md bg-gray-100">
+        </div>
+      </div>
+      <label class="text-left font-Manrope text-gray-600 my-2">Street Address:</label>
+      <input type="number" class="border border-gray-200 h-8 rounded-md bg-gray-100">
+      <label class="text-left font-Manrope text-gray-600 my-2">Zip:</label>
+      <input type="number" class="border border-gray-200 h-8 rounded-md bg-gray-100">
+      <button class="w-full h-14 bg-primary hover:bg-red-500 my-8 rounded-lg text-white text-center font-Manrope font-extrabold hover:text-gray-100"
+        @click.prevent="settrainerinuser">
+        Submit Payment
+      </button>
+
+
+    </div>
+  </BaseModal>
 </template>
 
 <script>
+import BaseModal from "../components/utilities/BaseModal.vue";
 import axios from "axios";
-import PopTrainer from '../components/PopTrainer.vue'
 export default {
   name: "OneTrainerView",
   components:{
-    PopTrainer,
+    BaseModal,
   },
   data() {
     return {
@@ -102,7 +126,7 @@ export default {
       id: "",
       Clients: [],
       conf: "",
-      showPop: false,
+      modalActive: false,
     };
   },
   created() {
@@ -110,27 +134,16 @@ export default {
     this.getTrainer();
     this.getUser();
   },
-  provide(){
-    return{
-      changePop : this.changePop
-    }
-  },
   methods: {
     changePop(){
       this.showPop = !this.showPop;
     },
     getTrainer() {
       this.id = this.$route.params.id;
-      // this.Clients = this.$route.params.id;
       axios
         .get(`http://localhost:3000/AllTrainers/${this.id}`)
         .then((res) => {
           this.trainers = res.data;
-          console.log(this.trainers);
-          // console.log(this.trainers.Clients[0].id);
-          // console.log(this.trainers.Clients);
-          // console.log(this.trainers.Fees);
-          console.log(this.trainers.Clients.length);
         })
         .catch((err) => console.log(err));
     },
@@ -138,46 +151,43 @@ export default {
       axios
         .get(`http://localhost:3000/users/${this.user.id}`)
         .then((res) => {
-          // console.log(res.data)
           this.user = res.data;
-          // console.log(this.user)
         })
         .catch((err) => console.log(err));
     },
     SubwithTrainer() {
-      // console.log(this.trainers.Clients);
-      // if (this.trainers.Clients.length < 1) {
-        
-      // }
-      // console.log(Object.is(this.trainers.Clients[0],this.user));
-      // console.log(this.user);
-      // if (this.trainers.Clients.findIndex(object => object === this.user)) {
-      //     alert('You Already Have Sub');
-      //     return
-      //   }
-      this.showPop = true;
+      this.modalActive = true;
       this.trainers.Clients.push(this.user);
+      
       axios
         .put(`http://localhost:3000/AllTrainers/${this.id}`, this.trainers)
         .then((res) => {
           console.log(res);
+        })
+        .catch((err) => console.log(err));
+    },
+    settrainerinuser() {
+      this.user.trainer = this.trainers;
+      localStorage.setItem("user", JSON.stringify(this.user))
+      console.log(this.user);
+      axios
+        .put(`http://localhost:3000/users/${this.user.id}`, this.user)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => console.log(err));
+    },
+    deleteuserifNo() {
+      this.modalActive = false
+      this.trainers.Clients.pop();
+      axios
+        .put(`http://localhost:3000/AllTrainers/${this.id}`, this.trainers)
+        .then((res) => {
+          console.log(res);
+          console.log('a7a');
           // console.log(this.trainers.Clients[0].id);
         })
         .catch((err) => console.log(err));
-
-      //   for(var i=0;i<=this.trainers.Clients.length;i++){
-      //   if(!this.trainers.Clients[i].hasOwnProperty(this.user.id)){
-      //     this.trainers.Clients.push(this.user)
-      //   axios.put(`http://localhost:3000/AllTrainers/${this.id}`,this.trainers).then((res)=>{
-      //     console.log(res);
-      //     alert("you have been subscribed successfully")
-      //   }).catch(err=>console.log(err))
-
-      //   }
-      //   else {
-      //     alert("you are already subscribed !!")
-      //   }
-      // }
     },
     
   },
