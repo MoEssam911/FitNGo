@@ -161,6 +161,7 @@ const register = () => {
         Email: email.value,
         age: age.value,
         gender: gender.value,
+        phone: phone.value,
         weight: "",
         height: "",
         bodyfat: "",

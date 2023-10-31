@@ -127,9 +127,9 @@ export default {
       axios.put(`http://localhost:3000/users/${this.id}`,this.user).then((res)=>{
                     console.log(res.data)
                     alert("Submit Workout Successfully");
+                    window.location.reload()
                   }).catch((err)=>console.log(err));
                   router.push(`/TrainerAccount/EditUser/${this.user.id}/WorkoutsPlans`)
-                  window.location.reload()
                 
     },
     AddRow() {
