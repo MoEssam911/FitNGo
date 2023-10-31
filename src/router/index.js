@@ -20,16 +20,15 @@ const UserProfile = () => import('../views/UserProfile.vue')
 const WorkoutsView = () => import('../views/WorkoutsView.vue') 
 const LoginOrSignUp = () => import('../views/DashboardAdminLogin&signapp.vue')
 
-const shop = () => import ('../components/shop.vue') 
-const item = () => import ('../components/item.vue')
-const cart = () => import ('../components/Cart.vue')
-const checkout = () => import ('../views/CheckOut.vue')
+const shop = () => import ('../components/Shop/shop.vue') 
+const item = () => import ('../components/Shop/item.vue')
+const cart = () => import ('../components/Shop/CartUpdate.vue')
+const checkout = () => import ('../components/Shop/CheckoutUpdated.vue')
 const SingleWorkout = () => import ('../views/SingleWorkout.vue')
 const ChangeProfilePicture = () => import ('../components/ChangeProfilePicture.vue')
 const DashboardView = () => import ('../AdminDashboard/DashboardView.vue')
 const EditTrainer = () => import ('../AdminDashboard/TrainersDashboard/TrainersDashboardEdit.vue')
 const EditProduct = () => import ('../AdminDashboard/ProductsDashboard/ProductsDashboardEdit.vue')
-
 
 
 
@@ -95,6 +94,14 @@ const router = createRouter({
       component: About,
       meta: {
         title: 'About Us'
+      }
+    },
+    {
+      path: "/:NotFound(.*)*", 
+      name: "ErrorPage",
+      component: ErrorPage,
+      meta: {
+        title: 'Error'
       }
     },
 
