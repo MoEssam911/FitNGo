@@ -31,9 +31,8 @@
                 <label for="" class="text-black text-base font-medium"
                   >Rate :</label
                 >
-                <h2 for="" class="text-primary text-base font-medium">
-                  {{ user.trainer.Rate }}
-                </h2>
+                <span for="" class="text-primary text-base font-medium" v-html="user.trainer.Rate">
+                </span>
               </div>
               <div class="flex flex-wrap">
                 <label for="" class="text-black text-base font-medium"

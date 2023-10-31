@@ -28,7 +28,7 @@
               <div class="flex flex-wrap">
                 <label for="" class="text-black text-base font-medium"
                   >Rate :</label>
-                <h2 for="" class="text-primary text-base font-medium">{{user.Rate}}</h2>
+                <span v-html="user.Rate" for="" class="text-primary text-base font-medium"></span>
               </div>
               <div class="flex flex-wrap">
                 <label for="" class="text-black text-base font-medium"

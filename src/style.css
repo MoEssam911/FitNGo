@@ -13,7 +13,7 @@
 }
 
 @layer components {
-  .card {
+  .cardTrainer {
     &:hover .icon {
       opacity: 1;
     }
@@ -57,9 +57,56 @@
     }
   }
 }
-.card {
+.cardTrainer {
   @apply px-3 mt-4 hover:shadow-xl transition-all duration-500 border relative overflow-hidden flex flex-col items-center rounded-[40px] h-[450px] ;
 }
+.card {
+  &:hover .icon {
+    opacity: 1;
+  }
+  &::before {
+    content: "";
+    width: 16rem;
+    height: 16rem;
+    background-color:white;
+    position: absolute;
+    top: -100px;
+    right: -130px;
+    border-radius: 50%;
+    z-index: -1;
+    transition: 0.5s;
+  }
+  &:hover:before {
+    content: "";
+    width: 25rem;
+    height: 25rem;
+    top: -230px;
+  }
+  & .product {
+    transition: 0.5s;
+  }
+  &:hover .product {
+    transform: translateY(-35px);
+  }
+  & .price {
+    transition: 0.5s;
+    transform-origin: bottom;
+  }
+  &:hover .price {
+    transform: scale(1.1);
+  }
+  & button {
+    transform-origin: bottom;
+  }
+  & button:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+  }
+}
+.card {
+@apply px-3 mt-4 hover:shadow-xl transition-all duration-500 border relative overflow-hidden flex flex-col items-center rounded-[40px] h-[450px] ;
+}
+
 
 
 * {
