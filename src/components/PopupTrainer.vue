@@ -19,7 +19,7 @@
             class="fa-solid mx-auto mb-4 fa-circle-check fa-3x text-primary"></i>
 
           <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
-            You have Subscribed <span class="text-primary">successfully</span>
+            You have subscribed <span class="text-primary">successfully</span>
           </h3>
         </div>
       </div>
@@ -46,7 +46,7 @@ export default {
   created() {
     this.user = JSON.parse(localStorage.getItem("user"));
     this.getUser();
-  },
+  },  
 
   methods: {
     getUser() {
@@ -65,7 +65,6 @@ export default {
     },
   },
 };
-
 </script>
 
 <style scoped>

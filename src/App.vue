@@ -14,9 +14,9 @@
   <Navbar v-if="['LoginOrSignUp'].indexOf($route.name) && ['DashboardView'].indexOf($route.name) && ['ErrorPage'].indexOf($route.name)"/>
 
 
-  <main class="w-full h-screen relative">
+  <main class="w-full mt-28 relative">
 
-    <RouterView class="mt-20" v-slot="{ Component }">
+    <RouterView class="min-h-screen  " v-slot="{ Component }">
       <Transition name="page">
         <component :is="Component" />
       </Transition>
