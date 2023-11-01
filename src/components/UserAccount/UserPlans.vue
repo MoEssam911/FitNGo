@@ -1,7 +1,9 @@
 <template>
-    <div class=" relative w-full">
+    <div class=" relative w-full ">
         <div class="flex gap-5">
-            <div class="text-dark text-2xl mb-3 text-center" v-if="!!woPlans">You Don't Have Workout Plans</div>
+            <div class="text-dark text-2xl mb-3 text-center mx-auto" v-if="!!woPlans">
+            <img class="opacity-80" width="600" src="../../assets/svg/NoPLans-01.svg" alt="">
+            </div>
             <div class="bg-secondary w-full  p-6 rounded-2xl" v-if="!!!woPlans">
                 <div class="flex justify-between">
                     <i class="fa-solid fa-caret-left text-4xl hover:cursor-pointer hover:text-primary inline-block" @click="change('left')" v-if="planTarget > 0"></i>

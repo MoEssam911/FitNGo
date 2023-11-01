@@ -2,9 +2,11 @@
   <div class="h-max">
     <div class="flex gap-5">
       <div class="w-full flex flex-col">
-        <!-- <div class="text-dark text-2xl mb-3 text-center" v-if="!user.trainer[0]">You Can Hire Trainer</div> -->
+        <div class="text-dark text-2xl mb-3 text-center" v-if="user.trainer==0">
+          <img class="opacity-75" src="../assets/svg/NoTrainersvg-01.svg" alt="">
+        </div>
 
-        <div
+        <div v-else
           class="flex flex-col flex-wrap h-auto w-full bg-secondary rounded-3xl p-5 m-3"
         >
           <div>
@@ -31,8 +33,8 @@
                 <label for="" class="text-black text-base font-medium"
                   >Rate :</label
                 >
-                <h2 for="" class="text-primary text-base font-medium">
-                  {{ user.trainer.Rate }}
+                <h2 v-html="user.trainer.Rate" for="" class="text-primary text-base font-medium">
+                  
                 </h2>
               </div>
               <div class="flex flex-wrap">

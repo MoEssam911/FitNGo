@@ -1,12 +1,8 @@
 <template>
   <div class="container grid font-manrope mb-[2%]">
     <!-- no items  -->
-    <div v-if="cart.length == 0" class="grid place-items-center mt-7 gap-4">
-      <i class="fa-solid fa-truck-ramp-box fa-4x"></i>
-      <h1 class="text-xl">
-        Your cart is Empty
-        <span class="text-2xl text-primary font-bold">!</span>
-      </h1>
+    <div v-if="cart.length == 0" class="text-center pt-28 gap-4">
+      <img src="../../assets/svg/itemempty-01.svg" alt="">
       <router-link to="/shop">
         <button
           class="bg-primary text-white rounded-lg py-3 px-4">

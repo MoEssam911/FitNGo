@@ -4,6 +4,7 @@
     :style="`background: #ebe7e7 url(${trainers.TrainerImg}) no-repeat`"
     style="background-size: 100% 150%; background-blend-mode: soft-light"
   >
+  <PopTrainer v-if="showPop == true"></PopTrainer>
     <div
       class="md:w-6/12 sm:w-12/12 md:shadow-lg md:border rounded-md mt-8"
       style="backdrop-filter: blur(0.5)"
@@ -106,7 +107,7 @@
         Submit Payment
       </button>
 
-
+      
     </div>
   </BaseModal>
 </template>
@@ -114,13 +115,22 @@
 <script>
 import BaseModal from "../components/utilities/BaseModal.vue";
 import axios from "axios";
+import PopTrainer from "../components/PopTrainer.vue";
+
 export default {
   name: "OneTrainerView",
   components:{
     BaseModal,
+    PopTrainer
+  },
+  provide() {
+    return {
+      changePop: this.changePop,
+    };
   },
   data() {
     return {
+      showPop: false,
       trainers: {},
       user: {},
       id: "",
@@ -169,6 +179,7 @@ export default {
     },
     settrainerinuser() {
       this.modalActive = false
+      this.trainers.Clients = []
       this.user.trainer = this.trainers;
       localStorage.setItem("user", JSON.stringify(this.user))
       console.log(this.user);
@@ -178,6 +189,7 @@ export default {
           console.log(res);
         })
         .catch((err) => console.log(err));
+        this.showPop = !this.showPop;
     },
     deleteuserifNo() {
       this.modalActive = false
