@@ -6,7 +6,7 @@
     <div class="container grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-4">
     <div v-for="card in trainerscards" :key="card">
       <div class="cards w-full mb-5">
-        <div class="card my-2 h-fit">
+        <div class="cardTrainer my-2 h-fit">
           <div class="product flex flex-col justify-center items-center my-6">
             <img
               :src="card.imageProfile"

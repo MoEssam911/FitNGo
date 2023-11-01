@@ -1,6 +1,6 @@
 <template>
-  <header>
-    <div class="navbar flex px-10 items-center bg-black text-white fixed w-full z-50 top-0" v-if="role=='user' || role=='trainer'">
+  <header v-if="!loggedIN || fullData">
+    <div class="navbar flex px-10 items-center bg-black text-white fixed w-full z-[5555] top-0" v-if="role=='user' || role=='trainer'">
     <div class="logo"><a href=""><img src="../../assets/Images/Logo-Fit&go version 2-white.png" alt=""></a></div>
     <nav class="navigation ms-auto flex me-4">
       <div class="nav-list mx-4 flex text-white" v-if="this.toggle == 'open' || windowWidth > 830">
@@ -47,7 +47,7 @@ import router from '../../router';
         fullData : false,
       }
     },
-    inject: ["apperLogin","loggedIN","userLoggedIN","user"],
+    inject: ["apperLogin","loggedIN","userLoggedIN","user","fullData"],
     beforeUnmount() {
       // Remove the resize event listener when the component is unmounted
       window.removeEventListener('resize', this.updateWindowWidth);

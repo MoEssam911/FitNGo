@@ -32,7 +32,7 @@
                 </td>
                 <td class="px-6 py-4">
                   <router-link :to="`/TrainerAccount/EditUser/${cli.id}`"><i class="fa-solid fa-pen ml-5 cursor-pointer"></i></router-link>
-                  <i class="fa-solid fa-trash ml-5 text-red-700 cursor-pointer"></i>
+                  <i class="fa-solid fa-trash ml-5 text-red-700 cursor-pointer" @click="deleteclient(cli.id)"></i>
                 </td>
               </tr>
               
@@ -69,6 +69,15 @@ export default {
       trainer:{},
     };
   },
+  methods:{
+
+    deleteclient(Index){
+      this.trainer.Clients.splice(Index,1)
+      localStorage.setItem('user',JSON.stringify(this.trainer))
+      axios.put(`http://localhost:3000/AllTrainers/${this.trainer.id}`,this.trainer).then((res)=>{console.log(res)}).catch((err)=>{console.log(err)});
+      
+    }
+  }
 };
 </script>
 

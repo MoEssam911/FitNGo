@@ -11,7 +11,7 @@
   ></div>
 
   <!-- <Navbar v-if="fullData || !loggedIN"/> -->
-  <Navbar v-if="['LoginOrSignUp'].indexOf($route.name) && ['DashboardView'].indexOf($route.name)"/>
+  <Navbar v-if="['LoginOrSignUp'].indexOf($route.name) && ['DashboardView'].indexOf($route.name) && ['ErrorPage'].indexOf($route.name)"/>
 
 
   <main class="w-full mt-28 relative">
@@ -23,7 +23,7 @@
     </RouterView>
     <!-- <Checkout></Checkout> -->
 
-    <Footer v-if="['LoginOrSignUp'].indexOf($route.name) && ['DashboardView'].indexOf($route.name)"/>
+    <Footer v-if="['LoginOrSignUp'].indexOf($route.name) && ['DashboardView'].indexOf($route.name) && ['ErrorPage'].indexOf($route.name)"/>
     <!-- <Footer /> -->
   </main>
 </template>
@@ -123,6 +123,7 @@ export default {
       userLoggedIN:this.userLoggedIN,
       updateUser:this.updateUser,
       loggedIN: computed(()=>this.loggedIN),
+      fullData: computed(()=>this.fullData),
       user: computed(()=>this.user),
 
     };

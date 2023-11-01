@@ -23,12 +23,12 @@
               </div>
               <div class="flex flex-wrap ">
                 <label for="" class="text-black text-base font-medium">Clients :</label>
-                <!-- <h2 for="" class="text-primary text-base font-medium" v-if="user.Clients.length">{{ user.Clients.length }}</h2> -->
+                <h2 for="" class="text-primary text-base font-medium" v-if="user.Clients.length">{{ user.Clients.length }}</h2>
               </div>
               <div class="flex flex-wrap">
                 <label for="" class="text-black text-base font-medium"
                   >Rate :</label>
-                <h2 for="" class="text-primary text-base font-medium">{{user.Rate}}</h2>
+                <span v-html="user.Rate" for="" class="text-primary text-base font-medium"></span>
               </div>
               <div class="flex flex-wrap">
                 <label for="" class="text-black text-base font-medium"
@@ -55,7 +55,7 @@ export default {
     }
   },
   created(){
-    if (JSON.parse(localStorage.getItem('user')) == 'trainer') {
+    if (localStorage.getItem('role') == 'trainer') {
       this.user = JSON.parse(localStorage.getItem('user'));
     }
   }

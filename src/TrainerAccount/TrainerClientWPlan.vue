@@ -83,6 +83,7 @@ import axios from 'axios';
         this.user = res.data;
         this.Workouts = res.data.plans.Workouts;
         this.maxLength = this.Workouts.length - 1;
+        console.log(this.planTarget);
         // console.log(this.user.plans.Diet);
       })
       .catch((err) => console.log(err));

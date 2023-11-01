@@ -5,7 +5,7 @@
                     <MenuIcon @click="toggleUserSideHandler"></MenuIcon>
                 </div>
                 <h1 class="font-Manrope font-bold text-lg">My Account</h1>
-                <div>
+                <div v-if="fullData">
                     <svg
                         width="20"
                         height="20"
@@ -48,6 +48,7 @@ import UserTrainer from '../components/UserTrainer.vue'
             return{
                 toggleUserSide: false,
                 toggleComponent:'trainer',
+                fullData : false
             }
         },
         components:{
@@ -80,6 +81,7 @@ import UserTrainer from '../components/UserTrainer.vue'
             if(!(JSON.parse(localStorage.getItem('fullData')))){
                 this.toggleComponent = 'mydata'
             }
+            this.fullData = JSON.parse(localStorage.getItem('fullData'))
         }
     }
 </script>

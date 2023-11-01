@@ -68,7 +68,7 @@ const Login = () => {
         })
         console.log(user.value);
       // userLoggedIN();
-      closeLogin();
+      // closeLogin();
       // router.push('/UserProfile')
     })
     .catch((error) => {

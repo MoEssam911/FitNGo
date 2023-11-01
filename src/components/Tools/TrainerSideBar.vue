@@ -10,7 +10,7 @@
       <div class="mx-auto">
         <img
           class="w-32 h-32 rounded-full object-cover"
-          :src="user.TrainerImg"
+          :src="user.imageProfile"
         />
       </div>
       <p class="font-Manrope font-bold text-primary text-lg text-center py-3">
@@ -91,8 +91,9 @@ export default {
     };
   },
   created(){
-    if (JSON.parse(localStorage.getItem('user')) == 'trainer') {
+    if (localStorage.getItem('role') == 'trainer') {
       this.user = JSON.parse(localStorage.getItem('user'));
+      console.log(this.user);
     }
   },
 
