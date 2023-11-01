@@ -123,6 +123,7 @@ export default {
       userLoggedIN:this.userLoggedIN,
       updateUser:this.updateUser,
       loggedIN: computed(()=>this.loggedIN),
+      fullData: computed(()=>this.fullData),
       user: computed(()=>this.user),
 
     };
