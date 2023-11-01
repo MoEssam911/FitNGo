@@ -132,7 +132,7 @@ export default {
   created() {
     this.user = JSON.parse(localStorage.getItem("user"));
     this.getTrainer();
-    this.getUser();
+    // this.getUser();
   },
   methods: {
     changePop(){
@@ -148,15 +148,18 @@ export default {
         .catch((err) => console.log(err));
     },
     getUser() {
-      axios
-        .get(`http://localhost:3000/users/${this.user.id}`)
-        .then((res) => {
-          this.user = res.data;
-        })
-        .catch((err) => console.log(err));
+      // axios
+      //   .get(`http://localhost:3000/users/${this.user.id}`)
+      //   .then((res) => {
+      //     this.user = res.data;
+      //   })
+      //   .catch((err) => console.log(err));
+      this.user = JSON.parse(localStorage.getItem('user'));
+      console.log(this.user);
     },
     SubwithTrainer() {
       this.modalActive = true;
+      console.log(this.trainers.Clients.includes(this.user));
       if (this.trainers.Clients.indexOf(this.user) === -1) {
         this.trainers.Clients.push(this.user);
       axios
@@ -169,15 +172,18 @@ export default {
     },
     settrainerinuser() {
       this.modalActive = false
+      this.trainers.Clients = []
       this.user.trainer = this.trainers;
-      localStorage.setItem("user", JSON.stringify(this.user))
       console.log(this.user);
       axios
         .put(`http://localhost:3000/users/${this.user.id}`, this.user)
         .then((res) => {
-          console.log(res);
+          console.log(res.data);
+         localStorage.setItem("user", JSON.stringify(this.user))
+
         })
         .catch((err) => console.log(err));
+
     },
     deleteuserifNo() {
       this.modalActive = false

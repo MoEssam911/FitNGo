@@ -24,7 +24,7 @@
                 </p>
                 <p>
                   <span class="text-lg font-semibold mr-3">Mobile:</span>
-                  {{ user.phoneNumber }}
+                  {{ user.phone }}
                 </p>
                 <p>
                   <span class="text-lg font-semibold mr-3">Street:</span>
