@@ -1,11 +1,10 @@
 <template>
   <div class="container grid font-manrope mb-[2%]">
     <!-- no items  -->
-    <div v-if="cart.length == 0" class="text-center pt-28 gap-4">
-      <img src="../../assets/svg/itemempty-01.svg" alt="">
+    <div v-if="cart.length == 0" class="text-center flex flex-col items-center justify-center w-full h-96">
+      <img src="../../assets/svg/itemempty-01.svg" alt=""  style="width: 500px; height: 500px;"/>
       <router-link to="/shop">
-        <button
-          class="bg-primary text-white rounded-lg py-3 px-4">
+        <button class="bg-primary text-white rounded-lg py-3 px-4 mb-3">
           Go Shopping
         </button>
       </router-link>

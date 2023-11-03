@@ -1,121 +1,136 @@
 <template>
   <main class="bg-secondary text-dark bg-opacity-50">
-    <div class="container" v-if="!paidFor">
-      <div class="pt-28 flex gap-3 items-center">
-        <img
-          class="ml-1"
-          src="../../assets/Images/Logo-Fit&go version 2.png"
-          alt="logo"
-          width="40" />
-        <h1 class="text-3xl text-center font-bold">Checkout</h1>
-      </div>
-      <div class="flex flex-col md:flex-row gap-4">
-        <!-- shipping -->
-        <div class="bg-white rounded-2xl md:w-9/12 md:mb-12">
-          <section class="p-7 border-b">
-            <div class="flex justify-between">
-              <h2 class="text-xl font-semibold">
-                <span class="pr-3">1</span> Shipping Address
-              </h2>
-              <div>
-                <p>
-                  <span class="text-lg font-semibold mr-3">Name:</span>
-                  {{ user.userName }}
-                </p>
-                <p>
-                  <span class="text-lg font-semibold mr-3">Mobile:</span>
-                  {{ user.phone }}
-                </p>
-                <p>
-                  <span class="text-lg font-semibold mr-3">Street:</span>
-                  {{ user.address.street }}
-                </p>
-                <p>
-                  <span class="text-lg font-semibold mr-3">Building:</span>
-                  {{ user.address.building }}
-                </p>
-                <p>
-                  <span class="text-lg font-semibold mr-3">Area:</span>
-                  {{ user.address.area }}
-                </p>
-              </div>
-              <button
-                @click="showHideAddress"
-                class="border border-primary hover:bg-primary hover:text-white font-semibold px-5 h-11 rounded-lg">
-                Change
-              </button>
-            </div>
-          </section>
-          <!-- payment methods -->
-          <CheckoutPop v-if="showPop == true"></CheckoutPop>
-          <section class="p-7" v-if="!hasPaid">
-            <h2 class="text-xl font-semibold">
-              <span class="pr-3">2</span> Payment Method
-            </h2>
-
-            <div class="">
-              <div class="border-b pb-5">
-                <h3 class="text-center text-2xl font-semibold pb-5 m-0">
-                  <i class="fa-solid fa-hand-holding-dollar text-primary"></i>
-                  Cash On Delivery
-                </h3>
+    <div v-if="cart.length == 0" class="text-center flex flex-col items-center  justify-center w-full h-96">
+      <img src="../../assets/svg/itemempty-01.svg" alt=""  style="width: 500px; height: 500px;"/>
+      <router-link to="/shop">
+        <button class="bg-primary text-white rounded-lg py-3 px-4 mb-3">
+          Go Shopping
+        </button>
+      </router-link>
+    </div>
+    <div v-else>
+      <div class="container" v-if="!paidFor">
+        <div class="pt-28 flex gap-3 items-center">
+          <img
+            class="ml-1"
+            src="../../assets/Images/Logo-Fit&go version 2.png"
+            alt="logo"
+            width="40"
+          />
+          <h1 class="text-3xl text-center font-bold">Checkout</h1>
+        </div>
+        <div class="flex flex-col md:flex-row gap-4">
+          <!-- shipping -->
+          <div class="bg-white rounded-2xl md:w-9/12 md:mb-12">
+            <section class="p-7 border-b">
+              <div class="flex justify-between">
+                <h2 class="text-xl font-semibold">
+                  <span class="pr-3">1</span> Shipping Address
+                </h2>
+                <div>
+                  <p>
+                    <span class="text-lg font-semibold mr-3">Name:</span>
+                    {{ user.userName }}
+                  </p>
+                  <p>
+                    <span class="text-lg font-semibold mr-3">Mobile:</span>
+                    {{ user.phone }}
+                  </p>
+                  <p>
+                    <span class="text-lg font-semibold mr-3">Street:</span>
+                    {{ user.address.street }}
+                  </p>
+                  <p>
+                    <span class="text-lg font-semibold mr-3">Building:</span>
+                    {{ user.address.building }}
+                  </p>
+                  <p>
+                    <span class="text-lg font-semibold mr-3">Area:</span>
+                    {{ user.address.area }}
+                  </p>
+                </div>
                 <button
-                  @click="changePop"
-                  class="transition border border-primary hover:bg-primary hover:text-white text-xl font-semibold w-full py-3 px-5 rounded-xl">
-                  Confirm Using Cash
+                  @click="showHideAddress"
+                  class="border border-primary hover:bg-primary hover:text-white font-semibold px-5 h-11 rounded-lg"
+                >
+                  Change
                 </button>
               </div>
-            </div>
-            <div>
-              <h3 class="text-center text-2xl font-semibold pb-5 m-0">
-                <i class="fa-regular fa-credit-card text-primary mr-2"></i>
-                Pay Online
-              </h3>
-              <div ref="paypal" class="z-10"></div>
-            </div>
-          </section>
-          <section v-if="hasPaid">
-            <div class="border p-5 rounded-xl text-center m-6">
-              
-              <p class="text-2xl">
-                <i class="fa-solid fa-truck-fast"></i>
-                Your Order is been shipping
-              </p>
-            </div>
-          </section>
-        </div>
+            </section>
+            <!-- payment methods -->
+            <CheckoutPop v-if="showPop == true"></CheckoutPop>
+            <section class="p-7" v-if="!hasPaid">
+              <h2 class="text-xl font-semibold">
+                <span class="pr-3">2</span> Payment Method
+              </h2>
 
-        <!-- cart -->
-        <div class="bg-white rounded-2xl md:w-3/12 mb-12">
-          <h1 class="text-2xl font-bold text-center p-3 border-b">Your Cart</h1>
-          <!-- item -->
-          <div
-            class="flex flex-col justify-center items-center border-b py-2"
-            v-for="(item, index) in cart"
-            :key="index">
-            <div class="">
-              <img :src="item.images[0]" class="w-24 h-28" alt="product" />
-            </div>
-            <div class="text-sm text-center">
-              <p>
-                {{ item.title.substring(0, 25) }}
-              </p>
-              <p>
-                <span class="text-primary font-semibold mr-1">{{
-                  item.price
-                }}</span>
-                <span class="font-bold">EGP</span>
-              </p>
-            </div>
+              <div class="">
+                <div class="border-b pb-5">
+                  <h3 class="text-center text-2xl font-semibold pb-5 m-0">
+                    <i class="fa-solid fa-hand-holding-dollar text-primary"></i>
+                    Cash On Delivery
+                  </h3>
+                  <button
+                    @click="changePop"
+                    class="transition border border-primary hover:bg-primary hover:text-white text-xl font-semibold w-full py-3 px-5 rounded-xl"
+                  >
+                    Confirm Using Cash
+                  </button>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-center text-2xl font-semibold pb-5 m-0">
+                  <i class="fa-regular fa-credit-card text-primary mr-2"></i>
+                  Pay Online
+                </h3>
+                <div ref="paypal" class="z-10"></div>
+              </div>
+            </section>
+            <section v-if="hasPaid">
+              <div class="border p-5 rounded-xl text-center m-6">
+                <p class="text-2xl">
+                  <i class="fa-solid fa-truck-fast"></i>
+                  Your Order is been shipping
+                </p>
+              </div>
+            </section>
           </div>
-          <!-- subtotal -->
-          <div class="p-4">
-            <div class="flex flex-col justify-center items-center py-2">
-              <p class="lg:text-xl md:text-base font-bold">Total:</p>
-              <p class="lg:text-lg md:text-base font-semibold text-primary">
-                {{ prices }}
-                <span class="font-bold text-base text-dark">EGP</span>
-              </p>
+
+          <!-- cart -->
+          <div class="bg-white rounded-2xl md:w-3/12 mb-12">
+            <h1 class="text-2xl font-bold text-center p-3 border-b">
+              Your Cart
+            </h1>
+            <!-- item -->
+            <div
+              class="flex flex-col justify-center items-center border-b py-2"
+              v-for="(item, index) in cart"
+              :key="index"
+            >
+              <div class="">
+                <img :src="item.images[0]" class="w-24 h-28" alt="product" />
+              </div>
+              <div class="text-sm text-center">
+                <p>
+                  {{ item.title.substring(0, 25) }}
+                </p>
+                <p>
+                  <span class="text-primary font-semibold mr-1">{{
+                    item.price
+                  }}</span>
+                  <span class="font-bold">EGP</span>
+                </p>
+              </div>
+            </div>
+            <!-- subtotal -->
+            <div class="p-4">
+              <div class="flex flex-col justify-center items-center py-2">
+                <p class="lg:text-xl md:text-base font-bold">Total:</p>
+                <p class="lg:text-lg md:text-base font-semibold text-primary">
+                  {{ prices }}
+                  <span class="font-bold text-base text-dark">EGP</span>
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -127,7 +142,8 @@
   <div
     v-if="showAddressModal"
     @click.self="showHideAddress"
-    class="bg-black bg-opacity-50 w-full h-full flex justify-center items-center fixed top-0 left-0 z-[100]">
+    class="bg-black bg-opacity-50 w-full h-full flex justify-center items-center fixed top-0 left-0 z-[100]"
+  >
     <div class="text-dark">
       <div class="w-auto bg-white h-auto rounded-3xl p-5">
         <h2 class="text-xl text-center font-semibold mb-5 border-b p-3">
@@ -169,10 +185,12 @@
               name="floating_street"
               class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-dark appearance-none focus:outline-none focus:ring-0 focus:border-primary peer"
               placeholder=" "
-              required />
+              required
+            />
             <label
               for="floating_street"
-              class="peer-focus:font-medium absolute text-sm text-dark duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+              class="peer-focus:font-medium absolute text-sm text-dark duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
               Street Name
             </label>
           </div>
@@ -185,7 +203,8 @@
                 name="floating_building"
                 class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-dark appearance-none focus:outline-none focus:ring-0 focus:border-primary peer"
                 placeholder=" "
-                required />
+                required
+              />
               <label
                 for="floating_building"
                 class="peer-focus:font-medium absolute text-sm text-dark duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
@@ -199,7 +218,8 @@
                 name="floating_area"
                 class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-dark appearance-none focus:outline-none focus:ring-0 focus:border-primary peer"
                 placeholder=" "
-                required />
+                required
+              />
               <label
                 for="floating_area"
                 class="peer-focus:font-medium absolute text-sm text-dark duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
@@ -214,10 +234,12 @@
               name="floating_street"
               class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-dark appearance-none focus:outline-none focus:ring-0 focus:border-primary peer"
               placeholder=" "
-              required />
+              required
+            />
             <label
               for="floating_street"
-              class="peer-focus:font-medium absolute text-sm text-dark duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+              class="peer-focus:font-medium absolute text-sm text-dark duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
               Nearest landmark
             </label>
           </div>
@@ -225,7 +247,8 @@
           <div class="m-5 block text-center">
             <button
               class="bg-primary rounded-lg p-2 px-6 text-white font-Manrope text-sm hover:bg-red-800"
-              type="submit">
+              type="submit"
+            >
               Add Address
             </button>
           </div>
@@ -237,13 +260,14 @@
   <component
     :is="'script'"
     :src="'https://www.paypal.com/sdk/js?client-id=AQPENnpRHIiN_s--JbA5QXXpsa6JPmD71kVfHBUkOQFXVZzTitRous4_YB2HrbhYhurDRH7bj776Zczw'"
-    @load="setLoaded"></component>
+    @load="setLoaded"
+  ></component>
 </template>
 
 <script>
 import axios from "axios";
 import CheckoutPop from "./CheckoutPop.vue";
-import router from '../../router';
+import router from "../../router";
 
 export default {
   name: "HelloWorld",
@@ -310,8 +334,16 @@ export default {
 
     // pay cash
     changePop() {
-        this.showPop = !this.showPop;
-        this.hasPaid = true;
+      this.showPop = !this.showPop;
+      this.hasPaid = true;
+      this.user.cart = [];
+      localStorage.setItem("user", JSON.stringify(this.user));
+      axios
+        .put(`http://localhost:3000/users/${this.user.id}`, this.user)
+        .then((res) => {
+          console.log(res.data);
+        })
+        .catch((err) => console.log(err));
     },
     setLoaded() {
       this.loaded = true;
