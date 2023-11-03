@@ -12,7 +12,7 @@ FitnessPro allows users to connect with certified personal trainers who can help
 - Reviews and ratings from other users to make an informed choice.
 
 ### 2. Buy Supplements
-Find a wide range of fitness supplements, from protein shakes to vitamins, right at your fingertips. FitnessPro's e-commerce section offers:
+Find a wide range of fitness supplements, from protein shakes to vitamins, right at your fingertips. Fit&Go's e-commerce section offers:
 - A user-friendly shopping experience with a catalog of high-quality products.
 - Detailed product descriptions and reviews to help users make the right choices.
 - Secure payment options and order tracking.
@@ -23,10 +23,10 @@ Locate the nearest gyms and fitness centers in your area, making it convenient f
 - Scan your location to get all gyms near you using google maps api
 
 ## Getting Started
-To get started with FitnessPro, follow these steps:
+To get started with Fit&Go, follow these steps:
 
 1. Clone the repository:
-   `git clone https://github.com/yourusername/fitnesspro.git`
+   `git clone https://github.com/yourusername/FitNGo.git`
 
 2- Install Modules:
   `npm i`
