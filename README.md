@@ -26,7 +26,7 @@ Locate the nearest gyms and fitness centers in your area, making it convenient f
 To get started with Fit&Go, follow these steps:
 
 1. Clone the repository:
-   `git clone https://github.com/yourusername/FitNGo.git`
+   `git clone https://github.com/MoEssam911/FitNGo.git`
 
 2- Install Modules:
   `npm i`
